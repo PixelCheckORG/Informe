@@ -67,7 +67,7 @@
 
 ## Repositorios:
 
-- Informe: [https://github.com/IronCoders-IOT/Final-Project](https://github.com/IronCoders-IOT/Final-Project)
+- Informe: https://github.com/PixelCheckORG/Informe
 
 ### TB1
 
