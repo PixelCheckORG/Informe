@@ -292,11 +292,56 @@ del ABET – EAC - Student Outcome 3.
 
 ## 3.1. To-Be Scenario Mapping
 
-[Content for to-be scenario mapping]
+En esta sección se describe cómo serían los escenarios ideales (To-Be) una vez implementada la solución PixelCheck propuesta por nuestro equipo. A partir de los problemas identificados en el análisis de detección de imágenes generadas por IA, se plantea una visión futura optimizada, en la que los usuarios pueden verificar la autenticidad de contenido visual de manera rápida y confiable.
+
+Cada mapeo To-Be representa la experiencia del usuario mejorada, los escenarios están divididos por segmentos para mantener un enfoque claro y específico.
+
+### Segmento 1: Usuarios Generales
+
+**Enlace para visualizar el To-Be Scenario Map de Usuarios Generales realizado en Miro:** 
+
+https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZNZGUzUCs3V01ncW8zbmdZQmc1RGZoVlZ4MUVwY1NBY1l5aE5XUHlyTkpldHJQYTcxTnNuREFFVEF3QUU1c0ExaEQ3RHNLRTJoNjBHaFkxZWlUd3E1TUZIbkZTemRBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=668820882265
+
+### Brainstorming:
+
+![Brainstorming](./assets/chapter-III/brainstorming.png)
+
+### To-Be Scenario Mapping 
+
+![to be](./assets/chapter-III/to-be-scenario.png)
+
 
 ## 3.2. User Stories
 
-[Content for user stories]
+El apartado de User Stories permite identificar las diversas situaciones que experimenta el usuario al interactuar con las diferentes áreas del proyecto PixelCheck, desde la carga de imágenes hasta el análisis de detección de IA. Su relevancia radica en que facilita la creación de un product backlog y, mediante los criterios de aceptación, podemos comprobar si estas historias se han cumplido correctamente.
+
+**Epics y User Stories de PixelCheck**
+
+|**Epic / Story ID**|**Título**|**Descripción**|**Criterios de Aceptación**|**Relacionado con (Epic ID)**|
+| - | - | - | - | - |
+|**EP01**|**Image Analysis Core**|<p>**Como** usuario,</p><p>**Quiero** analizar imágenes para detectar si fueron generadas por IA</p><p>**Para** verificar la autenticidad de contenido visual.</p>|||
+|**HU01**|**Cargar imagen para análisis**|<p>**Como** usuario,</p><p>**Quiero** cargar una imagen desde mi dispositivo</p><p>**Para** poder analizarla con el detector de IA.</p>|<p>**Escenario 1: Carga exitosa por arrastrar y soltar<br>Dado** que el usuario tiene una imagen en su dispositivo,<br>**Cuando** arrastra la imagen al área de carga,<br>**Entonces** el sistema muestra la imagen en vista previa y habilita el botón de análisis.</p><p>**Escenario 2: Carga exitosa por selección de archivo<br>Dado** que el usuario hace clic en el área de carga,<br>**Cuando** selecciona un archivo de imagen válido,<br>**Entonces** el sistema muestra la imagen en vista previa y habilita el botón de análisis.</p><p>**Escenario 3: Error por formato no válido<br>Dado** que el usuario intenta cargar un archivo que no es imagen,<br>**Cuando** selecciona el archivo,<br>**Entonces** el sistema muestra un mensaje de error y no procesa el archivo.</p>|**EP01**|
+|**HU02**|**Analizar imagen con algoritmo ML**|<p>**Como** usuario,</p><p>**Quiero** ejecutar el análisis de detección de IA en mi imagen</p><p>**Para** obtener un resultado sobre su autenticidad.</p>|<p>**Escenario 1: Análisis exitoso de imagen real<br>Dado** que el usuario ha cargado una imagen fotográfica real,<br>**Cuando** hace clic en "Analizar con IA",<br>**Entonces** el sistema muestra "Imagen Real/Fotográfica" con alta confianza.</p><p>**Escenario 2: Análisis exitoso de imagen generada por IA<br>Dado** que el usuario ha cargado una imagen generada por IA,<br>**Cuando** hace clic en "Analizar con IA",<br>**Entonces** el sistema muestra "Imagen Generada por IA" con nivel de confianza apropiado.</p><p>**Escenario 3: Análisis de diseño gráfico<br>Dado** que el usuario ha cargado un diseño gráfico digital,<br>**Cuando** hace clic en "Analizar con IA",<br>**Entonces** el sistema muestra "Diseño Gráfico/Digital" como resultado.</p>|**EP01**|
+|**HU03**|**Visualizar resultados detallados del análisis**|<p>**Como** usuario,</p><p>**Quiero** ver información detallada sobre el análisis realizado</p><p>**Para** entender los factores que influyeron en la clasificación.</p>|<p>**Escenario 1: Visualización de análisis de color<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario revisa los resultados,<br>**Entonces** puede ver el número de colores únicos detectados y la diversidad cromática.</p><p>**Escenario 2: Visualización de análisis de transparencia<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario revisa los resultados,<br>**Entonces** puede ver el porcentaje de píxeles transparentes detectados.</p><p>**Escenario 3: Visualización de análisis de ruido<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario revisa los resultados,<br>**Entonces** puede ver la interpretación del nivel de ruido fotográfico.</p>|**EP01**|
+|**EP02**|**Technical Analysis Details**|<p>**Como** usuario técnico,</p><p>**Quiero** acceder a información técnica detallada del análisis</p><p>**Para** entender los algoritmos y características utilizadas.</p>|||
+|**HU04**|**Ver probabilidades de clasificación ML**|<p>**Como** usuario técnico,</p><p>**Quiero** ver las probabilidades específicas de cada categoría</p><p>**Para** entender la confianza del modelo en cada clasificación.</p>|<p>**Escenario 1: Visualización de probabilidades<br>Dado** que el análisis ML se ha completado,<br>**Cuando** el usuario revisa la sección técnica,<br>**Entonces** puede ver los porcentajes para "Imagen Real", "Generada por IA" y "Diseño Gráfico".</p><p>**Escenario 2: Interpretación de confianza<br>Dado** que las probabilidades se muestran,<br>**Cuando** una categoría tiene probabilidad > 70%,<br>**Entonces** se muestra como "Alta Confianza".</p>|**EP02**|
+|**HU05**|**Consultar características extraídas**|<p>**Como** usuario técnico,</p><p>**Quiero** ver los valores específicos de las características analizadas</p><p>**Para** entender qué aspectos técnicos influyeron en la decisión.</p>|<p>**Escenario 1: Visualización de características principales<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario revisa la sección técnica,<br>**Entonces** puede ver valores numéricos para diversidad de color, transparencia, nivel de ruido, nitidez de bordes, patrones y compresión.</p><p>**Escenario 2: Interpretación de valores<br>Dado** que se muestran las características,<br>**Cuando** un valor está cerca de 1.0,<br>**Entonces** indica alta presencia de esa característica en la imagen.</p>|**EP02**|
+|**EP03**|**User Experience**|<p>**Como** usuario,</p><p>**Quiero** una interfaz intuitiva y responsiva</p><p>**Para** usar la aplicación de manera eficiente en cualquier dispositivo.</p>|||
+|**HU06**|**Navegar con interfaz responsiva**|<p>**Como** usuario web,</p><p>**Quiero** usar la aplicación web desde diferentes tamaños de pantalla</p><p>**Para** analizar imágenes desde cualquier dispositivo con navegador web.</p>|<p>**Escenario 1: Adaptación a diferentes resoluciones<br>Dado** que el usuario accede desde diferentes tamaños de pantalla (desktop, tablet),<br>**Cuando** carga la página web,<br>**Entonces** la interfaz se adapta automáticamente al tamaño de pantalla manteniendo la funcionalidad.</p><p>**Escenario 2: Funcionalidad completa en navegador web<br>Dado** que el usuario está usando un navegador web moderno,<br>**Cuando** realiza todas las acciones (cargar, analizar, ver resultados),<br>**Entonces** todas las funcionalidades están disponibles y optimizadas para web.</p>|**EP03**|
+|**HU07**|**Visualizar estado de carga durante análisis**|<p>**Como** usuario,</p><p>**Quiero** ver el progreso del análisis en tiempo real</p><p>**Para** saber que el sistema está procesando mi imagen.</p>|<p>**Escenario 1: Indicador de progreso visible<br>Dado** que el usuario inicia el análisis,<br>**Cuando** el sistema procesa la imagen,<br>**Entonces** se muestra un overlay de carga con spinner y mensajes de estado.</p><p>**Escenario 2: Mensajes de progreso específicos<br>Dado** que el análisis está en progreso,<br>**Cuando** cada etapa se completa,<br>**Entonces** el mensaje de estado se actualiza para reflejar la etapa actual.</p>|**EP03**|
+|**HU08**|**Ver metadatos de la imagen**|<p>**Como** usuario,</p><p>**Quiero** ver información básica de la imagen cargada</p><p>**Para** conocer sus características técnicas.</p>|<p>**Escenario 1: Visualización de metadatos básicos<br>Dado** que el usuario ha cargado una imagen,<br>**Cuando** revisa la sección de metadatos,<br>**Entonces** puede ver formato, dimensiones, tamaño de archivo y nivel de compresión.</p><p>**Escenario 2: Interpretación de compresión<br>Dado** que se muestran los metadatos,<br>**Cuando** el formato es JPEG con alta compresión,<br>**Entonces** se indica "Alta compresión" en la interfaz.</p>|**EP01**|
+|**HU09**|**Limpiar análisis anterior**|<p>**Como** usuario,</p><p>**Quiero** poder cargar una nueva imagen</p><p>**Para** realizar un nuevo análisis sin interferencias.</p>|<p>**Escenario 1: Reset automático al cargar nueva imagen<br>Dado** que el usuario tiene resultados de análisis previo,<br>**Cuando** carga una nueva imagen,<br>**Entonces** los resultados anteriores se ocultan automáticamente.</p><p>**Escenario 2: Botón de limpiar manual<br>Dado** que el usuario quiere limpiar los resultados,<br>**Cuando** hace clic en un botón "Nueva imagen",<br>**Entonces** se resetea la interfaz al estado inicial.</p>|**EP03**|
+|**HU10**|**Copiar resultado al portapapeles**|<p>**Como** usuario,</p><p>**Quiero** copiar el resultado del análisis</p><p>**Para** compartirlo fácilmente en otros lugares.</p>|<p>**Escenario 1: Copia del resultado principal<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario hace clic en "Copiar resultado",<br>**Entonces** el texto del resultado se copia al portapapeles.</p><p>**Escenario 2: Confirmación de copia<br>Dado** que el usuario copia el resultado,<br>**Cuando** la copia es exitosa,<br>**Entonces** se muestra un mensaje de confirmación temporal.</p>|**EP03**|
+|**HU11**|**Ver historial de análisis recientes**|<p>**Como** usuario,</p><p>**Quiero** ver las últimas imágenes analizadas</p><p>**Para** acceder rápidamente a análisis previos.</p>|<p>**Escenario 1: Lista de análisis recientes<br>Dado** que el usuario ha realizado varios análisis,<br>**Cuando** accede a la sección de historial,<br>**Entonces** puede ver una lista de las últimas 5 imágenes con sus resultados.</p><p>**Escenario 2: Selección de análisis previo<br>Dado** que existe historial de análisis,<br>**Cuando** el usuario hace clic en un análisis previo,<br>**Entonces** se muestran los resultados de esa imagen nuevamente.</p>|**EP01**|
+|**HU12**|**Exportar resultados como imagen**|<p>**Como** usuario,</p><p>**Quiero** exportar el resultado del análisis como imagen</p><p>**Para** guardar o compartir el resultado visualmente.</p>|<p>**Escenario 1: Exportación exitosa<br>Dado** que el análisis se ha completado,<br>**Cuando** el usuario hace clic en "Exportar resultado",<br>**Entonces** se descarga una imagen PNG con el resultado y la imagen original.</p><p>**Escenario 2: Formato de exportación<br>Dado** que el usuario exporta el resultado,<br>**Cuando** se genera la imagen,<br>**Entonces** incluye el resultado, nivel de confianza y fecha del análisis.</p>|**EP03**|
+|**HU13**|**Cambiar tema visual (claro/oscuro)**|<p>**Como** usuario,</p><p>**Quiero** cambiar entre tema claro y oscuro</p><p>**Para** usar la aplicación según mi preferencia visual.</p>|<p>**Escenario 1: Cambio a tema oscuro<br>Dado** que el usuario está en tema claro,<br>**Cuando** hace clic en el botón de cambio de tema,<br>**Entonces** la interfaz cambia a colores oscuros manteniendo la funcionalidad.</p><p>**Escenario 2: Persistencia del tema<br>Dado** que el usuario cambia el tema,<br>**Cuando** recarga la página,<br>**Entonces** se mantiene el tema seleccionado.</p>|**EP03**|
+|**HU14**|**Ver información de ayuda**|<p>**Como** usuario nuevo,</p><p>**Quiero** acceder a información de ayuda</p><p>**Para** entender cómo usar la aplicación correctamente.</p>|<p>**Escenario 1: Acceso a ayuda<br>Dado** que el usuario necesita ayuda,<br>**Cuando** hace clic en el botón "Ayuda",<br>**Entonces** se muestra un modal con instrucciones paso a paso.</p><p>**Escenario 2: Cierre de ayuda<br>Dado** que el modal de ayuda está abierto,<br>**Cuando** el usuario hace clic en "Cerrar" o fuera del modal,<br>**Entonces** el modal se cierra y regresa a la interfaz principal.</p>|**EP03**|
+|**HU15**|**Validar formato de imagen antes de análisis**|<p>**Como** usuario,</p><p>**Quiero** que el sistema valide el formato de imagen</p><p>**Para** evitar errores durante el análisis.</p>|<p>**Escenario 1: Validación de formato soportado<br>Dado** que el usuario carga una imagen,<br>**Cuando** el formato es JPG, PNG o WEBP,<br>**Entonces** el sistema permite continuar con el análisis.</p><p>**Escenario 2: Rechazo de formato no soportado<br>Dado** que el usuario carga un archivo no soportado,<br>**Cuando** el formato no es imagen válida,<br>**Entonces** se muestra un mensaje de error específico.</p>|**EP01**|
+|**HU16**|**Mostrar tiempo de análisis**|<p>**Como** usuario,</p><p>**Quiero** ver cuánto tiempo tomó el análisis</p><p>**Para** conocer la eficiencia del sistema.</p>|<p>**Escenario 1: Tiempo de análisis visible<br>Dado** que el análisis se ha completado,<br>**Cuando** se muestran los resultados,<br>**Entonces** aparece el tiempo total de procesamiento en segundos.</p><p>**Escenario 2: Tiempo por etapa<br>Dado** que el análisis está en progreso,<br>**Cuando** cada etapa se completa,<br>**Entonces** se muestra el tiempo parcial de esa etapa.</p>|**EP02**|
+|**HU17**|**Redimensionar imagen automáticamente**|<p>**Como** usuario,</p><p>**Quiero** que imágenes muy grandes se redimensionen</p><p>**Para** mejorar la velocidad de análisis.</p>|<p>**Escenario 1: Redimensionamiento automático<br>Dado** que el usuario carga una imagen mayor a 2048px,<br>**Cuando** se inicia el análisis,<br>**Entonces** la imagen se redimensiona automáticamente manteniendo la proporción.</p><p>**Escenario 2: Notificación de redimensionamiento<br>Dado** que la imagen fue redimensionada,<br>**Cuando** se muestra el resultado,<br>**Entonces** aparece una nota indicando que la imagen fue optimizada.</p>|**EP01**|
+|**HU18**|**Comparar múltiples imágenes**|<p>**Como** usuario,</p><p>**Quiero** analizar hasta 3 imágenes simultáneamente</p><p>**Para** comparar resultados de diferentes imágenes.</p>|<p>**Escenario 1: Carga múltiple<br>Dado** que el usuario quiere comparar imágenes,<br>**Cuando** carga hasta 3 imágenes,<br>**Entonces** se muestran en una vista de comparación lado a lado.</p><p>**Escenario 2: Análisis comparativo<br>Dado** que hay múltiples imágenes cargadas,<br>**Cuando** se ejecuta el análisis,<br>**Entonces** se muestran los resultados de todas las imágenes en una tabla comparativa.</p>|**EP01**|
+|**HU19**|**Guardar configuración de análisis**|<p>**Como** usuario frecuente,</p><p>**Quiero** guardar mis preferencias de análisis</p><p>**Para** no tener que configurar cada vez.</p>|<p>**Escenario 1: Guardado de preferencias<br>Dado** que el usuario ajusta configuraciones,<br>**Cuando** hace clic en "Guardar configuración",<br>**Entonces** las preferencias se almacenan en localStorage.</p><p>**Escenario 2: Carga de configuración<br>Dado** que existen configuraciones guardadas,<br>**Cuando** el usuario recarga la página,<br>**Entonces** se restauran automáticamente sus preferencias.</p>|**EP03**|
+|**HU20**|**Ver estadísticas de uso**|<p>**Como** usuario,</p><p>**Quiero** ver estadísticas de mis análisis</p><p>**Para** conocer mis patrones de uso.</p>|<p>**Escenario 1: Estadísticas básicas<br>Dado** que el usuario ha realizado varios análisis,<br>**Cuando** accede a la sección de estadísticas,<br>**Entonces** puede ver total de análisis, tipos de imágenes más comunes y tiempo promedio.</p><p>**Escenario 2: Gráfico de distribución<br>Dado** que existen estadísticas,<br>**Cuando** se muestran los datos,<br>**Entonces** aparece un gráfico simple de distribución por tipo de imagen.</p>|**EP02**|
 
 ## 3.3. Impact Mapping
 
@@ -304,9 +349,161 @@ del ABET – EAC - Student Outcome 3.
 
 ## 3.4. Product Backlog
 
-[Content for product backlog]
+El Product Backlog es una lista priorizada de tareas, funcionalidades y requisitos necesarios para el desarrollo del proyecto PixelCheck, asegurando que se trabaje en los elementos más importantes y alineados con los objetivos del proyecto. Cada ítem del backlog incluye una descripción, prioridad y título.
 
-<div style="page-break-after: always;"></div>
+<table>
+  <thead>
+    <tr>
+      <th>Orden</th>
+      <th>User Story Id</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Story Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>HU01</td>
+      <td>Cargar imagen para análisis</td>
+      <td>Como usuario, quiero cargar una imagen desde mi dispositivo para poder analizarla con el detector de IA.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>HU02</td>
+      <td>Analizar imagen con algoritmo ML</td>
+      <td>Como usuario, quiero ejecutar el análisis de detección de IA en mi imagen para obtener un resultado sobre su autenticidad.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>HU03</td>
+      <td>Visualizar resultados detallados del análisis</td>
+      <td>Como usuario, quiero ver información detallada sobre el análisis realizado para entender los factores que influyeron en la clasificación.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>HU15</td>
+      <td>Validar formato de imagen antes de análisis</td>
+      <td>Como usuario, quiero que el sistema valide el formato de imagen para evitar errores durante el análisis.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>HU08</td>
+      <td>Ver metadatos de la imagen</td>
+      <td>Como usuario, quiero ver información básica de la imagen cargada para conocer sus características técnicas.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>HU07</td>
+      <td>Visualizar estado de carga durante análisis</td>
+      <td>Como usuario, quiero ver el progreso del análisis en tiempo real para saber que el sistema está procesando mi imagen.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>HU06</td>
+      <td>Navegar con interfaz responsiva</td>
+      <td>Como usuario web, quiero usar la aplicación web desde diferentes tamaños de pantalla para analizar imágenes desde cualquier dispositivo con navegador web.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>HU04</td>
+      <td>Ver probabilidades de clasificación ML</td>
+      <td>Como usuario técnico, quiero ver las probabilidades específicas de cada categoría para entender la confianza del modelo en cada clasificación.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>HU05</td>
+      <td>Consultar características extraídas</td>
+      <td>Como usuario técnico, quiero ver los valores específicos de las características analizadas para entender qué aspectos técnicos influyeron en la decisión.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>HU16</td>
+      <td>Mostrar tiempo de análisis</td>
+      <td>Como usuario, quiero ver cuánto tiempo tomó el análisis para conocer la eficiencia del sistema.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>HU09</td>
+      <td>Limpiar análisis anterior</td>
+      <td>Como usuario, quiero poder cargar una nueva imagen para realizar un nuevo análisis sin interferencias.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>HU10</td>
+      <td>Copiar resultado al portapapeles</td>
+      <td>Como usuario, quiero copiar el resultado del análisis para compartirlo fácilmente en otros lugares.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>HU17</td>
+      <td>Redimensionar imagen automáticamente</td>
+      <td>Como usuario, quiero que imágenes muy grandes se redimensionen para mejorar la velocidad de análisis.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>HU13</td>
+      <td>Cambiar tema visual (claro/oscuro)</td>
+      <td>Como usuario, quiero cambiar entre tema claro y oscuro para usar la aplicación según mi preferencia visual.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>HU14</td>
+      <td>Ver información de ayuda</td>
+      <td>Como usuario nuevo, quiero acceder a información de ayuda para entender cómo usar la aplicación correctamente.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>HU11</td>
+      <td>Ver historial de análisis recientes</td>
+      <td>Como usuario, quiero ver las últimas imágenes analizadas para acceder rápidamente a análisis previos.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>HU12</td>
+      <td>Exportar resultados como imagen</td>
+      <td>Como usuario, quiero exportar el resultado del análisis como imagen para guardar o compartir el resultado visualmente.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>HU19</td>
+      <td>Guardar configuración de análisis</td>
+      <td>Como usuario frecuente, quiero guardar mis preferencias de análisis para no tener que configurar cada vez.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>HU18</td>
+      <td>Comparar múltiples imágenes</td>
+      <td>Como usuario, quiero analizar hasta 3 imágenes simultáneamente para comparar resultados de diferentes imágenes.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>HU20</td>
+      <td>Ver estadísticas de uso</td>
+      <td>Como usuario, quiero ver estadísticas de mis análisis para conocer mis patrones de uso.</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
 
 # Capítulo IV: Strategic-Level Software Design
 
