@@ -577,8 +577,37 @@ El Product Backlog es una lista priorizada de tareas, funcionalidades y requisit
       <td>Como profesional de medios, quiero tener acceso a funcionalidades avanzadas con mi cuenta profesional para utilizar herramientas especializadas como análisis por lotes y reportes.</td>
       <td>4</td>
     </tr>
+    <tr>
+      <td>27</td>
+      <td>TS01</td>
+      <td>Implementar validación de archivos de imagen</td>
+      <td>Como desarrollador, quiero implementar validación de tipos de archivo de imagen para asegurar que solo se procesen formatos válidos y evitar errores del sistema.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>TS02</td>
+      <td>Configurar límites de tamaño de archivo</td>
+      <td>Como desarrollador, quiero establecer límites de tamaño para archivos de imagen para optimizar el rendimiento del sistema y evitar sobrecarga del servidor.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>TS03</td>
+      <td>Implementar sistema de logging de errores</td>
+      <td>Como desarrollador, quiero implementar un sistema de logging de errores para monitorear y diagnosticar problemas del sistema en producción.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>TS04</td>
+      <td>Configurar compresión automática de imágenes</td>
+      <td>Como desarrollador, quiero implementar compresión automática de imágenes para reducir el tiempo de procesamiento y mejorar la eficiencia del análisis.</td>
+      <td>3</td>
+    </tr>
   </tbody>
 </table>
+
 # Capítulo IV: Strategic-Level Software Design
 
 ## 4.1. Strategic-Level Attribute-Driven Design
