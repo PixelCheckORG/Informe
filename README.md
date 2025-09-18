@@ -31,8 +31,8 @@
       <td>U202212760</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>Gutierrez Garcia, Jose Eduardo</td>
+      <td>U202221518</td>
     </tr>
     <tr>
       <td>Párraga Gamarra, Paolo Gonzalo</td>
