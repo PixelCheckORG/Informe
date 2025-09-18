@@ -378,11 +378,13 @@ Los requisitos funcionales seleccionados representan las capacidades core del si
 
 ### 4.3.2. Software Architecture Context Level Diagrams
 
-[Content for context level diagrams]
+
+<img src="https://i.ibb.co/kgw6hLXG/contexto.png" alt="contexto" border="0">
+
 
 ### 4.3.3. Software Architecture Container Level Diagrams
 
-[Content for container level diagrams]
+<img src="https://i.ibb.co/0pkCFkJt/contenedores.png" alt="contenedores" border="0">
 
 ### 4.3.4. Software Architecture Deployment Diagrams
 
