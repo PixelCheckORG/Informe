@@ -587,7 +587,87 @@ En el siguiente Empathy Map presentamos a Ana García, una editora digital senio
 
 ### 2.3.4. As-is Scenario Mapping
 
-[Content for as-is scenario mapping]
+El As-is Scenario Mapping permite analizar la situación actual de cada segmento objetivo antes de la implementación de PixelCheck, identificando los procesos existentes, puntos de dolor y oportunidades de mejora en sus flujos de trabajo de verificación de imágenes.
+
+#### Segmento 1: Usuarios Generales de Internet
+
+El As-Is Scenario para el segmento de usuarios generales revela un proceso de verificación de imágenes caracterizado por métodos informales y poco confiables. Los usuarios dependen principalmente de búsquedas en Google, consultas a conocidos, y su intuición personal para determinar la autenticidad de las imágenes. No existe un sistema estructurado de verificación, lo que genera incertidumbre y riesgo de compartir contenido falso inadvertidamente.
+
+**Enlace para visualizar el As-is Scenario Map de Usuarios Generales realizado en Miro:** [Acceso al mapa completo](usuario_general.html)
+
+**Brainstorming:**
+
+![Brainstorming Usuario General](assets/chapter-II/brainstorming-1.png)
+
+**Identify the highs and lows:**
+
+![As-is Scenario Usuario General](assets/chapter-II/as-is-1.png)
+
+**Positive Areas:**
+- Satisfacción al encontrar herramientas simples e intuitivas
+- Confianza cuando obtiene resultados claros y comprensibles
+
+**Negative Areas:**
+- Frustración ante herramientas muy técnicas o complejas
+- Confusión con terminología especializada sin explicaciones
+
+**Blank Areas:**
+- Necesidad de explorar cómo integrar la verificación en el flujo natural de consumo de contenido en redes sociales
+- Oportunidad de desarrollar características educativas que aumenten la conciencia sobre desinformación visual
+
+#### Segmento 2: Profesionales de Medios y Comunicación
+
+El As-Is Scenario para el segmento de profesionales de medios muestra un proceso de verificación editorial que depende de herramientas básicas como búsqueda reversa de imágenes, verificación manual y consultas con fuentes. Los procesos actuales son lentos, no están estandarizados, carecen de documentación formal y no proporcionan el nivel de certeza técnica requerido para mantener la credibilidad editorial en un entorno de alta presión temporal.
+
+**Enlace para visualizar el As-is Scenario Map de Profesionales de Medios realizado en Miro:** [Acceso al mapa completo](profesional_medios.html)
+
+**Brainstorming:**
+
+![Brainstorming Profesional de Medios](assets/chapter-II/brainstorming-2.png)
+
+**Identify the highs and lows:**
+
+![As-is Scenario Profesional de Medios](assets/chapter-II/as-is-2.png)
+
+**Positive Areas:**
+- Optimismo al descubrir herramientas que cumplen estándares profesionales de precisión
+- Satisfacción profesional al implementar procesos que mejoran la credibilidad editorial
+
+**Negative Areas:**
+- Cautela y preocupación por el costo-beneficio de nuevas herramientas especializadas
+- Estrés por la resistencia del equipo a cambios en workflows establecidos
+
+**Blank Areas:**
+- Explorar la integración profunda con sistemas de gestión de contenido (CMS) existentes
+- Desarrollar métricas específicas para medir el impacto de la verificación en la credibilidad y eficiencia editorial
+- Investigar necesidades de capacitación y certificación profesional en detección de contenido sintético
+
+#### Análisis Comparativo de Escenarios Actuales
+
+| **Aspecto** | **Usuario General** | **Profesional de Medios** |
+|---|---|---|
+| **Método Principal** | Intuición y búsquedas básicas | Verificación manual y fuentes |
+| **Tiempo Disponible** | Flexible, uso ocasional | Limitado por deadlines |
+| **Nivel de Certeza Requerido** | Suficiente para decisión personal | Alto, respaldo institucional |
+| **Consecuencias de Error** | Vergüenza personal | Daño a credibilidad editorial |
+| **Herramientas Actuales** | Google Images, preguntar a otros | TinEye, contacto con fuentes |
+| **Documentación** | No requerida | Necesaria para auditorías |
+
+#### Implicaciones para el Diseño de PixelCheck
+
+Los insights obtenidos del As-is Scenario Mapping revelan oportunidades claras para que PixelCheck aborde las brechas identificadas:
+
+**Para Usuarios Generales:**
+- Interfaz simple que reduzca la curva de aprendizaje
+- Explicaciones educativas que transformen la frustración en conocimiento
+- Integración con plataformas de redes sociales para verificación in-situ
+
+**Para Profesionales de Medios:**
+- Funcionalidades avanzadas de documentación y reportes
+- Integración con herramientas editoriales existentes
+- Soporte técnico especializado para casos complejos
+- Métricas de rendimiento para justificar ROI organizacional
+
 
 ## 2.4. Ubiquitous Language
 
