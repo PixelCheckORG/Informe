@@ -323,6 +323,13 @@ El mercado de detección de imágenes generadas por IA presenta competidores est
 
 ### 2.2.1. Diseño de entrevistas
 
+### Preguntas Generales
+
+1. ¿ Cual es tu nombre?
+2. ¿ Cual es tu edad?
+3. ¿ Donde Resides?
+4. ¿Cual es tu Ocupación?
+
 ### Segmento 1: Usuarios Generales de Internet
 
 1. ¿Con qué frecuencia consumes contenido visual (imágenes, memes, noticias) en redes sociales y sitios web?
@@ -372,6 +379,10 @@ El mercado de detección de imágenes generadas por IA presenta competidores est
 
 [Content for interview records]
 
+#### Segmento 1: Usuarios Generales de Internet
+
+#### Segmento 2: Profesionales de Medios y Comunicación
+
 ### 2.2.3. Análisis de entrevistas
 
 [Content for interview analysis]
@@ -387,8 +398,6 @@ Los user persona nos permiten entender el perfil y comportamiento de cada segmen
 
 Presentamos a Carlos Mendoza, un joven estudiante universitario que representa a nuestro primer segmento objetivo. Este user persona encarna las características y necesidades de los usuarios generales que consumen contenido visual diariamente y buscan herramientas simples para verificar la autenticidad de las imágenes que encuentran online. Carlos fue creado a partir del análisis de comportamientos reales identificados durante el proceso de investigación y validación de hipótesis Lean UX.
 
-
-<img src="chapter-II/user-persona-1.png" alt="User Persona - Usuario General" width="500"/>
 
 ![User Persona - Usuario General](assets/chapter-II/user-persona-1.png)
 
