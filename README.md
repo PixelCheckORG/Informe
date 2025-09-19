@@ -499,8 +499,70 @@ María José, estudiante de Marketing y practicante en comunicación de una ONG,
 
 ### 2.2.3. Análisis de entrevistas
 
-[Content for interview analysis]
-Para crear una solución que responda a las necesidades específicas de los usuarios, realizaremos la identificación del User persona, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
+### Segmento 1: Usuarios Generales de Internet
+
+**Perfil de Entrevistado:**
+- Hombre, 22 años, estudiante universitario
+- Consumo: múltiple acceso diario a contenido visual
+- Comportamiento: comparación de fuentes o descarte por sospecha
+
+**Expectativas:**
+- Importancia de detección IA: 9/10
+- Tiempo máximo tolerado: 30 segundos
+- Dispositivo preferido: móvil
+- Disposición de pago: $3-4 USD mensuales
+
+### Validación de Hipótesis
+
+**Confirmadas:**
+- Demanda de herramientas rápidas y precisas
+- Insuficiencia de métodos actuales de verificación
+- Diferenciación clara entre necesidades profesionales y casuales
+
+**Nuevos Insights:**
+- Brecha de precio significativa entre segmentos (12.5x diferencia)
+- Necesidad crítica de documentación en contexto profesional
+- Preferencia por explicaciones educativas en usuarios generales
+
+### Implicaciones de Producto
+
+**Características Core:**
+- Análisis < 30 segundos
+- Precisión > 90%
+- Interfaz responsive (móvil-first)
+
+**Diferenciación por Segmento:**
+- Profesionales: reportes, integraciones, soporte técnico
+- Generales: simplicidad, educación, modelo freemium
+
+**Modelo de Precios Validado:**
+- Freemium para usuarios generales
+- Suscripción profesional: $20-100 USD/mes según organización
+
+### Segmento 2: Profesionales de Medios y Comunicación
+
+**Perfil de Entrevistados:**
+- 100% mujeres, edad promedio: 21.3 años
+- Roles: practicantes en agencias publicitarias, medios digitales y ONGs
+- Ubicación: Lima Metropolitana y Callao
+
+**Uso y Volumen:**
+- Procesamiento diario: 10-30 imágenes por profesional
+- Tiempo máximo de verificación: 5-10 minutos por imagen
+- Métodos actuales: Google Imágenes (100%), TinEye (67%), metadatos (33%)
+
+**Experiencias Críticas:**
+- 100% reportó casos de contenido IA que casi se publica o se publicó
+- Sectores afectados: política, publicidad, transparencia institucional
+
+**Requisitos Técnicos:**
+- Nivel de certeza requerido: 80-95%
+- 100% requiere reportes técnicos para justificar decisiones
+- Integración preferida: web app (67%), API/CMS (33%)
+
+**Presupuesto Disponible:**
+- Rango: $20-100 USD mensuales
+- Promedio: $50 USD mensuales
 
 ### 2.3.1. User Personas
 
