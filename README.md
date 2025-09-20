@@ -360,7 +360,7 @@ A continuación se definen los escenarios de atributos de calidad más relevante
 
 - Medida: Para HU18 (hasta 3 imágenes): resultado final en <30s en condiciones normales; para lotes grandes, procesamiento asíncrono con SLA configurado (ej. 90% de lotes <5min).
 
-- 3. **Precisión (Accuracy)**
+3. **Precisión (Accuracy)**
 
 - Fuente: Modelo ML ejecuta clasificación sobre datasets representativos.
 
@@ -415,15 +415,93 @@ A continuación se definen los escenarios de atributos de calidad más relevante
 
 #### 4.1.2.3. Constraints
 
-[Content for constraints]
+- Tecnológicas: Backend implementado en Python (Django); frontend en React (Firebase Hosting); despliegue en Azure App Service; base de datos MySQL (Azure Database for MySQL).
+
+- Infraestructura MVP: modelo ML embebido en el mismo App Service (evitar microservicio ML separado inicialmente).
+
+- Costes / Recursos: evitar dependencias que impliquen alto costo operativo para la etapa de prototipo (p. ej. no GPUs dedicadas inicialmente).
+
+- Regulatorias / Privacidad: almacenamiento seguro de imágenes y metadatos; cifrado en tránsito y en reposo.
+
+- Operacionales: pipeline CI/CD automatizado via GitHub Actions.
+
+- Tiempo de entrega: priorizar MVP con funcionalidades esenciales (análisis por imagen, UI básica, IAM, historial).
 
 ### 4.1.3. Architectural Drivers Backlog
 
-[Content for architectural drivers backlog]
+Listado priorizado de drivers que dirigen decisiones (por orden de impacto inicial):
+
+1. Precisión del detector (ML) — Alta prioridad. Impacta directamente la utilidad del producto.
+
+2. Latencia de análisis (UX) — Alta prioridad (≤10s objetivo).
+ 
+3. Explicabilidad / Trazabilidad — Alta prioridad para profesionales.
+ 
+4. Seguridad y privacidad de datos — Alta prioridad.
+ 
+5. Disponibilidad (uptime) — Media-alta.
+ 
+6. Escalabilidad — Media. Habilitar escalado vertical/horizontal cuando sea necesario.
+ 
+7. Costo operativo — Media. Mantener solución coste-eficiente en MVP.
+ 
+8. Mantenibilidad / Evolución — Media. Estructura modular y tests.
+ 
+9. Observabilidad y Operaciones — Media. Logs, métricas y alertas.
+ 
+10. Integración y despliegue continuo — Media-baja (imprescindible para desarrollo rápido).
 
 ### 4.1.4. Architectural Design Decisions
 
-[Content for architectural design decisions]
+Decisiones arquitectónicas clave (qué se eligió y por qué):
+
+**1. Stack Backend: Python + Django (Django REST Framework)**
+
+- Razonamiento: Django acelera desarrollo con funcionalidades listas (auth, ORM, admin), facilita la gestión de usuarios/roles y tiene buen ecosistema para APIs. DRF ofrece endpoints bien estructurados y documentación.
+
+- Impacto: desarrollo más rápido y consistente con IAM BC integrado.
+
+**2. Modelo ML embebido en App Service (MVP)**
+
+- Razonamiento: simplifica despliegue y reduce latencia de integración (modelo en la misma aplicación). Evita complejidad de comunicaciones inter-servicio en la fase inicial.
+
+- Evolución: diseño modular para poder extraer el ML a un servicio independiente (Azure Container Instance o Azure ML) cuando la carga o la necesidad de GPU lo demande.
+
+**3. Tareas de inferencia en background con Celery + Redis**
+
+- Razonamiento: para evitar bloqueo de solicitudes HTTP y dar feedback de progreso (HU07). Celery permite procesar jobs (inferencia, generación de heatmaps, exportes PDF) de forma asíncrona y escalable.
+
+- Impacto: mayor robustez frente a cargas puntuales y posibilidad de priorizar jobs.
+
+**4. Persistencia: MySQL (Azure Database for MySQL) + opcional columna JSON para features**
+
+- Razonamiento: MySQL centraliza usuarios, historial y resultados. Para features complejos se pueden usar columnas JSON o añadir MongoDB en fases posteriores.
+
+- Impacto: simplifica operaciones iniciales; considerar Blob Storage para imágenes grandes en producción.
+
+**5. Almacenamiento de imágenes: Azure Blob Storage (opcional en prototipo, recomendado en producción)**
+
+- Razonamiento: mejor rendimiento y costes para archivos binarios; MySQL solo guarda referencias (URL) y metadatos.
+
+**6. Autenticación y autorización: Django auth + tokens (JWT) para sesión en API; roles (general / profesional) con control RBAC.**
+
+- Impacto: cumplimiento de HU21–HU26 y control de accesos a funciones avanzadas.
+
+**7. Despliegue y CI/CD: GitHub Actions para pipelines (tests, build, deploy) hacia GitHub Pages (landing), Firebase (webapp) y Azure App Service (backend).**
+
+- Impacto: integración continua y despliegues reproducibles.
+
+**8. Observabilidad y Logging: Application Insights (Azure) para métricas de rendimiento e instrumentación; logs estructurados para análisis de errores.**
+
+- Impacto: facilita detección de regresiones y tuning del modelo.
+
+**9. Contenedorización: Docker para backend (facilita despliegue en App Service y futura migración a servicios de contenedores).**
+
+- Impacto: consistencia entre entornos y escalabilidad.
+
+**10. Explicabilidad: el sistema genera, junto con la probabilidad, artefactos explicativos (p. ej. mapas de calor, lista de features, metadatos) almacenados como recursos accesibles desde la UI/Reportes.**
+
+- Impacto: cumplimiento de HU02/HU03 para profesionales y confianza del usuario general.
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
