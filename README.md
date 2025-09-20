@@ -330,7 +330,88 @@ Los requisitos funcionales seleccionados representan las capacidades core del si
 
 #### 4.1.2.2. Quality attribute Scenarios
 
-[Content for quality attribute scenarios]
+A continuación se definen los escenarios de atributos de calidad más relevantes para PixelCheck usando la plantilla: fuente → estímulo → artefacto → ambiente → respuesta → medida.
+
+1. **Latencia (Performance)**
+
+- Fuente: Usuario general sube una imagen desde el navegador.
+
+- Estímulo: Petición de análisis (POST /analyze).
+
+- Artefacto: API/servicio de análisis (Image Analysis BC).
+
+- Ambiente: Carga normal (picos moderados), modelo ML embebido en App Service.
+
+- Respuesta: El sistema procesa la imagen y devuelve resultado + explicación.
+
+- Medida: ≥95% de las respuestas en <10 segundos para imágenes individuales (resolución estándar comprimida).
+
+2. **Capacidad de procesamiento por lote (Scalability)**
+
+- Fuente: Profesional de medios solicita análisis por lote (hasta 3 imágenes o un lote mayor).
+
+- Estímulo: Petición de batch o colas de trabajo.
+
+- Artefacto: Pipeline de procesamiento (Ingestion → Analysis → Results).
+
+- Ambiente: Horas de trabajo pico (varios usuarios profesionales simultáneos).
+
+- Respuesta: El sistema encola y procesa lotes; provee confirmación inmediata de recepción y - notifica cuando finaliza.
+
+- Medida: Para HU18 (hasta 3 imágenes): resultado final en <30s en condiciones normales; para lotes grandes, procesamiento asíncrono con SLA configurado (ej. 90% de lotes <5min).
+
+- 3. **Precisión (Accuracy)**
+
+- Fuente: Modelo ML ejecuta clasificación sobre datasets representativos.
+
+- Estímulo: Imagen (real / IA / manipulada).
+
+- Artefacto: Modelo de clasificación (Image Analysis BC).
+
+- Ambiente: Condiciones estándar de entrada (resolución aceptada, imagen no corrupta).
+
+- Respuesta: El modelo produce una probabilidad y una explicación de las características que sustentan la decisión.
+
+- Medida: Meta inicial de precisión del modelo ≥ 85–90% (objetivo a mejorar con iteraciones y re-entrenamiento).
+
+
+4. **Seguridad (Security)**
+
+- Fuente: Usuario autenticado solicita su historial.
+
+- Estímulo: Petición a API protegida.
+
+- Artefacto: IAM BC + Backend API.
+
+- Ambiente: Conexión pública a Internet.
+
+- Respuesta: Acceso permitido solo con credenciales; datos en tránsito cifrados; secrets protegidos.
+
+- Medida: Autorización/Autenticación para todas las rutas sensibles; TLS obligatorio; secretos en Key Vault (o equivalente).
+
+5. **Disponibilidad y fiabilidad (Availability / Reliability)**
+
+- Fuente: Usuario intenta acceder en horario pico.
+
+- Estímulo: Tráfico concurrente y/o fallas parciales del servicio.
+
+- Artefacto: App Service + MySQL.
+
+- Respuesta: El sistema debe seguir sirviendo la WebApp y aceptar solicitudes, degradando funcionalidades pesadas si es necesario (p. ej. encolado).
+
+- Medida: Disponibilidad objetivo ≥ 99% para la ruta de lectura/consulta; fallos manejados por reintentos y logs.
+
+6. **Mantenibilidad**
+
+- Fuente: Equipo de desarrollo cambia la lógica de análisis o actualiza el modelo.
+
+- Estímulo: Nuevas versiones del modelo o corrección de bugs.
+
+- Artefacto: Repositorio + CI/CD (GitHub Actions).
+
+- Respuesta: Deploy automatizado, pruebas automáticas y rollback posible.
+
+- Medida: Tiempo medio de despliegue < 30 min con pruebas y sin downtime para rutas públicas.
 
 #### 4.1.2.3. Constraints
 
