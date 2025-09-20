@@ -328,106 +328,687 @@ Esta sección presenta los tres tipos de inputs fundamentales para el proceso de
 
 Los requisitos funcionales seleccionados representan las capacidades core del sistema PixelCheck, priorizadas por su impacto directo en la arquitectura y su criticidad para el éxito de la solución. Estas funcionalidades abarcan desde las operaciones básicas de análisis hasta las capacidades avanzadas requeridas por usuarios profesionales.
 
+A continuación se listan las historias / epics que tienen mayor impacto en la arquitectura
+
+<table>
+  <thead>
+    <tr>
+      <th>Epic / User Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HU01</td>
+      <td>Cargar imagen para análisis</td>
+      <td>El sistema debe aceptar imágenes subidas por usuarios (móvil/desktop) y entregarlas al pipeline de análisis.</td>
+      <td>POST /images acepta JPG/PNG/WEBP, devuelve jobId o resultado, respuesta inicial &lt; 2s.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU02</td>
+      <td>Analizar imagen con algoritmo ML</td>
+      <td>Ejecutar inferencia (modelo) y devolver probabilidad y artefactos explicativos.</td>
+      <td>Resultado con % confianza y explain artifacts; p95 latency ≤ 10s (MVP objetivo).</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU03</td>
+      <td>Visualizar resultados detallados</td>
+      <td>Mostrar resultado, % confianza y explicación (mapa de calor, features, metadatos).</td>
+      <td>UI muestra resultado legible y artefactos descargables; endpoint /results/{id} disponible.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU21 / HU22</td>
+      <td>Registro / Inicio de sesión</td>
+      <td>Gestión de cuentas y sesiones (IAM).</td>
+      <td>Registro, login, JWT; roles general / profesional; endpoints auth protegidos.</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td>HU15</td>
+      <td>Validar formato antes de análisis</td>
+      <td>Validación previa de formato y tamaño para evitar overloading del pipeline.</td>
+      <td>Rechazo con mensaje claro si &gt;10MB o formato no soportado.</td>
+      <td>EP01 / TS01</td>
+    </tr>
+    <tr>
+      <td>HU18</td>
+      <td>Análisis por lotes</td>
+      <td>Capacidad de análisis en lote para profesionales.</td>
+      <td>Enqueue de hasta N imágenes; status por item; throughput medible.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>HU19</td>
+      <td>Reportes profesionales</td>
+      <td>Generación de reportes PDF con metadata y evidencias.</td>
+      <td>Endpoint para generar/reportar; export PDF con datos y fecha.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>TS03</td>
+      <td>Logging y observabilidad</td>
+      <td>Sistema central de logs y métricas.</td>
+      <td>Application Insights integrado; logs estructurados y alertas.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>TS04</td>
+      <td>Compresión automática</td>
+      <td>Redimensionado y compresión para imágenes grandes.</td>
+      <td>Imagen &gt;1920x1080 autocoms; calidad min 85%; tiempo de preprocessing &lt; 1s.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
 #### 4.1.2.2. Quality attribute Scenarios
 
-A continuación se definen los escenarios de atributos de calidad más relevantes para PixelCheck usando la plantilla: fuente → estímulo → artefacto → ambiente → respuesta → medida.
+A continuación se definen los escenarios de atributos de calidad.
 
-1. **Latencia (Performance)**
+Tabla de Quality Attribute Scenarios:
 
-- Fuente: Usuario general sube una imagen desde el navegador.
-
-- Estímulo: Petición de análisis (POST /analyze).
-
-- Artefacto: API/servicio de análisis (Image Analysis BC).
-
-- Ambiente: Carga normal (picos moderados), modelo ML embebido en App Service.
-
-- Respuesta: El sistema procesa la imagen y devuelve resultado + explicación.
-
-- Medida: ≥95% de las respuestas en <10 segundos para imágenes individuales (resolución estándar comprimida).
-
-2. **Capacidad de procesamiento por lote (Scalability)**
-
-- Fuente: Profesional de medios solicita análisis por lote (hasta 3 imágenes o un lote mayor).
-
-- Estímulo: Petición de batch o colas de trabajo.
-
-- Artefacto: Pipeline de procesamiento (Ingestion → Analysis → Results).
-
-- Ambiente: Horas de trabajo pico (varios usuarios profesionales simultáneos).
-
-- Respuesta: El sistema encola y procesa lotes; provee confirmación inmediata de recepción y - notifica cuando finaliza.
-
-- Medida: Para HU18 (hasta 3 imágenes): resultado final en <30s en condiciones normales; para lotes grandes, procesamiento asíncrono con SLA configurado (ej. 90% de lotes <5min).
-
-- 3. **Precisión (Accuracy)**
-
-- Fuente: Modelo ML ejecuta clasificación sobre datasets representativos.
-
-- Estímulo: Imagen (real / IA / manipulada).
-
-- Artefacto: Modelo de clasificación (Image Analysis BC).
-
-- Ambiente: Condiciones estándar de entrada (resolución aceptada, imagen no corrupta).
-
-- Respuesta: El modelo produce una probabilidad y una explicación de las características que sustentan la decisión.
-
-- Medida: Meta inicial de precisión del modelo ≥ 85–90% (objetivo a mejorar con iteraciones y re-entrenamiento).
-
-
-4. **Seguridad (Security)**
-
-- Fuente: Usuario autenticado solicita su historial.
-
-- Estímulo: Petición a API protegida.
-
-- Artefacto: IAM BC + Backend API.
-
-- Ambiente: Conexión pública a Internet.
-
-- Respuesta: Acceso permitido solo con credenciales; datos en tránsito cifrados; secrets protegidos.
-
-- Medida: Autorización/Autenticación para todas las rutas sensibles; TLS obligatorio; secretos en Key Vault (o equivalente).
-
-5. **Disponibilidad y fiabilidad (Availability / Reliability)**
-
-- Fuente: Usuario intenta acceder en horario pico.
-
-- Estímulo: Tráfico concurrente y/o fallas parciales del servicio.
-
-- Artefacto: App Service + MySQL.
-
-- Respuesta: El sistema debe seguir sirviendo la WebApp y aceptar solicitudes, degradando funcionalidades pesadas si es necesario (p. ej. encolado).
-
-- Medida: Disponibilidad objetivo ≥ 99% para la ruta de lectura/consulta; fallos manejados por reintentos y logs.
-
-6. **Mantenibilidad**
-
-- Fuente: Equipo de desarrollo cambia la lógica de análisis o actualiza el modelo.
-
-- Estímulo: Nuevas versiones del modelo o corrección de bugs.
-
-- Artefacto: Repositorio + CI/CD (GitHub Actions).
-
-- Respuesta: Deploy automatizado, pruebas automáticas y rollback posible.
-
-- Medida: Tiempo medio de despliegue < 30 min con pruebas y sin downtime para rutas públicas.
+<table>
+  <thead>
+    <tr>
+      <th>Atributo</th>
+      <th>Fuente</th>
+      <th>Estímulo</th>
+      <th>Artefacto</th>
+      <th>Entorno</th>
+      <th>Respuesta</th>
+      <th>Medida</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Latencia (Rendimiento)</td>
+      <td>Usuario final</td>
+      <td>Subida de imagen (≤ 8MB) y petición de análisis</td>
+      <td>Endpoint /analyze</td>
+      <td>Condición normal (no pico)</td>
+      <td>Crear job y devolver resultado en ≤10s</td>
+      <td>p95 latency ≤ 10s</td>
+    </tr>
+    <tr>
+      <td>Escalabilidad</td>
+      <td>Varios usuarios</td>
+      <td>100 requests concurrentes de análisis</td>
+      <td>Worker pool / API</td>
+      <td>Picos de tráfico</td>
+      <td>Scale horizontal del backend/workers; jobs encolados</td>
+      <td>Throughput / latencia p95 &lt; 20s</td>
+    </tr>
+    <tr>
+      <td>Disponibilidad</td>
+      <td>Usuario</td>
+      <td>Petición a /results</td>
+      <td>Backend API</td>
+      <td>Falla de instancia</td>
+      <td>Failover a instancias saludables; mantener servicio</td>
+      <td>Uptime ≥ 99.5%</td>
+    </tr>
+    <tr>
+      <td>Seguridad</td>
+      <td>Atacante externo</td>
+      <td>Petición no autorizada a /history</td>
+      <td>API + BD</td>
+      <td>Producción</td>
+      <td>Rechazar petición; log y alert</td>
+      <td>0 accesos no autorizados; registro de intento</td>
+    </tr>
+    <tr>
+      <td>Precisión (ML)</td>
+      <td>Equipo de QA</td>
+      <td>Dataset de validación</td>
+      <td>Modelo ML</td>
+      <td>Condiciones controladas</td>
+      <td>Modelo clasifica IA vs real</td>
+      <td>Objetivo inicial prec. ≥ 90% en dataset</td>
+    </tr>
+    <tr>
+      <td>Observabilidad</td>
+      <td>Operaciones</td>
+      <td>Picos de latencia / errores</td>
+      <td>Monitoring</td>
+      <td>Producción</td>
+      <td>Alertas y trazas; RCA en &lt; 30 min</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 4.1.2.3. Constraints
 
-[Content for constraints]
+Eestas restricciones son impuestas por alcance del proyecto, presupuesto y decisiones de infraestructura.
+
+<table>
+  <thead>
+    <tr>
+      <th>Technical Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C01</td>
+      <td>Stack Backend</td>
+      <td>Backend en Python (Django) para acelerar IAM y APIs</td>
+      <td>Repositorio con Django + DRF; endpoints auth listos</td>
+      <td>HU21/HU22</td>
+    </tr>
+    <tr>
+      <td>C02</td>
+      <td>Persistencia única (MVP)</td>
+      <td>Usar Azure Database for MySQL como BD principal</td>
+      <td>DB disponible en Azure; tablas users, images, analysis</td>
+      <td>HU01 / HU02</td>
+    </tr>
+    <tr>
+      <td>C03</td>
+      <td>ML embebido (MVP)</td>
+      <td>El modelo ML se despliega en App Service inicialmente</td>
+      <td>Inference en App Service sin servicio externo</td>
+      <td>HU02</td>
+    </tr>
+    <tr>
+      <td>C04</td>
+      <td>No GPUs dedicadas (fase 1)</td>
+      <td>No provisionar GPU en MVP (cost constraint)</td>
+      <td>Inferencia CPU; tiempos medidos aceptables</td>
+      <td>HU02</td>
+    </tr>
+    <tr>
+      <td>C05</td>
+      <td>CI/CD obligatorio</td>
+      <td>Usar GitHub Actions para build/deploy</td>
+      <td>Pipelines que despliegan a App Service / Firebase / GH Pages</td>
+      <td>TS03</td>
+    </tr>
+    <tr>
+      <td>C06</td>
+      <td>Protección de secretos</td>
+      <td>Usar KeyVault/Environment vars para secrets</td>
+      <td>Credenciales no en repositorio; tests de secrets fail</td>
+      <td>TS03</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 4.1.3. Architectural Drivers Backlog
 
-[Content for architectural drivers backlog]
+El backlog recoge drivers funcionales, drivers de calidad y constraints, ordenados por importancia e impacto.
+
+<table>
+  <thead>
+    <tr>
+      <th>Driver ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Importancia (Stakeholders)</th>
+      <th>Impacto en Complexity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D1</td>
+      <td>Análisis rápido (latencia)</td>
+      <td>Responder análisis en ≤10s p95</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>D2</td>
+      <td>Precisión del detector</td>
+      <td>Modelo objetivo ≥ 90% en dataset</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>D3</td>
+      <td>Explicabilidad y reportes</td>
+      <td>Generar artefactos explicativos y PDFs</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D4</td>
+      <td>Escalabilidad por demanda</td>
+      <td>Soportar cargas concurrentes (batch)</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D5</td>
+      <td>Seguridad y privacidad</td>
+      <td>Autenticación, cifrado y control de roles</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D6</td>
+      <td>Observabilidad y operabilidad</td>
+      <td>Logs, métricas y alertas</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D7</td>
+      <td>Simplicidad operacional (cost)</td>
+      <td>Mantener coste razonable en MVP</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D8</td>
+      <td>Evolución hacia ML servicio</td>
+      <td>Capacidad de extraer ML a servicio dedicado</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D9</td>
+      <td>Persistencia y consistencia</td>
+      <td>Integridad de historiales y reportes</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 4.1.4. Architectural Design Decisions
 
-[Content for architectural design decisions]
+Para cada driver clave evaluamos patrones candidatos (3 por driver relevante) y elegimos la opción que cumple los trade-offs del MVP y la evolución futura.
+
+**Decisión global (resumen)**
+
+- **Backend:** Django + Django REST Framework por rapidez en desarrollo, soluciones out-of-the-box para IAM y ORM.
+
+- **ML:** modelo inicialmente embebido en App Service (menor complejidad). Diseño modular para extraerlo a servicio (ACI / Azure ML) cuando sea necesario.
+
+- **Procesamiento asíncrono:** Celery + Redis para jobs de inferencia y generación de reports (desvincula tiempos de HTTP).
+
+- **Persistencia:** Azure MySQL para entidades; en producción se recomienda usar Blob Storage para imágenes grandes y una colección JSON para features si se requiere.
+
+- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Firebase, backend → Azure App Service).
+
+<h3>Candidate Pattern Evaluation Matrix (selección de 3 drivers clave)</h3>
+
+<h4>Driver D1 — Análisis rápido (latencia)</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. Modelo embebido en App Service (single process)</td>
+      <td>Menor latencia por llamada local; despliegue simple</td>
+      <td>Carga en App Service; menos flexible para escalar GPU</td>
+    </tr>
+    <tr>
+      <td>B. Servicio ML separado (microservicio en Flask/FastAPI)</td>
+      <td>Independencia, posibilidad de escalar por separado</td>
+      <td>Comunicación HTTP extra → latencia; mayor complejidad</td>
+    </tr>
+    <tr>
+      <td>C. Serverless inference (Function / Azure ML endpoint)</td>
+      <td>Auto-scaling y pay-per-use</td>
+      <td>Cold starts, integración más compleja, coste variable</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> A para MVP (embebido) por simplicidad y menor overhead; diseño modular para migrar a B o C si escala.</p>
+
+<h4>Driver D2 — Escalabilidad / Batch processing</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. Celery + Redis (workers)</td>
+      <td>Control de concurrency, retrys, priorización</td>
+      <td>Requiere infraestructura adicional (Redis)</td>
+    </tr>
+    <tr>
+      <td>B. Threaded worker dentro del proceso web</td>
+      <td>Simple, menos infra</td>
+      <td>Bloqueo de requests, mala escalabilidad</td>
+    </tr>
+    <tr>
+      <td>C. Serverless jobs (cloud functions)</td>
+      <td>Escala automática</td>
+      <td>Mayor complejidad en orchestration y tracking</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> A Celery + Redis (balance entre control y complejidad) para manejar lotes y jobs asíncronos; permite medir y priorizar.</p>
+
+<h4>Driver D3 — Almacenamiento de artefactos y features</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. MySQL + JSON columns</td>
+      <td>Fácil gestión, single DB</td>
+      <td>No óptimo para vectores/embeddings grandes</td>
+    </tr>
+    <tr>
+      <td>B. MySQL + Blob Storage (imágenes)</td>
+      <td>Eficiente en almacenamiento de binarios</td>
+      <td>Gestión adicional de storage/ACL</td>
+    </tr>
+    <tr>
+      <td>C. MySQL + NoSQL (Mongo/Elastic)</td>
+      <td>Flexible para features y búsquedas</td>
+      <td>Complejidad en consistencia y operaciones</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> B (MySQL como fuente de verdad + Blob Storage para imágenes) en producción; en MVP usar MySQL (referencias) y dejar Blob Storage como próxima iteración si el tamaño/volumen lo exige.</p>
+
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
-[Content for quality attribute scenario refinements]
+Tras el taller de atributos de calidad se priorizó favorecer la experiencia interactiva (baja latencia) y la precisión / explicabilidad del detector, seguido por la capacidad de procesamiento por lotes para profesionales y la seguridad de acceso a historiales. Las decisiones resultantes favorecen una arquitectura con inferencia rápida (modelo embebido en MVP), procesamiento asíncrono (cola + workers) y trazabilidad/artefactos explicativos almacenados junto al resultado.
+
+<section>
+  <h3>Scenario Refinement for Scenario 1 — Latencia interactiva</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Respuesta de análisis interactivo para usuario general (HU01, HU02, HU03).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Ofrecer una experiencia inmediata que permita a usuarios generales obtener veredicto y confianza en el resultado sin esperar.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Performance / Latency, Availability, Usability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Usuario sube una imagen ≤ 8 MB y solicita análisis.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Navegador (usuario general).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Condiciones normales (carga media, no pico extremo).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Endpoint <code>POST /analyze</code>, servicio Backend API, worker de inferencia ML.</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>El sistema encola (o procesa) y entrega resultado (probabilidad + explicación breve) y/o jobId; UI muestra progreso. Resultado final disponible en tiempo interactivo.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>p95 latency ≤ 10 segundos; success rate ≥ 95% (jobs completados sin error).</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Resultado síncrono o asíncrono por defecto?</li>
+            <li>¿Tolerancia de UX a respuestas parciales?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Inferencia sin GPU puede limitar latencia.</li>
+            <li>Trade-off entre explicación rica (mapas de calor) y tiempo de respuesta.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 2 — Precisión y Explicabilidad (para profesionales)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Revisión editorial de imagen para publicación, donde el profesional requiere evidencia (HU02, HU03, HU19).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Entregar una decisión con nivel de confianza y evidencia suficiente para que un profesional tome una decisión editorial informada.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Accuracy (Precision), Explainability, Traceability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Un profesional solicita análisis detallado de una imagen (single o lote pequeño) y requiere reporte descargable.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Usuario Profesional (WebApp autenticado con rol).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Entorno de edición / flujo editorial (no necesariamente bajo pico).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Image Analysis (ML) BC, Results &amp; Reporting BC; generación de explain artifacts (heatmap, features list) y PDF de reporte.</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>Modelo devuelve % confianza, versión de modelo, features determinantes y artefactos explicativos; Results genera reporte con metadatos y evidencia.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>Precisión objetivo inicial ≥ 90% en dataset de validación; reporte contiene mínimo 2 features explicativos + metadatos; tiempo de generación del reporte ≤ 30s (MVP objetivo para single image).</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Qué formato mínimo de evidencia aceptan los profesionales?</li>
+            <li>¿Necesitamos certificación/firmado en reportes?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Explicabilidad puede requerir cálculos adicionales que aumentan latencia.</li>
+            <li>Mantener versioning del modelo para trazabilidad.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 3 — Procesamiento por Lotes (Profesionales)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Envío de lote de imágenes (ej. 20–100) para análisis por parte de un profesional o equipo (HU18, HU19).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Permitir procesar volúmenes medios de imágenes con trazabilidad por item y generación de reportes agregados.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Scalability, Throughput, Reliability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Usuario profesional sube un lote de N imágenes y solicita procesamiento por lotes.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: WebApp autenticada (Usuario Profesional).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Horario laboral con picos (varios usuarios enviando lotes).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Ingestion BC encola ImageValidated por imagen; Celery + Redis como cola; pool de workers (Analysis BC).</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>El sistema encola cada imagen como job; workers procesan en paralelo; Results actualiza estado por imagen; al finalizar se genera reporte por lote (PDF/CSV).</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>Throughput objetivo inicial: ~5 imágenes / worker / minuto; todos los items deben completar con estado (processed/failed) y con posibilidad de retry; tiempo total depende de workers asignados pero UI debe mostrar progresos y ETA.</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Cuál es el tamaño máximo del lote por request?</li>
+            <li>¿Prioridad entre jobs?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Coste de escalado de workers.</li>
+            <li>Idempotencia y manejo de retries.</li>
+            <li>Necesidad de monitoreo de cola para evitar backlogs.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 4 — Seguridad: Acceso a Historial</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Intento de acceso no autorizado al historial de análisis o reportes (HU11, HU23, HU25).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Proteger datos sensibles y asegurar que sólo usuarios con rol adecuado puedan ver historiales y reportes; auditar accesos.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Security, Privacy, Auditability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Petición a <code>GET /history</code> o <code>GET /reports/{id}</code> con token inválido o rol insuficiente.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Cliente/Atacante (petición HTTP).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Producción (exposición pública).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>IAM BC (auth/authorization), Backend API, DB MySQL (results/reports).</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>Rechazar con 401/403; registrar evento en System Management (logs) con user/token/ip; si patrón anómalo, disparar alerta a ops.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>100% de accesos no autorizados denegados; todos los intentos registrados con timestamp y metadata; alertas generadas en caso de umbral de intentos anómalos.</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Periodo de retención de logs?</li>
+            <li>¿Necesidad de cumplimiento legal (p. ej. GDPR) para datos de usuarios?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Gestión segura de secrets (KeyVault) y rotación.</li>
+            <li>Tasa de falsos positivos en detección de anomalías que puede generar ruido en alertas.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 ## 4.2. Strategic-Level Domain-Driven Design
 
