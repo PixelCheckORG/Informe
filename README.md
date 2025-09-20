@@ -31,19 +31,16 @@
       <td>U202212760</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>Palma Obispo, Adrian Enrique Jesus</td>
+      <td>U202210066</td>
     </tr>
     <tr>
       <td>Párraga Gamarra, Paolo Gonzalo</td>
       <td>U202219186</td>
     </tr>
-    <tr>
-      <td></td>
-      <td></td>
-    </tr>
   </tbody>
 </table>
+
 
 </div>
 
