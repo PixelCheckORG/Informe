@@ -556,7 +556,12 @@ del ABET – EAC - Student Outcome 3.
 
 [Content for video about the product]
 
----
+
+## Conclusiones del Proyecto PixelCheck
+
+PixelCheck surge como una solución innovadora y socialmente relevante frente al creciente desafío de las imágenes generadas por IA, validando la existencia de una necesidad urgente tanto en usuarios generales como en profesionales de medios. El análisis confirma una brecha en el mercado entre herramientas técnicas de alto costo y soluciones básicas de baja precisión, posicionando a PixelCheck en un espacio intermedio con transparencia, accesibilidad y flexibilidad como principales diferenciadores. La propuesta de valor se refuerza con un enfoque educativo que no solo facilita la detección de contenido sintético, sino que también fortalece la confianza digital al empoderar a los usuarios con conocimiento sobre cómo y por qué ocurre cada detección.
+
+El modelo de negocio basado en una estrategia freemium asegura sostenibilidad y escalabilidad, mientras que la arquitectura técnica, fundamentada en Domain-Driven Design y validada con Lean UX, ofrece solidez y capacidad de evolución. A futuro, el proyecto no solo podrá consolidarse como referente en detección visual, sino también expandirse hacia audio, video y certificaciones, aportando a la lucha contra la desinformación. Con prioridades claras de desarrollo (MVP para usuarios generales, iteración rápida y crecimiento progresivo hacia lo profesional), PixelCheck se proyecta como una herramienta estándar que combina impacto social, viabilidad económica y relevancia tecnológica.
 
 ## Bibliografía
 
