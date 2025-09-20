@@ -408,6 +408,86 @@ A continuación se listan las historias / epics que tienen mayor impacto en la a
 </table>
 
 
+A continuación se listan las historias / epics que tienen mayor impacto en la arquitectura
+
+<table>
+  <thead>
+    <tr>
+      <th>Epic / User Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HU01</td>
+      <td>Cargar imagen para análisis</td>
+      <td>El sistema debe aceptar imágenes subidas por usuarios (móvil/desktop) y entregarlas al pipeline de análisis.</td>
+      <td>POST /images acepta JPG/PNG/WEBP, devuelve jobId o resultado, respuesta inicial &lt; 2s.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU02</td>
+      <td>Analizar imagen con algoritmo ML</td>
+      <td>Ejecutar inferencia (modelo) y devolver probabilidad y artefactos explicativos.</td>
+      <td>Resultado con % confianza y explain artifacts; p95 latency ≤ 10s (MVP objetivo).</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU03</td>
+      <td>Visualizar resultados detallados</td>
+      <td>Mostrar resultado, % confianza y explicación (mapa de calor, features, metadatos).</td>
+      <td>UI muestra resultado legible y artefactos descargables; endpoint /results/{id} disponible.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU21 / HU22</td>
+      <td>Registro / Inicio de sesión</td>
+      <td>Gestión de cuentas y sesiones (IAM).</td>
+      <td>Registro, login, JWT; roles general / profesional; endpoints auth protegidos.</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td>HU15</td>
+      <td>Validar formato antes de análisis</td>
+      <td>Validación previa de formato y tamaño para evitar overloading del pipeline.</td>
+      <td>Rechazo con mensaje claro si &gt;10MB o formato no soportado.</td>
+      <td>EP01 / TS01</td>
+    </tr>
+    <tr>
+      <td>HU18</td>
+      <td>Análisis por lotes</td>
+      <td>Capacidad de análisis en lote para profesionales.</td>
+      <td>Enqueue de hasta N imágenes; status por item; throughput medible.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>HU19</td>
+      <td>Reportes profesionales</td>
+      <td>Generación de reportes PDF con metadata y evidencias.</td>
+      <td>Endpoint para generar/reportar; export PDF con datos y fecha.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>TS03</td>
+      <td>Logging y observabilidad</td>
+      <td>Sistema central de logs y métricas.</td>
+      <td>Application Insights integrado; logs estructurados y alertas.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>TS04</td>
+      <td>Compresión automática</td>
+      <td>Redimensionado y compresión para imágenes grandes.</td>
+      <td>Imagen &gt;1920x1080 autocoms; calidad min 85%; tiempo de preprocessing &lt; 1s.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
 #### 4.1.2.2. Quality attribute Scenarios
 
 A continuación se definen los escenarios de atributos de calidad.
