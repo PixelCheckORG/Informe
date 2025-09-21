@@ -1,0 +1,58 @@
+@startuml
+!theme plain
+skinparam rectangle {
+  BackgroundColor White
+  BorderColor Black
+  RoundCorner 15
+  FontSize 12
+  FontStyle bold
+}
+
+skinparam arrow {
+  Color Black
+  FontSize 10
+  FontColor DarkBlue
+}
+
+skinparam linetype ortho
+skinparam defaultTextAlignment center
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+title Context Map - PixelCheck Bounded Contexts
+
+rectangle "IAM\n(Identity & Access Management)\n<<Bounded Context>>" as IAM #LightBlue {
+}
+
+rectangle "Ingestion & Validation\n(Image Processing)\n<<Bounded Context>>" as ING #LightGreen {
+}
+
+rectangle "Image Analysis\n(Machine Learning)\n<<Bounded Context>>" as ML #LightYellow {
+}
+
+rectangle "Results & Reporting\n(Analytics & Reports)\n<<Bounded Context>>" as REP #LightCoral {
+}
+
+rectangle "System Management\n(Monitoring & Logs)\n<<Bounded Context>>" as SYS #LightGray {
+}
+
+' Relaciones principales
+IAM -down-> ING : <<Customer/Supplier>>\nRoles y permisos
+ING -down-> ML : <<Customer/Supplier>>\nImágenes validadas
+ML -down-> REP : <<Conformist>>\nResultados de análisis
+IAM -right-> REP : <<Shared Kernel>>\nDefiniciones de roles
+
+' Relaciones del sistema de monitoreo
+SYS -[dashed]-> IAM : <<ACL>>\nLogs y auditoría
+SYS -[dashed]-> ING : <<ACL>>\nMétricas de ingesta
+SYS -[dashed]-> ML : <<ACL>>\nPerformance ML
+SYS -[dashed]-> REP : <<ACL>>\nEstadísticas
+
+' Notas explicativas
+note right of IAM : Maneja usuarios,\nautenticación y\nautorización
+note right of ING : Procesa y valida\nimágenes de entrada
+note right of ML : Detecta deepfakes\ny contenido generado por IA
+note right of REP : Genera reportes\ny estadísticas
+note left of SYS : Monitorea el sistema\ny gestiona logs
+
+@enduml

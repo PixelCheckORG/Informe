@@ -1442,15 +1442,27 @@ Esto permitió asegurar consistencia semántica y definir capacidades claras por
 
 ### 4.2.5. Context Mapping
 
-Finalmente, se elaboró el Context Mapping para mostrar la relación estructural entre los bounded contexts descubiertos. Se exploraron diferentes alternativas y se seleccionaron patrones de relación adecuados:
+Para representar la relación estructural entre los bounded contexts de **PixelCheck**, el equipo realizó un proceso iterativo de exploración.  
+Se analizaron distintas alternativas para identificar cómo debían colaborar y qué patrones de relación aplicar.  
 
-- Gestión de Usuarios ↔ Detección de Imágenes: Relación Customer/Supplier, donde Detección depende de la información validada por Gestión de Usuarios (rol, permisos).
+Durante este análisis, se plantearon preguntas clave como:  
 
-- Detección de Imágenes ↔ Administración: Relación Conformist, donde Administración consume la información generada por el análisis (reportes, estadísticas, logs).
+- ¿Qué pasaría si movemos las capacidades de validación de usuarios desde *IAM* hacia *Ingestion & Validation*?  
+- ¿Qué ocurriría si se parte el *Image Analysis (ML)* en dos bounded contexts separados: uno para análisis rápido y otro para análisis por lotes?  
+- ¿Podría duplicarse la capacidad de reporte tanto en *Results & Reporting* como en *System Management* para reducir dependencias?  
+- ¿Qué ventajas tendría crear un *shared service* para las métricas utilizadas tanto en *Results & Reporting* como en *System Management*?  
 
-- Gestión de Usuarios ↔ Administración: Relación Shared Kernel, compartiendo un núcleo común de definiciones de roles, permisos y políticas de seguridad.
+Tras evaluar estas alternativas, se decidió mantener la separación de bounded contexts con el siguiente mapa de relaciones:  
 
-El resultado fue un mapa de contextos que equilibra autonomía y colaboración, reduciendo riesgos de acoplamiento y asegurando escalabilidad futura.
+- **IAM ↔ Ingestion & Validation**: Relación **Customer/Supplier**, donde Ingestion depende de IAM para validar que el usuario tenga permisos de carga.  
+- **Ingestion & Validation ↔ Image Analysis (ML)**: Relación **Customer/Supplier**, donde el análisis depende de recibir imágenes limpias y preprocesadas.  
+- **Image Analysis (ML) ↔ Results & Reporting**: Relación **Conformist**, donde Reporting consume directamente los resultados generados sin modificarlos.  
+- **IAM ↔ Results & Reporting**: Relación **Shared Kernel**, compartiendo un núcleo común de definiciones de roles y permisos para restringir acceso a reportes.  
+- **System Management ↔ Todos los demás BCs**: Relación **Anti-Corruption Layer**, donde Management actúa como capa protectora recolectando logs y métricas sin acoplarse directamente a la lógica interna de cada BC.  
+
+<img src="https://i.ibb.co/HTV5BDGZ/context.png" alt="context" border="0">
+
+El resultado es un mapa de contextos que equilibra autonomía y colaboración, asegurando escalabilidad futura y reduciendo riesgos de acoplamiento excesivo.
 
 ## 4.3. Software Architecture
 
