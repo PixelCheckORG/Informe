@@ -1122,6 +1122,8 @@ De este análisis surgieron los siguientes contextos candidatos:
 
 Estos contextos permitieron segmentar responsabilidades y reducir complejidad, preparando el terreno para los siguientes pasos del modelado.
 
+<img src="https://i.ibb.co/CszGnd4D/Evdd.png" alt="Evdd" border="0">
+
 ### 4.2.3. Domain Message Flows Modeling
 
 Posteriormente, se modelaron los flujos de mensajes del dominio utilizando la técnica de Domain Storytelling. Esto permitió visualizar cómo los contextos descubiertos debían colaborar entre sí para resolver los casos de uso principales.
