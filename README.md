@@ -216,6 +216,14 @@ El equipo de PixelCheck está conformado por profesionales multidisciplinarios:
 
 ## 1.2. Solution Profile
 
+La solución propuesta consiste en una plataforma digital orientada a la reserva y gestión de cubículos de estudio dentro de entornos académicos. El sistema busca resolver los problemas actuales de disponibilidad, falta de organización y poca visibilidad en el uso de espacios, brindando a los estudiantes una herramienta intuitiva para realizar reservas rápidas y seguras, y a los administradores un panel centralizado para supervisar la ocupación y optimizar la gestión de recursos. De esta forma, se garantiza una experiencia más ordenada, transparente y eficiente tanto para usuarios generales como para la administración de la institución.
+
+**Tecnologías Emergentes Utilizadas**
+
+En el desarrollo de la solución, se incorpora Machine Learning (ML) como tecnología emergente clave para mejorar la experiencia de los usuarios y aportar valor agregado al sistema. El uso de ML permite analizar patrones de uso en las reservas y en la gestión de espacios, anticipando necesidades de los usuarios y optimizando la asignación de recursos.
+
+Con esta integración, el sistema no solo cumple con las funcionalidades básicas de registro, reservas y administración, sino que además adquiere la capacidad de aprender del comportamiento de los usuarios y ofrecer recomendaciones inteligentes, lo cual contribuye a la escalabilidad futura y posiciona la solución dentro de la tendencia de aplicaciones inteligentes en el mercado educativo.
+
 ### 1.2.1. Antecedentes y problemática
 
 El aumento exponencial de imágenes generadas por IA ha generado desafíos en la veracidad de la información visual. Plataformas y medios digitales se enfrentan a la dificultad de diferenciar contenido real de contenido manipulado o generado artificialmente. Esto provoca riesgos de desinformación y disminuye la confianza en medios digitales. PixelCheck surge como solución para proporcionar a usuarios generales y profesionales herramientas precisas y rápidas para verificar la autenticidad de imágenes, utilizando técnicas avanzadas de Machine Learning y análisis de imágenes.
