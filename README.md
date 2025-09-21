@@ -1137,105 +1137,90 @@ Para mas detalles del diagrama:
 
 El Modelado de Flujos de Mensajes de Dominio (Domain Storytelling) se utiliza para describir cómo los bounded contexts colaboran mediante mensajes/acciones para cumplir escenarios de negocio clave. A continuación se presentan cuatro escenarios representativos (registro, autenticación, análisis de imagen individual y análisis por lotes con reporte) con sus actores, pasos, comandos/eventos y consideraciones operacionales. Cada escenario está pensado para ser traducido a un diagrama de Domain Storytelling en Miro (actores arriba, bounded contexts en el centro, persistencia/externos abajo, flechas etiquetadas con comandos/eventos).
 
-#### Escenario 1 — Registro de usuario
+**Escenario: Registro de usuarios**
 
-- **User stories relacionadas:** HU21 (Registro de usuario web)  
-- **Actores:** Usuario General, Profesional de Medios (ambos pueden registrarse)  
-- **Objetivo:** Permitir crear una cuenta con rol adecuado (general/profesional) y obtener credenciales válidas.  
+**Actores:**  
+- Identificación de los usuarios dentro de nuestra solución teniendo dos actores que se pueden identificar como `Usuario general` o `Profesionales de medios`.
 
-**Flujo (paso a paso):**
-1. **Comando:** `RegisterUser(name, email, password, roleRequested)` enviado desde *WebApp* al **IAM BC**.  
-2. **Validaciones IAM:** comprobar unicidad de email, política de contraseña.  
-3. **Evento:** `UserRegistered(userId, email, role)` → persistencia en *users (MySQL)*.  
-4. **Acción:** IAM envía correo de verificación (si aplica) y/o devuelve **201 Created** con `userId`.  
-5. **Resultado esperado:** usuario creado; si rol profesional fue solicitado, puede requerir aprobación manual (workflow opcional).  
-6. **Casos de error:**  
-   - Email ya registrado → **409 Conflict**.  
-   - Contraseña débil → **400 Bad Request**.  
+**Explicación del proceso y definición de los eventos:**
 
-**Datos intercambiados (ejemplo):**  
-- `RegisterUser { email, passwordHash, role }`  
-- `UserRegistered { userId, email, role, createdAt }` 
+1. El usuario llega a la página de inicio de sesión de la aplicación y, a través de las opciones, se realiza la gestión de roles para cada tipo de usuario.  
+2. El usuario realiza el registro en el sistema identificándose como uno de los segmentos disponibles.  
+3. Registra sus datos (username, password) en los campos correspondientes para la creación de su cuenta.  
+4. Se realizan las validaciones correspondientes al registro de su contraseña.  
+5. Se obtiene el registro del usuario en la aplicación.  
+6. El usuario debe realizar la autenticación de sus datos la primera vez que ingresa a la aplicación.  
+
 
 **Visualización del flujo:**
 
 <img src="https://i.ibb.co/Csmx20c5/iamflow.jpg" alt="iamflow" border="0">
 
-#### Escenario 2 — Autenticación y acceso a módulos (Login / RBAC)
+**Escenario: Autenticación y acceso a módulos**
 
-- **User stories relacionadas:** HU22 (Inicio de sesión), HU25 (Gestión de sesión y seguridad), HU26 (Autenticación para profesionales)  
-- **Actores:** Usuario General / Profesional de Medios  
+**Actores:**  
+- Principal: Usuario general (rol básico con acceso limitado a análisis de imágenes individuales).  
+- Principal: Profesional de medios (rol avanzado con acceso a análisis por lotes, reportes y funcionalidades extendidas).  
 
-**Flujo (paso a paso):**
-1. **Comando:** `LoginUser(email, password)` desde *WebApp* → IAM BC.  
-2. **Validación:** IAM verifica credenciales; en éxito, genera **token JWT** con roles y expiración.  
-3. **Evento:** `UserLoggedIn(userId, token, roles)` (registro en logs/metrics).  
-4. **Respuesta:** WebApp recibe token; guarda en sesión/localStorage y lo usa en siguientes requests.  
-5. **Acceso a módulos:** Endpoints protegidos validan token → autorización por rol (**RBAC**).  
-6. **Casos de error:**  
-   - Credenciales inválidas → **401 Unauthorized**.  
-   - Cuenta desactivada → **403 Forbidden**.  
-   - Token expirado → refresh o re-login.  
+**Explicación del proceso y definición de los eventos:**
 
-**Datos intercambiados (ejemplo):**  
-- `UserLoggedIn { userId, roles, tokenExp }`  
+1. El usuario solicita acceso en la plataforma PixelCheck (WebApp).  
+2. El sistema IAM valida las credenciales ingresadas.  
+3. Se determina el rol del usuario (`Usuario general` o `Profesional de medios`) y se conceden permisos según el perfil.  
+4. El sistema notifica al usuario sobre el resultado del proceso de autenticación (acceso concedido o denegado).  
+5. El usuario accede a las funcionalidades correspondientes a su rol dentro de la aplicación.  
 
 **Visualización del flujo:**
 
-LINK
+<img src="https://i.ibb.co/cK9b7sDf/iamfloew2.jpg" alt="iamfloew2" border="0">
 
-#### Escenario 3 — Análisis rápido de imagen (Usuario general)
+**Escenario: Análisis rápido de imagen (Usuario general)**
 
-- **User stories relacionadas:** HU01 (Cargar imagen), HU02 (Analizar imagen con ML), HU03 (Visualizar resultados), HU07 (Estado de carga), HU17 (Redimensionar automáticamente)  
-- **Actores:** Usuario General (WebApp)  
-- **BCs involucrados:** Ingestion & Validation BC → Image Analysis (ML) BC → Results & Reporting BC → WebApp  
+**Actores:**  
+- Principal: Usuario general (rol básico de la plataforma).  
+- Secundario: Plataforma PixelCheck (módulos de Ingesta, Análisis y Resultados).  
 
-**Flujo (paso a paso):**
-1. **Comando:** `UploadImage(file, userId, metadata)` desde WebApp → Ingestion & Validation BC.  
-2. **Validación / Preprocesamiento:** formato/tamaño; si >1920x1080 → resize/compression.  
-   - Si inválido → **Evento:** `ImageRejected(imageId, reason)` → respuesta **400**.  
-3. **Evento:** `ImageValidated(imageId, storageUrl, metadata)` → persistencia en *images*.  
-4. **Comando/Evento:** `AnalysisRequested(imageId, userId)` → encolado en Celery/Redis.  
-5. **Worker:** toma job → `AnalysisStarted(imageId, workerId)` → ejecuta modelo ML.  
-6. **Evento:** `AnalysisCompleted(imageId, result, confidence, artifactsUrl, modelVersion)` → persistencia en *analysis_results*.  
-7. **Evento:** `ResultStored(resultId, imageId, userId)` → notificación WebApp (SSE/WebSocket) o consulta `GET /results/{imageId}`.  
-8. **Respuesta UI:** mostrar veredicto (“Probablemente IA — 92%”), explicación y opción de ver análisis detallado.  
-9. **Casos de error:** `JobFailed` → reintentos; si persiste → `AnalysisFailed`.  
+**Explicación del proceso y definición de los eventos:**  
 
-**Datos intercambiados (ejemplos):**  
-- `ImageValidated { imageId, url, width, height, uploadedBy }`  
-- `AnalysisCompleted { imageId, result, confidence, artifacts, modelVersion }`  
+1. El usuario general carga una imagen desde la WebApp de PixelCheck.  
+2. El sistema de Ingesta y Validación verifica el formato y tamaño de la imagen.  
+   - Si no cumple con las condiciones → se rechaza la imagen y se notifica al usuario.  
+   - Si cumple → se registra en el sistema.  
+3. El sistema envía la imagen validada al módulo de Análisis con ML.  
+4. El motor de Análisis ejecuta el modelo para detectar si la imagen fue generada por IA.  
+5. Al completarse el análisis, se genera un resultado con un nivel de confianza (ej. “Probablemente IA — 92%”).  
+6. El sistema guarda el resultado en el módulo de Resultados y lo notifica al usuario.  
+7. El usuario visualiza el resultado en la interfaz junto con la explicación básica.  
 
 **Visualización del flujo:**
 
-LINK
+<img src="https://i.ibb.co/fYv5R2ZB/MSG1.png" alt="MSG1" border="0">
 
+<br>
 
-#### Escenario 4 — Análisis por lotes y generación de reporte (Profesional de medios)
+**Escenario: Análisis por lotes y generación de reporte (Profesional de medios)**
 
-- **User stories relacionadas:** HU18 (Análisis por lotes), HU19 (Reportes profesionales), HU11 (Historial), HU12 (Exportar resultado)  
-- **Actores:** Profesional de Medios (WebApp)  
-- **BCs involucrados:** Ingestion & Validation BC → Image Analysis BC → Results & Reporting BC → IAM BC  
+**Actores:**  
+- Principal: Profesional de medios (rol avanzado de la plataforma).  
+- Secundario: Plataforma PixelCheck (módulos de Ingesta, Análisis, Reportes e IAM).  
 
-**Flujo (paso a paso):**
-1. **Comando:** `UploadBatch([file1,…,fileN], userId, batchMetadata)` → Ingestion BC.  
-2. **Preprocesamiento:** valida cada archivo; crea `imageId` por item y emite `ImageValidated`.  
-   - Devuelve `batchId` y `jobIds` al cliente.  
-3. **Encolado masivo:** `AnalysisRequested(imageId)` → workers procesan en paralelo.  
-   - Prioridad: profesional > general.  
-4. **Procesamiento:** `AnalysisStarted` → `AnalysisCompleted` → Results persiste estado por item.  
-5. **Agregación:** al terminar lote → `GenerateReport(batchId)` con resumen, tabla de resultados, links a artifacts.  
-6. **Evento:** `ReportGenerated(reportId, batchId, url)` → notificación al profesional.  
-7. **Interacción:** Profesional descarga PDF/CSV con evidencia.  
-8. **Casos de error:** `JobFailed` → reintentos; si falla → marcar failed en reporte.  
+**Explicación del proceso y definición de los eventos:**  
 
-**Datos intercambiados (ejemplos):**  
-- `BatchSubmitted { batchId, jobIds[], uploadedBy }`  
-- `ReportGenerated { reportId, batchId, summary, url }` 
+1. El profesional de medios sube un lote de imágenes (batch) desde la WebApp.  
+2. El sistema de Ingesta valida cada archivo y genera un identificador (`imageId`) para cada uno.  
+   - Si alguna imagen no cumple las condiciones → se marca como rechazada.  
+   - Si cumple → se encola para análisis.  
+3. El sistema envía todas las imágenes válidas al módulo de Análisis con ML en paralelo.  
+4. Cada análisis genera un resultado individual con confianza y estado.  
+5. Al completarse el procesamiento del lote, el sistema agrega todos los resultados.  
+6. Se genera un reporte (PDF/CSV) con estadísticas, tablas y links de evidencia.  
+7. El reporte se almacena en el módulo de Resultados & Reportes.  
+8. El sistema notifica al profesional que el reporte está listo para descarga.  
+9. El profesional accede a la sección de reportes y descarga el archivo generado.  
 
 **Visualización del flujo:**
 
-LINK
+<img src="https://i.ibb.co/KpFyxZ7k/MSG2.png" alt="MSG2" border="0">
 
 
 
