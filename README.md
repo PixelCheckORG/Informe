@@ -1094,17 +1094,23 @@ Tras el taller de atributos de calidad se priorizó favorecer la experiencia int
 
 ### 4.2.1. EventStorming
 
-Con el objetivo de comprender en profundidad el dominio del sistema, se llevó a cabo una sesión de EventStorming de aproximadamente 1 hora. En esta dinámica, el equipo organizó sus ideas utilizando sticky notes de diferentes colores para representar eventos, comandos, usuarios y agregados.
+Con el objetivo de comprender en profundidad el dominio del sistema, se llevó a cabo una sesión de EventStorming de aproximadamente 1 hora. En esta dinámica, el equipo organizó sus ideas utilizando sticky notes de diferentes colores para representar eventos, comandos, usuarios, reglas de negocio, sistemas externos, artefactos y problemas detectados.
 
-- Eventos (naranja): Representaron los hechos más relevantes del flujo, como registro, inicio de sesión, creación de reservas o validación de horarios.
+- Eventos de dominio (Domain Events): Hechos relevantes del flujo, como Imagen cargada, Verificación iniciada, Resultado generado o Reporte exportado.
 
-- Comandos (azul): Acciones disparadas por los usuarios, como “reservar cubículo” o “aprobar solicitud”.
+- Comandos (Commands): Acciones iniciadas por los usuarios o el sistema, como Subir imagen, Solicitar verificación, Generar reporte.
 
-- Actores/usuarios (amarillo): Incluyeron visitante, estudiante, administrador y superadmin, lo que permitió mapear responsabilidades.
+- Actores/Usuarios/Roles: Incluyeron Visitante, Usuario registrado y Administrador, lo que permitió mapear responsabilidades.
 
-- Agregados (verde): Elementos del dominio como “Cubículo”, “Reserva” o “Usuario”, que agrupan consistencia y reglas del negocio.
+- Aggregates / Artefactos: Elementos del dominio como Imagen, Resultado de Verificación, Reporte, que agrupan consistencia y reglas de negocio.
 
-La sesión ayudó a visualizar el recorrido del sistema desde la perspectiva del visitante en la landing page hasta la gestión avanzada del panel administrativo. Esto proporcionó una primera visión integral y permitió detectar interacciones críticas y posibles puntos de mejora.
+- Policies / Business Rules: Validaciones como La imagen debe ser en formato válido (JPEG/PNG), El reporte solo puede ser descargado por usuarios registrados o El administrador accede a estadísticas globales.
+
+- Sistemas externos / Infra Tech: El Modelo de Machine Learning que clasifica imágenes (IA generada vs. real) y los servicios de almacenamiento en la nube para guardar resultados.
+
+- Problemas / Issues (Parking Lot): Posibles limitaciones como tiempo de procesamiento del modelo, precisión insuficiente en ciertos casos, o posible sesgo en datasets.
+
+La sesión ayudó a visualizar el recorrido del sistema desde la carga inicial de una imagen hasta la clasificación automática con el modelo de Machine Learning y la entrega del resultado final. Además, permitió identificar reglas de negocio críticas, dependencias tecnológicas y riesgos a mitigar en futuras iteraciones.
 
 <img src="https://i.ibb.co/tw4gcrkV/legenda.png" alt="legenda" border="0">
 
@@ -1114,29 +1120,124 @@ A partir del EventStorming, se realizó una sesión de Candidate Context Discove
 
 De este análisis surgieron los siguientes contextos candidatos:
 
-- Contexto de Gestión de Usuarios: Registro, inicio de sesión, roles y permisos.
+- Contexto de Gestión de Usuarios: Registro, inicio de sesión, asignación de roles y manejo de historial de verificaciones.
 
-- Contexto de Reservas: Administración de cubículos, horarios y disponibilidad en tiempo real.
+- Contexto de Verificación de Imágenes: Procesamiento de la imagen, análisis con el modelo de Machine Learning y clasificación entre “real” o “IA generada”.
 
-- Contexto de Administración: Configuración del sistema, reportes y gestión de políticas.
-
-Estos contextos permitieron segmentar responsabilidades y reducir complejidad, preparando el terreno para los siguientes pasos del modelado.
+-Contexto de Administración: Configuración del sistema, monitoreo de resultados globales y generación de reportes agregados.
 
 <img src="https://i.ibb.co/CszGnd4D/Evdd.png" alt="Evdd" border="0">
 
+Para mas detalles del diagrama: 
+
+[https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353](https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353)
+
+
 ### 4.2.3. Domain Message Flows Modeling
 
-Posteriormente, se modelaron los flujos de mensajes del dominio utilizando la técnica de Domain Storytelling. Esto permitió visualizar cómo los contextos descubiertos debían colaborar entre sí para resolver los casos de uso principales.
+El Modelado de Flujos de Mensajes de Dominio (Domain Storytelling) se utiliza para describir cómo los bounded contexts colaboran mediante mensajes/acciones para cumplir escenarios de negocio clave. A continuación se presentan cuatro escenarios representativos (registro, autenticación, análisis de imagen individual y análisis por lotes con reporte) con sus actores, pasos, comandos/eventos y consideraciones operacionales. Cada escenario está pensado para ser traducido a un diagrama de Domain Storytelling en Miro (actores arriba, bounded contexts en el centro, persistencia/externos abajo, flechas etiquetadas con comandos/eventos).
 
-Ejemplo de flujo principal:
+#### Escenario 1 — Registro de usuario
 
-1. El estudiante envía un comando de “Reservar Cubículo” (Contexto de Reservas).
+- **User stories relacionadas:** HU21 (Registro de usuario web)  
+- **Actores:** Usuario General, Profesional de Medios (ambos pueden registrarse)  
+- **Objetivo:** Permitir crear una cuenta con rol adecuado (general/profesional) y obtener credenciales válidas.  
 
-2. El sistema valida disponibilidad y responde con “Reserva Confirmada” o “Reserva Rechazada”.
+**Flujo (paso a paso):**
+1. **Comando:** `RegisterUser(name, email, password, roleRequested)` enviado desde *WebApp* al **IAM BC**.  
+2. **Validaciones IAM:** comprobar unicidad de email, política de contraseña.  
+3. **Evento:** `UserRegistered(userId, email, role)` → persistencia en *users (MySQL)*.  
+4. **Acción:** IAM envía correo de verificación (si aplica) y/o devuelve **201 Created** con `userId`.  
+5. **Resultado esperado:** usuario creado; si rol profesional fue solicitado, puede requerir aprobación manual (workflow opcional).  
+6. **Casos de error:**  
+   - Email ya registrado → **409 Conflict**.  
+   - Contraseña débil → **400 Bad Request**.  
 
-3. El administrador recibe notificaciones en el Contexto de Administración para monitorear el uso de los espacios.
+**Datos intercambiados (ejemplo):**  
+- `RegisterUser { email, passwordHash, role }`  
+- `UserRegistered { userId, email, role, createdAt }` 
 
-Este modelado evidenció dependencias entre contextos y ayudó a anticipar necesidades de integración.
+**Visualización del flujo:**
+
+<img src="https://i.ibb.co/Csmx20c5/iamflow.jpg" alt="iamflow" border="0">
+
+#### Escenario 2 — Autenticación y acceso a módulos (Login / RBAC)
+
+- **User stories relacionadas:** HU22 (Inicio de sesión), HU25 (Gestión de sesión y seguridad), HU26 (Autenticación para profesionales)  
+- **Actores:** Usuario General / Profesional de Medios  
+
+**Flujo (paso a paso):**
+1. **Comando:** `LoginUser(email, password)` desde *WebApp* → IAM BC.  
+2. **Validación:** IAM verifica credenciales; en éxito, genera **token JWT** con roles y expiración.  
+3. **Evento:** `UserLoggedIn(userId, token, roles)` (registro en logs/metrics).  
+4. **Respuesta:** WebApp recibe token; guarda en sesión/localStorage y lo usa en siguientes requests.  
+5. **Acceso a módulos:** Endpoints protegidos validan token → autorización por rol (**RBAC**).  
+6. **Casos de error:**  
+   - Credenciales inválidas → **401 Unauthorized**.  
+   - Cuenta desactivada → **403 Forbidden**.  
+   - Token expirado → refresh o re-login.  
+
+**Datos intercambiados (ejemplo):**  
+- `UserLoggedIn { userId, roles, tokenExp }`  
+
+**Visualización del flujo:**
+
+LINK
+
+#### Escenario 3 — Análisis rápido de imagen (Usuario general)
+
+- **User stories relacionadas:** HU01 (Cargar imagen), HU02 (Analizar imagen con ML), HU03 (Visualizar resultados), HU07 (Estado de carga), HU17 (Redimensionar automáticamente)  
+- **Actores:** Usuario General (WebApp)  
+- **BCs involucrados:** Ingestion & Validation BC → Image Analysis (ML) BC → Results & Reporting BC → WebApp  
+
+**Flujo (paso a paso):**
+1. **Comando:** `UploadImage(file, userId, metadata)` desde WebApp → Ingestion & Validation BC.  
+2. **Validación / Preprocesamiento:** formato/tamaño; si >1920x1080 → resize/compression.  
+   - Si inválido → **Evento:** `ImageRejected(imageId, reason)` → respuesta **400**.  
+3. **Evento:** `ImageValidated(imageId, storageUrl, metadata)` → persistencia en *images*.  
+4. **Comando/Evento:** `AnalysisRequested(imageId, userId)` → encolado en Celery/Redis.  
+5. **Worker:** toma job → `AnalysisStarted(imageId, workerId)` → ejecuta modelo ML.  
+6. **Evento:** `AnalysisCompleted(imageId, result, confidence, artifactsUrl, modelVersion)` → persistencia en *analysis_results*.  
+7. **Evento:** `ResultStored(resultId, imageId, userId)` → notificación WebApp (SSE/WebSocket) o consulta `GET /results/{imageId}`.  
+8. **Respuesta UI:** mostrar veredicto (“Probablemente IA — 92%”), explicación y opción de ver análisis detallado.  
+9. **Casos de error:** `JobFailed` → reintentos; si persiste → `AnalysisFailed`.  
+
+**Datos intercambiados (ejemplos):**  
+- `ImageValidated { imageId, url, width, height, uploadedBy }`  
+- `AnalysisCompleted { imageId, result, confidence, artifacts, modelVersion }`  
+
+**Visualización del flujo:**
+
+LINK
+
+
+#### Escenario 4 — Análisis por lotes y generación de reporte (Profesional de medios)
+
+- **User stories relacionadas:** HU18 (Análisis por lotes), HU19 (Reportes profesionales), HU11 (Historial), HU12 (Exportar resultado)  
+- **Actores:** Profesional de Medios (WebApp)  
+- **BCs involucrados:** Ingestion & Validation BC → Image Analysis BC → Results & Reporting BC → IAM BC  
+
+**Flujo (paso a paso):**
+1. **Comando:** `UploadBatch([file1,…,fileN], userId, batchMetadata)` → Ingestion BC.  
+2. **Preprocesamiento:** valida cada archivo; crea `imageId` por item y emite `ImageValidated`.  
+   - Devuelve `batchId` y `jobIds` al cliente.  
+3. **Encolado masivo:** `AnalysisRequested(imageId)` → workers procesan en paralelo.  
+   - Prioridad: profesional > general.  
+4. **Procesamiento:** `AnalysisStarted` → `AnalysisCompleted` → Results persiste estado por item.  
+5. **Agregación:** al terminar lote → `GenerateReport(batchId)` con resumen, tabla de resultados, links a artifacts.  
+6. **Evento:** `ReportGenerated(reportId, batchId, url)` → notificación al profesional.  
+7. **Interacción:** Profesional descarga PDF/CSV con evidencia.  
+8. **Casos de error:** `JobFailed` → reintentos; si falla → marcar failed en reporte.  
+
+**Datos intercambiados (ejemplos):**  
+- `BatchSubmitted { batchId, jobIds[], uploadedBy }`  
+- `ReportGenerated { reportId, batchId, summary, url }` 
+
+**Visualización del flujo:**
+
+LINK
+
+
 
 ### 4.2.4. Bounded Context Canvases
 
@@ -1144,17 +1245,23 @@ Cada contexto identificado fue descrito en detalle mediante un Bounded Context C
 
 Por ejemplo:
 
-Bounded Context: Reservas
+Bounded Context: Detección de Imágenes
 
-- Context Overview: Gestión de cubículos y reservas en tiempo real.
+- Context Overview: Procesamiento y análisis de imágenes para identificar si son generadas por IA o auténticas.
 
-- Business Rules: Solo un usuario puede reservar un cubículo en un intervalo de tiempo; el sistema debe validar conflictos antes de confirmar.
+- Business Rules:
 
-- Ubiquitous Language: “Cubículo”, “Reserva”, “Disponibilidad”, “Horario”.
+  - Toda imagen subida debe ser validada antes de generar un resultado.
 
-- Capabilities: Crear, cancelar y visualizar reservas.
+  - El sistema debe ofrecer un nivel de confianza (score) acompañado de la clasificación.
 
-- Dependencies: Interacción con Gestión de Usuarios (para validar roles) y con Administración (para reportes y métricas).
+  - Las imágenes rechazadas o sospechosas deben almacenarse para auditoría.
+
+- Ubiquitous Language: “Imagen Original”, “Imagen IA”, “Clasificación”, “Score de Confianza”, “Resultado de Verificación”.
+
+- Capabilities: Subir imagen, ejecutar análisis, generar reporte de clasificación, guardar histórico.
+
+- Dependencies: Interacción con Gestión de Usuarios (para validar roles y accesos) y con Administración (para métricas, auditorías y políticas de uso).
 
 Esto permitió asegurar consistencia semántica y definir capacidades claras por contexto.
 
@@ -1162,11 +1269,11 @@ Esto permitió asegurar consistencia semántica y definir capacidades claras por
 
 Finalmente, se elaboró el Context Mapping para mostrar la relación estructural entre los bounded contexts descubiertos. Se exploraron diferentes alternativas y se seleccionaron patrones de relación adecuados:
 
-- Gestión de Usuarios ↔ Reservas: Relación Customer/Supplier, donde Reservas depende de la información validada por Gestión de Usuarios.
+- Gestión de Usuarios ↔ Detección de Imágenes: Relación Customer/Supplier, donde Detección depende de la información validada por Gestión de Usuarios (rol, permisos).
 
-- Reservas ↔ Administración: Relación Conformist, donde Administración consume la información generada en Reservas sin modificarla.
+- Detección de Imágenes ↔ Administración: Relación Conformist, donde Administración consume la información generada por el análisis (reportes, estadísticas, logs).
 
-- Gestión de Usuarios ↔ Administración: Relación Shared Kernel, compartiendo un núcleo común de definiciones de roles y permisos.
+- Gestión de Usuarios ↔ Administración: Relación Shared Kernel, compartiendo un núcleo común de definiciones de roles, permisos y políticas de seguridad.
 
 El resultado fue un mapa de contextos que equilibra autonomía y colaboración, reduciendo riesgos de acoplamiento y asegurando escalabilidad futura.
 
