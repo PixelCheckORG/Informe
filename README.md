@@ -1116,75 +1116,1216 @@ El Product Backlog es una lista priorizada de tareas, funcionalidades y requisit
 
 ## 4.1. Strategic-Level Attribute-Driven Design
 
+En esta sección se evidencia el proceso de Attribute-Driven Design (ADD) aplicado a PixelCheck bajo un enfoque Domain-Driven. Se conectan las necesidades del negocio y de los segmentos objetivo con decisiones arquitectónicas. Se documenta el propósito del diseño, los Inputs (funcionales y de calidad), los drivers arquitectónicos, decisiones clave, escenarios de calidad y se referencia las vistas iniciales de arquitectura de alto nivel.
+
 ### 4.1.1. Design Purpose
 
-[Content for design purpose]
+El propósito del proceso de diseño de PixelCheck es desarrollar una arquitectura de software robusta y escalable que aborde la problemática crítica de la verificación de autenticidad de imágenes en el contexto actual de proliferación de contenido generado por inteligencia artificial.
+La arquitectura debe estar orientada a satisfacer las necesidades específicas de dos segmentos objetivo claramente diferenciados: los usuarios generales de internet que requieren verificación rápida y simple de contenido visual, y los profesionales de medios y comunicación que necesitan herramientas avanzadas de análisis y documentación.
+El proceso de diseño busca crear una solución que combine eficiencia operativa con precisión técnica, garantizando que la detección de imágenes generadas por IA sea accesible para usuarios sin conocimientos técnicos, mientras proporciona la profundidad analítica requerida por profesionales del sector mediático. La arquitectura resultante debe soportar el crecimiento del negocio y la evolución tecnológica, manteniendo la confiabilidad y seguridad necesarias para generar credibilidad en un dominio donde la veracidad de la información es fundamental.
 
 ### 4.1.2. Attribute-Driven Design Inputs
 
+Esta sección presenta los tres tipos de inputs fundamentales para el proceso de diseño con ADD: la funcionalidad primaria derivada de los requisitos más críticos del sistema, los escenarios de atributos de calidad que determinan las características no funcionales, y las restricciones técnicas y de negocio que delimitan el espacio de solución.
+
 #### 4.1.2.1. Primary Functionality (Primary User Stories)
 
-[Content for primary functionality]
+Los requisitos funcionales seleccionados representan las capacidades core del sistema PixelCheck, priorizadas por su impacto directo en la arquitectura y su criticidad para el éxito de la solución. Estas funcionalidades abarcan desde las operaciones básicas de análisis hasta las capacidades avanzadas requeridas por usuarios profesionales.
+
+A continuación se listan las historias / epics que tienen mayor impacto en la arquitectura
+
+<table>
+  <thead>
+    <tr>
+      <th>Epic / User Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HU01</td>
+      <td>Cargar imagen para análisis</td>
+      <td>El sistema debe aceptar imágenes subidas por usuarios (móvil/desktop) y entregarlas al pipeline de análisis.</td>
+      <td>POST /images acepta JPG/PNG/WEBP, devuelve jobId o resultado, respuesta inicial &lt; 2s.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU02</td>
+      <td>Analizar imagen con algoritmo ML</td>
+      <td>Ejecutar inferencia (modelo) y devolver probabilidad y artefactos explicativos.</td>
+      <td>Resultado con % confianza y explain artifacts; p95 latency ≤ 10s (MVP objetivo).</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU03</td>
+      <td>Visualizar resultados detallados</td>
+      <td>Mostrar resultado, % confianza y explicación (mapa de calor, features, metadatos).</td>
+      <td>UI muestra resultado legible y artefactos descargables; endpoint /results/{id} disponible.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU21 / HU22</td>
+      <td>Registro / Inicio de sesión</td>
+      <td>Gestión de cuentas y sesiones (IAM).</td>
+      <td>Registro, login, JWT; roles general / profesional; endpoints auth protegidos.</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td>HU15</td>
+      <td>Validar formato antes de análisis</td>
+      <td>Validación previa de formato y tamaño para evitar overloading del pipeline.</td>
+      <td>Rechazo con mensaje claro si &gt;10MB o formato no soportado.</td>
+      <td>EP01 / TS01</td>
+    </tr>
+    <tr>
+      <td>HU18</td>
+      <td>Análisis por lotes</td>
+      <td>Capacidad de análisis en lote para profesionales.</td>
+      <td>Enqueue de hasta N imágenes; status por item; throughput medible.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>HU19</td>
+      <td>Reportes profesionales</td>
+      <td>Generación de reportes PDF con metadata y evidencias.</td>
+      <td>Endpoint para generar/reportar; export PDF con datos y fecha.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>TS03</td>
+      <td>Logging y observabilidad</td>
+      <td>Sistema central de logs y métricas.</td>
+      <td>Application Insights integrado; logs estructurados y alertas.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>TS04</td>
+      <td>Compresión automática</td>
+      <td>Redimensionado y compresión para imágenes grandes.</td>
+      <td>Imagen &gt;1920x1080 autocoms; calidad min 85%; tiempo de preprocessing &lt; 1s.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+
+A continuación se listan las historias / epics que tienen mayor impacto en la arquitectura
+
+<table>
+  <thead>
+    <tr>
+      <th>Epic / User Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HU01</td>
+      <td>Cargar imagen para análisis</td>
+      <td>El sistema debe aceptar imágenes subidas por usuarios (móvil/desktop) y entregarlas al pipeline de análisis.</td>
+      <td>POST /images acepta JPG/PNG/WEBP, devuelve jobId o resultado, respuesta inicial &lt; 2s.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU02</td>
+      <td>Analizar imagen con algoritmo ML</td>
+      <td>Ejecutar inferencia (modelo) y devolver probabilidad y artefactos explicativos.</td>
+      <td>Resultado con % confianza y explain artifacts; p95 latency ≤ 10s (MVP objetivo).</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU03</td>
+      <td>Visualizar resultados detallados</td>
+      <td>Mostrar resultado, % confianza y explicación (mapa de calor, features, metadatos).</td>
+      <td>UI muestra resultado legible y artefactos descargables; endpoint /results/{id} disponible.</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <td>HU21 / HU22</td>
+      <td>Registro / Inicio de sesión</td>
+      <td>Gestión de cuentas y sesiones (IAM).</td>
+      <td>Registro, login, JWT; roles general / profesional; endpoints auth protegidos.</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <td>HU15</td>
+      <td>Validar formato antes de análisis</td>
+      <td>Validación previa de formato y tamaño para evitar overloading del pipeline.</td>
+      <td>Rechazo con mensaje claro si &gt;10MB o formato no soportado.</td>
+      <td>EP01 / TS01</td>
+    </tr>
+    <tr>
+      <td>HU18</td>
+      <td>Análisis por lotes</td>
+      <td>Capacidad de análisis en lote para profesionales.</td>
+      <td>Enqueue de hasta N imágenes; status por item; throughput medible.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>HU19</td>
+      <td>Reportes profesionales</td>
+      <td>Generación de reportes PDF con metadata y evidencias.</td>
+      <td>Endpoint para generar/reportar; export PDF con datos y fecha.</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <td>TS03</td>
+      <td>Logging y observabilidad</td>
+      <td>Sistema central de logs y métricas.</td>
+      <td>Application Insights integrado; logs estructurados y alertas.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>TS04</td>
+      <td>Compresión automática</td>
+      <td>Redimensionado y compresión para imágenes grandes.</td>
+      <td>Imagen &gt;1920x1080 autocoms; calidad min 85%; tiempo de preprocessing &lt; 1s.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### 4.1.2.2. Quality attribute Scenarios
 
-[Content for quality attribute scenarios]
+A continuación se definen los escenarios de atributos de calidad.
+
+Tabla de Quality Attribute Scenarios:
+
+<table>
+  <thead>
+    <tr>
+      <th>Atributo</th>
+      <th>Fuente</th>
+      <th>Estímulo</th>
+      <th>Artefacto</th>
+      <th>Entorno</th>
+      <th>Respuesta</th>
+      <th>Medida</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Latencia (Rendimiento)</td>
+      <td>Usuario final</td>
+      <td>Subida de imagen (≤ 8MB) y petición de análisis</td>
+      <td>Endpoint /analyze</td>
+      <td>Condición normal (no pico)</td>
+      <td>Crear job y devolver resultado en ≤10s</td>
+      <td>p95 latency ≤ 10s</td>
+    </tr>
+    <tr>
+      <td>Escalabilidad</td>
+      <td>Varios usuarios</td>
+      <td>100 requests concurrentes de análisis</td>
+      <td>Worker pool / API</td>
+      <td>Picos de tráfico</td>
+      <td>Scale horizontal del backend/workers; jobs encolados</td>
+      <td>Throughput / latencia p95 &lt; 20s</td>
+    </tr>
+    <tr>
+      <td>Disponibilidad</td>
+      <td>Usuario</td>
+      <td>Petición a /results</td>
+      <td>Backend API</td>
+      <td>Falla de instancia</td>
+      <td>Failover a instancias saludables; mantener servicio</td>
+      <td>Uptime ≥ 99.5%</td>
+    </tr>
+    <tr>
+      <td>Seguridad</td>
+      <td>Atacante externo</td>
+      <td>Petición no autorizada a /history</td>
+      <td>API + BD</td>
+      <td>Producción</td>
+      <td>Rechazar petición; log y alert</td>
+      <td>0 accesos no autorizados; registro de intento</td>
+    </tr>
+    <tr>
+      <td>Precisión (ML)</td>
+      <td>Equipo de QA</td>
+      <td>Dataset de validación</td>
+      <td>Modelo ML</td>
+      <td>Condiciones controladas</td>
+      <td>Modelo clasifica IA vs real</td>
+      <td>Objetivo inicial prec. ≥ 90% en dataset</td>
+    </tr>
+    <tr>
+      <td>Observabilidad</td>
+      <td>Operaciones</td>
+      <td>Picos de latencia / errores</td>
+      <td>Monitoring</td>
+      <td>Producción</td>
+      <td>Alertas y trazas; RCA en &lt; 30 min</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
 
 #### 4.1.2.3. Constraints
 
-[Content for constraints]
+Eestas restricciones son impuestas por alcance del proyecto, presupuesto y decisiones de infraestructura.
+
+<table>
+  <thead>
+    <tr>
+      <th>Technical Story ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Criterios de Aceptación</th>
+      <th>Relacionado con (Epic ID)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C01</td>
+      <td>Stack Backend</td>
+      <td>Backend en Python (Django) para acelerar IAM y APIs</td>
+      <td>Repositorio con Django + DRF; endpoints auth listos</td>
+      <td>HU21/HU22</td>
+    </tr>
+    <tr>
+      <td>C02</td>
+      <td>Persistencia única (MVP)</td>
+      <td>Usar Azure Database for MySQL como BD principal</td>
+      <td>DB disponible en Azure; tablas users, images, analysis</td>
+      <td>HU01 / HU02</td>
+    </tr>
+    <tr>
+      <td>C03</td>
+      <td>ML embebido (MVP)</td>
+      <td>El modelo ML se despliega en App Service inicialmente</td>
+      <td>Inference en App Service sin servicio externo</td>
+      <td>HU02</td>
+    </tr>
+    <tr>
+      <td>C04</td>
+      <td>No GPUs dedicadas (fase 1)</td>
+      <td>No provisionar GPU en MVP (cost constraint)</td>
+      <td>Inferencia CPU; tiempos medidos aceptables</td>
+      <td>HU02</td>
+    </tr>
+    <tr>
+      <td>C05</td>
+      <td>CI/CD obligatorio</td>
+      <td>Usar GitHub Actions para build/deploy</td>
+      <td>Pipelines que despliegan a App Service / Firebase / GH Pages</td>
+      <td>TS03</td>
+    </tr>
+    <tr>
+      <td>C06</td>
+      <td>Protección de secretos</td>
+      <td>Usar KeyVault/Environment vars para secrets</td>
+      <td>Credenciales no en repositorio; tests de secrets fail</td>
+      <td>TS03</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 4.1.3. Architectural Drivers Backlog
 
-[Content for architectural drivers backlog]
+El backlog recoge drivers funcionales, drivers de calidad y constraints, ordenados por importancia e impacto.
+
+<table>
+  <thead>
+    <tr>
+      <th>Driver ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Importancia (Stakeholders)</th>
+      <th>Impacto en Complexity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D1</td>
+      <td>Análisis rápido (latencia)</td>
+      <td>Responder análisis en ≤10s p95</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>D2</td>
+      <td>Precisión del detector</td>
+      <td>Modelo objetivo ≥ 90% en dataset</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>D3</td>
+      <td>Explicabilidad y reportes</td>
+      <td>Generar artefactos explicativos y PDFs</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D4</td>
+      <td>Escalabilidad por demanda</td>
+      <td>Soportar cargas concurrentes (batch)</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D5</td>
+      <td>Seguridad y privacidad</td>
+      <td>Autenticación, cifrado y control de roles</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D6</td>
+      <td>Observabilidad y operabilidad</td>
+      <td>Logs, métricas y alertas</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D7</td>
+      <td>Simplicidad operacional (cost)</td>
+      <td>Mantener coste razonable en MVP</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D8</td>
+      <td>Evolución hacia ML servicio</td>
+      <td>Capacidad de extraer ML a servicio dedicado</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>D9</td>
+      <td>Persistencia y consistencia</td>
+      <td>Integridad de historiales y reportes</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 4.1.4. Architectural Design Decisions
 
-[Content for architectural design decisions]
+Para cada driver clave evaluamos patrones candidatos (3 por driver relevante) y elegimos la opción que cumple los trade-offs del MVP y la evolución futura.
+
+**Decisión global (resumen)**
+
+- **Backend:** Django + Django REST Framework por rapidez en desarrollo, soluciones out-of-the-box para IAM y ORM.
+
+- **ML:** modelo inicialmente embebido en App Service (menor complejidad). Diseño modular para extraerlo a servicio (ACI / Azure ML) cuando sea necesario.
+
+- **Procesamiento asíncrono:** Celery + Redis para jobs de inferencia y generación de reports (desvincula tiempos de HTTP).
+
+- **Persistencia:** Azure MySQL para entidades; en producción se recomienda usar Blob Storage para imágenes grandes y una colección JSON para features si se requiere.
+
+- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Firebase, backend → Azure App Service).
+
+<h3>Candidate Pattern Evaluation Matrix (selección de 3 drivers clave)</h3>
+
+<h4>Driver D1 — Análisis rápido (latencia)</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. Modelo embebido en App Service (single process)</td>
+      <td>Menor latencia por llamada local; despliegue simple</td>
+      <td>Carga en App Service; menos flexible para escalar GPU</td>
+    </tr>
+    <tr>
+      <td>B. Servicio ML separado (microservicio en Flask/FastAPI)</td>
+      <td>Independencia, posibilidad de escalar por separado</td>
+      <td>Comunicación HTTP extra → latencia; mayor complejidad</td>
+    </tr>
+    <tr>
+      <td>C. Serverless inference (Function / Azure ML endpoint)</td>
+      <td>Auto-scaling y pay-per-use</td>
+      <td>Cold starts, integración más compleja, coste variable</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> A para MVP (embebido) por simplicidad y menor overhead; diseño modular para migrar a B o C si escala.</p>
+
+<h4>Driver D2 — Escalabilidad / Batch processing</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. Celery + Redis (workers)</td>
+      <td>Control de concurrency, retrys, priorización</td>
+      <td>Requiere infraestructura adicional (Redis)</td>
+    </tr>
+    <tr>
+      <td>B. Threaded worker dentro del proceso web</td>
+      <td>Simple, menos infra</td>
+      <td>Bloqueo de requests, mala escalabilidad</td>
+    </tr>
+    <tr>
+      <td>C. Serverless jobs (cloud functions)</td>
+      <td>Escala automática</td>
+      <td>Mayor complejidad en orchestration y tracking</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> A Celery + Redis (balance entre control y complejidad) para manejar lotes y jobs asíncronos; permite medir y priorizar.</p>
+
+<h4>Driver D3 — Almacenamiento de artefactos y features</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Pro</th>
+      <th>Con</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A. MySQL + JSON columns</td>
+      <td>Fácil gestión, single DB</td>
+      <td>No óptimo para vectores/embeddings grandes</td>
+    </tr>
+    <tr>
+      <td>B. MySQL + Blob Storage (imágenes)</td>
+      <td>Eficiente en almacenamiento de binarios</td>
+      <td>Gestión adicional de storage/ACL</td>
+    </tr>
+    <tr>
+      <td>C. MySQL + NoSQL (Mongo/Elastic)</td>
+      <td>Flexible para features y búsquedas</td>
+      <td>Complejidad en consistencia y operaciones</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Decisión:</strong> B (MySQL como fuente de verdad + Blob Storage para imágenes) en producción; en MVP usar MySQL (referencias) y dejar Blob Storage como próxima iteración si el tamaño/volumen lo exige.</p>
+
 
 ### 4.1.5. Quality Attribute Scenario Refinements
 
-[Content for quality attribute scenario refinements]
+Tras el taller de atributos de calidad se priorizó favorecer la experiencia interactiva (baja latencia) y la precisión / explicabilidad del detector, seguido por la capacidad de procesamiento por lotes para profesionales y la seguridad de acceso a historiales. Las decisiones resultantes favorecen una arquitectura con inferencia rápida (modelo embebido en MVP), procesamiento asíncrono (cola + workers) y trazabilidad/artefactos explicativos almacenados junto al resultado.
+
+<section>
+  <h3>Scenario Refinement for Scenario 1 — Latencia interactiva</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Respuesta de análisis interactivo para usuario general (HU01, HU02, HU03).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Ofrecer una experiencia inmediata que permita a usuarios generales obtener veredicto y confianza en el resultado sin esperar.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Performance / Latency, Availability, Usability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Usuario sube una imagen ≤ 8 MB y solicita análisis.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Navegador (usuario general).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Condiciones normales (carga media, no pico extremo).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Endpoint <code>POST /analyze</code>, servicio Backend API, worker de inferencia ML.</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>El sistema encola (o procesa) y entrega resultado (probabilidad + explicación breve) y/o jobId; UI muestra progreso. Resultado final disponible en tiempo interactivo.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>p95 latency ≤ 10 segundos; success rate ≥ 95% (jobs completados sin error).</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Resultado síncrono o asíncrono por defecto?</li>
+            <li>¿Tolerancia de UX a respuestas parciales?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Inferencia sin GPU puede limitar latencia.</li>
+            <li>Trade-off entre explicación rica (mapas de calor) y tiempo de respuesta.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 2 — Precisión y Explicabilidad (para profesionales)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Revisión editorial de imagen para publicación, donde el profesional requiere evidencia (HU02, HU03, HU19).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Entregar una decisión con nivel de confianza y evidencia suficiente para que un profesional tome una decisión editorial informada.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Accuracy (Precision), Explainability, Traceability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Un profesional solicita análisis detallado de una imagen (single o lote pequeño) y requiere reporte descargable.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Usuario Profesional (WebApp autenticado con rol).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Entorno de edición / flujo editorial (no necesariamente bajo pico).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Image Analysis (ML) BC, Results &amp; Reporting BC; generación de explain artifacts (heatmap, features list) y PDF de reporte.</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>Modelo devuelve % confianza, versión de modelo, features determinantes y artefactos explicativos; Results genera reporte con metadatos y evidencia.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>Precisión objetivo inicial ≥ 90% en dataset de validación; reporte contiene mínimo 2 features explicativos + metadatos; tiempo de generación del reporte ≤ 30s (MVP objetivo para single image).</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Qué formato mínimo de evidencia aceptan los profesionales?</li>
+            <li>¿Necesitamos certificación/firmado en reportes?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Explicabilidad puede requerir cálculos adicionales que aumentan latencia.</li>
+            <li>Mantener versioning del modelo para trazabilidad.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 3 — Procesamiento por Lotes (Profesionales)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Envío de lote de imágenes (ej. 20–100) para análisis por parte de un profesional o equipo (HU18, HU19).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Permitir procesar volúmenes medios de imágenes con trazabilidad por item y generación de reportes agregados.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Scalability, Throughput, Reliability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Usuario profesional sube un lote de N imágenes y solicita procesamiento por lotes.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: WebApp autenticada (Usuario Profesional).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Horario laboral con picos (varios usuarios enviando lotes).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>Ingestion BC encola ImageValidated por imagen; Celery + Redis como cola; pool de workers (Analysis BC).</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>El sistema encola cada imagen como job; workers procesan en paralelo; Results actualiza estado por imagen; al finalizar se genera reporte por lote (PDF/CSV).</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>Throughput objetivo inicial: ~5 imágenes / worker / minuto; todos los items deben completar con estado (processed/failed) y con posibilidad de retry; tiempo total depende de workers asignados pero UI debe mostrar progresos y ETA.</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Cuál es el tamaño máximo del lote por request?</li>
+            <li>¿Prioridad entre jobs?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Coste de escalado de workers.</li>
+            <li>Idempotencia y manejo de retries.</li>
+            <li>Necesidad de monitoreo de cola para evitar backlogs.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Scenario Refinement for Scenario 4 — Seguridad: Acceso a Historial</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Campo</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scenario(s):</td>
+        <td>Intento de acceso no autorizado al historial de análisis o reportes (HU11, HU23, HU25).</td>
+      </tr>
+      <tr>
+        <td>Business Goals:</td>
+        <td>Proteger datos sensibles y asegurar que sólo usuarios con rol adecuado puedan ver historiales y reportes; auditar accesos.</td>
+      </tr>
+      <tr>
+        <td>Relevant Quality Attributes:</td>
+        <td>Security, Privacy, Auditability.</td>
+      </tr>
+      <tr>
+        <td>Stimulus:</td>
+        <td>Petición a <code>GET /history</code> o <code>GET /reports/{id}</code> con token inválido o rol insuficiente.</td>
+      </tr>
+      <tr>
+        <td>Scenario Components:</td>
+        <td>Stimulus Source: Cliente/Atacante (petición HTTP).</td>
+      </tr>
+      <tr>
+        <td>Environment:</td>
+        <td>Producción (exposición pública).</td>
+      </tr>
+      <tr>
+        <td>Artifact (if Known):</td>
+        <td>IAM BC (auth/authorization), Backend API, DB MySQL (results/reports).</td>
+      </tr>
+      <tr>
+        <td>Response:</td>
+        <td>Rechazar con 401/403; registrar evento en System Management (logs) con user/token/ip; si patrón anómalo, disparar alerta a ops.</td>
+      </tr>
+      <tr>
+        <td>Response Measure:</td>
+        <td>100% de accesos no autorizados denegados; todos los intentos registrados con timestamp y metadata; alertas generadas en caso de umbral de intentos anómalos.</td>
+      </tr>
+      <tr>
+        <td>Questions:</td>
+        <td>
+          <ul>
+            <li>¿Periodo de retención de logs?</li>
+            <li>¿Necesidad de cumplimiento legal (p. ej. GDPR) para datos de usuarios?</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Issues:</td>
+        <td>
+          <ul>
+            <li>Gestión segura de secrets (KeyVault) y rotación.</li>
+            <li>Tasa de falsos positivos en detección de anomalías que puede generar ruido en alertas.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
 ## 4.2. Strategic-Level Domain-Driven Design
 
 ### 4.2.1. EventStorming
 
-[Content for event storming]
+Con el objetivo de comprender en profundidad el dominio del sistema, se llevó a cabo una sesión de EventStorming de aproximadamente 1 hora. En esta dinámica, el equipo organizó sus ideas utilizando sticky notes de diferentes colores para representar eventos, comandos, usuarios, reglas de negocio, sistemas externos, artefactos y problemas detectados.
+
+- Eventos de dominio (Domain Events): Hechos relevantes del flujo, como Imagen cargada, Verificación iniciada, Resultado generado o Reporte exportado.
+
+- Comandos (Commands): Acciones iniciadas por los usuarios o el sistema, como Subir imagen, Solicitar verificación, Generar reporte.
+
+- Actores/Usuarios/Roles: Incluyeron Visitante, Usuario registrado y Administrador, lo que permitió mapear responsabilidades.
+
+- Aggregates / Artefactos: Elementos del dominio como Imagen, Resultado de Verificación, Reporte, que agrupan consistencia y reglas de negocio.
+
+- Policies / Business Rules: Validaciones como La imagen debe ser en formato válido (JPEG/PNG), El reporte solo puede ser descargado por usuarios registrados o El administrador accede a estadísticas globales.
+
+- Sistemas externos / Infra Tech: El Modelo de Machine Learning que clasifica imágenes (IA generada vs. real) y los servicios de almacenamiento en la nube para guardar resultados.
+
+- Problemas / Issues (Parking Lot): Posibles limitaciones como tiempo de procesamiento del modelo, precisión insuficiente en ciertos casos, o posible sesgo en datasets.
+
+La sesión ayudó a visualizar el recorrido del sistema desde la carga inicial de una imagen hasta la clasificación automática con el modelo de Machine Learning y la entrega del resultado final. Además, permitió identificar reglas de negocio críticas, dependencias tecnológicas y riesgos a mitigar en futuras iteraciones.
+
+<img src="https://i.ibb.co/tw4gcrkV/legenda.png" alt="legenda" border="0">
 
 ### 4.2.2. Candidate Context Discovery
 
-[Content for candidate context discovery]
+A partir del EventStorming, se realizó una sesión de Candidate Context Discovery con el fin de identificar bounded contexts dentro del dominio. Para ello, se aplicaron las técnicas de start-with-value (enfocándonos en las partes de mayor impacto para el negocio) y look-for-pivotal-events (eventos que marcan transiciones clave).
+
+De este análisis surgieron los siguientes contextos candidatos:
+
+- Contexto de Gestión de Usuarios: Registro, inicio de sesión, asignación de roles y manejo de historial de verificaciones.
+
+- Contexto de Verificación de Imágenes: Procesamiento de la imagen, análisis con el modelo de Machine Learning y clasificación entre “real” o “IA generada”.
+
+-Contexto de Administración: Configuración del sistema, monitoreo de resultados globales y generación de reportes agregados.
+
+<img src="https://i.ibb.co/CszGnd4D/Evdd.png" alt="Evdd" border="0">
+
+Para mas detalles del diagrama: 
+
+[https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353](https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353)
+
 
 ### 4.2.3. Domain Message Flows Modeling
 
-[Content for domain message flows modeling]
+El Modelado de Flujos de Mensajes de Dominio (Domain Storytelling) se utiliza para describir cómo los bounded contexts colaboran mediante mensajes/acciones para cumplir escenarios de negocio clave. A continuación se presentan cuatro escenarios representativos (registro, autenticación, análisis de imagen individual y análisis por lotes con reporte) con sus actores, pasos, comandos/eventos y consideraciones operacionales. Cada escenario está pensado para ser traducido a un diagrama de Domain Storytelling en Miro (actores arriba, bounded contexts en el centro, persistencia/externos abajo, flechas etiquetadas con comandos/eventos).
+
+**Escenario: Registro de usuarios**
+
+**Actores:**  
+- Identificación de los usuarios dentro de nuestra solución teniendo dos actores que se pueden identificar como `Usuario general` o `Profesionales de medios`.
+
+**Explicación del proceso y definición de los eventos:**
+
+1. El usuario llega a la página de inicio de sesión de la aplicación y, a través de las opciones, se realiza la gestión de roles para cada tipo de usuario.  
+2. El usuario realiza el registro en el sistema identificándose como uno de los segmentos disponibles.  
+3. Registra sus datos (username, password) en los campos correspondientes para la creación de su cuenta.  
+4. Se realizan las validaciones correspondientes al registro de su contraseña.  
+5. Se obtiene el registro del usuario en la aplicación.  
+6. El usuario debe realizar la autenticación de sus datos la primera vez que ingresa a la aplicación.  
+
+
+**Visualización del flujo:**
+
+<img src="https://i.ibb.co/Csmx20c5/iamflow.jpg" alt="iamflow" border="0">
+
+**Escenario: Autenticación y acceso a módulos**
+
+**Actores:**  
+- Principal: Usuario general (rol básico con acceso limitado a análisis de imágenes individuales).  
+- Principal: Profesional de medios (rol avanzado con acceso a análisis por lotes, reportes y funcionalidades extendidas).  
+
+**Explicación del proceso y definición de los eventos:**
+
+1. El usuario solicita acceso en la plataforma PixelCheck (WebApp).  
+2. El sistema IAM valida las credenciales ingresadas.  
+3. Se determina el rol del usuario (`Usuario general` o `Profesional de medios`) y se conceden permisos según el perfil.  
+4. El sistema notifica al usuario sobre el resultado del proceso de autenticación (acceso concedido o denegado).  
+5. El usuario accede a las funcionalidades correspondientes a su rol dentro de la aplicación.  
+
+**Visualización del flujo:**
+
+<img src="https://i.ibb.co/cK9b7sDf/iamfloew2.jpg" alt="iamfloew2" border="0">
+
+**Escenario: Análisis rápido de imagen (Usuario general)**
+
+**Actores:**  
+- Principal: Usuario general (rol básico de la plataforma).  
+- Secundario: Plataforma PixelCheck (módulos de Ingesta, Análisis y Resultados).  
+
+**Explicación del proceso y definición de los eventos:**  
+
+1. El usuario general carga una imagen desde la WebApp de PixelCheck.  
+2. El sistema de Ingesta y Validación verifica el formato y tamaño de la imagen.  
+   - Si no cumple con las condiciones → se rechaza la imagen y se notifica al usuario.  
+   - Si cumple → se registra en el sistema.  
+3. El sistema envía la imagen validada al módulo de Análisis con ML.  
+4. El motor de Análisis ejecuta el modelo para detectar si la imagen fue generada por IA.  
+5. Al completarse el análisis, se genera un resultado con un nivel de confianza (ej. “Probablemente IA — 92%”).  
+6. El sistema guarda el resultado en el módulo de Resultados y lo notifica al usuario.  
+7. El usuario visualiza el resultado en la interfaz junto con la explicación básica.  
+
+**Visualización del flujo:**
+
+<img src="https://i.ibb.co/fYv5R2ZB/MSG1.png" alt="MSG1" border="0">
+
+<br>
+
+**Escenario: Análisis por lotes y generación de reporte (Profesional de medios)**
+
+**Actores:**  
+- Principal: Profesional de medios (rol avanzado de la plataforma).  
+- Secundario: Plataforma PixelCheck (módulos de Ingesta, Análisis, Reportes e IAM).  
+
+**Explicación del proceso y definición de los eventos:**  
+
+1. El profesional de medios sube un lote de imágenes (batch) desde la WebApp.  
+2. El sistema de Ingesta valida cada archivo y genera un identificador (`imageId`) para cada uno.  
+   - Si alguna imagen no cumple las condiciones → se marca como rechazada.  
+   - Si cumple → se encola para análisis.  
+3. El sistema envía todas las imágenes válidas al módulo de Análisis con ML en paralelo.  
+4. Cada análisis genera un resultado individual con confianza y estado.  
+5. Al completarse el procesamiento del lote, el sistema agrega todos los resultados.  
+6. Se genera un reporte (PDF/CSV) con estadísticas, tablas y links de evidencia.  
+7. El reporte se almacena en el módulo de Resultados & Reportes.  
+8. El sistema notifica al profesional que el reporte está listo para descarga.  
+9. El profesional accede a la sección de reportes y descarga el archivo generado.  
+
+**Visualización del flujo:**
+
+<img src="https://i.ibb.co/KpFyxZ7k/MSG2.png" alt="MSG2" border="0">
+
+
 
 ### 4.2.4. Bounded Context Canvases
 
-[Content for bounded context canvases]
+Cada contexto identificado fue descrito en detalle mediante un Bounded Context Canvas, siguiendo un proceso iterativo.
+
+Por ejemplo:
+
+Bounded Context: Detección de Imágenes
+
+- Context Overview: Procesamiento y análisis de imágenes para identificar si son generadas por IA o auténticas.
+
+- Business Rules:
+
+  - Toda imagen subida debe ser validada antes de generar un resultado.
+
+  - El sistema debe ofrecer un nivel de confianza (score) acompañado de la clasificación.
+
+  - Las imágenes rechazadas o sospechosas deben almacenarse para auditoría.
+
+- Ubiquitous Language: “Imagen Original”, “Imagen IA”, “Clasificación”, “Score de Confianza”, “Resultado de Verificación”.
+
+- Capabilities: Subir imagen, ejecutar análisis, generar reporte de clasificación, guardar histórico.
+
+- Dependencies: Interacción con Gestión de Usuarios (para validar roles y accesos) y con Administración (para métricas, auditorías y políticas de uso).
+
+Esto permitió asegurar consistencia semántica y definir capacidades claras por contexto.
+
+<!-- IAM Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">IAM Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Gestión de usuarios, autenticación y autorización de accesos en PixelCheck.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Todo usuario debe registrarse con credenciales válidas.</li>
+          <li>Los roles definen permisos y accesos a funcionalidades.</li>
+          <li>Los intentos fallidos de autenticación deben ser registrados.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Usuario”, “Rol”, “Permiso”, “Autenticación”, “Token”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Registrar usuario, autenticar, validar rol, asignar permisos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Ingesta & Validación (para validar permisos al subir imágenes) y con Resultados (para acceso restringido a reportes).</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Ingestion & Validation Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Ingestion & Validation Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Recepción, validación y preprocesamiento de imágenes cargadas al sistema.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Las imágenes deben cumplir con formatos soportados (JPG, PNG, etc.).</li>
+          <li>Las imágenes mayores a 1920x1080 deben redimensionarse automáticamente.</li>
+          <li>Imágenes inválidas o corruptas deben ser rechazadas.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Imagen subida”, “Imagen válida”, “Imagen rechazada”, “Preprocesamiento”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Subir imagen, validar formato, redimensionar, almacenar metadatos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Conexión con Image Analysis (ML) para enviar imágenes validadas y con IAM para verificar permisos de usuario.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Image Analysis (ML) Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Image Analysis (ML) Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Procesamiento y análisis de imágenes para identificar si son generadas por IA o auténticas.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Toda imagen validada debe pasar por el modelo de ML.</li>
+          <li>El sistema debe calcular un score de confianza.</li>
+          <li>El modelo debe registrar su versión usada en cada análisis.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Imagen IA”, “Imagen Original”, “Análisis”, “Score de Confianza”, “Modelo ML”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Ejecutar análisis, calcular score, generar resultado, registrar versión del modelo.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Ingesta & Validación (para recibir imágenes) y con Resultados (para enviar clasificación).</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Results & Reporting Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Results & Reporting Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Gestión de resultados individuales y reportes generados para usuarios y profesionales.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Cada resultado debe asociarse al usuario que subió la imagen.</li>
+          <li>Los reportes deben estar disponibles solo para usuarios autorizados.</li>
+          <li>Debe existir historial consultable de análisis previos.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Resultado”, “Reporte”, “Historial”, “Exportación”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Almacenar resultados, generar reportes (PDF/CSV), notificar a usuarios, consultar historial.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Image Analysis (ML) para recibir resultados y con IAM para controlar acceso a reportes.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- System Management Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">System Management Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Administración general del sistema, métricas, auditoría y políticas de uso.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Se deben registrar logs de auditoría de todas las operaciones.</li>
+          <li>El sistema debe monitorear el uso para métricas y KPIs.</li>
+          <li>Las políticas de retención de datos deben cumplirse.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Auditoría”, “Métrica”, “Política de Retención”, “Monitoreo”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Generar métricas, registrar logs, gestionar políticas de datos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con IAM (para usuarios administradores) y con todos los demás BCs para recolectar métricas y logs.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 4.2.5. Context Mapping
 
-[Content for context mapping]
+Para representar la relación estructural entre los bounded contexts de **PixelCheck**, el equipo realizó un proceso iterativo de exploración.  
+Se analizaron distintas alternativas para identificar cómo debían colaborar y qué patrones de relación aplicar.  
+
+Durante este análisis, se plantearon preguntas clave como:  
+
+- ¿Qué pasaría si movemos las capacidades de validación de usuarios desde *IAM* hacia *Ingestion & Validation*?  
+- ¿Qué ocurriría si se parte el *Image Analysis (ML)* en dos bounded contexts separados: uno para análisis rápido y otro para análisis por lotes?  
+- ¿Podría duplicarse la capacidad de reporte tanto en *Results & Reporting* como en *System Management* para reducir dependencias?  
+- ¿Qué ventajas tendría crear un *shared service* para las métricas utilizadas tanto en *Results & Reporting* como en *System Management*?  
+
+Tras evaluar estas alternativas, se decidió mantener la separación de bounded contexts con el siguiente mapa de relaciones:  
+
+- **IAM ↔ Ingestion & Validation**: Relación **Customer/Supplier**, donde Ingestion depende de IAM para validar que el usuario tenga permisos de carga.  
+- **Ingestion & Validation ↔ Image Analysis (ML)**: Relación **Customer/Supplier**, donde el análisis depende de recibir imágenes limpias y preprocesadas.  
+- **Image Analysis (ML) ↔ Results & Reporting**: Relación **Conformist**, donde Reporting consume directamente los resultados generados sin modificarlos.  
+- **IAM ↔ Results & Reporting**: Relación **Shared Kernel**, compartiendo un núcleo común de definiciones de roles y permisos para restringir acceso a reportes.  
+- **System Management ↔ Todos los demás BCs**: Relación **Anti-Corruption Layer**, donde Management actúa como capa protectora recolectando logs y métricas sin acoplarse directamente a la lógica interna de cada BC.  
+
+<img src="https://i.ibb.co/HTV5BDGZ/context.png" alt="context" border="0">
+
+El resultado es un mapa de contextos que equilibra autonomía y colaboración, asegurando escalabilidad futura y reduciendo riesgos de acoplamiento excesivo.
 
 ## 4.3. Software Architecture
 
 ### 4.3.1. Software Architecture System Landscape Diagram
 
-[Content for system landscape diagram]
+Este diagrama muestra que el sistema PixelCheck opera en un ecosistema compuesto por dos tipos de usuarios: Usuarios Generales y Profesionales de Medios. Los Usuarios Generales interactúan con la plataforma subiendo imágenes para verificar su autenticidad, recibiendo resultados básicos que indican si la imagen fue generada por inteligencia artificial o no. Por otro lado, los Profesionales de Medios utilizan el sistema para acceder a funcionalidades avanzadas, como análisis detallados, reportes personalizados y visualización de metadatos, lo que les permite contar con información más completa y confiable para su trabajo. Ambos perfiles acceden a PixelCheck a través de la plataforma web, que centraliza la lógica de verificación y adapta las funcionalidades de acuerdo con el tipo de usuario.
+
+<img src="https://i.ibb.co/jZZTnkPs/Ladnscape-Pixel.png" alt="Ladnscape-Pixel" border="0">
 
 ### 4.3.2. Software Architecture Context Level Diagrams
 
-[Content for context level diagrams]
+Este diagrama muestra que el sistema PixelCheck (representado como una única entidad) interactúa con dos tipos de usuarios principales:
+
+- Usuario General, que sube imágenes a la plataforma web y recibe resultados básicos sobre su autenticidad (si fue generada por inteligencia artificial o si es una imagen real).
+
+- Profesional de Medios, que requiere un análisis más avanzado y la generación de reportes detallados que le permitan validar la confiabilidad de material gráfico antes de su difusión o uso en investigaciones.
+
+De esta forma, el diagrama de contexto refleja cómo los distintos tipos de usuarios se relacionan con PixelCheck, manteniendo una visión general sin entrar aún en los detalles de los contenedores internos.
+
+<img src="https://i.ibb.co/kgw6hLXG/contexto.png" alt="context-c4" border="0">
+
 
 ### 4.3.3. Software Architecture Container Level Diagrams
 
-[Content for container level diagrams]
+Este diagrama muestra que el sistema PixelCheck está compuesto por varios contenedores principales que trabajan en conjunto para ofrecer la verificación de imágenes:
+
+- Landing Page, desarrollada en HTML, CSS y JavaScript, sirve como la puerta de entrada al sistema. Presenta el producto, informa a los usuarios sobre las funcionalidades de PixelCheck y redirige hacia la aplicación principal.
+
+- Aplicación Web, construida con un framework moderno de frontend (React/Vue/Angular), que provee una interfaz responsiva para que los usuarios suban imágenes, consulten resultados básicos o generen reportes avanzados.
+
+- Backend API, implementada en Python con Django, que concentra la lógica de negocio del sistema. Dentro de esta API se encuentran los bounded contexts encargados de:
+
+  - Procesar imágenes y ejecutar el modelo de Machine Learning.
+
+  - Gestionar usuarios, sesiones y permisos.
+
+  - Generar y almacenar reportes de verificación.
+
+- Base de Datos MySQL, que almacena usuarios, metadatos, resultados de los análisis y el historial de verificaciones realizadas.
+
+Los usuarios acceden primero a la Landing Page, desde la cual se redirigen a la Web App. Esta se comunica con la Backend API a través de llamadas REST/JSON, y la API, a su vez, interactúa con la Base de Datos para leer o almacenar información según sea necesario.
+
+<img src="https://i.ibb.co/zVCpdG1q/contianer-pixel.png" alt="contaner-c4" border="0">
 
 ### 4.3.4. Software Architecture Deployment Diagrams
 
-[Content for deployment diagrams]
+Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes entornos y servicios de infraestructura en la nube:
+
+- En Microsoft Azure, se utiliza un App Service para desplegar el Backend API desarrollado en Python Django, el cual contiene la lógica de negocio y el modelo de Machine Learning encargado de verificar imágenes. Además, en el mismo entorno se encuentra el servicio Azure Database for MySQL, que aloja la base de datos donde se almacenan usuarios, resultados de análisis e historial de reportes.
+
+- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera (HTML, CSS, JS), se encuentra desplegada en GitHub Pages, funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
+
+- Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Firebase Hosting y la Landing Page en GitHub Pages.
+
+- Finalmente, los usuarios generales acceden a la plataforma para subir imágenes y recibir resultados básicos de detección, mientras que los profesionales de medios pueden acceder a análisis avanzados y reportes detallados, todo a través de la WebApp.
+
+De esta manera, el despliegue asegura integración continua, disponibilidad en la nube y separación clara entre backend, frontend y landing page, garantizando una arquitectura escalable y mantenible.
+
+<img src="https://i.ibb.co/0R54zB1R/diagram-deploy.png" alt="diagram-deploy" border="0">
 
 <div style="page-break-after: always;"></div>
 
@@ -1366,10 +2507,36 @@ El Product Backlog es una lista priorizada de tareas, funcionalidades y requisit
 
 ## Bibliografía
 
-[Bibliography content]
+Cozzolino, D., & Poggi, G. (2024, September 24). Zero-shot detection of AI-generated images. *arXiv preprint arXiv:2409.15875*. https://arxiv.org/abs/2409.15875
 
----
+Epstein, D. C., Dhamija, A. R., Jain, L., & Boult, T. E. (2023, October 23). Online detection of AI-generated images. *arXiv preprint arXiv:2310.15150*. https://arxiv.org/abs/2310.15150
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional. https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215
+
+Evans, E. (2015). *Domain-driven design reference: Definitions and pattern summaries*. Domain Language. https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+
+Fowler, M. (2021, December 12). Domain driven design. *Martin Fowler's Bliki*. https://martinfowler.com/bliki/DomainDrivenDesign.html
+
+IEEE Xplore. (2024). Performance comparison and visualization of AI-generated-image detection methods. *IEEE Journals & Magazine*. https://ieeexplore.ieee.org/document/10508937/
+
+Khononov, V. (2021). *Learning domain-driven design: Aligning software architecture and business strategy*. O'Reilly Media. https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/
+
+Liu, Y., Zhang, Q., & Wang, S. (2023). Detection of AI-created images using pixel-wise feature extraction and convolutional neural networks. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10674908/
+
+National Center for Biotechnology Information. (2022). AI-enabled image fraud in scientific publications. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC9278510/
+
+Sightengine. (2024). *AI image detector: Detect AI-generated media at scale* [Software]. https://sightengine.com/detect-ai-generated-images
+
+Texas Tech University Libraries. (2024). AI images and multimedia - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/images
+
+Texas Tech University Libraries. (2024). AI detection - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/detection
+
+Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contrast: A simple yet effective approach for AI-generated image detection. *arXiv preprint arXiv:2311.12397*. https://arxiv.org/html/2311.12397v2
+
 
 ## Anexos
+
+ - *Enlace a la presentación del TB1:* <br>
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ
 
 [Annexes content]

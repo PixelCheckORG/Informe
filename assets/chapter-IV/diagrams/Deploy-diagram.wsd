@@ -1,0 +1,62 @@
+@startuml
+!include <tupadr3/common>
+
+title Deployment Diagram - PixelCheck
+
+node "Azure Cloud" {
+  node "App Service - Backend" {
+    component BackendApp [
+      Backend API
+      (Python Django)
+    ]
+  }
+
+  database MySQL [
+    Azure Database
+    for MySQL
+  ]
+}
+
+node "Frontends" {
+  node "Firebase Hosting" {
+    component WebApp [
+      PixelCheck WebApp
+      (Frontend React)
+    ]
+  }
+
+  node "GitHub Pages" {
+    component LandingPage [
+      Landing Page
+      (Estática)
+    ]
+  }
+}
+
+node "CI/CD" {
+  component GitHubRepo [
+    GitHub Repository
+    (Código fuente)
+  ]
+  component GitHubActions [
+    GitHub Actions
+    Pipeline CI/CD
+  ]
+}
+
+actor UsuarioGeneral
+actor UsuarioProfesional
+
+UsuarioGeneral --> WebApp : "Sube imágenes\nRecibe resultados básicos"
+UsuarioProfesional --> WebApp : "Accede a reportes\nAvanzados"
+
+WebApp --> BackendApp : HTTPS
+LandingPage --> BackendApp : HTTPS
+BackendApp --> MySQL : "Consultas SQL\nconexión segura"
+
+GitHubRepo --> GitHubActions : "Código fuente"
+GitHubActions --> BackendApp : "Deploy Backend"
+GitHubActions --> WebApp : "Deploy Frontend"
+GitHubActions --> LandingPage : "Deploy Landing"
+
+@enduml
