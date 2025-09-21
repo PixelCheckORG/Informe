@@ -1094,23 +1094,79 @@ Tras el taller de atributos de calidad se priorizó favorecer la experiencia int
 
 ### 4.2.1. EventStorming
 
-[Content for event storming]
+Con el objetivo de comprender en profundidad el dominio del sistema, se llevó a cabo una sesión de EventStorming de aproximadamente 1 hora. En esta dinámica, el equipo organizó sus ideas utilizando sticky notes de diferentes colores para representar eventos, comandos, usuarios y agregados.
+
+- Eventos (naranja): Representaron los hechos más relevantes del flujo, como registro, inicio de sesión, creación de reservas o validación de horarios.
+
+- Comandos (azul): Acciones disparadas por los usuarios, como “reservar cubículo” o “aprobar solicitud”.
+
+- Actores/usuarios (amarillo): Incluyeron visitante, estudiante, administrador y superadmin, lo que permitió mapear responsabilidades.
+
+- Agregados (verde): Elementos del dominio como “Cubículo”, “Reserva” o “Usuario”, que agrupan consistencia y reglas del negocio.
+
+La sesión ayudó a visualizar el recorrido del sistema desde la perspectiva del visitante en la landing page hasta la gestión avanzada del panel administrativo. Esto proporcionó una primera visión integral y permitió detectar interacciones críticas y posibles puntos de mejora.
+
+<img src="https://i.ibb.co/tw4gcrkV/legenda.png" alt="legenda" border="0">
 
 ### 4.2.2. Candidate Context Discovery
 
-[Content for candidate context discovery]
+A partir del EventStorming, se realizó una sesión de Candidate Context Discovery con el fin de identificar bounded contexts dentro del dominio. Para ello, se aplicaron las técnicas de start-with-value (enfocándonos en las partes de mayor impacto para el negocio) y look-for-pivotal-events (eventos que marcan transiciones clave).
+
+De este análisis surgieron los siguientes contextos candidatos:
+
+- Contexto de Gestión de Usuarios: Registro, inicio de sesión, roles y permisos.
+
+- Contexto de Reservas: Administración de cubículos, horarios y disponibilidad en tiempo real.
+
+- Contexto de Administración: Configuración del sistema, reportes y gestión de políticas.
+
+Estos contextos permitieron segmentar responsabilidades y reducir complejidad, preparando el terreno para los siguientes pasos del modelado.
 
 ### 4.2.3. Domain Message Flows Modeling
 
-[Content for domain message flows modeling]
+Posteriormente, se modelaron los flujos de mensajes del dominio utilizando la técnica de Domain Storytelling. Esto permitió visualizar cómo los contextos descubiertos debían colaborar entre sí para resolver los casos de uso principales.
+
+Ejemplo de flujo principal:
+
+1. El estudiante envía un comando de “Reservar Cubículo” (Contexto de Reservas).
+
+2. El sistema valida disponibilidad y responde con “Reserva Confirmada” o “Reserva Rechazada”.
+
+3. El administrador recibe notificaciones en el Contexto de Administración para monitorear el uso de los espacios.
+
+Este modelado evidenció dependencias entre contextos y ayudó a anticipar necesidades de integración.
 
 ### 4.2.4. Bounded Context Canvases
 
-[Content for bounded context canvases]
+Cada contexto identificado fue descrito en detalle mediante un Bounded Context Canvas, siguiendo un proceso iterativo.
+
+Por ejemplo:
+
+Bounded Context: Reservas
+
+- Context Overview: Gestión de cubículos y reservas en tiempo real.
+
+- Business Rules: Solo un usuario puede reservar un cubículo en un intervalo de tiempo; el sistema debe validar conflictos antes de confirmar.
+
+- Ubiquitous Language: “Cubículo”, “Reserva”, “Disponibilidad”, “Horario”.
+
+- Capabilities: Crear, cancelar y visualizar reservas.
+
+- Dependencies: Interacción con Gestión de Usuarios (para validar roles) y con Administración (para reportes y métricas).
+
+Esto permitió asegurar consistencia semántica y definir capacidades claras por contexto.
 
 ### 4.2.5. Context Mapping
 
-[Content for context mapping]
+Finalmente, se elaboró el Context Mapping para mostrar la relación estructural entre los bounded contexts descubiertos. Se exploraron diferentes alternativas y se seleccionaron patrones de relación adecuados:
+
+- Gestión de Usuarios ↔ Reservas: Relación Customer/Supplier, donde Reservas depende de la información validada por Gestión de Usuarios.
+
+- Reservas ↔ Administración: Relación Conformist, donde Administración consume la información generada en Reservas sin modificarla.
+
+- Gestión de Usuarios ↔ Administración: Relación Shared Kernel, compartiendo un núcleo común de definiciones de roles y permisos.
+
+El resultado fue un mapa de contextos que equilibra autonomía y colaboración, reduciendo riesgos de acoplamiento y asegurando escalabilidad futura.
 
 ## 4.3. Software Architecture
 
