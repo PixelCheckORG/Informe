@@ -402,41 +402,43 @@ Piero Delgado, estudiante de Administración y Marketing de 22 años que reside 
 
 Entrevista N°2:
 
-**Entrevistado:** x<br>
+**Entrevistado:** Joaquin Cortez<br>
 **Sexo:** Masculino <br>
-**Edad:** 2 años<br>
+**Edad:** 21 años<br>
 **Domicilio:** Lima<br>
 **Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 8:30<br>
 
 <img src="./assets/chapter-ii/entrevista-5.png" alt="Entrevista con 5" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`x`](x)
+**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EfB1wapVTCNNvbFtnP6cU58BSKL2ze7MMJKHsxySug4M_A?e=m70lAE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EfB1wapVTCNNvbFtnP6cU58BSKL2ze7MMJKHsxySug4M_A?e=m70lAE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
-**Resumen de la Entrevista:** <br>
+**Resumen de la Entrevista:** El entrevistado es un consumidor digital activo que pasa 2-3 horas diarias consumiendo contenido visual en redes sociales y sitios web, principalmente desde su móvil (70% del tiempo). Ha experimentado directamente la dificultad de distinguir entre imágenes reales y generadas por IA, especialmente con deepfakes de celebridades, y actualmente recurre a métodos básicos como búsqueda inversa en Google para verificar autenticidad. Considera extremadamente importante (9/10) poder identificar contenido artificial debido a preocupaciones sobre desinformación, y estaría dispuesto a pagar hasta $10-25 USD mensuales por una herramienta confiable que analice imágenes en 30 segundos o menos. <br>
+
 
 
 ---
 
 Entrevista N°3:
 
-**Entrevistado:** x<br>
+**Entrevistado:** Jose Pierola<br>
 **Sexo:** Masculino <br>
-**Edad:** 2 años<br>
+**Edad:** 21 años<br>
 **Domicilio:** Lima<br>
 **Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 5:06<br>
 
 <img src="./assets/chapter-ii/entrevista-6.png" alt="Entrevista con 6" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`x`](x)
+**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuWQuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuWQuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr)
 
-**Resumen de la Entrevista:** <br>
+
+**Resumen de la Entrevista:** El entrevistado es un usuario ocasional de redes sociales que consume contenido visual principalmente los fines de semana desde su computadora, con un enfoque más hacia noticias que entretenimiento. Aunque no ha tenido experiencias directas sospechando de imágenes falsas, reconoce moderadamente la importancia del tema (6/10) y prefiere soluciones gratuitas o de muy bajo costo. Valora la simplicidad por encima de la funcionalidad avanzada, prefiere respuestas rápidas tipo sí/no sin complicaciones técnicas, y estaría dispuesto a esperar hasta 2 minutos por resultados confiables. Su perfil representa a usuarios menos técnicos que buscan herramientas básicas, intuitivas y accesibles económicamente, priorizando la facilidad de uso sobre características avanzadas. <br>
 
 
 ---
 
-**Entrevista para el Segmento Objetivo 1 - Profesionales de Medios y Comunicación:**
+**Entrevista para el Segmento Objetivo 2 - Profesionales de Medios y Comunicación:**
 
 ---
 
