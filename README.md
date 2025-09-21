@@ -1516,10 +1516,36 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 ## Bibliografía
 
-[Bibliography content]
+Cozzolino, D., & Poggi, G. (2024, September 24). Zero-shot detection of AI-generated images. *arXiv preprint arXiv:2409.15875*. https://arxiv.org/abs/2409.15875
 
----
+Epstein, D. C., Dhamija, A. R., Jain, L., & Boult, T. E. (2023, October 23). Online detection of AI-generated images. *arXiv preprint arXiv:2310.15150*. https://arxiv.org/abs/2310.15150
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional. https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215
+
+Evans, E. (2015). *Domain-driven design reference: Definitions and pattern summaries*. Domain Language. https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+
+Fowler, M. (2021, December 12). Domain driven design. *Martin Fowler's Bliki*. https://martinfowler.com/bliki/DomainDrivenDesign.html
+
+IEEE Xplore. (2024). Performance comparison and visualization of AI-generated-image detection methods. *IEEE Journals & Magazine*. https://ieeexplore.ieee.org/document/10508937/
+
+Khononov, V. (2021). *Learning domain-driven design: Aligning software architecture and business strategy*. O'Reilly Media. https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/
+
+Liu, Y., Zhang, Q., & Wang, S. (2023). Detection of AI-created images using pixel-wise feature extraction and convolutional neural networks. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10674908/
+
+National Center for Biotechnology Information. (2022). AI-enabled image fraud in scientific publications. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC9278510/
+
+Sightengine. (2024). *AI image detector: Detect AI-generated media at scale* [Software]. https://sightengine.com/detect-ai-generated-images
+
+Texas Tech University Libraries. (2024). AI images and multimedia - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/images
+
+Texas Tech University Libraries. (2024). AI detection - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/detection
+
+Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contrast: A simple yet effective approach for AI-generated image detection. *arXiv preprint arXiv:2311.12397*. https://arxiv.org/html/2311.12397v2
+
 
 ## Anexos
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ
+*Enlace a la presentación del TB1*
 
 [Annexes content]
