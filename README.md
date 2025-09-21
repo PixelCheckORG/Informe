@@ -1732,7 +1732,7 @@ Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contr
 
 ## Anexos
 
+ - *Enlace a la presentación del TB1:* <br>
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ
-*Enlace a la presentación del TB1*
 
 [Annexes content]
