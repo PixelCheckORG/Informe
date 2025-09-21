@@ -1,20 +1,20 @@
-# <center>COURSE PROJECT</center>
+
+# <center>Informe de Trabajo Final</center>
 
 <p align="center">
-    <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"><br>
-    <strong>Ingeniería de Software</strong><br>
-    <strong>Arquitecturas De Software Emergentes - 7295</strong><br>
-    <strong>Profesor: Royer Edelwer Rojas Malasquez </strong><br>
-    <br><strong>INFORME</strong>
+  <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"><br>
+  <strong>Carrera: Ingeniería de Software - 8vo ciclo</strong><br>
+  <strong>Curso: Arquitecturas De Software Emergentes</strong><br>
+  <strong>Sección: 7295</strong><br>
+  <strong>Profesor: Royer Edelwer Rojas Malasquez</strong><br>
+  <br><strong>Informe de Trabajo Final</strong>
+  <br><strong>Startup: Pixel Dev</strong>
+  <br><strong>Producto: PixelCheck</strong>
+  <br><strong>Mes y año: Septiembre 2025</strong>
 </p>
-<h4 style="text-align: center;"><strong>Startup: Pixel Dev</strong></h4>
-
-<h4 style="text-align: center;"><strong>Product: PixelCheck</strong></h4>
-
 
 <div style="text-align: center;">
-
 
 <h5 style="text-align: center;"> Team Members</h5>
 
@@ -39,8 +39,8 @@
       <td>U202219186</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>Palma Obispo, Adrián Enrique Jesús</td>
+      <td>U202210066</td>
     </tr>
   </tbody>
 </table>
@@ -51,15 +51,20 @@
 
 # Registro de Versiones del Informe
 
-<div align="center">
 
+## Registro de Versiones del Informe
 
 |**Versión**|**Fecha**|**Autor**|                                   **Descripción de modificación**                                   |
 | :-: | :-: | :-: |:---------------------------------------------------------------------------------------------------:|
-|1\.0|9/10/2025|Paolo Gonzalo Parraga Gamarra|                                 Redacción del perfil de la Startup.                                 |
-
-
-</div>
+|1.0|29/08/2025|Adrian [Capítulo I]|Redacción del perfil de la startup, análisis de problema y justificación.|
+|1.1|05/09/2025|Michael [Capítulo II]|Desarrollo de Lean UX Canvas, definición de hipótesis y user outcomes.|
+|1.2|10/09/2025|Paolo [Capítulo III]|Elaboración de user personas, user journey mapping y event storming.|
+|1.3|15/09/2025|Jose [Capítulo IV]|Creación de product backlog, domain message flows y context mapping.|
+|1.4|16/09/2025|Adrian|Actualización de la justificación y objetivos del Capítulo I.|
+|1.5|18/09/2025|Michael|Agregado de entrevistas y resumen de entrevistas en Capítulo II.|
+|1.6|19/09/2025|Paolo|Actualización de user stories y technical stories en Capítulo III.|
+|1.7|20/09/2025|Jose|Elaboración de bounded context canvas y diagramas de despliegue en Capítulo IV.|
+|1.8|20/09/2025|Todos|Revisión general, ajustes de formato y bibliografía.|
 
 # Project Report Collaboration Insights
 
@@ -189,10 +194,10 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de
 conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro
 del ABET – EAC - Student Outcome 3.
 
-| **Criterio Específico** | **Acciones Realizadas** | **Conclusiones** |
-|-------------------------|-------------------------|------------------|
-| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. |  <br>**TB1:**<br>  <br>**TP1:**<br>  <br>**TB2:**<br>  <br>**TF1:**<br>| |
-| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. |  <br>**TB1:**<br>  <br>**TP1:**<br>  <br>**TB2:**<br>  <br>**TF1:**<br>|  |
+| **Criterio Específico**                                                                                                                                                                   | **Acciones Realizadas**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | **Conclusiones**                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.**    | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, realicé las **entrevistas a usuarios**, incluyendo el diseño, la recopilación de información y el análisis de resultados. Además, expuse la **documentación técnica de los diagramas C4**, mostrando la arquitectura del sistema a nivel de landscape, contexto, contenedores y despliegue.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé completamente la **especificación de requerimientos**, que incluyó el **mapeo de escenarios futuros (To-Be)**, la definición de **User Stories**, la elaboración del **Impact Mapping** y la priorización en el **Product Backlog**. También participé en la explicación de puntos clave de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, elaboré el **análisis de competidores** y sus estrategias, conduje el proceso de **Needfinding** mediante la construcción de **User Personas, User Task Matrix, Empathy Mapping y As-Is Scenario Mapping**, y definí el **lenguaje ubicuo** del proyecto. Asimismo, presenté el **planeamiento del producto**, guiando la visión de la solución.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, presenté el **Startup Profile**, los **perfiles de los integrantes del equipo**, el **Solution Profile**, la identificación de **antecedentes y problemática**, y apliqué el **Lean UX Process**, desarrollando los **problem statements, assumptions, hypothesis statements y el Lean UX Canvas**. También expuse los **segmentos objetivo** y el **prototipo MVP Web**. | En **TB1** demostré mi capacidad de **comunicación oral efectiva**, presentando resultados, metodologías y propuestas con **claridad y objetividad**. Pude **adaptar el lenguaje según la audiencia**, desde explicaciones técnicas hasta enfoques más generales. Con ello, evidencié mi **competencia en el logro del curso** y en el **Student Outcome 3 de ABET**, vinculado con la comunicación oral.                             |
+| **Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, documenté de manera detallada las **entrevistas realizadas**, presentando la metodología y los hallazgos más relevantes. También elaboré la **documentación técnica de los diagramas C4**, describiendo con precisión la arquitectura del sistema y sus diferentes vistas.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, redacté íntegramente la **especificación de requerimientos**, que incluyó el mapeo de escenarios futuros, la definición de historias de usuario, la construcción del impact mapping y la organización del product backlog. Adicionalmente, aporté en la documentación técnica de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, redacté el **análisis de requerimientos**, incluyendo el estudio de competidores, el análisis de entrevistas, la definición de user personas, task matrix, empathy mapping, escenarios actuales y el lenguaje ubicuo. También me encargué de la **documentación del planeamiento del producto**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, elaboré el informe que incluyó el **Startup Profile**, el **Solution Profile**, los **antecedentes y la problemática**, así como la documentación completa del **Lean UX Process** con problem statements, assumptions, hypothesis statements y Lean UX Canvas. También desarrollé el **canvas de modelo de negocio** y la descripción del **MVP Web**.                                                                                                          | En **TB1** demostré mi capacidad de **comunicación escrita clara y estructurada**, logrando plasmar de manera **objetiva y comprensible** el proceso seguido y los resultados alcanzados. El documento permitió que personas con distintos niveles de especialización comprendieran el análisis y la propuesta. Con ello, evidencié mi **aporte al logro del curso** y al **Student Outcome 3 de ABET**, en su **dimensión escrita**. |
 
 <div style="page-break-after: always;"></div>
 
@@ -208,12 +213,12 @@ PixelCheck es una startup enfocada en el desarrollo de soluciones para la verifi
 
 El equipo de PixelCheck está conformado por profesionales multidisciplinarios:
 
-* **Adrián Palma (Project Manager & UX Designer):** Responsable de la planificación, coordinación y diseño de experiencia de usuario. Lidera la integración del enfoque Lean UX.
-* **Desarrollador Backend:** Especialista en Machine Learning y procesamiento de imágenes, encargado del desarrollo del algoritmo de clasificación y análisis de patrones.
-* **Desarrollador Frontend:** Encargado de la interfaz web, asegurando una experiencia ligera y responsiva en diferentes dispositivos.
-* **Científico de Datos:** Responsable de entrenar y optimizar los modelos de Neural Network para la detección de imágenes generadas por IA.
-* **Tester/QA:** Asegura la calidad del software, revisando la precisión de los análisis y la experiencia del usuario.
-
+| Nombre                   | Descripción | Foto |
+|--------------------------|-------------|------|
+| Gutierrez Garcia, José Eduardo | Tengo 21 años, actualmente me encuentro cruzando mi 8vo ciclo de la carrera de ingeniería de software en la UPC. Me gusta jugar videojuegos y practicar natación, soy un gran aficionado de la tecnología y del ensamblaje de computadoras. Me considero una persona dispuesta siempre a aprender tecnologías nuevas, creativa y responsable.<br> |<img src="./assets/chapter-I/jose.png" width="200" height="270"> |
+| Paolo Gonzalo Párraga Gamarra | Soy Paolo Párraga, estudiante de ingeniería de software en séptimo ciclo. Soy una persona que disfruta trabajar duro para lograr mis objetivos y nunca me rindo a pesar de los momentos difíciles. Me gusta el trabajo en equipo porque siento que puedo aportar a mis compañeros cuando lo necesiten.|<img src="./assets/chapter-I/paolo.png" width="200" height="270"> |
+| Palma Obispo, Adrián Enrique Jesús | Tengo 20 años y actualmente curso el 7mo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Me apasiona la programación y el desarrollo web, tengo experiencia en proyectos freelance y disfruto trabajar en equipo. Me considero una persona creativa, responsable y siempre dispuesta a aprender nuevas tecnologías, especialmente en el área de diseño de experiencia de usuario y gestión de proyectos. | <img src="./assets/chapter-I/adrian.jpg" width="200" height="270"> |
+| Michael Stefano Carmelino Dueñas | Soy Michael Carmelino, estudiante de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), actualmente cursando el séptimo ciclo. Soy una persona que le gusta el trabajo en equipo donde haya una comunicación y formas de integrarse entre todos para llegar a un fin común.<br><br>Me gusta desarrollar proyectos que tengan que ver con la seguridad en ciertos aspectos pero también me gusta hacer proyectos que me den a mí facilidades en lo personal o por diversión.<br> | <img src="./assets/chapter-I/michael.png" width="200" height="270"> |
 ## 1.2. Solution Profile
 
 La solución propuesta consiste en una plataforma digital orientada a la reserva y gestión de cubículos de estudio dentro de entornos académicos. El sistema busca resolver los problemas actuales de disponibilidad, falta de organización y poca visibilidad en el uso de espacios, brindando a los estudiantes una herramienta intuitiva para realizar reservas rápidas y seguras, y a los administradores un panel centralizado para supervisar la ocupación y optimizar la gestión de recursos. De esta forma, se garantiza una experiencia más ordenada, transparente y eficiente tanto para usuarios generales como para la administración de la institución.
@@ -521,7 +526,7 @@ Entrevista N°3:
 
 <img src="./assets/chapter-ii/entrevista-3.png" alt="Entrevista con Maria Jose" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcn
 
 **Resumen de la Entrevista:** <br>
 
