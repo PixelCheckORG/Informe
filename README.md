@@ -1250,6 +1250,196 @@ Bounded Context: Detección de Imágenes
 
 Esto permitió asegurar consistencia semántica y definir capacidades claras por contexto.
 
+<!-- IAM Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">IAM Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Gestión de usuarios, autenticación y autorización de accesos en PixelCheck.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Todo usuario debe registrarse con credenciales válidas.</li>
+          <li>Los roles definen permisos y accesos a funcionalidades.</li>
+          <li>Los intentos fallidos de autenticación deben ser registrados.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Usuario”, “Rol”, “Permiso”, “Autenticación”, “Token”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Registrar usuario, autenticar, validar rol, asignar permisos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Ingesta & Validación (para validar permisos al subir imágenes) y con Resultados (para acceso restringido a reportes).</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Ingestion & Validation Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Ingestion & Validation Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Recepción, validación y preprocesamiento de imágenes cargadas al sistema.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Las imágenes deben cumplir con formatos soportados (JPG, PNG, etc.).</li>
+          <li>Las imágenes mayores a 1920x1080 deben redimensionarse automáticamente.</li>
+          <li>Imágenes inválidas o corruptas deben ser rechazadas.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Imagen subida”, “Imagen válida”, “Imagen rechazada”, “Preprocesamiento”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Subir imagen, validar formato, redimensionar, almacenar metadatos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Conexión con Image Analysis (ML) para enviar imágenes validadas y con IAM para verificar permisos de usuario.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Image Analysis (ML) Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Image Analysis (ML) Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Procesamiento y análisis de imágenes para identificar si son generadas por IA o auténticas.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Toda imagen validada debe pasar por el modelo de ML.</li>
+          <li>El sistema debe calcular un score de confianza.</li>
+          <li>El modelo debe registrar su versión usada en cada análisis.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Imagen IA”, “Imagen Original”, “Análisis”, “Score de Confianza”, “Modelo ML”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Ejecutar análisis, calcular score, generar resultado, registrar versión del modelo.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Ingesta & Validación (para recibir imágenes) y con Resultados (para enviar clasificación).</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- Results & Reporting Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">Results & Reporting Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Gestión de resultados individuales y reportes generados para usuarios y profesionales.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Cada resultado debe asociarse al usuario que subió la imagen.</li>
+          <li>Los reportes deben estar disponibles solo para usuarios autorizados.</li>
+          <li>Debe existir historial consultable de análisis previos.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Resultado”, “Reporte”, “Historial”, “Exportación”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Almacenar resultados, generar reportes (PDF/CSV), notificar a usuarios, consultar historial.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con Image Analysis (ML) para recibir resultados y con IAM para controlar acceso a reportes.</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<!-- System Management Bounded Context -->
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+  <thead>
+    <tr>
+      <th colspan="2">System Management Bounded Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Context Overview</b></td>
+      <td>Administración general del sistema, métricas, auditoría y políticas de uso.</td>
+    </tr>
+    <tr>
+      <td><b>Business Rules</b></td>
+      <td>
+        <ul>
+          <li>Se deben registrar logs de auditoría de todas las operaciones.</li>
+          <li>El sistema debe monitorear el uso para métricas y KPIs.</li>
+          <li>Las políticas de retención de datos deben cumplirse.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Ubiquitous Language</b></td>
+      <td>“Auditoría”, “Métrica”, “Política de Retención”, “Monitoreo”.</td>
+    </tr>
+    <tr>
+      <td><b>Capabilities</b></td>
+      <td>Generar métricas, registrar logs, gestionar políticas de datos.</td>
+    </tr>
+    <tr>
+      <td><b>Dependencies</b></td>
+      <td>Interacción con IAM (para usuarios administradores) y con todos los demás BCs para recolectar métricas y logs.</td>
+    </tr>
+  </tbody>
+</table>
+
+
 ### 4.2.5. Context Mapping
 
 Finalmente, se elaboró el Context Mapping para mostrar la relación estructural entre los bounded contexts descubiertos. Se exploraron diferentes alternativas y se seleccionaron patrones de relación adecuados:
