@@ -31,8 +31,8 @@
       <td>U202212760</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td>Gutierrez Garcia, Jose Eduardo</td>
+      <td>U202221518</td>
     </tr>
     <tr>
       <td>Párraga Gamarra, Paolo Gonzalo</td>
@@ -202,39 +202,69 @@ del ABET – EAC - Student Outcome 3.
 
 ### 1.1.1. Descripción de la Startup
 
-[Content for startup description]
+PixelCheck es una startup enfocada en el desarrollo de soluciones para la verificación de contenido visual. Su producto principal, una aplicación web ligera, permite detectar si una imagen fue generada por inteligencia artificial (IA), combinando análisis de patrones de píxeles, distribución de colores y texturas, presencia o ausencia de ruido natural y revisión de metadatos. La startup busca brindar herramientas confiables y accesibles que ayuden a usuarios y profesionales a diferenciar contenido real de contenido generado artificialmente, potenciando la transparencia en medios digitales.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-[Content for team member profiles]
+El equipo de PixelCheck está conformado por profesionales multidisciplinarios:
+
+* **Adrián Palma (Project Manager & UX Designer):** Responsable de la planificación, coordinación y diseño de experiencia de usuario. Lidera la integración del enfoque Lean UX.
+* **Desarrollador Backend:** Especialista en Machine Learning y procesamiento de imágenes, encargado del desarrollo del algoritmo de clasificación y análisis de patrones.
+* **Desarrollador Frontend:** Encargado de la interfaz web, asegurando una experiencia ligera y responsiva en diferentes dispositivos.
+* **Científico de Datos:** Responsable de entrenar y optimizar los modelos de Neural Network para la detección de imágenes generadas por IA.
+* **Tester/QA:** Asegura la calidad del software, revisando la precisión de los análisis y la experiencia del usuario.
 
 ## 1.2. Solution Profile
 
-### 1.2.1 Antecedentes y problemática
+La solución propuesta consiste en una plataforma digital orientada a la reserva y gestión de cubículos de estudio dentro de entornos académicos. El sistema busca resolver los problemas actuales de disponibilidad, falta de organización y poca visibilidad en el uso de espacios, brindando a los estudiantes una herramienta intuitiva para realizar reservas rápidas y seguras, y a los administradores un panel centralizado para supervisar la ocupación y optimizar la gestión de recursos. De esta forma, se garantiza una experiencia más ordenada, transparente y eficiente tanto para usuarios generales como para la administración de la institución.
 
-[Content for background and problem statement]
+**Tecnologías Emergentes Utilizadas**
+
+En el desarrollo de la solución, se incorpora Machine Learning (ML) como tecnología emergente clave para mejorar la experiencia de los usuarios y aportar valor agregado al sistema. El uso de ML permite analizar patrones de uso en las reservas y en la gestión de espacios, anticipando necesidades de los usuarios y optimizando la asignación de recursos.
+
+Con esta integración, el sistema no solo cumple con las funcionalidades básicas de registro, reservas y administración, sino que además adquiere la capacidad de aprender del comportamiento de los usuarios y ofrecer recomendaciones inteligentes, lo cual contribuye a la escalabilidad futura y posiciona la solución dentro de la tendencia de aplicaciones inteligentes en el mercado educativo.
+
+### 1.2.1. Antecedentes y problemática
+
+El aumento exponencial de imágenes generadas por IA ha generado desafíos en la veracidad de la información visual. Plataformas y medios digitales se enfrentan a la dificultad de diferenciar contenido real de contenido manipulado o generado artificialmente. Esto provoca riesgos de desinformación y disminuye la confianza en medios digitales. PixelCheck surge como solución para proporcionar a usuarios generales y profesionales herramientas precisas y rápidas para verificar la autenticidad de imágenes, utilizando técnicas avanzadas de Machine Learning y análisis de imágenes.
 
 ### 1.2.2. Lean UX Process
 
+PixelCheck adopta un enfoque **Lean UX**, centrado en validar hipótesis de usuario mediante iteraciones rápidas y feedback constante. Este proceso permite construir una experiencia efectiva, enfocada en resolver los problemas más relevantes de los usuarios.
+
 #### 1.2.2.1. Lean UX Problem Statements
 
-[Content for Lean UX problem statements]
+* Los usuarios tienen dificultades para identificar imágenes generadas por IA en medios digitales.
+* Las herramientas existentes son complejas, lentas o inaccesibles para usuarios generales.
+* Existe falta de confianza en la autenticidad de contenido visual en redes sociales y medios online.
 
 #### 1.2.2.2. Lean UX Assumptions
 
-[Content for Lean UX assumptions]
+* Los usuarios buscan una herramienta ligera y rápida para verificar imágenes.
+* La mayoría de los usuarios no posee conocimientos técnicos profundos sobre Machine Learning o procesamiento de imágenes.
+* La visualización de resultados claros y comprensibles incrementa la confianza en la herramienta.
+* La detección de patrones de píxeles, ruido y metadatos es suficiente para diferenciar imágenes reales de generadas por IA con alta precisión.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-[Content for Lean UX hypothesis statements]
+* Si proporcionamos un análisis accesible y comprensible de imágenes, entonces los usuarios podrán diferenciar imágenes reales de generadas por IA de manera confiable.
+* Si la aplicación permite filtrar resultados y analizar múltiples características (colores, texturas, ruido, metadatos), entonces los usuarios técnicos podrán tomar decisiones informadas sobre la autenticidad del contenido.
+* Si la interfaz es responsiva y ligera, entonces los usuarios podrán utilizar la herramienta en cualquier dispositivo sin inconvenientes.
+
 
 #### 1.2.2.4. Lean UX Canvas
 
-[Content for Lean UX canvas]
+<img width="945" height="1211" alt="image" src="https://github.com/user-attachments/assets/b4bcb820-f06e-470d-b870-5fb6e0dcd93f" />
+
 
 ## 1.3. Segmentos objetivo
 
-[Content for target segments]
+* **Usuarios generales de internet:**
+  Personas que consumen contenido en redes sociales y sitios de noticias, que necesitan verificar rápidamente si una imagen es real o generada por IA, sin requerir conocimientos técnicos avanzados.
+
+* **Profesionales de medios y comunicación:**
+  Editores, periodistas y creadores de contenido que requieren herramientas precisas para analizar imágenes, asegurando la autenticidad antes de su publicación.
+
 
 <div style="page-break-after: always;"></div>
 
