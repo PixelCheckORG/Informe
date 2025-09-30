@@ -2387,16 +2387,7 @@ Los siguientes elementos han sido cuidadosamente seleccionados para optimizar la
 
 Para la paleta de colores hemos seleccionado un esquema moderno que transmite confianza, tecnología y precisión:
 
-**Colores Principales:**
-
-- **Primary Blue:** `#2C3E50` - Representa profesionalismo y confiabilidad técnica
-- **Accent Blue:** `#3498DB` - Transmite innovación y tecnología
-- **Success Green:** `#27AE60` - Indica resultados positivos (imagen real)
-- **Warning Orange:** `#E67E22` - Señala precaución (imagen sospechosa)
-- **Danger Red:** `#E74C3C` - Alerta de imagen generada por IA
-- **Neutral Gray:** `#ECF0F1` - Proporciona balance y legibilidad
-- **Dark Text:** `#2C3E50` - Para contenido principal
-- **Light Background:** `#FFFFFF` - Fondo limpio y profesional
+![Paleta de Colores](assets/chapter-vi/colorpalete.png)
 
 Este esquema fue elegido porque:
 
@@ -2407,19 +2398,7 @@ Este esquema fue elegido porque:
 
 #### TIPOGRAFÍA
 
-**Fuente Principal: Inter** (sans-serif moderna)
-
-- **Heading 1 (H1):** 32px / Bold / #2C3E50
-- **Heading 2 (H2):** 24px / Semibold / #2C3E50
-- **Heading 3 (H3):** 20px / Semibold / #34495E
-- **Body Text:** 16px / Regular / #2C3E50
-- **Caption:** 14px / Regular / #7F8C8D
-- **Button Text:** 16px / Medium / #FFFFFF
-
-**Fuente Secundaria: Roboto Mono** (para datos técnicos)
-
-- Utilizada para mostrar porcentajes de confianza, códigos y metadatos
-- Tamaño: 14px / Regular / #2C3E50
+![Tipografía](assets/chapter-vi/tipografia.png)
 
 **Razones de selección:**
 
@@ -2508,92 +2487,24 @@ PixelCheck sigue un enfoque mobile-first con breakpoints adaptados:
 
 #### BUTTON STYLES
 
-**Primary Button:**
-```css
-Background: #3498DB
-Text: #FFFFFF (Inter Medium 16px)
-Border-radius: 8px
-Padding: 12px 24px
-Hover: #2980B9
-Active: #21618C
-```
-
-**Secondary Button:**
-```css
-Background: transparent
-Border: 2px solid #3498DB
-Text: #3498DB (Inter Medium 16px)
-Border-radius: 8px
-Padding: 10px 22px
-Hover: Background #3498DB, Text #FFFFFF
-```
-
-**Danger Button:**
-```css
-Background: #E74C3C
-Text: #FFFFFF
-Border-radius: 8px
-Padding: 12px 24px
-Hover: #C0392B
-```
-
-**Icon Button:**
-```css
-Background: transparent
-Size: 40x40px
-Icon: 24x24px
-Border-radius: 50%
-Hover: Background rgba(52, 152, 219, 0.1)
-```
+![Estilos de Botones](assets/chapter-vi/botones.png)
 
 #### COMPONENT STYLES
 
-**Cards:**
-
-- Background: #FFFFFF
-- Border-radius: 12px
-- Box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
-- Padding: 24px
-
 **Input Fields:**
 
-- Border: 2px solid #E0E0E0
-- Border-radius: 8px
-- Padding: 12px 16px
-- Focus: Border #3498DB
-- Error: Border #E74C3C
+![Input Fields](assets/chapter-vi/inputfields.png)
 
 **Progress Indicators:**
 
-- Track: #E0E0E0
-- Fill: #3498DB
-- Height: 8px
-- Border-radius: 4px
+![Progress Indicators](assets/chapter-vi/progrees.png)
 
-**Tooltips:**
 
-- Background: #2C3E50
-- Text: #FFFFFF (14px)
-- Border-radius: 6px
-- Arrow: 8px
-
-#### LOADING & FEEDBACK STATES
-
-**Loading Spinner:**
-
-- Color: #3498DB
-- Size: 40px (default) / 24px (small)
-- Animation: Rotate 1s linear infinite
+#### FEEDBACK STATES
 
 **Toast Notifications:**
 
-- **Success:** Background #27AE60, Icon CheckCircle
-- **Error:** Background #E74C3C, Icon XCircle
-- **Warning:** Background #E67E22, Icon AlertCircle
-- **Info:** Background #3498DB, Icon Info
-- **Position:** Top-right
-- **Duration:** 4 segundos
-- **Border-radius:** 8px
+![Toast Notifications](assets/chapter-vi/toastnotifications.png)
 
 #### MOBILE-SPECIFIC GUIDELINES
 
@@ -2648,19 +2559,137 @@ Hover: Background rgba(52, 152, 219, 0.1)
 
 ### 6.2.1. Labeling Systems
 
-[Content for labeling systems]
+Se han implementado etiquetas claras y concisas para representar funciones específicas dentro de PixelCheck. Estas etiquetas ayudan a los usuarios a comprender fácilmente la función de cada módulo. Las etiquetas principales son:
+
+**Secciones Principales:**
+
+- **Home / Inicio** - Página principal con introducción al servicio
+- **Upload Image / Subir Imagen** - Área para cargar imágenes a analizar
+- **Analysis Dashboard / Panel de Análisis** - Visualización de resultados del análisis
+- **Results / Resultados** - Detalle completo del análisis realizado
+- **History / Historial** - Registro de análisis previos
+- **Reports / Reportes** - Generación y descarga de informes
+- **About / Acerca de** - Información sobre PixelCheck y el equipo
+- **Help / Ayuda** - Documentación y soporte
+- **Settings / Configuración** - Preferencias de usuario
+
+**Estados de Análisis:**
+
+- **Real Image / Imagen Real** - Resultado: imagen auténtica
+- **AI-Generated / Generada por IA** - Resultado: imagen creada artificialmente
+- **Suspicious / Sospechoso** - Resultado: requiere revisión adicional
+- **Processing / Procesando** - Estado: análisis en curso
+- **Error / Error** - Estado: fallo en el proceso
+
+Estas etiquetas permiten una identificación directa de las secciones sin necesidad de interpretación adicional, manteniendo consistencia en inglés y español según el idioma del usuario.
 
 ### 6.2.2. Searching Systems
 
-[Content for searching systems]
+**¿Qué se busca?**
+
+El usuario puede buscar análisis previos, imágenes específicas por nombre o fecha, y resultados históricos filtrados por tipo de detección (real, IA, sospechoso).
+
+**¿Qué resultados se mostrarán?**
+
+La búsqueda devolverá:
+- Registros de análisis con miniatura de la imagen
+- Fecha y hora del análisis
+- Resultado de la detección (Real/IA/Sospechoso)
+- Porcentaje de confianza del análisis
+- Opción para ver detalles completos o re-analizar
+
+**Interfaz de búsqueda:**
+
+En el panel de historial se implementa una barra de búsqueda con ícono de lupa que permite:
+- Búsqueda por nombre de archivo
+- Filtro por rango de fechas
+- Filtro por tipo de resultado (Real/IA/Sospechoso)
+- Ordenamiento por fecha (más reciente/más antiguo) o nivel de confianza
+
+La búsqueda es contextual y se actualiza en tiempo real mientras el usuario escribe, mejorando significativamente la usabilidad cuando se tienen múltiples análisis almacenados.
 
 ### 6.2.3. SEO Tags and Meta Tags
 
-[Content for SEO tags and meta tags]
+Para optimizar la visibilidad en buscadores y ofrecer contexto sobre la aplicación, se proponen las siguientes etiquetas:
+
+**Título:**
+- PixelCheck | Detección de Imágenes Generadas por IA
+
+**Description:**
+- Verifica la autenticidad de imágenes con PixelCheck. Detecta contenido generado por IA mediante análisis avanzado de píxeles y metadatos. Herramienta precisa y confiable para verificación de imágenes.
+
+**Keywords:**
+- detección IA, verificación de imágenes, PixelCheck, deepfake detector, análisis de imágenes, autenticidad de fotos, AI image detection, imagen real vs IA, verificación de contenido
+
+**Open Graph Tags (para redes sociales):**
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Verifica si una imagen es real o generada por IA con nuestra tecnología avanzada de análisis
+- **Type:** website
+- **URL:** https://pixelcheck.app
+- **Image:** https://pixelcheck.app/og-image.png
+
+**Twitter Card:**
+- **Card Type:** summary_large_image
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Herramienta de verificación de autenticidad de imágenes
+- **Image:** https://pixelcheck.app/twitter-card.png
+
+**Meta Tags Adicionales:**
+- **Viewport:** width=device-width, initial-scale=1.0
+- **Robots:** index, follow
+- **Canonical URL:** https://pixelcheck.app
 
 ### 6.2.4. Navigation Systems
 
-[Content for navigation systems]
+PixelCheck implementa un sistema de navegación híbrido que combina navegación global con navegación contextual, optimizado tanto para desktop como para dispositivos móviles.
+
+**Navegación Principal (Desktop):**
+
+La barra de navegación superior permanece fija y contiene:
+- **Logo PixelCheck** (izquierda) - Regresa a Home al hacer click
+- **Home** - Página de inicio
+- **Upload** - Acceso directo a subir imagen
+- **History** - Ver análisis previos
+- **About** - Información del proyecto
+- **Sign In / User Profile** (derecha) - Autenticación o perfil de usuario
+
+**Navegación Principal (Mobile):**
+
+En dispositivos móviles, se implementa:
+- **Bottom Navigation Bar** con 4 acciones principales:
+  - Home (ícono casa)
+  - Upload (ícono +)
+  - History (ícono reloj)
+  - Profile (ícono usuario)
+- **Hamburger Menu** (superior derecho) para opciones secundarias:
+  - Settings
+  - Help & Support
+  - About
+  - Sign Out
+
+**Navegación Contextual:**
+
+Dentro del flujo de análisis:
+1. **Upload Screen** → Botón "Analyze" lleva a Processing
+2. **Processing Screen** → Progreso visual, al completar lleva a Results
+3. **Results Screen** → Acciones disponibles:
+   - "Analyze Another" → Regresa a Upload
+   - "Save Report" → Descarga PDF
+   - "View Details" → Expande información técnica
+   - "Back to History" → Va a lista de análisis
+
+**Breadcrumbs:**
+
+En secciones profundas se muestran rutas de navegación:
+```
+Home > History > Analysis Detail > Technical Report
+```
+
+**Quick Actions (Floating Action Button - FAB):**
+
+En cualquier pantalla, un botón flotante azul (#3498DB) permite acceso rápido a "Upload New Image", la acción más frecuente de los usuarios.
+
+Esta navegación plana y accesible garantiza una experiencia intuitiva, reduciendo la necesidad de múltiples clics o rutas complejas. Los usuarios siempre pueden volver al inicio o iniciar un nuevo análisis desde cualquier punto de la aplicación.
 
 ## 6.3. Landing Page UI Design
 
