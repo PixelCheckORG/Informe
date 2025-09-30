@@ -2381,11 +2381,268 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 ### 6.1.1. General Style Guidelines
 
-[Content for general style guidelines]
+Los siguientes elementos han sido cuidadosamente seleccionados para optimizar la experiencia del usuario en PixelCheck, enfocándose en claridad, profesionalismo y accesibilidad.
+
+#### COLOR
+
+Para la paleta de colores hemos seleccionado un esquema moderno que transmite confianza, tecnología y precisión:
+
+**Colores Principales:**
+
+- **Primary Blue:** `#2C3E50` - Representa profesionalismo y confiabilidad técnica
+- **Accent Blue:** `#3498DB` - Transmite innovación y tecnología
+- **Success Green:** `#27AE60` - Indica resultados positivos (imagen real)
+- **Warning Orange:** `#E67E22` - Señala precaución (imagen sospechosa)
+- **Danger Red:** `#E74C3C` - Alerta de imagen generada por IA
+- **Neutral Gray:** `#ECF0F1` - Proporciona balance y legibilidad
+- **Dark Text:** `#2C3E50` - Para contenido principal
+- **Light Background:** `#FFFFFF` - Fondo limpio y profesional
+
+Este esquema fue elegido porque:
+
+- El azul oscuro transmite seriedad técnica necesaria para herramientas de verificación
+- Los colores de estado (verde/naranja/rojo) son universalmente reconocidos
+- El contraste alto facilita la lectura y accesibilidad
+- La paleta funciona tanto en modo claro como oscuro
+
+#### TIPOGRAFÍA
+
+**Fuente Principal: Inter** (sans-serif moderna)
+
+- **Heading 1 (H1):** 32px / Bold / #2C3E50
+- **Heading 2 (H2):** 24px / Semibold / #2C3E50
+- **Heading 3 (H3):** 20px / Semibold / #34495E
+- **Body Text:** 16px / Regular / #2C3E50
+- **Caption:** 14px / Regular / #7F8C8D
+- **Button Text:** 16px / Medium / #FFFFFF
+
+**Fuente Secundaria: Roboto Mono** (para datos técnicos)
+
+- Utilizada para mostrar porcentajes de confianza, códigos y metadatos
+- Tamaño: 14px / Regular / #2C3E50
+
+**Razones de selección:**
+
+- Inter es altamente legible en pantallas y dispositivos diversos
+- Roboto Mono proporciona claridad para datos numéricos y técnicos
+- Ambas fuentes tienen excelente soporte web y rendimiento
+
+#### BRANDING
+
+**Logotipo:** El logo de PixelCheck combina un ícono de verificación pixelado con tipografía moderna, representando la fusión entre análisis técnico y usabilidad.
+
+**Elementos del logo:**
+
+- **Símbolo:** Check mark formado por píxeles degradados
+- **Texto:** "PixelCheck" en Inter Bold
+- **Colores:** Gradiente de #3498DB a #2C3E50
+
+**Valores visuales del branding:**
+
+- **Precisión:** Los píxeles representan análisis detallado
+- **Confianza:** El check mark simboliza verificación certificada
+- **Modernidad:** Diseño limpio y minimalista
+
+#### ICONOGRAFÍA
+
+Sistema de iconos basado en **Lucide Icons** con las siguientes características:
+
+- **Estilo:** Outline (contorno)
+- **Peso:** 2px stroke
+- **Tamaño base:** 24x24px
+- **Color:** Heredado del contexto
+
+**Iconos principales:**
+
+- **Upload:** Subir imagen
+- **Eye:** Visualizar análisis
+- **FileText:** Reportes
+- **AlertCircle:** Advertencias
+- **CheckCircle:** Verificación exitosa
+- **XCircle:** Detección de IA
+- **History:** Historial
+- **Download:** Exportar resultados
 
 ### 6.1.2. Web, Mobile & Devices Style Guidelines
 
-[Content for web, mobile & devices style guidelines]
+#### RESPONSIVE DESIGN
+
+PixelCheck sigue un enfoque mobile-first con breakpoints adaptados:
+
+**Breakpoints:**
+
+- **Mobile:** 320px - 767px
+- **Tablet:** 768px - 1023px
+- **Desktop:** 1024px - 1439px
+- **Large Desktop:** 1440px+
+
+**Grid System:**
+
+- **Contenedor máximo:** 1280px
+- **Columnas:** 12 columns (flexible)
+- **Gutter:** 24px (desktop) / 16px (mobile)
+- **Margin:** 32px (desktop) / 16px (mobile)
+
+#### BACKGROUND STYLES
+
+**Fondos principales:**
+
+- **Landing Page:** Gradiente sutil #FFFFFF → #F8F9FA
+- **Dashboard:** #FFFFFF sólido
+- **Cards/Containers:** #FFFFFF con sombra suave
+- **Modal overlays:** rgba(44, 62, 80, 0.8)
+
+#### TEXT STYLES POR CONTEXTO
+
+**Sobre fondos claros:**
+
+- **Títulos:** #2C3E50 (Primary Blue)
+- **Body:** #34495E (Dark Gray)
+- **Secondary:** #7F8C8D (Medium Gray)
+
+**Sobre fondos oscuros:**
+
+- **Títulos:** #FFFFFF
+- **Body:** #ECF0F1
+- **Secondary:** #BDC3C7
+
+#### BUTTON STYLES
+
+**Primary Button:**
+```css
+Background: #3498DB
+Text: #FFFFFF (Inter Medium 16px)
+Border-radius: 8px
+Padding: 12px 24px
+Hover: #2980B9
+Active: #21618C
+```
+
+**Secondary Button:**
+```css
+Background: transparent
+Border: 2px solid #3498DB
+Text: #3498DB (Inter Medium 16px)
+Border-radius: 8px
+Padding: 10px 22px
+Hover: Background #3498DB, Text #FFFFFF
+```
+
+**Danger Button:**
+```css
+Background: #E74C3C
+Text: #FFFFFF
+Border-radius: 8px
+Padding: 12px 24px
+Hover: #C0392B
+```
+
+**Icon Button:**
+```css
+Background: transparent
+Size: 40x40px
+Icon: 24x24px
+Border-radius: 50%
+Hover: Background rgba(52, 152, 219, 0.1)
+```
+
+#### COMPONENT STYLES
+
+**Cards:**
+
+- Background: #FFFFFF
+- Border-radius: 12px
+- Box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+- Padding: 24px
+
+**Input Fields:**
+
+- Border: 2px solid #E0E0E0
+- Border-radius: 8px
+- Padding: 12px 16px
+- Focus: Border #3498DB
+- Error: Border #E74C3C
+
+**Progress Indicators:**
+
+- Track: #E0E0E0
+- Fill: #3498DB
+- Height: 8px
+- Border-radius: 4px
+
+**Tooltips:**
+
+- Background: #2C3E50
+- Text: #FFFFFF (14px)
+- Border-radius: 6px
+- Arrow: 8px
+
+#### LOADING & FEEDBACK STATES
+
+**Loading Spinner:**
+
+- Color: #3498DB
+- Size: 40px (default) / 24px (small)
+- Animation: Rotate 1s linear infinite
+
+**Toast Notifications:**
+
+- **Success:** Background #27AE60, Icon CheckCircle
+- **Error:** Background #E74C3C, Icon XCircle
+- **Warning:** Background #E67E22, Icon AlertCircle
+- **Info:** Background #3498DB, Icon Info
+- **Position:** Top-right
+- **Duration:** 4 segundos
+- **Border-radius:** 8px
+
+#### MOBILE-SPECIFIC GUIDELINES
+
+**Touch Targets:**
+
+- Mínimo: 44x44px (iOS) / 48x48px (Android)
+- Spacing entre targets: 8px mínimo
+
+**Navigation:**
+
+- Bottom navigation bar en mobile
+- Hamburger menu para opciones secundarias
+- Swipe gestures para historial
+
+**Image Upload:**
+
+- Área de drop aumentada en mobile
+- Botón de cámara integrado
+- Preview optimizado para pantalla vertical
+
+**Results Display:**
+
+- Stack vertical de información
+- Scroll suave entre secciones
+- Acciones principales siempre visibles
+
+#### ACCESSIBILITY
+
+**Contraste:**
+
+- Mínimo WCAG AA: 4.5:1 para texto normal
+- Mínimo WCAG AA: 3:1 para texto grande
+
+**Focus States:**
+
+- Outline: 3px solid #3498DB
+- Offset: 2px
+
+**Screen Reader:**
+
+- Etiquetas ARIA en todos los componentes interactivos
+- Alt text descriptivo en imágenes
+- Live regions para resultados dinámicos
+
+**Keyboard Navigation:**
+
+- Tab order lógico
+- Shortcuts visibles en tooltips
+- Escape para cerrar modales
 
 ## 6.2. Information Architecture
 
