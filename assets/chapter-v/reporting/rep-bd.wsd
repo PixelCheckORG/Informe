@@ -1,0 +1,31 @@
+@startuml
+entity analysis_results {
+  * result_id : BIGINT PK
+  --
+  image_id : BIGINT UNIQUE
+  owner_id : BIGINT
+  label : ENUM('AI','REAL')
+  confidence : DECIMAL(5,4)
+  model_version : VARCHAR(64)
+  processed_at : DATETIME
+}
+
+entity reports {
+  * report_id : BIGINT PK
+  --
+  owner_id : BIGINT
+  scope : ENUM('SINGLE','BATCH')
+  format : ENUM('PDF','CSV')
+  status : ENUM('REQUESTED','GENERATING','READY','FAILED')
+  url_or_blob_ref : TEXT
+  created_at : DATETIME
+}
+
+entity report_items {
+  * report_id : BIGINT FK -> reports.report_id
+  * image_id : BIGINT FK -> analysis_results.image_id
+}
+
+reports ||--o{ report_items
+analysis_results ||--o{ report_items
+@enduml

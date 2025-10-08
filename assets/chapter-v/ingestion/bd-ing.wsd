@@ -1,0 +1,33 @@
+@startuml
+entity images {
+  * image_id : BIGINT PK
+  --
+  uploader_id : BIGINT
+  filename : VARCHAR(255)
+  mime_type : VARCHAR(64)
+  size_bytes : BIGINT
+  width : INT
+  height : INT
+  checksum : CHAR(64) UNIQUE
+  status : ENUM('REJECTED','VALIDATED','QUEUED')
+  content : LONGBLOB  -- opcional si guardas blob en MySQL
+  file_path : VARCHAR(512)  -- opcional si usas filesystem
+  created_at : DATETIME
+}
+
+entity batches {
+  * batch_id : BIGINT PK
+  --
+  owner_id : BIGINT
+  status : ENUM('RECEIVED','QUEUED','PROCESSING','COMPLETED')
+  created_at : DATETIME
+}
+
+entity batch_items {
+  * batch_id : BIGINT FK -> batches.batch_id
+  * image_id : BIGINT FK -> images.image_id
+}
+
+batches ||--o{ batch_items
+images ||--o{ batch_items
+@enduml

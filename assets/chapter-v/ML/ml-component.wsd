@@ -1,0 +1,25 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(ml_bc, "Image Analysis (ML) BC") {
+  Component(jobsConsumer, "JobsConsumer", "Consumer", "Recibe solicitudes de análisis de imágenes")
+  Component(analysisOrchestrator, "AnalysisOrchestrator", "Service", "Orquesta el flujo de análisis ML")
+  Component(imageContentSource, "ImageContentSource", "Adapter", "Lee bytes de imágenes desde almacenamiento")
+  Component(inferenceService, "InferenceService", "Adapter", "Ejecuta el modelo ML para predicción")
+  Component(analysisRepository, "AnalysisRepository", "Repository", "Guarda resultados de análisis")
+  Component(eventBus, "EventBus", "Adapter", "Publica eventos de análisis completado")
+}
+
+Container(webapp, "Web App", "React", "Interfaz web responsiva para cargar imágenes y ver resultados")
+ContainerDb(db, "PixelCheck DB", "MySQL", "Almacena resultados de análisis y logs ML") #Red
+
+Rel(webapp, jobsConsumer, "Solicita análisis de imagen", "HTTPS/REST")
+Rel(jobsConsumer, analysisOrchestrator, "Envía solicitud de análisis")
+
+Rel(analysisOrchestrator, imageContentSource, "Lee bytes de imagen")
+Rel(analysisOrchestrator, inferenceService, "Predice con modelo ML")
+Rel(analysisOrchestrator, analysisRepository, "Guarda resultado")
+Rel(analysisOrchestrator, eventBus, "Publica evento AnalysisCompleted")
+
+Rel(analysisRepository, db, "Lee/Escribe resultados", "SQL")
+@enduml

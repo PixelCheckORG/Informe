@@ -2341,37 +2341,614 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 # Capítulo V: Tactical-Level Software Design
 
-## 5.X. Bounded Context: [Bounded Context Name]
+## 5.1. Bounded Context: IAM (Identity & Access Management)
 
-### 5.X.1. Domain Layer
+El **IAM BC** gestiona el registro, autenticación, autorización y asignación de roles de los usuarios del sistema.  
+Provee **tokens JWT** para el resto de los Bounded Contexts y comparte un núcleo de permisos con **Results & Reporting** (Shared Kernel).  
+También actúa como **Supplier** para **Ingestion & Validation**, validando quién tiene acceso para subir imágenes.  
 
-[Content for domain layer]
+### 5.1.1. Domain Layer
 
-### 5.X.2. Interface Layer
+La **Domain Layer** encapsula las reglas de autenticación, gestión de contraseñas y asignación de roles, evitando dependencias con frameworks externos.
 
-[Content for interface layer]
+#### Aggregates
 
-### 5.X.3. Application Layer
+**User**  
+- **Propósito:** Representar a un usuario autenticable y sus roles.  
+- **Atributos (VOs cuando aplica):**  
+  - `UserId`  
+  - `Username`  
+  - `PasswordHash`  
+  - `Email`  
+  - `Roles[]`  
+  - `CreatedAt`  
+- **Invariantes:**  
+  - `Username` único.  
+  - La contraseña se almacena solo como hash.  
+- **Métodos:**  
+  - `add_role(Role)`  
+  - `has_role(Role)`  
+  - `verify_password(raw)`
 
-[Content for application layer]
+**SessionToken (VO)**  
+- **Propósito:** Representar un token de acceso (JWT).  
+- **Atributos:** `value`, `expiresAt`
 
-### 5.X.4. Infrastructure Layer
+#### Entities
 
-[Content for infrastructure layer]
+**Role**  
+- **Atributos:**  
+  - `RoleId`  
+  - `name ∈ {USER, PROFESSIONAL, ADMIN}`
 
-### 5.X.5. Bounded Context Software Architecture Component Level Diagrams
+#### Value Objects
 
-[Content for component level diagrams]
+- **Username, Email, PasswordHash:** validan formato y fortaleza.  
+- **RoleName (enum)**
 
-### 5.X.6. Bounded Context Software Architecture Code Level Diagrams
+#### Domain Services
 
-#### 5.X.6.1. Bounded Context Domain Layer Class Diagrams
+- **PasswordPolicy:** valida la complejidad y longitud mínima.  
+- **JwtSigner:** firma y valida los claims de acceso.
 
-[Content for domain layer class diagrams]
+#### Commands
 
-#### 5.X.6.2. Bounded Context Database Design Diagram
+- `SignUp(username, email, rawPassword, roles?)`  
+- `SignIn(usernameOrEmail, rawPassword)`  
+- `AssignRoles(userId, roles[])`
 
-[Content for database design diagram]
+#### Queries
+
+- `GetUserById`  
+- `GetAllRoles`  
+- `GetUserByUsername`
+
+#### Domain Events
+
+- `UserRegistered(userId)`  
+- `UserSignedIn(userId)`  
+- `UserRolesChanged(userId)`
+
+### 5.1.2. Interface Layer
+
+La capa de interfaz está expuesta mediante **Django REST Framework**, proporcionando los controladores y recursos necesarios para la comunicación externa.
+
+#### Controllers (ViewSets / Views)
+
+- **AuthController**  
+  - `POST /api/v1/auth/sign-up`  
+  - `POST /api/v1/auth/sign-in`
+
+- **UsersController**  
+  - `GET /api/v1/users/{id}`  
+  - `GET /api/v1/users` *(solo admin)*
+
+- **RolesController**  
+  - `GET /api/v1/roles`
+
+#### Resources (Serializers / DTOs)
+
+- **SignUpResource** `{ username, email, password, roles? }`  
+- **SignInResource** `{ usernameOrEmail, password }`  
+- **AuthenticatedUserResource** `{ userId, username, roles[], token }`  
+- **UserResource** `{ id, username, email, roles[], createdAt }`
+
+#### Transformers
+
+- `SignUpCommandFromResource`  
+- `SignInCommandFromResource`  
+- `UserResourceFromEntity`  
+- `AuthenticatedUserResourceFromEntity`
+
+### 5.1.3. Application Layer
+
+#### Command Services
+
+**UserCommandService**  
+- `handle(SignUp)` → valida políticas, hashea contraseña, persiste usuario y emite `UserRegistered`.  
+- `handle(SignIn)` → verifica contraseña, emite `UserSignedIn` y genera `SessionToken`.
+
+#### Query Services
+
+- **UserQueryService:** lectura optimizada (DTOs).  
+- **RoleQueryService.**
+
+#### Policies & Authorization
+
+**AuthorizationService**  
+- `has_permission(user, action, resource)` → evalúa permisos según roles.
+
+### 5.1.4. Infrastructure Layer
+
+#### Adapters
+
+- **DjangoUserRepository (ORM)**  
+- **DjangoRoleRepository**  
+- **DjangoPasswordHasher** *(usa `django.contrib.auth.hashers`)*  
+- **DjangoJwtSigner** *(usa `pyjwt`)*
+
+#### Persistence (Django ORM)
+
+- **UserModel**(id, username, email, password_hash, created_at)  
+- **RoleModel**(id, name)  
+- **UserRoles**(user_id, role_id)
+
+### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/Kz32jWzJ/iambc.png" alt="iambc" border="0">
+
+### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/spN62nQ7/clasesiam.png" alt="clasesiam" border="0">
+
+#### 5.1.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/4np467jC/bd-iam.png" alt="bd-iam" border="0">
+
+## 5.2. Bounded Context: Ingestion & Validation
+
+El **Ingestion & Validation BC** es responsable de recibir, validar y preparar las imágenes que ingresan al sistema.  
+Verifica el formato, tamaño y dimensiones de cada archivo, asocia las imágenes con el usuario que las subió y gestiona su envío al análisis.  
+Actúa como **Customer** de **IAM** (para verificar permisos y roles de acceso) y como **Supplier** de **Image Analysis (ML)** (emite eventos `ImageValidated`).
+
+
+### 5.2.1. Domain Layer
+
+#### Aggregates
+
+**Image**  
+- **Atributos:**  
+  - `ImageId`  
+  - `UploaderId`  
+  - `Filename`  
+  - `MimeType`  
+  - `SizeBytes`  
+  - `Width`  
+  - `Height`  
+  - `Checksum`  
+  - `Status ∈ {REJECTED, VALIDATED, QUEUED}`  
+  - `CreatedAt`  
+- **Métodos:**  
+  - `validate(policy)`  
+  - `mark_validated()`  
+  - `mark_rejected(reason)`
+
+**Batch (para profesionales)**  
+- **Atributos:**  
+  - `BatchId`  
+  - `OwnerId`  
+  - `Items[]`  
+  - `Status ∈ {RECEIVED, QUEUED, PROCESSING, COMPLETED}`
+
+#### Value Objects
+
+- **ValidationPolicy:** define límites máximos (peso en MB, formatos permitidos, dimensiones máximas).  
+- **Checksum:** valor hash (por ejemplo, SHA-256) usado para evitar duplicados.
+
+#### Domain Events
+
+- `ImageValidated(imageId, uploaderId)`  
+- `BatchQueued(batchId)`
+
+#### Commands
+
+- `UploadImage(uploaderId, fileMeta, bytes)`  
+- `CreateBatch(ownerId, files[])`
+
+#### Queries
+
+- `GetImageById`  
+- `GetBatchById`
+
+### 5.2.2. Interface Layer
+
+
+#### Controllers
+
+- `POST /api/v1/images/upload`  
+- `POST /api/v1/batches/upload`  
+- `GET /api/v1/images/{imageId}`  
+- `GET /api/v1/batches/{batchId}`
+
+#### Resources (Serializers / DTOs)
+
+- **UploadImageResponse** `{ imageId, status }`  
+- **BatchUploadResponse** `{ batchId, items[] }`  
+- **ImageResource** `{ ...meta..., status }`
+
+#### ACL hacia IAM
+
+- `IamClient.verify_token()`  
+- `IamClient.require_role('PROFESSIONAL')` *(para subida de lotes)*
+
+### 5.2.3. Application Layer
+
+#### Services
+
+**IngestionCommandService**  
+- `handle(UploadImage)` → valida formato, calcula `Checksum`, persiste la imagen, marca como `VALIDATED` y encola el trabajo hacia ML (`AnalysisRequested`).
+
+**BatchCommandService**  
+- `handle(CreateBatch)` → crea el batch con sus ítems, guarda en base de datos y emite `BatchQueued`.
+
+#### Policies
+
+- **ImageValidationPolicy:** reglas configurables por entorno (p. ej., límites de peso y tipo MIME).
+
+
+### 5.2.4. Infrastructure Layer
+
+#### Adapters
+
+- **DjangoImageRepository**  
+- **DjangoBatchRepository**  
+- **Queue Adapter:**
+
+#### Persistencia (MySQL)
+
+- **Tabla:** `images`  
+  - Puede almacenar la imagen directamente en un campo `LONGBLOB` o mediante una ruta `file_path` (si se usa `MEDIA_ROOT`).  
+  - Para la primera version se acordó mantener una **estrategia dual** (`BLOB` o `file_path`) sin usar almacenamiento externo.
+
+
+### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/4ZfZ8dT9/ing-comp.png" alt="ing-comp" border="0">
+
+### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/dsJtpYyR/class-ing.png" alt="class-ing" border="0">
+
+#### 5.2.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/v4QNPyPh/bd-ing.png" alt="bd-ing" border="0">
+
+
+## 5.3. Bounded Context: Image Analysis (ML)
+
+El **Image Analysis (ML)** BC ejecuta el modelo de Machine Learning para clasificar una imagen como “Imagen IA” o “Imagen Original”. Calcula el score de confianza y registra la versión del modelo utilizada. Consume imágenes validadas del BC *Ingestion & Validation* y envía los resultados al BC *Results & Reporting*.
+
+### 5.3.1. Domain Layer
+
+#### Aggregates
+
+**AnalysisJob**  
+Atributos:  
+- JobId  
+- ImageId  
+- Status ∈ {PENDING, RUNNING, DONE, FAILED}  
+- RequestedAt  
+- StartedAt  
+- FinishedAt  
+
+Métodos:  
+- `start()`  
+- `complete(result)`  
+- `fail(reason)`  
+
+**ModelVersion**  
+Atributos:  
+- name (e.g., `pcx-cnn-v0.1`)  
+- checksum  
+- createdAt  
+
+**AnalysisResult**  
+Atributos:  
+- ImageId  
+- label ∈ {AI, REAL}  
+- confidence (0..1)  
+- modelVersion  
+- explainArtifacts? (p. ej. heatmap)  
+- processedAt  
+
+#### Domain Services
+
+**InferenceService (puerto de dominio)**  
+- `predict(imageBytes) -> (label, confidence, explain?)`  
+
+**ExplainabilityService (opcional)**  
+- Usado solo si el escenario o política lo requiere, por ejemplo, cuando se necesita justificar visualmente la clasificación.
+
+
+#### Domain Events
+
+- `AnalysisCompleted(imageId, label, confidence, modelVersion)`  
+- `AnalysisFailed(imageId, reason)`
+
+#### Commands
+
+- `RunAnalysis(jobId, imageId)`  
+- `RunBatchAnalysis(batchId)`
+
+#### Queries
+
+- `GetAnalysisByImageId`  
+- `GetModelVersionActive`
+
+### 5.3.2. Interface Layer
+
+#### Controllers (solo para administración o health check)
+
+- `GET /api/v1/ml/health`  
+- `GET /api/v1/ml/model-version`  
+
+#### SSE/Webhook internos  
+Los resultados (`AnalysisCompleted`) se notifican a *Results & Reporting* (puede hacerse mediante webhook, SSE o polling).  
+En tu TF, *Results* consume directamente la salida del módulo ML como **Conformist**.
+
+### 5.3.3. Application Layer
+
+#### Services
+
+**AnalysisOrchestrator**  
+- Descarga bytes/imágenes desde el almacenamiento (BLOB o filesystem).  
+- Invoca `InferenceService`.  
+- Construye un `AnalysisResult`.  
+- Persiste y emite el evento `AnalysisCompleted`.
+
+#### Policies
+
+**LatencyBudget**  
+- Límite máximo: ≤ 10s por imagen en el MVP (para análisis rápido).  
+- Refinable según los escenarios de calidad definidos más adelante.
+
+
+### 5.3.4. Infrastructure Layer
+
+#### Adapters
+
+- `PytorchTensorflowRunner` (para el MVP: TensorFlow en CPU, con posibilidad de escalar).  
+- `DjangoAnalysisRepository`  
+- `DjangoModelVersionRepository`  
+
+#### Job Runner
+
+- Celery worker (si el equipo lo usa)  
+- Alternativamente, un comando `manage.py` de Django para tareas periódicas o de lotes.
+
+#### Persistencia
+
+Tablas en MySQL:  
+- `analysis_results`  
+- `model_versions`  
+- `analysis_jobs`
+
+### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/8DghcfgW/ml-comp.png" alt="ml-comp" border="0">
+
+### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/8DcNwC4P/ml-class.png" alt="ml-class" border="0">
+
+
+#### 5.3.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/LDkncy2Y/bd-ml.png" alt="bd-ml" border="0">
+
+## 5.4. Bounded Context: Results & Reporting
+
+El **Results & Reporting** BC almacena los resultados generados por el análisis de imágenes, expone consultas de historial y genera reportes en formatos **PDF** o **CSV** para los usuarios profesionales.  
+Su acceso está controlado mediante el **Shared Kernel** de roles y permisos compartido con el BC **IAM**.  
+Cada resultado se asocia al usuario que subió la imagen y se mantiene un historial consultable por usuario.
+
+
+### 5.4.1. Domain Layer
+
+#### Aggregates
+
+**Result**  
+Atributos:  
+- ResultId  
+- ImageId  
+- OwnerId  
+- Label  
+- Confidence  
+- ModelVersion  
+- ProcessedAt  
+
+**Report**  
+Atributos:  
+- ReportId  
+- OwnerId  
+- Scope ∈ {SINGLE, BATCH}  
+- Format ∈ {PDF, CSV}  
+- Status ∈ {REQUESTED, GENERATING, READY, FAILED}  
+- UrlOrBlobRef  
+- CreatedAt
+
+#### Domain Events
+
+- `ReportGenerated(reportId, ownerId, url)`  
+- `ResultStored(imageId, ownerId)`
+
+
+#### Commands
+
+- `GenerateReport(ownerId, scope, selection[])`
+
+#### Queries
+
+- `GetResultByImageId`  
+- `ListResultsByOwner`  
+- `GetReport(reportId)`
+
+### 5.4.2. Interface Layer
+
+#### Controllers
+
+- `GET /api/v1/results/{imageId}`  
+- `GET /api/v1/results?ownerId=...&page=...`  
+- `POST /api/v1/reports` *(solo profesional)*  
+- `GET /api/v1/reports/{reportId}`  
+
+#### Resources
+
+- **ResultResource** `{ imageId, label, confidence, modelVersion, processedAt }`  
+- **ReportRequest** `{ scope, selection[], format }`  
+- **ReportResource** `{ reportId, status, url }`  
+
+
+#### ACL con IAM (Shared Kernel)
+
+Permisos definidos:  
+- `VIEW_REPORTS`  
+- `VIEW_RESULTS_OWN`  
+- `VIEW_RESULTS_ALL` *(solo admin)*  
+
+Estos permisos garantizan que los reportes y resultados sean accesibles únicamente por sus propietarios o administradores autorizados.
+
+
+### 5.4.3. Application Layer
+
+#### Services
+
+**ResultsQueryService**  
+- Gestiona las consultas de resultados e historial.  
+
+**ReportCommandService**  
+- Agrega los datos requeridos.  
+- Compone los archivos PDF/CSV.  
+- Persiste el reporte y publica el evento `ReportGenerated`.  
+
+#### Policies
+
+**ReportRetentionPolicy**  
+- Define el tiempo de retención y expiración de los reportes.  
+- Permite eliminar o archivar reportes antiguos de forma automatizada.
+
+
+### 5.4.4. Infrastructure Layer
+
+#### Adapters
+
+- `DjangoResultsRepository`  
+- `DjangoReportsRepository`  
+- `PdfGenerator` (p. ej. **ReportLab**)  
+- `CsvExporter`  
+
+#### Storage
+
+Para el **MVP**, los reportes pueden almacenarse:  
+- Como binario (LONGBLOB) en **MySQL**, o  
+- Como archivo físico en `MEDIA_ROOT` (guardando solo el path en base de datos).  
+
+### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/7NZgSSTP/report-comp.png" alt="report-comp" border="0">
+
+### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/kgnf8g4W/class-report.png" alt="class-report" border="0">
+
+#### 5.4.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/1GSr5ZJP/bd-reprot.png" alt="bd-reprot" border="0">
+
+## 5.5. Bounded Context: System Management
+
+El **System Management** BC centraliza la **recolección de métricas, auditorías y políticas de retención de datos**.  
+Opera como un **Anti-Corruption Layer (ACL)** frente a los demás **Bounded Contexts**, recopilando eventos y logs sin acoplarse directamente a su lógica interna.  
+Su objetivo es mantener la trazabilidad, el monitoreo y la gobernanza del sistema completo.
+
+### 5.5.1. Domain Layer
+
+#### Aggregates
+
+**AuditLog**  
+Atributos:  
+- LogId  
+- ActorId?  
+- Action  
+- Target  
+- Payload (JSON)  
+- OccurredAt  
+
+**Metric**  
+Atributos:  
+- MetricId  
+- name  
+- value  
+- labels (JSON)  
+- timestamp  
+
+**RetentionPolicy**  
+Atributos:  
+- name  
+- days  
+- apply(scope)  
+
+#### Domain Events
+
+- `PolicyApplied(policyName, countAffected)`
+
+#### Commands
+
+- `RecordAudit(actorId?, action, target, payload)`  
+- `RecordMetric(name, value, labels)`  
+- `ApplyRetention(policyName)`
+
+#### Queries
+
+- `ListAuditLogs(filter)`  
+- `GetMetricsRange(name, from, to)`
+
+### 5.5.2. Interface Layer
+
+#### Controllers
+
+- `POST /api/v1/system/audit`  
+- `POST /api/v1/system/metrics`  
+- `GET /api/v1/system/metrics?name&from&to`  
+- `POST /api/v1/system/retention/apply` *(solo admin)*  
+
+
+### 5.5.3. Application Layer
+
+#### Services
+
+**AuditService**  
+- Gestiona el registro de acciones del sistema y usuarios.  
+- Implementa idempotencia básica mediante checksum para evitar duplicados.  
+
+**MetricsService**  
+- Calcula y almacena métricas de rendimiento y uso.  
+- Permite consultas agregadas y filtradas por etiquetas o rangos de tiempo.  
+
+**RetentionService**  
+- Ejecuta políticas de retención configuradas.  
+- Opera mediante *jobs programados* para limpiar o archivar registros antiguos
+
+### 5.5.4. Infrastructure Layer
+
+#### Adapters
+
+- `DjangoAuditRepository`  
+- `DjangoMetricsRepository`  
+- `Scheduler` *(Django Crontab o Celery Beat)*  
+- `Exportadores` *(p. ej., Prometheus si se requiere integración de monitoreo)*  
+
+### 5.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/Y7SzsW4D/sys-comp.png" alt="sys-comp" border="0">
+
+### 5.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/JwCzSTJn/sys-class.png" alt="sys-class" border="0">
+
+#### 5.5.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/tkhHgzr/bd-sys.png" alt="bd-sys" border="0">
 
 <div style="page-break-after: always;"></div>
 
@@ -2518,7 +3095,7 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 PixelCheck surge como una solución innovadora y socialmente relevante frente al creciente desafío de las imágenes generadas por IA, validando la existencia de una necesidad urgente tanto en usuarios generales como en profesionales de medios. El análisis confirma una brecha en el mercado entre herramientas técnicas de alto costo y soluciones básicas de baja precisión, posicionando a PixelCheck en un espacio intermedio con transparencia, accesibilidad y flexibilidad como principales diferenciadores. La propuesta de valor se refuerza con un enfoque educativo que no solo facilita la detección de contenido sintético, sino que también fortalece la confianza digital al empoderar a los usuarios con conocimiento sobre cómo y por qué ocurre cada detección.
 
-El modelo de negocio basado en una estrategia freemium asegura sostenibilidad y escalabilidad, mientras que la arquitectura técnica, fundamentada en Domain-Driven Design y validada con Lean UX, ofrece solidez y capacidad de evolución. A futuro, el proyecto no solo podrá consolidarse como referente en detección visual, sino también expandirse hacia audio, video y certificaciones, aportando a la lucha contra la desinformación. Con prioridades claras de desarrollo (MVP para usuarios generales, iteración rápida y crecimiento progresivo hacia lo profesional), PixelCheck se proyecta como una herramienta estándar que combina impacto social, viabilidad económica y relevancia tecnológica.
+El modelo de negocio basado en una estrategia freemium asegura sostenibilidad y escalabilidad, mientras que la arquitectura técnica, fundamentada en Domain-Driven Design y validada con Lean UX, ofrece solidez y capacidad de evolución. A futuro, el proyecto no solo podrá consolidarse como referente en detección visual, sino también expandirse hacia audio, video y certificaciones, aportando a la lucha contra la desinformación. Con prioridades claras de desarrollo ( para usuarios generales, iteración rápida y crecimiento progresivo hacia lo profesional), PixelCheck se proyecta como una herramienta estándar que combina impacto social, viabilidad económica y relevancia tecnológica.
 
 ## Bibliografía
 

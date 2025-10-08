@@ -1,0 +1,36 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(sys_bc, "System Management BC") {
+  Component(auditController, "AuditController", "REST Controller", "Gestiona logs y auditoría")
+  Component(metricsController, "MetricsController", "REST Controller", "Consulta métricas del sistema")
+  Component(retentionController, "RetentionController", "REST Controller", "Administra políticas de retención")
+
+  Component(auditService, "AuditService", "Service", "Lógica de auditoría y logs")
+  Component(metricsService, "MetricsService", "Service", "Lógica de métricas y monitoreo")
+  Component(retentionService, "RetentionService", "Service", "Lógica de retención de datos")
+
+  Component(auditRepository, "AuditRepository", "Repository", "Acceso a datos de auditoría")
+  Component(metricRepository, "MetricRepository", "Repository", "Acceso a datos de métricas")
+  Component(retentionPolicyRepo, "RetentionPolicyRepo", "Repository", "Acceso a políticas de retención")
+}
+
+Container(webapp, "Web App", "React", "Interfaz web para monitoreo y administración")
+ContainerDb(db, "PixelCheck DB", "MySQL", "Almacena logs, métricas y políticas de retención") #Red
+
+Rel(webapp, auditController, "Consulta auditoría", "HTTPS/REST")
+Rel(webapp, metricsController, "Consulta métricas", "HTTPS/REST")
+Rel(webapp, retentionController, "Administra retención", "HTTPS/REST")
+
+Rel(auditController, auditService, "Usa")
+Rel(metricsController, metricsService, "Usa")
+Rel(retentionController, retentionService, "Usa")
+
+Rel(auditService, auditRepository, "Usa")
+Rel(metricsService, metricRepository, "Usa")
+Rel(retentionService, retentionPolicyRepo, "Usa")
+
+Rel(auditRepository, db, "Lee/Escribe auditoría", "SQL")
+Rel(metricRepository, db, "Lee/Escribe métricas", "SQL")
+Rel(retentionPolicyRepo, db, "Lee/Escribe políticas", "SQL")
+@enduml

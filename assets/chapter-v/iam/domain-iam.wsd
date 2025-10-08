@@ -1,0 +1,36 @@
+@startuml
+class User {
+  +UserId id
+  +Username username
+  +Email email
+  -PasswordHash passwordHash
+  +List<Role> roles
+  +add_role(r: Role)
+  +has_role(r: Role): bool
+  +verify_password(raw): bool
+}
+
+class Role {
+  +RoleId id
+  +RoleName name
+}
+
+enum RoleName {
+  USER
+  PROFESSIONAL
+  ADMIN
+}
+
+class SessionToken {
+  +value
+  +expiresAt: datetime
+}
+
+class PasswordPolicy {
+  +validate(raw): void
+}
+
+User "1" o-- "*" Role : roles
+User "1" o-- "*" SessionToken : sessionTokens
+User "1" ..> PasswordPolicy : passwordPolicy
+@enduml

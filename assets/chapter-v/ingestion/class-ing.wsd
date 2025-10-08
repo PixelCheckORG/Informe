@@ -1,0 +1,41 @@
+@startuml
+class Image {
+  +ImageId id
+  +UploaderId uploaderId
+  +Filename filename
+  +MimeType mimeType
+  +SizeBytes sizeBytes
+  +int width
+  +int height
+  +Checksum checksum
+  +Status status
+  +CreatedAt createdAt
+  +validate(policy: ValidationPolicy): bool
+  +mark_validated(): void
+  +mark_rejected(reason: string): void
+}
+
+class Status <<enum>> {
+  REJECTED
+  VALIDATED
+  QUEUED
+}
+
+class Batch {
+  +BatchId id
+  +OwnerId ownerId
+  +Status status
+  +List<Image> items
+  +enqueue(): void
+}
+
+class ValidationPolicy {
+  +maxMb: int
+  +maxWidth: int
+  +maxHeight: int
+  +allowedFormats: List
+  +assert(image: Image): bool
+}
+
+Batch "1" o-- "*" Image
+@enduml
