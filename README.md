@@ -2327,7 +2327,7 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 - En Microsoft Azure, se utiliza un App Service para desplegar el Backend API desarrollado en Python Django, el cual contiene la lógica de negocio y el modelo de Machine Learning encargado de verificar imágenes. Además, en el mismo entorno se encuentra el servicio Azure Database for MySQL, que aloja la base de datos donde se almacenan usuarios, resultados de análisis e historial de reportes.
 
-- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera (HTML, CSS, JS), se encuentra desplegada en GitHub Pages, funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
+- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en firebase funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
 
 - Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Firebase Hosting y la Landing Page en GitHub Pages.
 
@@ -2335,7 +2335,7 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 De esta manera, el despliegue asegura integración continua, disponibilidad en la nube y separación clara entre backend, frontend y landing page, garantizando una arquitectura escalable y mantenible.
 
-<img src="https://i.ibb.co/0R54zB1R/diagram-deploy.png" alt="diagram-deploy" border="0">
+<img src="https://i.ibb.co/Q30MsP3Z/diagram-deployyy.png" alt="diagram-deployyy" border="0">
 
 <div style="page-break-after: always;"></div>
 
