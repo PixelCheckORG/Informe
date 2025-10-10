@@ -2745,14 +2745,41 @@ En el caso del usuario común podrá directamente hacer el paso 2 y obtener los 
 
 ### 6.4.3. Applications Mock-ups
 
-[Content for applications mock-ups]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up-1app.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3app.png)
+
+**Mock-up 4:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ### 6.4.4. Applications User Flow Diagrams
 
-[Content for applications user flow diagrams]
+El usuario se registaria, y tendría la opción de poder subir la imagen que desea analizar
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+Luego de subirla, obtiene los resultados y datos más específicos sobre esta
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ## 6.5. Applications Prototyping
 
+**Prototipo:**
+
+![Mock-up 2](assets/chapter-VI/prototipo1.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo2.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo3.png)
 
 
 <div style="page-break-after: always;"></div>
