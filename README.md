@@ -90,6 +90,20 @@ Para la entrega del TB1 se han realizado:
 [Colaboraciones del repositorio]
 ![insight_tb1](./assets/chapter-I/insights.png)
 
+### TP
+
+Para la entrega del TP se han realizado:
+- Desarrollo completo del **Capítulo VI: Solution UX Design**, incluyendo Style Guidelines, Information Architecture, Landing Page UI Design, Applications UX/UI Design y Applications Prototyping.
+- Elaboración del **Capítulo V: Tactical-Level Software Design**, con el diseño detallado de Domain Layer, Interface Layer, Application Layer e Infrastructure Layer para cada bounded context.
+- Creación de diagramas de arquitectura a nivel de componentes, clases y base de datos para todos los bounded contexts identificados.
+- Desarrollo e implementación de la **Landing Page** de PixelCheck con diseño responsive y optimizado.
+- Documentación de wireframes, mockups y prototipos interactivos de la aplicación web.
+- Definición de guías de estilo visual, sistemas de navegación y arquitectura de información.
+
+
+[Colaboraciones del repositorio]
+![insight_tp](./assets/chapter-I/insights-tp.png)
+
 ## Repositorios:
 
 - Informe: [https://github.com/PixelCheckORG/Informe](https://github.com/PixelCheckORG/Informe)
