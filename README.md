@@ -2695,21 +2695,53 @@ Esta navegación plana y accesible garantiza una experiencia intuitiva, reducien
 
 ### 6.3.1. Landing Page Wireframe
 
-[Content for landing page wireframe]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/wire-frame1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/wire-frame2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/wire-frame3.png)
 
 ### 6.3.2. Landing Page Mock-up
 
-[Content for landing page mock-up]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up1.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up2.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3.png)
 
 ## 6.4. Applications UX/UI Design
 
 ### 6.4.1. Applications Wireframes
 
-[Content for applications wireframes]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/Wireframe-1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/Wireframe-2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/Wireframe-3.png)
 
 ### 6.4.2. Applications Wireflow Diagrams
 
-[Content for applications wireflow diagrams]
+En el caso del usuario común podrá directamente hacer el paso 2 y obtener los resultados que saldrían en el paso 3. Sin embargo, los de pago tendrán que registrarse, pero teniendo la posibilidad de exportar sus datos de su prueba en un pdf.
+
+![Wireframe 3](assets/chapter-VI/wireflow-diagrams.png)
 
 ### 6.4.3. Applications Mock-ups
 
@@ -2721,7 +2753,7 @@ Esta navegación plana y accesible garantiza una experiencia intuitiva, reducien
 
 ## 6.5. Applications Prototyping
 
-[Content for applications prototyping]
+
 
 <div style="page-break-after: always;"></div>
 
