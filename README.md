@@ -3445,23 +3445,12 @@ Luego de subirla, obtiene los resultados y datos más específicos sobre esta
 
 [Content for video about the product]
 
-<<<<<<< HEAD
----
+
 ## Conclusiones
-
-A lo largo del desarrollo del informe, el equipo de PixelCheck ha logrado identificar y abordar los principales desafíos relacionados con la verificación de imágenes generadas por inteligencia artificial. Mediante la aplicación de metodologías Lean UX, entrevistas a usuarios y profesionales, y análisis competitivo, se ha validado la necesidad de una solución accesible, precisa y educativa para distintos segmentos de usuarios.
-
-La colaboración multidisciplinaria permitió construir una propuesta sólida, centrada en la transparencia del proceso de detección, la facilidad de uso y la adaptabilidad a diferentes contextos. El enfoque en la experiencia del usuario y la integración de tecnologías emergentes posicionan a PixelCheck como una herramienta innovadora en el mercado de verificación visual.
-
-Finalmente, el trabajo realizado evidencia la capacidad del equipo para comunicar, documentar y justificar cada decisión tomada, asegurando la calidad y relevancia del producto propuesto. PixelCheck está preparado para enfrentar los retos actuales y futuros en la autenticidad de contenido digital.
-=======
-
-## Conclusiones del Proyecto PixelCheck
 
 PixelCheck surge como una solución innovadora y socialmente relevante frente al creciente desafío de las imágenes generadas por IA, validando la existencia de una necesidad urgente tanto en usuarios generales como en profesionales de medios. El análisis confirma una brecha en el mercado entre herramientas técnicas de alto costo y soluciones básicas de baja precisión, posicionando a PixelCheck en un espacio intermedio con transparencia, accesibilidad y flexibilidad como principales diferenciadores. La propuesta de valor se refuerza con un enfoque educativo que no solo facilita la detección de contenido sintético, sino que también fortalece la confianza digital al empoderar a los usuarios con conocimiento sobre cómo y por qué ocurre cada detección.
 
 El modelo de negocio basado en una estrategia freemium asegura sostenibilidad y escalabilidad, mientras que la arquitectura técnica, fundamentada en Domain-Driven Design y validada con Lean UX, ofrece solidez y capacidad de evolución. A futuro, el proyecto no solo podrá consolidarse como referente en detección visual, sino también expandirse hacia audio, video y certificaciones, aportando a la lucha contra la desinformación. Con prioridades claras de desarrollo ( para usuarios generales, iteración rápida y crecimiento progresivo hacia lo profesional), PixelCheck se proyecta como una herramienta estándar que combina impacto social, viabilidad económica y relevancia tecnológica.
->>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
 
 ## Bibliografía
 
@@ -3495,8 +3484,4 @@ Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contr
 ## Anexos
 
  - *Enlace a la presentación del TB1:* <br>
-<<<<<<< HEAD
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ
-=======
 [`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ)
->>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
