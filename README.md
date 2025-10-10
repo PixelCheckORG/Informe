@@ -108,8 +108,6 @@ Para la entrega del TP se han realizado:
 
 - Informe: [https://github.com/PixelCheckORG/Informe](https://github.com/PixelCheckORG/Informe)
 
-[Colaboraciones del repositorio]
-![insight_tb1](./assets/chapter-I/insights.png)
 
 # Contenido
 
