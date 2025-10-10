@@ -2958,61 +2958,406 @@ Atributos:
 
 ### 6.1.1. General Style Guidelines
 
-[Content for general style guidelines]
+Los siguientes elementos han sido cuidadosamente seleccionados para optimizar la experiencia del usuario en PixelCheck, enfocándose en claridad, profesionalismo y accesibilidad.
+
+#### COLOR
+
+Para la paleta de colores hemos seleccionado un esquema moderno que transmite confianza, tecnología y precisión:
+
+![Paleta de Colores](assets/chapter-vi/colorpalete.png)
+
+Este esquema fue elegido porque:
+
+- El azul oscuro transmite seriedad técnica necesaria para herramientas de verificación
+- Los colores de estado (verde/naranja/rojo) son universalmente reconocidos
+- El contraste alto facilita la lectura y accesibilidad
+- La paleta funciona tanto en modo claro como oscuro
+
+#### TIPOGRAFÍA
+
+![Tipografía](assets/chapter-vi/tipografia.png)
+
+**Razones de selección:**
+
+- Inter es altamente legible en pantallas y dispositivos diversos
+- Roboto Mono proporciona claridad para datos numéricos y técnicos
+- Ambas fuentes tienen excelente soporte web y rendimiento
+
+#### BRANDING
+
+**Logotipo:** El logo de PixelCheck combina un ícono de verificación pixelado con tipografía moderna, representando la fusión entre análisis técnico y usabilidad.
+
+**Elementos del logo:**
+
+- **Símbolo:** Check mark formado por píxeles degradados
+- **Texto:** "PixelCheck" en Inter Bold
+- **Colores:** Gradiente de #3498DB a #2C3E50
+
+**Valores visuales del branding:**
+
+- **Precisión:** Los píxeles representan análisis detallado
+- **Confianza:** El check mark simboliza verificación certificada
+- **Modernidad:** Diseño limpio y minimalista
+
+#### ICONOGRAFÍA
+
+Sistema de iconos basado en **Lucide Icons** con las siguientes características:
+
+- **Estilo:** Outline (contorno)
+- **Peso:** 2px stroke
+- **Tamaño base:** 24x24px
+- **Color:** Heredado del contexto
+
+**Iconos principales:**
+
+- **Upload:** Subir imagen
+- **Eye:** Visualizar análisis
+- **FileText:** Reportes
+- **AlertCircle:** Advertencias
+- **CheckCircle:** Verificación exitosa
+- **XCircle:** Detección de IA
+- **History:** Historial
+- **Download:** Exportar resultados
 
 ### 6.1.2. Web, Mobile & Devices Style Guidelines
 
-[Content for web, mobile & devices style guidelines]
+#### RESPONSIVE DESIGN
+
+PixelCheck sigue un enfoque mobile-first con breakpoints adaptados:
+
+**Breakpoints:**
+
+- **Mobile:** 320px - 767px
+- **Tablet:** 768px - 1023px
+- **Desktop:** 1024px - 1439px
+- **Large Desktop:** 1440px+
+
+**Grid System:**
+
+- **Contenedor máximo:** 1280px
+- **Columnas:** 12 columns (flexible)
+- **Gutter:** 24px (desktop) / 16px (mobile)
+- **Margin:** 32px (desktop) / 16px (mobile)
+
+#### BACKGROUND STYLES
+
+**Fondos principales:**
+
+- **Landing Page:** Gradiente sutil #FFFFFF → #F8F9FA
+- **Dashboard:** #FFFFFF sólido
+- **Cards/Containers:** #FFFFFF con sombra suave
+- **Modal overlays:** rgba(44, 62, 80, 0.8)
+
+#### TEXT STYLES POR CONTEXTO
+
+**Sobre fondos claros:**
+
+- **Títulos:** #2C3E50 (Primary Blue)
+- **Body:** #34495E (Dark Gray)
+- **Secondary:** #7F8C8D (Medium Gray)
+
+**Sobre fondos oscuros:**
+
+- **Títulos:** #FFFFFF
+- **Body:** #ECF0F1
+- **Secondary:** #BDC3C7
+
+#### BUTTON STYLES
+
+![Estilos de Botones](assets/chapter-vi/botones.png)
+
+#### COMPONENT STYLES
+
+**Input Fields:**
+
+![Input Fields](assets/chapter-vi/inputfields.png)
+
+**Progress Indicators:**
+
+![Progress Indicators](assets/chapter-vi/progrees.png)
+
+
+#### FEEDBACK STATES
+
+**Toast Notifications:**
+
+![Toast Notifications](assets/chapter-vi/toastnotifications.png)
+
+#### MOBILE-SPECIFIC GUIDELINES
+
+**Touch Targets:**
+
+- Mínimo: 44x44px (iOS) / 48x48px (Android)
+- Spacing entre targets: 8px mínimo
+
+**Navigation:**
+
+- Bottom navigation bar en mobile
+- Hamburger menu para opciones secundarias
+- Swipe gestures para historial
+
+**Image Upload:**
+
+- Área de drop aumentada en mobile
+- Botón de cámara integrado
+- Preview optimizado para pantalla vertical
+
+**Results Display:**
+
+- Stack vertical de información
+- Scroll suave entre secciones
+- Acciones principales siempre visibles
+
+#### ACCESSIBILITY
+
+**Contraste:**
+
+- Mínimo WCAG AA: 4.5:1 para texto normal
+- Mínimo WCAG AA: 3:1 para texto grande
+
+**Focus States:**
+
+- Outline: 3px solid #3498DB
+- Offset: 2px
+
+**Screen Reader:**
+
+- Etiquetas ARIA en todos los componentes interactivos
+- Alt text descriptivo en imágenes
+- Live regions para resultados dinámicos
+
+**Keyboard Navigation:**
+
+- Tab order lógico
+- Shortcuts visibles en tooltips
+- Escape para cerrar modales
 
 ## 6.2. Information Architecture
 
 ### 6.2.1. Labeling Systems
 
-[Content for labeling systems]
+Se han implementado etiquetas claras y concisas para representar funciones específicas dentro de PixelCheck. Estas etiquetas ayudan a los usuarios a comprender fácilmente la función de cada módulo. Las etiquetas principales son:
+
+**Secciones Principales:**
+
+- **Home / Inicio** - Página principal con introducción al servicio
+- **Upload Image / Subir Imagen** - Área para cargar imágenes a analizar
+- **Analysis Dashboard / Panel de Análisis** - Visualización de resultados del análisis
+- **Results / Resultados** - Detalle completo del análisis realizado
+- **History / Historial** - Registro de análisis previos
+- **Reports / Reportes** - Generación y descarga de informes
+- **About / Acerca de** - Información sobre PixelCheck y el equipo
+- **Help / Ayuda** - Documentación y soporte
+- **Settings / Configuración** - Preferencias de usuario
+
+**Estados de Análisis:**
+
+- **Real Image / Imagen Real** - Resultado: imagen auténtica
+- **AI-Generated / Generada por IA** - Resultado: imagen creada artificialmente
+- **Suspicious / Sospechoso** - Resultado: requiere revisión adicional
+- **Processing / Procesando** - Estado: análisis en curso
+- **Error / Error** - Estado: fallo en el proceso
+
+Estas etiquetas permiten una identificación directa de las secciones sin necesidad de interpretación adicional, manteniendo consistencia en inglés y español según el idioma del usuario.
 
 ### 6.2.2. Searching Systems
 
-[Content for searching systems]
+**¿Qué se busca?**
+
+El usuario puede buscar análisis previos, imágenes específicas por nombre o fecha, y resultados históricos filtrados por tipo de detección (real, IA, sospechoso).
+
+**¿Qué resultados se mostrarán?**
+
+La búsqueda devolverá:
+- Registros de análisis con miniatura de la imagen
+- Fecha y hora del análisis
+- Resultado de la detección (Real/IA/Sospechoso)
+- Porcentaje de confianza del análisis
+- Opción para ver detalles completos o re-analizar
+
+**Interfaz de búsqueda:**
+
+En el panel de historial se implementa una barra de búsqueda con ícono de lupa que permite:
+- Búsqueda por nombre de archivo
+- Filtro por rango de fechas
+- Filtro por tipo de resultado (Real/IA/Sospechoso)
+- Ordenamiento por fecha (más reciente/más antiguo) o nivel de confianza
+
+La búsqueda es contextual y se actualiza en tiempo real mientras el usuario escribe, mejorando significativamente la usabilidad cuando se tienen múltiples análisis almacenados.
 
 ### 6.2.3. SEO Tags and Meta Tags
 
-[Content for SEO tags and meta tags]
+Para optimizar la visibilidad en buscadores y ofrecer contexto sobre la aplicación, se proponen las siguientes etiquetas:
+
+**Título:**
+- PixelCheck | Detección de Imágenes Generadas por IA
+
+**Description:**
+- Verifica la autenticidad de imágenes con PixelCheck. Detecta contenido generado por IA mediante análisis avanzado de píxeles y metadatos. Herramienta precisa y confiable para verificación de imágenes.
+
+**Keywords:**
+- detección IA, verificación de imágenes, PixelCheck, deepfake detector, análisis de imágenes, autenticidad de fotos, AI image detection, imagen real vs IA, verificación de contenido
+
+**Open Graph Tags (para redes sociales):**
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Verifica si una imagen es real o generada por IA con nuestra tecnología avanzada de análisis
+- **Type:** website
+- **URL:** https://pixelcheck.app
+- **Image:** https://pixelcheck.app/og-image.png
+
+**Twitter Card:**
+- **Card Type:** summary_large_image
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Herramienta de verificación de autenticidad de imágenes
+- **Image:** https://pixelcheck.app/twitter-card.png
+
+**Meta Tags Adicionales:**
+- **Viewport:** width=device-width, initial-scale=1.0
+- **Robots:** index, follow
+- **Canonical URL:** https://pixelcheck.app
 
 ### 6.2.4. Navigation Systems
 
-[Content for navigation systems]
+PixelCheck implementa un sistema de navegación híbrido que combina navegación global con navegación contextual, optimizado tanto para desktop como para dispositivos móviles.
+
+**Navegación Principal (Desktop):**
+
+La barra de navegación superior permanece fija y contiene:
+- **Logo PixelCheck** (izquierda) - Regresa a Home al hacer click
+- **Home** - Página de inicio
+- **Upload** - Acceso directo a subir imagen
+- **History** - Ver análisis previos
+- **About** - Información del proyecto
+- **Sign In / User Profile** (derecha) - Autenticación o perfil de usuario
+
+**Navegación Principal (Mobile):**
+
+En dispositivos móviles, se implementa:
+- **Bottom Navigation Bar** con 4 acciones principales:
+  - Home (ícono casa)
+  - Upload (ícono +)
+  - History (ícono reloj)
+  - Profile (ícono usuario)
+- **Hamburger Menu** (superior derecho) para opciones secundarias:
+  - Settings
+  - Help & Support
+  - About
+  - Sign Out
+
+**Navegación Contextual:**
+
+Dentro del flujo de análisis:
+1. **Upload Screen** → Botón "Analyze" lleva a Processing
+2. **Processing Screen** → Progreso visual, al completar lleva a Results
+3. **Results Screen** → Acciones disponibles:
+   - "Analyze Another" → Regresa a Upload
+   - "Save Report" → Descarga PDF
+   - "View Details" → Expande información técnica
+   - "Back to History" → Va a lista de análisis
+
+**Breadcrumbs:**
+
+En secciones profundas se muestran rutas de navegación:
+```
+Home > History > Analysis Detail > Technical Report
+```
+
+**Quick Actions (Floating Action Button - FAB):**
+
+En cualquier pantalla, un botón flotante azul (#3498DB) permite acceso rápido a "Upload New Image", la acción más frecuente de los usuarios.
+
+Esta navegación plana y accesible garantiza una experiencia intuitiva, reduciendo la necesidad de múltiples clics o rutas complejas. Los usuarios siempre pueden volver al inicio o iniciar un nuevo análisis desde cualquier punto de la aplicación.
 
 ## 6.3. Landing Page UI Design
 
 ### 6.3.1. Landing Page Wireframe
 
-[Content for landing page wireframe]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/wire-frame1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/wire-frame2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/wire-frame3.png)
 
 ### 6.3.2. Landing Page Mock-up
 
-[Content for landing page mock-up]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up1.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up2.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3.png)
 
 ## 6.4. Applications UX/UI Design
 
 ### 6.4.1. Applications Wireframes
 
-[Content for applications wireframes]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/Wireframe-1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/Wireframe-2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/Wireframe-3.png)
 
 ### 6.4.2. Applications Wireflow Diagrams
 
-[Content for applications wireflow diagrams]
+En el caso del usuario común podrá directamente hacer el paso 2 y obtener los resultados que saldrían en el paso 3. Sin embargo, los de pago tendrán que registrarse, pero teniendo la posibilidad de exportar sus datos de su prueba en un pdf.
+
+![Wireframe 3](assets/chapter-VI/wireflow-diagrams.png)
 
 ### 6.4.3. Applications Mock-ups
 
-[Content for applications mock-ups]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up-1app.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3app.png)
+
+**Mock-up 4:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ### 6.4.4. Applications User Flow Diagrams
 
-[Content for applications user flow diagrams]
+El usuario se registaria, y tendría la opción de poder subir la imagen que desea analizar
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+Luego de subirla, obtiene los resultados y datos más específicos sobre esta
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ## 6.5. Applications Prototyping
 
-[Content for applications prototyping]
+**Prototipo:**
+
+![Mock-up 2](assets/chapter-VI/prototipo1.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo2.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo3.png)
+
 
 <div style="page-break-after: always;"></div>
 
