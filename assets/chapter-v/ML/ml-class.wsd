@@ -1,0 +1,42 @@
+@startuml
+class AnalysisJob {
+  +JobId id
+  +ImageId imageId
+  +Status status
+  +RequestedAt : datetime
+  +StartedAt : datetime
+  +FinishedAt : datetime
+  +start(): void
+  +complete(result: AnalysisResult): void
+  +fail(reason: String): void
+}
+
+class Status <<enum>> {
+  PENDING
+  RUNNING
+  DONE
+  FAILED
+}
+
+class AnalysisResult {
+  +ImageId imageId
+  +label : Label
+  +confidence : float
+  +modelVersion : String
+  +explainArtifacts : String
+  +processedAt : datetime
+}
+
+class Label <<enum>> {
+  AI
+  REAL
+}
+
+class ModelVersion {
+  +name : String
+  +checksum : String
+  +createdAt : datetime
+}
+
+AnalysisJob "1" o-- "1" AnalysisResult : completes
+@enduml

@@ -10,7 +10,7 @@
   <br><strong>Informe de Trabajo Final</strong>
   <br><strong>Startup: Pixel Dev</strong>
   <br><strong>Producto: PixelCheck</strong>
-  <br><strong>Mes y año: Septiembre 2025</strong>
+  <br><strong>Mes y año: Octubre 2025</strong>
 </p>
 
 <div style="text-align: center;">
@@ -30,19 +30,20 @@
       <td>U202212760</td>
     </tr>
     <tr>
-      <td>Gutierrez Garcia, Jose Eduardo</td>
-      <td>U202221518</td>
+      <td>Palma Obispo, Adrian Enrique Jesus</td>
+      <td>U202210066</td>
     </tr>
     <tr>
       <td>Párraga Gamarra, Paolo Gonzalo</td>
       <td>U202219186</td>
     </tr>
     <tr>
-      <td>Palma Obispo, Adrián Enrique Jesús</td>
-      <td>U202210066</td>
+      <td>Gutiérrez García, José Eduardo</td>
+      <td>U20222518</td>
     </tr>
   </tbody>
 </table>
+
 
 </div>
 
@@ -77,6 +78,13 @@ Para la entrega del TB1 se han realizado:
 - Construcción de User Personas, User Task Matrix y Empathy Mapping.
 - Desarrollo del As-is Scenario Mapping y validación de hipótesis.
 - Documentación de hallazgos, insights y requisitos funcionales clave para el producto PixelCheck.
+
+[Colaboraciones del repositorio]
+![insight_tb1](./assets/chapter-I/insights.png)
+
+## Repositorios:
+
+- Informe: [https://github.com/PixelCheckORG/Informe](https://github.com/PixelCheckORG/Informe)
 
 [Colaboraciones del repositorio]
 ![insight_tb1](./assets/chapter-I/insights.png)
@@ -200,6 +208,10 @@ Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.
 En el siguiente cuadro se describe las acciones realizadas y enunciados de
 conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro
 del ABET – EAC - Student Outcome 3.
+| **Criterio Específico**                                                                                                                                                                   | **Acciones Realizadas**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | **Conclusiones**                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.**    | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, realicé las **entrevistas a usuarios**, incluyendo el diseño, la recopilación de información y el análisis de resultados. Además, expuse la **documentación técnica de los diagramas C4**, mostrando la arquitectura del sistema a nivel de landscape, contexto, contenedores y despliegue.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé completamente la **especificación de requerimientos**, que incluyó el **mapeo de escenarios futuros (To-Be)**, la definición de **User Stories**, la elaboración del **Impact Mapping** y la priorización en el **Product Backlog**. También participé en la explicación de puntos clave de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, elaboré el **análisis de competidores** y sus estrategias, conduje el proceso de **Needfinding** mediante la construcción de **User Personas, User Task Matrix, Empathy Mapping y As-Is Scenario Mapping**, y definí el **lenguaje ubicuo** del proyecto. Asimismo, presenté el **planeamiento del producto**, guiando la visión de la solución.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, presenté el **Startup Profile**, los **perfiles de los integrantes del equipo**, el **Solution Profile**, la identificación de **antecedentes y problemática**, y apliqué el **Lean UX Process**, desarrollando los **problem statements, assumptions, hypothesis statements y el Lean UX Canvas**. También expuse los **segmentos objetivo** y el **prototipo MVP Web**. | En **TB1** demostré mi capacidad de **comunicación oral efectiva**, presentando resultados, metodologías y propuestas con **claridad y objetividad**. Pude **adaptar el lenguaje según la audiencia**, desde explicaciones técnicas hasta enfoques más generales. Con ello, evidencié mi **competencia en el logro del curso** y en el **Student Outcome 3 de ABET**, vinculado con la comunicación oral.                             |
+| **Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, documenté de manera detallada las **entrevistas realizadas**, presentando la metodología y los hallazgos más relevantes. También elaboré la **documentación técnica de los diagramas C4**, describiendo con precisión la arquitectura del sistema y sus diferentes vistas.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, redacté íntegramente la **especificación de requerimientos**, que incluyó el mapeo de escenarios futuros, la definición de historias de usuario, la construcción del impact mapping y la organización del product backlog. Adicionalmente, aporté en la documentación técnica de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, redacté el **análisis de requerimientos**, incluyendo el estudio de competidores, el análisis de entrevistas, la definición de user personas, task matrix, empathy mapping, escenarios actuales y el lenguaje ubicuo. También me encargué de la **documentación del planeamiento del producto**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, elaboré el informe que incluyó el **Startup Profile**, el **Solution Profile**, los **antecedentes y la problemática**, así como la documentación completa del **Lean UX Process** con problem statements, assumptions, hypothesis statements y Lean UX Canvas. También desarrollé el **canvas de modelo de negocio** y la descripción del **MVP Web**.                                                                                                          | En **TB1** demostré mi capacidad de **comunicación escrita clara y estructurada**, logrando plasmar de manera **objetiva y comprensible** el proceso seguido y los resultados alcanzados. El documento permitió que personas con distintos niveles de especialización comprendieran el análisis y la propuesta. Con ello, evidencié mi **aporte al logro del curso** y al **Student Outcome 3 de ABET**, en su **dimensión escrita**. |
 
 | **Criterio Específico**                                                                                                                                                                   | **Acciones Realizadas**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | **Conclusiones**                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -434,7 +446,7 @@ Entrevista N°1:
 
 <img src="./assets/chapter-ii/entrevista-4.png" alt="Entrevista con Piero" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuuuEgMFEweqpZgZiIw_PMQ)
 
 **Resumen de la Entrevista:** <br>
 
@@ -453,7 +465,7 @@ Entrevista N°2:
 
 <img src="./assets/chapter-ii/entrevista-5.png" alt="Entrevista con 5" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EfB1wapVTCNNvbFtnP6cU58BSKL2ze7MMJKHsxySug4M_A?e=m70lAE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EfB1wapVTCNNvbFtnP6cU58BSKL2ze7MMJKHsxySug4M_A?e=m70lAE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EfB1wapVTCNNvbFtnP6cU58BSKL2ze7MMJKHsxySug4M_A)
 
 **Resumen de la Entrevista:** El entrevistado es un consumidor digital activo que pasa 2-3 horas diarias consumiendo contenido visual en redes sociales y sitios web, principalmente desde su móvil (70% del tiempo). Ha experimentado directamente la dificultad de distinguir entre imágenes reales y generadas por IA, especialmente con deepfakes de celebridades, y actualmente recurre a métodos básicos como búsqueda inversa en Google para verificar autenticidad. Considera extremadamente importante (9/10) poder identificar contenido artificial debido a preocupaciones sobre desinformación, y estaría dispuesto a pagar hasta $10-25 USD mensuales por una herramienta confiable que analice imágenes en 30 segundos o menos. <br>
 
@@ -472,7 +484,7 @@ Entrevista N°3:
 
 <img src="./assets/chapter-ii/entrevista-6.png" alt="Entrevista con 6" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuWQuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EbU1K3Kw37RJicXWqdh5hTUBuWQuuEgMFEweqpZgZiIw_PMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jbLISr)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/EVx2O6Iqc81NmzOtsv444kUB6X7ejOWcKYJPhh3tR7N6EQ?e=2k0O1a&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
 **Resumen de la Entrevista:** El entrevistado es un usuario ocasional de redes sociales que consume contenido visual principalmente los fines de semana desde su computadora, con un enfoque más hacia noticias que entretenimiento. Aunque no ha tenido experiencias directas sospechando de imágenes falsas, reconoce moderadamente la importancia del tema (6/10) y prefiere soluciones gratuitas o de muy bajo costo. Valora la simplicidad por encima de la funcionalidad avanzada, prefiere respuestas rápidas tipo sí/no sin complicaciones técnicas, y estaría dispuesto a esperar hasta 2 minutos por resultados confiables. Su perfil representa a usuarios menos técnicos que buscan herramientas básicas, intuitivas y accesibles económicamente, priorizando la facilidad de uso sobre características avanzadas. <br>
@@ -495,7 +507,7 @@ Entrevista N°1:
 
 <img src="./assets/chapter-ii/entrevista-1.png" alt="Entrevista con Nasthya" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EZ4vWSOqZ05IhOwIzeAajdsBMUiJd2v-KAkvx2FqzxwX3w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=iOUGaZ`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EZ4vWSOqZ05IhOwIzeAajdsBMUiJd2v-KAkvx2FqzxwX3w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=iOUGaZ)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EZ4vWSOqZ05IhOwIzeAajdsBMUiJd2v-KAkvx2FqzxwX3w)
 
 **Resumen de la Entrevista:** <br>
 
@@ -514,7 +526,7 @@ Entrevista N°2:
 
 <img src="./assets/chapter-ii/entrevista-2.png" alt="Entrevista con Hanna" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EVi6fSL5sP5DnBBJAMQJlm8BlrJc3YoBxIZm260g4J-89A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FycJx8`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EVi6fSL5sP5DnBBJAMQJlm8BlrJc3YoBxIZm260g4J-89A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=FycJx8)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EVi6fSL5sP5DnBBJAMQJlm8BlrJc3YoBxIZm260g4J-89A)
 
 **Resumen de la Entrevista:** <br>
 
@@ -533,7 +545,11 @@ Entrevista N°3:
 
 <img src="./assets/chapter-ii/entrevista-3.png" alt="Entrevista con Maria Jose" style="width: 600px; height: auto;"><br>
 
+<<<<<<< HEAD
 **Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=QV4Q06)
+=======
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw)
+>>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
 
 **Resumen de la Entrevista:** <br>
 
@@ -699,7 +715,6 @@ El As-is Scenario Mapping permite analizar la situación actual de cada segmento
 
 El As-Is Scenario para el segmento de usuarios generales revela un proceso de verificación de imágenes caracterizado por métodos informales y poco confiables. Los usuarios dependen principalmente de búsquedas en Google, consultas a conocidos, y su intuición personal para determinar la autenticidad de las imágenes. No existe un sistema estructurado de verificación, lo que genera incertidumbre y riesgo de compartir contenido falso inadvertidamente.
 
-**Enlace para visualizar el As-is Scenario Map de Usuarios Generales realizado en Miro:** [Acceso al mapa completo](usuario_general.html)
 
 **Brainstorming:**
 
@@ -724,8 +739,6 @@ El As-Is Scenario para el segmento de usuarios generales revela un proceso de ve
 #### Segmento 2: Profesionales de Medios y Comunicación
 
 El As-Is Scenario para el segmento de profesionales de medios muestra un proceso de verificación editorial que depende de herramientas básicas como búsqueda reversa de imágenes, verificación manual y consultas con fuentes. Los procesos actuales son lentos, no están estandarizados, carecen de documentación formal y no proporcionan el nivel de certeza técnica requerido para mantener la credibilidad editorial en un entorno de alta presión temporal.
-
-**Enlace para visualizar el As-is Scenario Map de Profesionales de Medios realizado en Miro:** [Acceso al mapa completo](profesional_medios.html)
 
 **Brainstorming:**
 
@@ -814,9 +827,8 @@ Cada mapeo To-Be representa la experiencia del usuario mejorada, los escenarios 
 
 ### Segmento 1: Usuarios Generales
 
-**Enlace para visualizar el To-Be Scenario Map de Usuarios Generales realizado en Miro:** 
+**Enlace para visualizar el To-Be Scenario Map de Usuarios Generales realizado en Miro:** [Ver mapa completo en Miro](https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZNZGUzUCs3V01ncW8zbmdZQmc1RGZoVlZ4MUVwY1NBY1l5aE5XUHlyTkpldHJQYTcxTnNuREFFVEF3QUU1c0ExaEQ3RHNLRTNDb3R3cS9hOWQ4QjdQa0xtenBNUVFBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=814372674401)
 
-https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZNZGUzUCs3V01ncW8zbmdZQmc1RGZoVlZ4MUVwY1NBY1l5aE5XUHlyTkpldHJQYTcxTnNuREFFVEF3QUU1c0ExaEQ3RHNLRTJoNjBHaFkxZWlUd3E1TUZIbkZTemRBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=668820882265
 
 ### Brainstorming:
 
@@ -829,9 +841,7 @@ https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZN
 
 ### Segmento 2: Profesionales de medios y comunicación
 
-**Enlace para visualizar el To-Be Scenario Map de Profesionales de medios y comunicación realizado en Miro:** 
-
-https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZNZGUzUCs3V01ncW8zbmdZQmc1RGZoVlZ4MUVwY1NBY1l5aE5XUHlyTkpldHJQYTcxTnNuREFFVEF3QUU1c0ExaEQ3RHNLRTJoNjBHaFkxZWlUd3E1TUZIbkZTemRBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=668820882265
+**Enlace para visualizar el To-Be Scenario Map de Profesionales de medios y comunicación realizado en Miro:** [Ver mapa completo en Miro](https://miro.com/welcomeonboard/bEhJWmdYV3h4bEtXTmRTN0NIZEx1WjIzRDBBd3NGdnBXZ3ZNZGUzUCs3V01ncW8zbmdZQmc1RGZoVlZ4MUVwY1NBY1l5aE5XUHlyTkpldHJQYTcxTnNuREFFVEF3QUU1c0ExaEQ3RHNLRTNDb3R3cS9hOWQ4QjdQa0xtenBNUVFBd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=814372674401)
 
 ### Brainstorming:
 
@@ -1945,7 +1955,7 @@ De este análisis surgieron los siguientes contextos candidatos:
 
 Para mas detalles del diagrama: 
 
-[https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353](https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=838022882353)
+[Ver EventStorming completo en Miro](https://miro.com/welcomeonboard/OEU4K1pySytvVkhVUGwwRnF0L01TaU5wY3l5NHZLS2NOWnJnOVNmKzJDOVROY2VJdzNTMzRBSStXMWkrWXp0NE5rSlRHUlVhdG5SZlhmbXorTnZUZHQ4NThCUWdqSzB3MVB5aWU3UmJONjhKOWVzaHBkNVhLUkpyY0crcFRMTUVzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE)
 
 
 ### 4.2.3. Domain Message Flows Modeling
@@ -2328,7 +2338,7 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 - En Microsoft Azure, se utiliza un App Service para desplegar el Backend API desarrollado en Python Django, el cual contiene la lógica de negocio y el modelo de Machine Learning encargado de verificar imágenes. Además, en el mismo entorno se encuentra el servicio Azure Database for MySQL, que aloja la base de datos donde se almacenan usuarios, resultados de análisis e historial de reportes.
 
-- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera (HTML, CSS, JS), se encuentra desplegada en GitHub Pages, funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
+- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en firebase funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
 
 - Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Firebase Hosting y la Landing Page en GitHub Pages.
 
@@ -2336,43 +2346,620 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 De esta manera, el despliegue asegura integración continua, disponibilidad en la nube y separación clara entre backend, frontend y landing page, garantizando una arquitectura escalable y mantenible.
 
-<img src="https://i.ibb.co/0R54zB1R/diagram-deploy.png" alt="diagram-deploy" border="0">
+<img src="https://i.ibb.co/Q30MsP3Z/diagram-deployyy.png" alt="diagram-deployyy" border="0">
 
 <div style="page-break-after: always;"></div>
 
 # Capítulo V: Tactical-Level Software Design
 
-## 5.X. Bounded Context: [Bounded Context Name]
+## 5.1. Bounded Context: IAM (Identity & Access Management)
 
-### 5.X.1. Domain Layer
+El **IAM BC** gestiona el registro, autenticación, autorización y asignación de roles de los usuarios del sistema.  
+Provee **tokens JWT** para el resto de los Bounded Contexts y comparte un núcleo de permisos con **Results & Reporting** (Shared Kernel).  
+También actúa como **Supplier** para **Ingestion & Validation**, validando quién tiene acceso para subir imágenes.  
 
-[Content for domain layer]
+### 5.1.1. Domain Layer
 
-### 5.X.2. Interface Layer
+La **Domain Layer** encapsula las reglas de autenticación, gestión de contraseñas y asignación de roles, evitando dependencias con frameworks externos.
 
-[Content for interface layer]
+#### Aggregates
 
-### 5.X.3. Application Layer
+**User**  
+- **Propósito:** Representar a un usuario autenticable y sus roles.  
+- **Atributos (VOs cuando aplica):**  
+  - `UserId`  
+  - `Username`  
+  - `PasswordHash`  
+  - `Email`  
+  - `Roles[]`  
+  - `CreatedAt`  
+- **Invariantes:**  
+  - `Username` único.  
+  - La contraseña se almacena solo como hash.  
+- **Métodos:**  
+  - `add_role(Role)`  
+  - `has_role(Role)`  
+  - `verify_password(raw)`
 
-[Content for application layer]
+**SessionToken (VO)**  
+- **Propósito:** Representar un token de acceso (JWT).  
+- **Atributos:** `value`, `expiresAt`
 
-### 5.X.4. Infrastructure Layer
+#### Entities
 
-[Content for infrastructure layer]
+**Role**  
+- **Atributos:**  
+  - `RoleId`  
+  - `name ∈ {USER, PROFESSIONAL, ADMIN}`
 
-### 5.X.5. Bounded Context Software Architecture Component Level Diagrams
+#### Value Objects
 
-[Content for component level diagrams]
+- **Username, Email, PasswordHash:** validan formato y fortaleza.  
+- **RoleName (enum)**
 
-### 5.X.6. Bounded Context Software Architecture Code Level Diagrams
+#### Domain Services
 
-#### 5.X.6.1. Bounded Context Domain Layer Class Diagrams
+- **PasswordPolicy:** valida la complejidad y longitud mínima.  
+- **JwtSigner:** firma y valida los claims de acceso.
 
-[Content for domain layer class diagrams]
+#### Commands
 
-#### 5.X.6.2. Bounded Context Database Design Diagram
+- `SignUp(username, email, rawPassword, roles?)`  
+- `SignIn(usernameOrEmail, rawPassword)`  
+- `AssignRoles(userId, roles[])`
 
-[Content for database design diagram]
+#### Queries
+
+- `GetUserById`  
+- `GetAllRoles`  
+- `GetUserByUsername`
+
+#### Domain Events
+
+- `UserRegistered(userId)`  
+- `UserSignedIn(userId)`  
+- `UserRolesChanged(userId)`
+
+### 5.1.2. Interface Layer
+
+La capa de interfaz está expuesta mediante **Django REST Framework**, proporcionando los controladores y recursos necesarios para la comunicación externa.
+
+#### Controllers (ViewSets / Views)
+
+- **AuthController**  
+  - `POST /api/v1/auth/sign-up`  
+  - `POST /api/v1/auth/sign-in`
+
+- **UsersController**  
+  - `GET /api/v1/users/{id}`  
+  - `GET /api/v1/users` *(solo admin)*
+
+- **RolesController**  
+  - `GET /api/v1/roles`
+
+#### Resources (Serializers / DTOs)
+
+- **SignUpResource** `{ username, email, password, roles? }`  
+- **SignInResource** `{ usernameOrEmail, password }`  
+- **AuthenticatedUserResource** `{ userId, username, roles[], token }`  
+- **UserResource** `{ id, username, email, roles[], createdAt }`
+
+#### Transformers
+
+- `SignUpCommandFromResource`  
+- `SignInCommandFromResource`  
+- `UserResourceFromEntity`  
+- `AuthenticatedUserResourceFromEntity`
+
+### 5.1.3. Application Layer
+
+#### Command Services
+
+**UserCommandService**  
+- `handle(SignUp)` → valida políticas, hashea contraseña, persiste usuario y emite `UserRegistered`.  
+- `handle(SignIn)` → verifica contraseña, emite `UserSignedIn` y genera `SessionToken`.
+
+#### Query Services
+
+- **UserQueryService:** lectura optimizada (DTOs).  
+- **RoleQueryService.**
+
+#### Policies & Authorization
+
+**AuthorizationService**  
+- `has_permission(user, action, resource)` → evalúa permisos según roles.
+
+### 5.1.4. Infrastructure Layer
+
+#### Adapters
+
+- **DjangoUserRepository (ORM)**  
+- **DjangoRoleRepository**  
+- **DjangoPasswordHasher** *(usa `django.contrib.auth.hashers`)*  
+- **DjangoJwtSigner** *(usa `pyjwt`)*
+
+#### Persistence (Django ORM)
+
+- **UserModel**(id, username, email, password_hash, created_at)  
+- **RoleModel**(id, name)  
+- **UserRoles**(user_id, role_id)
+
+### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/Kz32jWzJ/iambc.png" alt="iambc" border="0">
+
+### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/spN62nQ7/clasesiam.png" alt="clasesiam" border="0">
+
+#### 5.1.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/4np467jC/bd-iam.png" alt="bd-iam" border="0">
+
+## 5.2. Bounded Context: Ingestion & Validation
+
+El **Ingestion & Validation BC** es responsable de recibir, validar y preparar las imágenes que ingresan al sistema.  
+Verifica el formato, tamaño y dimensiones de cada archivo, asocia las imágenes con el usuario que las subió y gestiona su envío al análisis.  
+Actúa como **Customer** de **IAM** (para verificar permisos y roles de acceso) y como **Supplier** de **Image Analysis (ML)** (emite eventos `ImageValidated`).
+
+
+### 5.2.1. Domain Layer
+
+#### Aggregates
+
+**Image**  
+- **Atributos:**  
+  - `ImageId`  
+  - `UploaderId`  
+  - `Filename`  
+  - `MimeType`  
+  - `SizeBytes`  
+  - `Width`  
+  - `Height`  
+  - `Checksum`  
+  - `Status ∈ {REJECTED, VALIDATED, QUEUED}`  
+  - `CreatedAt`  
+- **Métodos:**  
+  - `validate(policy)`  
+  - `mark_validated()`  
+  - `mark_rejected(reason)`
+
+**Batch (para profesionales)**  
+- **Atributos:**  
+  - `BatchId`  
+  - `OwnerId`  
+  - `Items[]`  
+  - `Status ∈ {RECEIVED, QUEUED, PROCESSING, COMPLETED}`
+
+#### Value Objects
+
+- **ValidationPolicy:** define límites máximos (peso en MB, formatos permitidos, dimensiones máximas).  
+- **Checksum:** valor hash (por ejemplo, SHA-256) usado para evitar duplicados.
+
+#### Domain Events
+
+- `ImageValidated(imageId, uploaderId)`  
+- `BatchQueued(batchId)`
+
+#### Commands
+
+- `UploadImage(uploaderId, fileMeta, bytes)`  
+- `CreateBatch(ownerId, files[])`
+
+#### Queries
+
+- `GetImageById`  
+- `GetBatchById`
+
+### 5.2.2. Interface Layer
+
+
+#### Controllers
+
+- `POST /api/v1/images/upload`  
+- `POST /api/v1/batches/upload`  
+- `GET /api/v1/images/{imageId}`  
+- `GET /api/v1/batches/{batchId}`
+
+#### Resources (Serializers / DTOs)
+
+- **UploadImageResponse** `{ imageId, status }`  
+- **BatchUploadResponse** `{ batchId, items[] }`  
+- **ImageResource** `{ ...meta..., status }`
+
+#### ACL hacia IAM
+
+- `IamClient.verify_token()`  
+- `IamClient.require_role('PROFESSIONAL')` *(para subida de lotes)*
+
+### 5.2.3. Application Layer
+
+#### Services
+
+**IngestionCommandService**  
+- `handle(UploadImage)` → valida formato, calcula `Checksum`, persiste la imagen, marca como `VALIDATED` y encola el trabajo hacia ML (`AnalysisRequested`).
+
+**BatchCommandService**  
+- `handle(CreateBatch)` → crea el batch con sus ítems, guarda en base de datos y emite `BatchQueued`.
+
+#### Policies
+
+- **ImageValidationPolicy:** reglas configurables por entorno (p. ej., límites de peso y tipo MIME).
+
+
+### 5.2.4. Infrastructure Layer
+
+#### Adapters
+
+- **DjangoImageRepository**  
+- **DjangoBatchRepository**  
+- **Queue Adapter:**
+
+#### Persistencia (MySQL)
+
+- **Tabla:** `images`  
+  - Puede almacenar la imagen directamente en un campo `LONGBLOB` o mediante una ruta `file_path` (si se usa `MEDIA_ROOT`).  
+  - Para la primera version se acordó mantener una **estrategia dual** (`BLOB` o `file_path`) sin usar almacenamiento externo.
+
+
+### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/4ZfZ8dT9/ing-comp.png" alt="ing-comp" border="0">
+
+### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/dsJtpYyR/class-ing.png" alt="class-ing" border="0">
+
+#### 5.2.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/v4QNPyPh/bd-ing.png" alt="bd-ing" border="0">
+
+
+## 5.3. Bounded Context: Image Analysis (ML)
+
+El **Image Analysis (ML)** BC ejecuta el modelo de Machine Learning para clasificar una imagen como “Imagen IA” o “Imagen Original”. Calcula el score de confianza y registra la versión del modelo utilizada. Consume imágenes validadas del BC *Ingestion & Validation* y envía los resultados al BC *Results & Reporting*.
+
+### 5.3.1. Domain Layer
+
+#### Aggregates
+
+**AnalysisJob**  
+Atributos:  
+- JobId  
+- ImageId  
+- Status ∈ {PENDING, RUNNING, DONE, FAILED}  
+- RequestedAt  
+- StartedAt  
+- FinishedAt  
+
+Métodos:  
+- `start()`  
+- `complete(result)`  
+- `fail(reason)`  
+
+**ModelVersion**  
+Atributos:  
+- name (e.g., `pcx-cnn-v0.1`)  
+- checksum  
+- createdAt  
+
+**AnalysisResult**  
+Atributos:  
+- ImageId  
+- label ∈ {AI, REAL}  
+- confidence (0..1)  
+- modelVersion  
+- explainArtifacts? (p. ej. heatmap)  
+- processedAt  
+
+#### Domain Services
+
+**InferenceService (puerto de dominio)**  
+- `predict(imageBytes) -> (label, confidence, explain?)`  
+
+**ExplainabilityService (opcional)**  
+- Usado solo si el escenario o política lo requiere, por ejemplo, cuando se necesita justificar visualmente la clasificación.
+
+
+#### Domain Events
+
+- `AnalysisCompleted(imageId, label, confidence, modelVersion)`  
+- `AnalysisFailed(imageId, reason)`
+
+#### Commands
+
+- `RunAnalysis(jobId, imageId)`  
+- `RunBatchAnalysis(batchId)`
+
+#### Queries
+
+- `GetAnalysisByImageId`  
+- `GetModelVersionActive`
+
+### 5.3.2. Interface Layer
+
+#### Controllers (solo para administración o health check)
+
+- `GET /api/v1/ml/health`  
+- `GET /api/v1/ml/model-version`  
+
+#### SSE/Webhook internos  
+Los resultados (`AnalysisCompleted`) se notifican a *Results & Reporting* (puede hacerse mediante webhook, SSE o polling).  
+En tu TF, *Results* consume directamente la salida del módulo ML como **Conformist**.
+
+### 5.3.3. Application Layer
+
+#### Services
+
+**AnalysisOrchestrator**  
+- Descarga bytes/imágenes desde el almacenamiento (BLOB o filesystem).  
+- Invoca `InferenceService`.  
+- Construye un `AnalysisResult`.  
+- Persiste y emite el evento `AnalysisCompleted`.
+
+#### Policies
+
+**LatencyBudget**  
+- Límite máximo: ≤ 10s por imagen en el MVP (para análisis rápido).  
+- Refinable según los escenarios de calidad definidos más adelante.
+
+
+### 5.3.4. Infrastructure Layer
+
+#### Adapters
+
+- `PytorchTensorflowRunner` (para el MVP: TensorFlow en CPU, con posibilidad de escalar).  
+- `DjangoAnalysisRepository`  
+- `DjangoModelVersionRepository`  
+
+#### Job Runner
+
+- Celery worker (si el equipo lo usa)  
+- Alternativamente, un comando `manage.py` de Django para tareas periódicas o de lotes.
+
+#### Persistencia
+
+Tablas en MySQL:  
+- `analysis_results`  
+- `model_versions`  
+- `analysis_jobs`
+
+### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/8DghcfgW/ml-comp.png" alt="ml-comp" border="0">
+
+### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/8DcNwC4P/ml-class.png" alt="ml-class" border="0">
+
+
+#### 5.3.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/LDkncy2Y/bd-ml.png" alt="bd-ml" border="0">
+
+## 5.4. Bounded Context: Results & Reporting
+
+El **Results & Reporting** BC almacena los resultados generados por el análisis de imágenes, expone consultas de historial y genera reportes en formatos **PDF** o **CSV** para los usuarios profesionales.  
+Su acceso está controlado mediante el **Shared Kernel** de roles y permisos compartido con el BC **IAM**.  
+Cada resultado se asocia al usuario que subió la imagen y se mantiene un historial consultable por usuario.
+
+
+### 5.4.1. Domain Layer
+
+#### Aggregates
+
+**Result**  
+Atributos:  
+- ResultId  
+- ImageId  
+- OwnerId  
+- Label  
+- Confidence  
+- ModelVersion  
+- ProcessedAt  
+
+**Report**  
+Atributos:  
+- ReportId  
+- OwnerId  
+- Scope ∈ {SINGLE, BATCH}  
+- Format ∈ {PDF, CSV}  
+- Status ∈ {REQUESTED, GENERATING, READY, FAILED}  
+- UrlOrBlobRef  
+- CreatedAt
+
+#### Domain Events
+
+- `ReportGenerated(reportId, ownerId, url)`  
+- `ResultStored(imageId, ownerId)`
+
+
+#### Commands
+
+- `GenerateReport(ownerId, scope, selection[])`
+
+#### Queries
+
+- `GetResultByImageId`  
+- `ListResultsByOwner`  
+- `GetReport(reportId)`
+
+### 5.4.2. Interface Layer
+
+#### Controllers
+
+- `GET /api/v1/results/{imageId}`  
+- `GET /api/v1/results?ownerId=...&page=...`  
+- `POST /api/v1/reports` *(solo profesional)*  
+- `GET /api/v1/reports/{reportId}`  
+
+#### Resources
+
+- **ResultResource** `{ imageId, label, confidence, modelVersion, processedAt }`  
+- **ReportRequest** `{ scope, selection[], format }`  
+- **ReportResource** `{ reportId, status, url }`  
+
+
+#### ACL con IAM (Shared Kernel)
+
+Permisos definidos:  
+- `VIEW_REPORTS`  
+- `VIEW_RESULTS_OWN`  
+- `VIEW_RESULTS_ALL` *(solo admin)*  
+
+Estos permisos garantizan que los reportes y resultados sean accesibles únicamente por sus propietarios o administradores autorizados.
+
+
+### 5.4.3. Application Layer
+
+#### Services
+
+**ResultsQueryService**  
+- Gestiona las consultas de resultados e historial.  
+
+**ReportCommandService**  
+- Agrega los datos requeridos.  
+- Compone los archivos PDF/CSV.  
+- Persiste el reporte y publica el evento `ReportGenerated`.  
+
+#### Policies
+
+**ReportRetentionPolicy**  
+- Define el tiempo de retención y expiración de los reportes.  
+- Permite eliminar o archivar reportes antiguos de forma automatizada.
+
+
+### 5.4.4. Infrastructure Layer
+
+#### Adapters
+
+- `DjangoResultsRepository`  
+- `DjangoReportsRepository`  
+- `PdfGenerator` (p. ej. **ReportLab**)  
+- `CsvExporter`  
+
+#### Storage
+
+Para el **MVP**, los reportes pueden almacenarse:  
+- Como binario (LONGBLOB) en **MySQL**, o  
+- Como archivo físico en `MEDIA_ROOT` (guardando solo el path en base de datos).  
+
+### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/7NZgSSTP/report-comp.png" alt="report-comp" border="0">
+
+### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/kgnf8g4W/class-report.png" alt="class-report" border="0">
+
+#### 5.4.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/1GSr5ZJP/bd-reprot.png" alt="bd-reprot" border="0">
+
+## 5.5. Bounded Context: System Management
+
+El **System Management** BC centraliza la **recolección de métricas, auditorías y políticas de retención de datos**.  
+Opera como un **Anti-Corruption Layer (ACL)** frente a los demás **Bounded Contexts**, recopilando eventos y logs sin acoplarse directamente a su lógica interna.  
+Su objetivo es mantener la trazabilidad, el monitoreo y la gobernanza del sistema completo.
+
+### 5.5.1. Domain Layer
+
+#### Aggregates
+
+**AuditLog**  
+Atributos:  
+- LogId  
+- ActorId?  
+- Action  
+- Target  
+- Payload (JSON)  
+- OccurredAt  
+
+**Metric**  
+Atributos:  
+- MetricId  
+- name  
+- value  
+- labels (JSON)  
+- timestamp  
+
+**RetentionPolicy**  
+Atributos:  
+- name  
+- days  
+- apply(scope)  
+
+#### Domain Events
+
+- `PolicyApplied(policyName, countAffected)`
+
+#### Commands
+
+- `RecordAudit(actorId?, action, target, payload)`  
+- `RecordMetric(name, value, labels)`  
+- `ApplyRetention(policyName)`
+
+#### Queries
+
+- `ListAuditLogs(filter)`  
+- `GetMetricsRange(name, from, to)`
+
+### 5.5.2. Interface Layer
+
+#### Controllers
+
+- `POST /api/v1/system/audit`  
+- `POST /api/v1/system/metrics`  
+- `GET /api/v1/system/metrics?name&from&to`  
+- `POST /api/v1/system/retention/apply` *(solo admin)*  
+
+
+### 5.5.3. Application Layer
+
+#### Services
+
+**AuditService**  
+- Gestiona el registro de acciones del sistema y usuarios.  
+- Implementa idempotencia básica mediante checksum para evitar duplicados.  
+
+**MetricsService**  
+- Calcula y almacena métricas de rendimiento y uso.  
+- Permite consultas agregadas y filtradas por etiquetas o rangos de tiempo.  
+
+**RetentionService**  
+- Ejecuta políticas de retención configuradas.  
+- Opera mediante *jobs programados* para limpiar o archivar registros antiguos
+
+### 5.5.4. Infrastructure Layer
+
+#### Adapters
+
+- `DjangoAuditRepository`  
+- `DjangoMetricsRepository`  
+- `Scheduler` *(Django Crontab o Celery Beat)*  
+- `Exportadores` *(p. ej., Prometheus si se requiere integración de monitoreo)*  
+
+### 5.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="https://i.ibb.co/Y7SzsW4D/sys-comp.png" alt="sys-comp" border="0">
+
+### 5.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="https://i.ibb.co/JwCzSTJn/sys-class.png" alt="sys-class" border="0">
+
+#### 5.5.6.2. Bounded Context Database Design Diagram
+
+<img src="https://i.ibb.co/tkhHgzr/bd-sys.png" alt="bd-sys" border="0">
 
 <div style="page-break-after: always;"></div>
 
@@ -2382,61 +2969,406 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 ### 6.1.1. General Style Guidelines
 
-[Content for general style guidelines]
+Los siguientes elementos han sido cuidadosamente seleccionados para optimizar la experiencia del usuario en PixelCheck, enfocándose en claridad, profesionalismo y accesibilidad.
+
+#### COLOR
+
+Para la paleta de colores hemos seleccionado un esquema moderno que transmite confianza, tecnología y precisión:
+
+![Paleta de Colores](assets/chapter-vi/colorpalete.png)
+
+Este esquema fue elegido porque:
+
+- El azul oscuro transmite seriedad técnica necesaria para herramientas de verificación
+- Los colores de estado (verde/naranja/rojo) son universalmente reconocidos
+- El contraste alto facilita la lectura y accesibilidad
+- La paleta funciona tanto en modo claro como oscuro
+
+#### TIPOGRAFÍA
+
+![Tipografía](assets/chapter-vi/tipografia.png)
+
+**Razones de selección:**
+
+- Inter es altamente legible en pantallas y dispositivos diversos
+- Roboto Mono proporciona claridad para datos numéricos y técnicos
+- Ambas fuentes tienen excelente soporte web y rendimiento
+
+#### BRANDING
+
+**Logotipo:** El logo de PixelCheck combina un ícono de verificación pixelado con tipografía moderna, representando la fusión entre análisis técnico y usabilidad.
+
+**Elementos del logo:**
+
+- **Símbolo:** Check mark formado por píxeles degradados
+- **Texto:** "PixelCheck" en Inter Bold
+- **Colores:** Gradiente de #3498DB a #2C3E50
+
+**Valores visuales del branding:**
+
+- **Precisión:** Los píxeles representan análisis detallado
+- **Confianza:** El check mark simboliza verificación certificada
+- **Modernidad:** Diseño limpio y minimalista
+
+#### ICONOGRAFÍA
+
+Sistema de iconos basado en **Lucide Icons** con las siguientes características:
+
+- **Estilo:** Outline (contorno)
+- **Peso:** 2px stroke
+- **Tamaño base:** 24x24px
+- **Color:** Heredado del contexto
+
+**Iconos principales:**
+
+- **Upload:** Subir imagen
+- **Eye:** Visualizar análisis
+- **FileText:** Reportes
+- **AlertCircle:** Advertencias
+- **CheckCircle:** Verificación exitosa
+- **XCircle:** Detección de IA
+- **History:** Historial
+- **Download:** Exportar resultados
 
 ### 6.1.2. Web, Mobile & Devices Style Guidelines
 
-[Content for web, mobile & devices style guidelines]
+#### RESPONSIVE DESIGN
+
+PixelCheck sigue un enfoque mobile-first con breakpoints adaptados:
+
+**Breakpoints:**
+
+- **Mobile:** 320px - 767px
+- **Tablet:** 768px - 1023px
+- **Desktop:** 1024px - 1439px
+- **Large Desktop:** 1440px+
+
+**Grid System:**
+
+- **Contenedor máximo:** 1280px
+- **Columnas:** 12 columns (flexible)
+- **Gutter:** 24px (desktop) / 16px (mobile)
+- **Margin:** 32px (desktop) / 16px (mobile)
+
+#### BACKGROUND STYLES
+
+**Fondos principales:**
+
+- **Landing Page:** Gradiente sutil #FFFFFF → #F8F9FA
+- **Dashboard:** #FFFFFF sólido
+- **Cards/Containers:** #FFFFFF con sombra suave
+- **Modal overlays:** rgba(44, 62, 80, 0.8)
+
+#### TEXT STYLES POR CONTEXTO
+
+**Sobre fondos claros:**
+
+- **Títulos:** #2C3E50 (Primary Blue)
+- **Body:** #34495E (Dark Gray)
+- **Secondary:** #7F8C8D (Medium Gray)
+
+**Sobre fondos oscuros:**
+
+- **Títulos:** #FFFFFF
+- **Body:** #ECF0F1
+- **Secondary:** #BDC3C7
+
+#### BUTTON STYLES
+
+![Estilos de Botones](assets/chapter-vi/botones.png)
+
+#### COMPONENT STYLES
+
+**Input Fields:**
+
+![Input Fields](assets/chapter-vi/inputfields.png)
+
+**Progress Indicators:**
+
+![Progress Indicators](assets/chapter-vi/progrees.png)
+
+
+#### FEEDBACK STATES
+
+**Toast Notifications:**
+
+![Toast Notifications](assets/chapter-vi/toastnotifications.png)
+
+#### MOBILE-SPECIFIC GUIDELINES
+
+**Touch Targets:**
+
+- Mínimo: 44x44px (iOS) / 48x48px (Android)
+- Spacing entre targets: 8px mínimo
+
+**Navigation:**
+
+- Bottom navigation bar en mobile
+- Hamburger menu para opciones secundarias
+- Swipe gestures para historial
+
+**Image Upload:**
+
+- Área de drop aumentada en mobile
+- Botón de cámara integrado
+- Preview optimizado para pantalla vertical
+
+**Results Display:**
+
+- Stack vertical de información
+- Scroll suave entre secciones
+- Acciones principales siempre visibles
+
+#### ACCESSIBILITY
+
+**Contraste:**
+
+- Mínimo WCAG AA: 4.5:1 para texto normal
+- Mínimo WCAG AA: 3:1 para texto grande
+
+**Focus States:**
+
+- Outline: 3px solid #3498DB
+- Offset: 2px
+
+**Screen Reader:**
+
+- Etiquetas ARIA en todos los componentes interactivos
+- Alt text descriptivo en imágenes
+- Live regions para resultados dinámicos
+
+**Keyboard Navigation:**
+
+- Tab order lógico
+- Shortcuts visibles en tooltips
+- Escape para cerrar modales
 
 ## 6.2. Information Architecture
 
 ### 6.2.1. Labeling Systems
 
-[Content for labeling systems]
+Se han implementado etiquetas claras y concisas para representar funciones específicas dentro de PixelCheck. Estas etiquetas ayudan a los usuarios a comprender fácilmente la función de cada módulo. Las etiquetas principales son:
+
+**Secciones Principales:**
+
+- **Home / Inicio** - Página principal con introducción al servicio
+- **Upload Image / Subir Imagen** - Área para cargar imágenes a analizar
+- **Analysis Dashboard / Panel de Análisis** - Visualización de resultados del análisis
+- **Results / Resultados** - Detalle completo del análisis realizado
+- **History / Historial** - Registro de análisis previos
+- **Reports / Reportes** - Generación y descarga de informes
+- **About / Acerca de** - Información sobre PixelCheck y el equipo
+- **Help / Ayuda** - Documentación y soporte
+- **Settings / Configuración** - Preferencias de usuario
+
+**Estados de Análisis:**
+
+- **Real Image / Imagen Real** - Resultado: imagen auténtica
+- **AI-Generated / Generada por IA** - Resultado: imagen creada artificialmente
+- **Suspicious / Sospechoso** - Resultado: requiere revisión adicional
+- **Processing / Procesando** - Estado: análisis en curso
+- **Error / Error** - Estado: fallo en el proceso
+
+Estas etiquetas permiten una identificación directa de las secciones sin necesidad de interpretación adicional, manteniendo consistencia en inglés y español según el idioma del usuario.
 
 ### 6.2.2. Searching Systems
 
-[Content for searching systems]
+**¿Qué se busca?**
+
+El usuario puede buscar análisis previos, imágenes específicas por nombre o fecha, y resultados históricos filtrados por tipo de detección (real, IA, sospechoso).
+
+**¿Qué resultados se mostrarán?**
+
+La búsqueda devolverá:
+- Registros de análisis con miniatura de la imagen
+- Fecha y hora del análisis
+- Resultado de la detección (Real/IA/Sospechoso)
+- Porcentaje de confianza del análisis
+- Opción para ver detalles completos o re-analizar
+
+**Interfaz de búsqueda:**
+
+En el panel de historial se implementa una barra de búsqueda con ícono de lupa que permite:
+- Búsqueda por nombre de archivo
+- Filtro por rango de fechas
+- Filtro por tipo de resultado (Real/IA/Sospechoso)
+- Ordenamiento por fecha (más reciente/más antiguo) o nivel de confianza
+
+La búsqueda es contextual y se actualiza en tiempo real mientras el usuario escribe, mejorando significativamente la usabilidad cuando se tienen múltiples análisis almacenados.
 
 ### 6.2.3. SEO Tags and Meta Tags
 
-[Content for SEO tags and meta tags]
+Para optimizar la visibilidad en buscadores y ofrecer contexto sobre la aplicación, se proponen las siguientes etiquetas:
+
+**Título:**
+- PixelCheck | Detección de Imágenes Generadas por IA
+
+**Description:**
+- Verifica la autenticidad de imágenes con PixelCheck. Detecta contenido generado por IA mediante análisis avanzado de píxeles y metadatos. Herramienta precisa y confiable para verificación de imágenes.
+
+**Keywords:**
+- detección IA, verificación de imágenes, PixelCheck, deepfake detector, análisis de imágenes, autenticidad de fotos, AI image detection, imagen real vs IA, verificación de contenido
+
+**Open Graph Tags (para redes sociales):**
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Verifica si una imagen es real o generada por IA con nuestra tecnología avanzada de análisis
+- **Type:** website
+- **URL:** [https://pixelcheck.app](https://pixelcheck.app)
+- **Image:** [https://pixelcheck.app/og-image.png](https://pixelcheck.app/og-image.png)
+
+**Twitter Card:**
+- **Card Type:** summary_large_image
+- **Title:** PixelCheck - Detector de Imágenes IA
+- **Description:** Herramienta de verificación de autenticidad de imágenes
+- **Image:** [https://pixelcheck.app/twitter-card.png](https://pixelcheck.app/twitter-card.png)
+
+**Meta Tags Adicionales:**
+- **Viewport:** width=device-width, initial-scale=1.0
+- **Robots:** index, follow
+- **Canonical URL:** [https://pixelcheck.app](https://pixelcheck.app)
 
 ### 6.2.4. Navigation Systems
 
-[Content for navigation systems]
+PixelCheck implementa un sistema de navegación híbrido que combina navegación global con navegación contextual, optimizado tanto para desktop como para dispositivos móviles.
+
+**Navegación Principal (Desktop):**
+
+La barra de navegación superior permanece fija y contiene:
+- **Logo PixelCheck** (izquierda) - Regresa a Home al hacer click
+- **Home** - Página de inicio
+- **Upload** - Acceso directo a subir imagen
+- **History** - Ver análisis previos
+- **About** - Información del proyecto
+- **Sign In / User Profile** (derecha) - Autenticación o perfil de usuario
+
+**Navegación Principal (Mobile):**
+
+En dispositivos móviles, se implementa:
+- **Bottom Navigation Bar** con 4 acciones principales:
+  - Home (ícono casa)
+  - Upload (ícono +)
+  - History (ícono reloj)
+  - Profile (ícono usuario)
+- **Hamburger Menu** (superior derecho) para opciones secundarias:
+  - Settings
+  - Help & Support
+  - About
+  - Sign Out
+
+**Navegación Contextual:**
+
+Dentro del flujo de análisis:
+1. **Upload Screen** → Botón "Analyze" lleva a Processing
+2. **Processing Screen** → Progreso visual, al completar lleva a Results
+3. **Results Screen** → Acciones disponibles:
+   - "Analyze Another" → Regresa a Upload
+   - "Save Report" → Descarga PDF
+   - "View Details" → Expande información técnica
+   - "Back to History" → Va a lista de análisis
+
+**Breadcrumbs:**
+
+En secciones profundas se muestran rutas de navegación:
+```
+Home > History > Analysis Detail > Technical Report
+```
+
+**Quick Actions (Floating Action Button - FAB):**
+
+En cualquier pantalla, un botón flotante azul (#3498DB) permite acceso rápido a "Upload New Image", la acción más frecuente de los usuarios.
+
+Esta navegación plana y accesible garantiza una experiencia intuitiva, reduciendo la necesidad de múltiples clics o rutas complejas. Los usuarios siempre pueden volver al inicio o iniciar un nuevo análisis desde cualquier punto de la aplicación.
 
 ## 6.3. Landing Page UI Design
 
 ### 6.3.1. Landing Page Wireframe
 
-[Content for landing page wireframe]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/wire-frame1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/wire-frame2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/wire-frame3.png)
 
 ### 6.3.2. Landing Page Mock-up
 
-[Content for landing page mock-up]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up1.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up2.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3.png)
 
 ## 6.4. Applications UX/UI Design
 
 ### 6.4.1. Applications Wireframes
 
-[Content for applications wireframes]
+**Wireframe 1:**
+
+![Wireframe 1](assets/chapter-VI/Wireframe-1.png)
+
+**Wireframe 2:**
+
+![Wireframe 2](assets/chapter-VI/Wireframe-2.png)
+
+**Wireframe 3:**
+
+![Wireframe 3](assets/chapter-VI/Wireframe-3.png)
 
 ### 6.4.2. Applications Wireflow Diagrams
 
-[Content for applications wireflow diagrams]
+En el caso del usuario común podrá directamente hacer el paso 2 y obtener los resultados que saldrían en el paso 3. Sin embargo, los de pago tendrán que registrarse, pero teniendo la posibilidad de exportar sus datos de su prueba en un pdf.
+
+![Wireframe 3](assets/chapter-VI/wireflow-diagrams.png)
 
 ### 6.4.3. Applications Mock-ups
 
-[Content for applications mock-ups]
+**Mock-up 1:**
+
+![Mock-up 1](assets/chapter-VI/mock-up-1app.png)
+
+**Mock-up 2:**
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+**Mock-up 3:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-3app.png)
+
+**Mock-up 4:**
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ### 6.4.4. Applications User Flow Diagrams
 
-[Content for applications user flow diagrams]
+El usuario se registaria, y tendría la opción de poder subir la imagen que desea analizar
+
+![Mock-up 2](assets/chapter-VI/mock-up-2app.png)
+
+Luego de subirla, obtiene los resultados y datos más específicos sobre esta
+
+![Mock-up 3](assets/chapter-VI/mock-up-4app.png)
 
 ## 6.5. Applications Prototyping
 
-[Content for applications prototyping]
+**Prototipo:**
+
+![Mock-up 2](assets/chapter-VI/prototipo1.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo2.png)
+
+![Mock-up 3](assets/chapter-VI/prototipo3.png)
+
 
 <div style="page-break-after: always;"></div>
 
@@ -2514,6 +3446,7 @@ De esta manera, el despliegue asegura integración continua, disponibilidad en l
 
 [Content for video about the product]
 
+<<<<<<< HEAD
 ---
 ## Conclusiones
 
@@ -2522,37 +3455,49 @@ A lo largo del desarrollo del informe, el equipo de PixelCheck ha logrado identi
 La colaboración multidisciplinaria permitió construir una propuesta sólida, centrada en la transparencia del proceso de detección, la facilidad de uso y la adaptabilidad a diferentes contextos. El enfoque en la experiencia del usuario y la integración de tecnologías emergentes posicionan a PixelCheck como una herramienta innovadora en el mercado de verificación visual.
 
 Finalmente, el trabajo realizado evidencia la capacidad del equipo para comunicar, documentar y justificar cada decisión tomada, asegurando la calidad y relevancia del producto propuesto. PixelCheck está preparado para enfrentar los retos actuales y futuros en la autenticidad de contenido digital.
+=======
+
+## Conclusiones del Proyecto PixelCheck
+
+PixelCheck surge como una solución innovadora y socialmente relevante frente al creciente desafío de las imágenes generadas por IA, validando la existencia de una necesidad urgente tanto en usuarios generales como en profesionales de medios. El análisis confirma una brecha en el mercado entre herramientas técnicas de alto costo y soluciones básicas de baja precisión, posicionando a PixelCheck en un espacio intermedio con transparencia, accesibilidad y flexibilidad como principales diferenciadores. La propuesta de valor se refuerza con un enfoque educativo que no solo facilita la detección de contenido sintético, sino que también fortalece la confianza digital al empoderar a los usuarios con conocimiento sobre cómo y por qué ocurre cada detección.
+
+El modelo de negocio basado en una estrategia freemium asegura sostenibilidad y escalabilidad, mientras que la arquitectura técnica, fundamentada en Domain-Driven Design y validada con Lean UX, ofrece solidez y capacidad de evolución. A futuro, el proyecto no solo podrá consolidarse como referente en detección visual, sino también expandirse hacia audio, video y certificaciones, aportando a la lucha contra la desinformación. Con prioridades claras de desarrollo ( para usuarios generales, iteración rápida y crecimiento progresivo hacia lo profesional), PixelCheck se proyecta como una herramienta estándar que combina impacto social, viabilidad económica y relevancia tecnológica.
+>>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
 
 ## Bibliografía
 
-Cozzolino, D., & Poggi, G. (2024, September 24). Zero-shot detection of AI-generated images. *arXiv preprint arXiv:2409.15875*. https://arxiv.org/abs/2409.15875
+Cozzolino, D., & Poggi, G. (2024, September 24). Zero-shot detection of AI-generated images. *arXiv preprint arXiv:2409.15875*. [`https://arxiv.org/abs/2409.15875`](https://arxiv.org/abs/2409.15875)
 
-Epstein, D. C., Dhamija, A. R., Jain, L., & Boult, T. E. (2023, October 23). Online detection of AI-generated images. *arXiv preprint arXiv:2310.15150*. https://arxiv.org/abs/2310.15150
+Epstein, D. C., Dhamija, A. R., Jain, L., & Boult, T. E. (2023, October 23). Online detection of AI-generated images. *arXiv preprint arXiv:2310.15150*. [`https://arxiv.org/abs/2310.15150`](https://arxiv.org/abs/2310.15150)
 
-Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional. https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional. [`https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215`](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215)
 
-Evans, E. (2015). *Domain-driven design reference: Definitions and pattern summaries*. Domain Language. https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf
+Evans, E. (2015). *Domain-driven design reference: Definitions and pattern summaries*. Domain Language. [`https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf`](https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
 
-Fowler, M. (2021, December 12). Domain driven design. *Martin Fowler's Bliki*. https://martinfowler.com/bliki/DomainDrivenDesign.html
+Fowler, M. (2021, December 12). Domain driven design. *Martin Fowler's Bliki*. [`https://martinfowler.com/bliki/DomainDrivenDesign.html`](https://martinfowler.com/bliki/DomainDrivenDesign.html)
 
-IEEE Xplore. (2024). Performance comparison and visualization of AI-generated-image detection methods. *IEEE Journals & Magazine*. https://ieeexplore.ieee.org/document/10508937/
+IEEE Xplore. (2024). Performance comparison and visualization of AI-generated-image detection methods. *IEEE Journals & Magazine*. [`https://ieeexplore.ieee.org/document/10508937/`](https://ieeexplore.ieee.org/document/10508937/)
 
-Khononov, V. (2021). *Learning domain-driven design: Aligning software architecture and business strategy*. O'Reilly Media. https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/
+Khononov, V. (2021). *Learning domain-driven design: Aligning software architecture and business strategy*. O'Reilly Media. [`https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/`](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
 
-Liu, Y., Zhang, Q., & Wang, S. (2023). Detection of AI-created images using pixel-wise feature extraction and convolutional neural networks. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10674908/
+Liu, Y., Zhang, Q., & Wang, S. (2023). Detection of AI-created images using pixel-wise feature extraction and convolutional neural networks. *PMC Digital Archive*. [`https://pmc.ncbi.nlm.nih.gov/articles/PMC10674908/`](https://pmc.ncbi.nlm.nih.gov/articles/PMC10674908/)
 
-National Center for Biotechnology Information. (2022). AI-enabled image fraud in scientific publications. *PMC Digital Archive*. https://pmc.ncbi.nlm.nih.gov/articles/PMC9278510/
+National Center for Biotechnology Information. (2022). AI-enabled image fraud in scientific publications. *PMC Digital Archive*. [`https://pmc.ncbi.nlm.nih.gov/articles/PMC9278510/`](https://pmc.ncbi.nlm.nih.gov/articles/PMC9278510/)
 
-Sightengine. (2024). *AI image detector: Detect AI-generated media at scale* [Software]. https://sightengine.com/detect-ai-generated-images
+Sightengine. (2024). *AI image detector: Detect AI-generated media at scale* [Software]. [`https://sightengine.com/detect-ai-generated-images`](https://sightengine.com/detect-ai-generated-images)
 
-Texas Tech University Libraries. (2024). AI images and multimedia - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/images
+Texas Tech University Libraries. (2024). AI images and multimedia - Artificial intelligence tools for detection, research and writing. *Research Guides*. [`https://guides.library.ttu.edu/artificialintelligencetools/images`](https://guides.library.ttu.edu/artificialintelligencetools/images)
 
-Texas Tech University Libraries. (2024). AI detection - Artificial intelligence tools for detection, research and writing. *Research Guides*. https://guides.library.ttu.edu/artificialintelligencetools/detection
+Texas Tech University Libraries. (2024). AI detection - Artificial intelligence tools for detection, research and writing. *Research Guides*. [`https://guides.library.ttu.edu/artificialintelligencetools/detection`](https://guides.library.ttu.edu/artificialintelligencetools/detection)
 
-Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contrast: A simple yet effective approach for AI-generated image detection. *arXiv preprint arXiv:2311.12397*. https://arxiv.org/html/2311.12397v2
+Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contrast: A simple yet effective approach for AI-generated image detection. *arXiv preprint arXiv:2311.12397*. [`https://arxiv.org/html/2311.12397v2`](https://arxiv.org/html/2311.12397v2)
 
 
 ## Anexos
 
  - *Enlace a la presentación del TB1:* <br>
+<<<<<<< HEAD
 https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ
+=======
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ)
+>>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc

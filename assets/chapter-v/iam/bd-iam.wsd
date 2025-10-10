@@ -1,0 +1,24 @@
+@startuml
+entity users {
+  * id : BIGINT PK
+  --
+  username : VARCHAR(64) UNIQUE
+  email : VARCHAR(128) UNIQUE
+  password_hash : VARCHAR(256)
+  created_at : DATETIME
+}
+
+entity roles {
+  * id : BIGINT PK
+  --
+  name : VARCHAR(32) UNIQUE
+}
+
+entity user_roles {
+  * user_id : BIGINT FK -> users.id
+  * role_id : BIGINT FK -> roles.id
+}
+
+users ||--o{ user_roles
+roles ||--o{ user_roles
+@enduml

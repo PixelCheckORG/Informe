@@ -1,0 +1,35 @@
+@startuml
+entity audit_logs {
+  * log_id : BIGINT PK
+  --
+  actor_id : BIGINT NULL
+  action : VARCHAR(64)
+  target : VARCHAR(128)
+  payload_json : JSON
+  occurred_at : DATETIME
+  scope : VARCHAR(64)
+}
+
+entity metrics {
+  * metric_id : BIGINT PK
+  --
+  name : VARCHAR(64)
+  value : DOUBLE
+  labels_json : JSON
+  timestamp : DATETIME
+  scope : VARCHAR(64)
+}
+
+entity retention_policies {
+  * name : VARCHAR(64) PK
+  --
+  days : INT
+  scope : VARCHAR(64)
+  created_at : DATETIME
+}
+
+' Una política de retención puede aplicar a muchos logs y métricas según el scope
+retention_policies ||--o{ audit_logs : "governs logs by scope"
+retention_policies ||--o{ metrics : "governs metrics by scope"
+
+@enduml
