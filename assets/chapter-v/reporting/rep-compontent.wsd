@@ -1,0 +1,36 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(rep_bc, "Results & Reporting BC") {
+  Component(resultsController, "ResultsController", "REST Controller", "Consulta resultados de análisis")
+  Component(reportsController, "ReportsController", "REST Controller", "Solicita generación de reportes")
+
+  Component(resultsQueryService, "ResultsQueryService", "Service", "Lógica de consulta de resultados")
+  Component(reportCommandService, "ReportCommandService", "Service", "Lógica de generación de reportes")
+
+  Component(resultsRepository, "ResultsRepository", "Repository", "Acceso a datos de resultados")
+  Component(reportsRepository, "ReportsRepository", "Repository", "Acceso a datos de reportes")
+  Component(pdfGenerator, "PdfGenerator", "Adapter", "Genera reportes en PDF")
+  Component(csvExporter, "CsvExporter", "Adapter", "Exporta reportes en CSV")
+  Component(iamAcl, "IamAclAdapter", "Adapter", "Verifica roles y permisos")
+}
+
+Container(webapp, "Web App", "React", "Interfaz web responsiva para ver resultados y reportes")
+ContainerDb(db, "PixelCheck DB", "MySQL", "Almacena resultados y reportes generados") #Red
+
+Rel(webapp, resultsController, "Consulta resultados", "HTTPS/REST")
+Rel(webapp, reportsController, "Solicita reportes", "HTTPS/REST")
+
+Rel(resultsController, resultsQueryService, "Usa")
+Rel(reportsController, reportCommandService, "Usa")
+
+Rel(resultsQueryService, resultsRepository, "Usa")
+Rel(reportCommandService, resultsRepository, "Lee inputs")
+Rel(reportCommandService, reportsRepository, "Guarda reportes")
+Rel(reportCommandService, pdfGenerator, "Genera PDF")
+Rel(reportCommandService, csvExporter, "Genera CSV")
+Rel(reportCommandService, iamAcl, "Verifica roles")
+
+Rel(resultsRepository, db, "Lee/Escribe resultados", "SQL")
+Rel(reportsRepository, db, "Lee/Escribe reportes", "SQL")
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(iam_bc, "IAM BC") {
+  Component(authController, "AuthController", "REST Controller", "Gestiona autenticación y login")
+  Component(usersController, "UsersController", "REST Controller", "Consulta y gestión de usuarios")
+  Component(rolesController, "RolesController", "REST Controller", "Consulta y gestión de roles")
+
+  Component(userCommandService, "UserCommandService", "Service", "Lógica de comandos de usuario")
+  Component(userQueryService, "UserQueryService", "Service", "Lógica de consultas de usuario")
+  Component(roleQueryService, "RoleQueryService", "Service", "Lógica de consultas de roles")
+
+  Component(userRepository, "UserRepository", "Repository", "Acceso a datos de usuarios")
+  Component(roleRepository, "RoleRepository", "Repository", "Acceso a datos de roles")
+  Component(passwordHasher, "PasswordHasher", "Infra", "Hash de contraseñas")
+  Component(jwtSigner, "JwtSigner", "Infra", "Firma y verificación JWT")
+}
+
+Container(webapp, "Web App", "React", "Interfaz web responsiva para cargar imágenes y ver resultados")
+ContainerDb(db, "PixelCheck DB", "MySQL", "Almacena usuarios, historial de análisis, reportes") #Red
+
+Rel(webapp, authController, "Solicita login y registro", "HTTPS/REST")
+Rel(webapp, usersController, "Consulta usuarios", "HTTPS/REST")
+Rel(webapp, rolesController, "Consulta roles", "HTTPS/REST")
+
+Rel(authController, userCommandService, "Usa")
+Rel(usersController, userQueryService, "Usa")
+Rel(rolesController, roleQueryService, "Usa")
+
+Rel(userCommandService, userRepository, "Usa")
+Rel(userCommandService, passwordHasher, "Usa")
+Rel(userCommandService, jwtSigner, "Usa")
+Rel(userQueryService, userRepository, "Usa")
+Rel(roleQueryService, roleRepository, "Usa")
+
+Rel(userRepository, db, "Lee/Escribe usuarios", "SQL")
+Rel(roleRepository, db, "Lee/Escribe roles", "SQL")
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+entity analysis_jobs {
+  * job_id : BIGINT PK
+  --
+  image_id : BIGINT
+  status : ENUM('PENDING','RUNNING','DONE','FAILED')
+  requested_at : DATETIME
+  started_at : DATETIME
+  finished_at : DATETIME
+  error_message : TEXT
+}
+
+entity analysis_results {
+  * result_id : BIGINT PK
+  --
+  image_id : BIGINT UNIQUE
+  label : ENUM('AI','REAL')
+  confidence : DECIMAL(5,4)
+  model_version : VARCHAR(64)
+  explain_artifacts : TEXT  -- URL o JSON con paths/artefactos
+  processed_at : DATETIME
+}
+
+entity model_versions {
+  * name : VARCHAR(64) PK
+  --
+  checksum : CHAR(64)
+  created_at : DATETIME
+}
+
+analysis_jobs ||--o{ analysis_results : produces
+@enduml

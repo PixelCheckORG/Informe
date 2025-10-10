@@ -1,0 +1,34 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Boundary(ing_bc, "Ingestion & Validation BC") {
+  Component(uploadController, "UploadController", "REST Controller", "Recibe imágenes para validación")
+  Component(batchController, "BatchController", "REST Controller", "Procesa lotes de imágenes")
+
+  Component(ingestionCommandService, "IngestionCommandService", "Service", "Lógica de validación y registro de imágenes")
+  Component(batchCommandService, "BatchCommandService", "Service", "Lógica de procesamiento por lotes")
+
+  Component(imageRepository, "ImageRepository", "Repository", "Acceso a datos de imágenes")
+  Component(batchRepository, "BatchRepository", "Repository", "Acceso a datos de lotes")
+  Component(queueAdapter, "QueueAdapter", "Infra", "Encola solicitudes de análisis")
+  Component(iamAcl, "IamAclAdapter", "Infra", "Verifica permisos con IAM")
+}
+
+Container(webapp, "Web App", "React", "Interfaz web responsiva para cargar imágenes y ver resultados")
+ContainerDb(db, "PixelCheck DB", "MySQL", "Almacena imágenes, lotes y resultados de análisis") #Red
+
+Rel(webapp, uploadController, "Sube imágenes", "HTTPS/REST")
+Rel(webapp, batchController, "Procesa lotes", "HTTPS/REST")
+
+Rel(uploadController, ingestionCommandService, "Usa")
+Rel(batchController, batchCommandService, "Usa")
+
+Rel(ingestionCommandService, imageRepository, "Usa")
+Rel(ingestionCommandService, queueAdapter, "Encola análisis")
+Rel(ingestionCommandService, iamAcl, "Verifica permisos")
+Rel(batchCommandService, batchRepository, "Usa")
+Rel(batchCommandService, queueAdapter, "Encola análisis")
+
+Rel(imageRepository, db, "Lee/Escribe imágenes", "SQL")
+Rel(batchRepository, db, "Lee/Escribe lotes", "SQL")
+@enduml

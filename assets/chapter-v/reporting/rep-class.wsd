@@ -1,0 +1,47 @@
+@startuml
+class Result {
+  +ResultId id
+  +ImageId imageId
+  +OwnerId ownerId
+  +Label label
+  +float confidence
+  +String modelVersion
+  +datetime processedAt
+}
+
+class Report {
+  +ReportId id
+  +OwnerId ownerId
+  +Scope scope
+  +Format format
+  +Status status
+  +String urlOrBlobRef
+  +datetime createdAt
+}
+class Label <<enum>> {
+  AI
+  REAL
+}
+class Scope <<enum>> {
+  SINGLE
+  BATCH
+}
+
+class Format <<enum>> {
+  PDF
+  CSV
+}
+
+class Status <<enum>> {
+  REQUESTED
+  GENERATING
+  READY
+  FAILED
+}
+
+Result "0..*" o-- "1" Report : summarized by
+Report ..> Scope
+Report ..> Format
+Report ..> Status
+Result ..> Label
+@enduml

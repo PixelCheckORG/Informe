@@ -1,0 +1,28 @@
+@startuml
+class AuditLog {
+  +LogId id
+  +ActorId actorId
+  +String action
+  +String target
+  +String payloadJson
+  +datetime occurredAt
+}
+
+class Metric {
+  +MetricId id
+  +String name
+  +double value
+  +String labelsJson
+  +datetime timestamp
+}
+
+class RetentionPolicy {
+  +String name
+  +int days
+  +apply(scope): int
+}
+
+AuditLog "0..*" ..> "1" RetentionPolicy : se elimina según
+Metric "0..*" ..> "1" RetentionPolicy : se elimina según
+
+@enduml
