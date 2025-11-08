@@ -3619,9 +3619,24 @@ Durante las primeras fases del desarrollo, se emplea json-server en local para s
 
 [Content for execution evidence]
 
-#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+### **7.2.1.6. Services Documentation Evidence for Sprint Review**
 
-[Content for services documentation evidence]
+Durante el **Sprint 1** se elaboró y actualizó la documentación técnica de los servicios desarrollados en *PixelCheck*, garantizando trazabilidad, mantenibilidad y alineación con las guías de estilo y arquitectura establecidas.
+
+Se documentaron los servicios **backend** (Django REST Framework) mediante **Swagger/OpenAPI**, **Redoc** y archivos `README.md` por módulo, detallando endpoints, parámetros, respuestas y ejemplos. Los diagramas **UML y C4** fueron actualizados en *PlantUML* y *Structurizr*, reflejando las integraciones entre los bounded contexts (IAM, Ingestion, Analysis, Reporting).
+
+En el **frontend (React 18)** se empleó **Storybook** para documentar componentes UI (ImageUploader, LoadingIndicator, Navbar, ResultCard), asegurando consistencia visual con las *Style Guidelines (6.1.2)*.
+Se validó el diseño **responsive** en los breakpoints Mobile, Tablet, Desktop y Large Desktop, confirmando cumplimiento del grid de 12 columnas y contrastes accesibles (WCAG AA).
+
+Las evidencias se registraron en los repositorios oficiales:
+
+* `/docs/services/` – Documentación modular
+* `/docs/architecture/uml/` – Diagramas UML/C4
+* `/docs/ui/responsive_tests/` – Pruebas de diseño adaptable
+* `https://pixelcheckapi.netlify.app/docs` – Documentación OpenAPI visual
+
+En conjunto, la documentación generada respalda la implementación técnica revisada en el Sprint Review y asegura la coherencia del sistema con los lineamientos definidos en los capítulos VI y VII.
+
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
