@@ -1451,7 +1451,7 @@ Eestas restricciones son impuestas por alcance del proyecto, presupuesto y decis
       <td>C05</td>
       <td>CI/CD obligatorio</td>
       <td>Usar GitHub Actions para build/deploy</td>
-      <td>Pipelines que despliegan a App Service / Firebase / GH Pages</td>
+      <td>Pipelines que despliegan a App Service / Netlify / GH Pages</td>
       <td>TS03</td>
     </tr>
     <tr>
@@ -1561,7 +1561,7 @@ Para cada driver clave evaluamos patrones candidatos (3 por driver relevante) y 
 
 - **Persistencia:** Azure MySQL para entidades; en producción se recomienda usar Blob Storage para imágenes grandes y una colección JSON para features si se requiere.
 
-- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Firebase, backend → Azure App Service).
+- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Netlify, backend → Azure App Service).
 
 <h3>Candidate Pattern Evaluation Matrix (selección de 3 drivers clave)</h3>
 
@@ -2353,9 +2353,9 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 - En Microsoft Azure, se utiliza un App Service para desplegar el Backend API desarrollado en Python Django, el cual contiene la lógica de negocio y el modelo de Machine Learning encargado de verificar imágenes. Además, en el mismo entorno se encuentra el servicio Azure Database for MySQL, que aloja la base de datos donde se almacenan usuarios, resultados de análisis e historial de reportes.
 
-- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en firebase funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
+- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Netlify Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en Netlify, funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
 
-- Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Firebase Hosting y la Landing Page en GitHub Pages.
+- Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Netlify Hosting y la Landing Page en GitHub Pages.
 
 - Finalmente, los usuarios generales acceden a la plataforma para subir imágenes y recibir resultados básicos de detección, mientras que los profesionales de medios pueden acceder a análisis avanzados y reportes detallados, todo a través de la WebApp.
 
@@ -3387,55 +3387,247 @@ Luego de subirla, obtiene los resultados y datos más específicos sobre esta
 
 ## 7.1. Software Configuration Management
 
+En los siguientes puntos, detallaremos las herramientas, convenciones, referencias y configuraciones empleadas a lo largo del desarrollo del proyecto, los cuales contribuyeron a mantener la base en el trabajo realizado.
+
 ### 7.1.1. Software Development Environment Configuration
 
-[Content for development environment configuration]
+**UX/UI Design**
+
+**Miro**
+
+Es una plataforma colaborativa de pizarra digital que permite trabajar en equipo de manera remota. Se utilizó para realizar el proceso completo de EventStorming, identificando eventos de dominio, comandos, agregados, políticas de negocio y bounded contexts. También fue fundamental para la creación de los mapas To-Be Scenario, Brainstorming, User Journey Maps y Empathy Maps, facilitando la visualización y organización de los flujos de usuario y necesidades detectadas en ambos segmentos objetivo.
+
+**Figma**
+
+Es una herramienta de diseño de interfaces colaborativa basada en la nube. Se empleó para diseñar los wireframes, mock-ups y prototipos interactivos de la aplicación web PixelCheck. Permitió crear componentes reutilizables, establecer el sistema de diseño (style guidelines, paleta de colores, tipografía) y generar las vistas tanto para usuarios generales como para profesionales de medios, asegurando consistencia visual en toda la experiencia de usuario.
+
+**UXPressia**
+
+Es una plataforma especializada en la creación de herramientas de UX como User Personas, Impact Maps y Customer Journey Maps. Se utilizó para documentar de manera profesional los perfiles de los segmentos objetivo (Usuarios Generales y Profesionales de Medios), sus necesidades, frutraciones y objetivos, así como para mapear el impacto de las funcionalidades del producto en los resultados de negocio.
+
+**Software Architecture & Diagrams**
+
+**PlantUML**
+
+Es una herramienta de código abierto que permite crear diagramas UML mediante sintaxis de texto plano. Se utilizó extensivamente para generar los diagramas de clases (Domain Layer Class Diagrams) de cada bounded context del sistema, incluyendo IAM, Ingestion & Validation, Image Analysis (ML), Results & Reporting y System Management. Esto garantizó precisión técnica en la representación de las entidades, value objects, aggregates y sus relaciones.
+
+**Structurizr**
+
+Es una plataforma que implementa el modelo C4 (Context, Containers, Components, Code) para documentar arquitectura de software como código. Se empleó para diseñar y generar los diagramas C4 del sistema PixelCheck, incluyendo el System Context Diagram, Container Diagram y Component Diagrams, permitiendo visualizar la arquitectura estratégica del sistema y sus integraciones con servicios externos como Azure MySQL, Azure Blob Storage y servicios de Machine Learning.
+
+
+**Software Development**
+
+**Landing Page Development**
+
+Para el desarrollo de la landing page de PixelCheck se utilizaron las tecnologías fundamentales del desarrollo web: HTML5 para la estructura semántica, CSS3 para los estilos y diseño responsivo, y JavaScript para la interactividad y efectos visuales. Se implementó un diseño moderno y minimalista que presenta claramente la propuesta de valor del producto, con secciones informativas sobre las funcionalidades de detección de imágenes generadas por IA dirigidas a ambos segmentos objetivo.
+
+**Backend Development**
+
+Para el desarrollo del backend de la aplicación se utilizó Python como lenguaje principal junto con Django 4.2 como framework web, complementado con Django REST Framework (DRF) para la construcción de las APIs RESTful. Esta elección tecnológica permitió implementar rápidamente el sistema de autenticación JWT, los bounded contexts (IAM, Ingestion, Analysis, Reporting) y la integración con el modelo de Machine Learning. Se utilizó PyTorch para la inferencia del modelo de detección de imágenes IA, Celery con Redis como broker para el procesamiento asíncrono de trabajos de análisis, y Pillow para el manejo y preprocesamiento de imágenes.
+
+**Frontend Web Application**
+
+Para el desarrollo del frontend de la aplicación web se utilizó React 18 como framework principal de JavaScript, complementado con Material-UI (MUI) para los componentes de interfaz de usuario, garantizando una experiencia consistente y profesional. Se implementó React Router para la navegación entre vistas, Axios para las llamadas HTTP a la API backend, y Recharts para la visualización de estadísticas y dashboards de uso. El estado global de la aplicación se gestionó mediante Context API, permitiendo compartir información de autenticación y resultados de análisis entre componentes.
+
+**Software Deployment**
+
+**GitHub Pages**
+
+Es un servicio de hosting estático gratuito integrado con GitHub. Se utilizó para desplegar y hospedar la landing page de PixelCheck, aprovechando su integración automática con el repositorio y su capacidad de servir contenido estático de manera rápida y confiable mediante CDN global.
+
+**Netlify Hosting**
+
+Es la plataforma de hosting de Google para aplicaciones web modernas. Se empleó para desplegar la aplicación web frontend de React, aprovechando su CDN global, certificados SSL automáticos y capacidad de rollback instantáneo entre versiones. La integración con GitHub Actions permitió despliegues automáticos en cada merge a la rama principal.
+
+**Software Documentation**
+
+**Markdown**
+
+Es un lenguaje de marcado ligero que permite formatear texto de manera sencilla. Se utilizó para toda la documentación del proyecto en los archivos README.md del repositorio, incluyendo este informe técnico completo con todos los capítulos de análisis, diseño y arquitectura del sistema PixelCheck.
+
+**GitHub**
+
+Es la plataforma de control de versiones y colaboración basada en Git. Se creó la organización PixelCheckORG con repositorios separados para el informe de documentación, landing page y aplicaciones backend/frontend. Se implementó GitFlow como estrategia de branching con ramas feature para cada capítulo del desarrollo, permitiendo un trabajo colaborativo ordenado entre los miembros del equipo.
 
 ### 7.1.2. Source Code Management
 
-[Content for source code management]
+Para la gestión y actualización del proyecto, se creó una organización via GitHub, en la cual se tuvo un control sobre los cambios a lo largo del ciclo de vida del proyect. Se organizo de la siguiente manera.
+
+Organization: https://github.com/PixelCheckORG Landing page repository: https://github.com/PixelCheckORG/Landing-Page
+
+Report repository: https://github.com/PixelCheckORG/Informe
+
+Web Application repository: https://aquaconecta-app.netlify.app/
+
+Para controlar de manera eficiente el flujo de trabajo se utilizó GitFlow, donde contamos con una rama principal main que es donde se encuentra la versión más estable y lista para pasar a producción del proyecto.
+
+Ramas auxiliares:
+
+feature: Son las ramas donde se desarrollan las funcionalidades del proyecto. Luego de completarlas, se fusionan con la rama develop.
+
+La nomenclatura para los features fueron las siguientes: feature/chapter-n. Por ejemplo, feature/chapter-6.
+
+Commit Conventions
+
+Para el formato de los commits se siguió la estructura de Conventional Commits 1.0.0, la cual tiene la siguiente estructura:
+
+< type > [optional scope]: < description > Donde:
+
+type: Es el tipo de cambio. Tenemos valores como: fix, feat, build, chore, ci, docs, style, refactor, perf, test, etc. scope: Indica donde se realizó el commit (opcional). description: Menciona las actualizaciones del codigo.
 
 ### 7.1.3. Source Code Style Guide & Conventions
 
-[Content for source code style guide & conventions]
+**HTML/CSS**
+
+Para el desarrollo de la landing page se siguió la Guía de Estilo de Google para HTML/CSS, aplicando los siguientes principios:
+
+- Iniciar documento con `<!DOCTYPE html>` y etiquetas meta apropiadas.
+- Incluir la etiqueta `<title>` dentro de `<head>`.
+- Aplicar sangría de dos espacios de manera consistente.
+- Usar letras minúsculas para elementos HTML, atributos, propiedades CSS y selectores.
+- Encerrar atributos HTML entre comillas.
+- Asegurar que todos los elementos tengan etiqueta de cierre.
+- Evitar líneas de código extensas.
+- Las imágenes deben incluir `width`, `height` y atributo `alt` descriptivo.
+
+**JavaScript/React**
+
+Para el desarrollo del frontend en React se siguió la Guía de Estilo de Airbnb para JavaScript, estableciendo:
+
+**Nomenclatura:**
+- Componentes React: PascalCase (ej: `ImageAnalyzer`, `UserDashboard`)
+- Funciones y variables: camelCase (ej: `handleUpload`, `imageData`)
+- Constantes: UPPER_SNAKE_CASE (ej: `API_BASE_URL`, `MAX_FILE_SIZE`)
+
+**Sintaxis:**
+- Usar `const` por defecto, `let` solo cuando sea necesario, evitar `var`.
+- Todas las instrucciones finalizan con punto y coma (`;`).
+- Comillas simples (`'`) para strings, dobles para JSX props.
+- Sangría de 2 espacios consistente.
+- Arrow functions para callbacks.
+- Hooks de React (`useState`, `useEffect`, `useContext`) en componentes funcionales.
 
 ### 7.1.4. Software Deployment Configuration
 
-[Content for software deployment configuration]
+Para el despliegue de la Landing Page y la Aplicación Web, se utiliza GitHub Pages y Netlify Hosting como servicios principales.
+
+Durante las primeras fases del desarrollo, se emplea json-server en local para simular datos (mock) y validar funcionalidades. Esta configuración permite trabajar sin una base de datos real durante las pruebas iniciales. Una vez que se tenga una base de datos definitiva, esta configuración será reemplazada por una conexión real.
 
 ## 7.2. Solution Implementation
 
-### 7.2.X. Sprint n
+### 7.2.1. Sprint 1
 
-#### 7.2.X.1. Sprint Planning n
+#### 7.2.1.1. Sprint Planning 1
 
-[Content for sprint planning]
+<table border="1">
+    <thead>
+        <tr>
+            <th>Sprint #</th>
+            <th>Sprint 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Sprint Planning Background</strong></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>2025-10-15</td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td>18:00 PM</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>La reunión se realizó virtualmente vía Discord</td>
+        </tr>
+        <tr>
+            <td>Prepared By</td>
+            <td>Palma Obispo, Adrian Enrique Jesus</td>
+        </tr>
+        <tr>
+            <td>Attendees (to planning meeting)</td>
+            <td>
+                Carmelino Dueñas, Michael Stefano / Palma Obispo, Adrian Enrique Jesus / Párraga Gamarra, Paolo Gonzalo / Gutiérrez García, José Eduardo
+            </td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Review Summary</td>
+            <td>No aplica (primer sprint)</td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Retrospective Summary</td>
+            <td>No aplica (primer sprint)</td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Goal</td>
+            <td>
+              El objetivo de este sprint es desarrollar la versión inicial de la aplicación web de PixelCheck, enfocándose en las funcionalidades core de detección de imágenes generadas por IA. Se implementará el sistema de autenticación de usuarios, la interfaz para cargar imágenes, la visualización de resultados de análisis y una experiencia de usuario responsiva e intuitiva que permita a los usuarios generales verificar rápidamente la autenticidad de imágenes.
+            </td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Velocity</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Sum of Story Points</td>
+            <td>23</td>
+        </tr>
+    </tbody>
+</table>
 
-#### 7.2.X.2. Sprint Backlog n
+#### 7.2.1.2. Sprint Backlog 1
 
-[Content for sprint backlog]
+| Sprint # | Sprint 1 |           |             |             |                     |             |                                          |
+|----------|----------|-----------|-------------|-------------|---------------------|-------------|------------------------------------------|
+| User Story |        | Work-Item / Task |         |             |                     |             |                                          |
+| Id       | Title    | Id        | Title       | Description | Estimation (Hours)   | Assigned To | Status (To-do / InProcess / ToReview / Done) |
+| HU21 | Registro de usuario web | T01 | Implementar formulario de registro | Como usuario quiero poder registrarme en la plataforma ingresando email, contraseña y nombre completo. | 4 | Adrian Palma | Done |
+| HU21 | Registro de usuario web | T02 | Validación de campos del formulario | Implementar validaciones de email único, contraseña segura y campos requeridos. | 3 | Adrian Palma | Done |
+| HU22 | Inicio de sesión de usuario web | T03 | Crear pantalla de login | Como usuario registrado quiero iniciar sesión con email y contraseña para acceder a mis funcionalidades. | 3 | Paolo Párraga | Done |
+| HU22 | Inicio de sesión de usuario web | T04 | Implementar autenticación JWT | Configurar sistema de tokens JWT para mantener sesión activa del usuario. | 4 | Paolo Párraga | Done |
+| HU01 | Verificación rápida de autenticidad | T05 | Crear componente de carga de imagen | Como usuario quiero cargar imágenes desde mi dispositivo para analizarlas. | 5 | Michael Carmelino | Done |
+| HU01 | Verificación rápida de autenticidad | T06 | Implementar preview de imagen | Mostrar vista previa de la imagen cargada antes del análisis. | 2 | Michael Carmelino | Done |
+| HU03 | Carga rápida y sencilla | T07 | Implementar drag and drop | Como usuario quiero arrastrar y soltar imágenes en el área de carga. | 3 | José Gutiérrez | Done |
+| HU03 | Carga rápida y sencilla | T08 | Validar formatos de imagen | Validar que solo se acepten formatos JPG, PNG y WEBP. | 2 | José Gutiérrez | Done |
+| HU06 | Navegar con interfaz responsiva | T09 | Implementar diseño responsivo | Como usuario quiero que la interfaz se adapte a diferentes tamaños de pantalla. | 4 | Adrian Palma | Done |
+| HU06 | Navegar con interfaz responsiva | T10 | Configurar breakpoints Material-UI | Configurar responsive design usando sistema de grid de MUI. | 2 | Adrian Palma | Done |
+| HU07 | Visualizar estado de carga durante análisis | T11 | Crear componente de loading | Como usuario quiero ver el progreso mientras se analiza mi imagen. | 3 | Michael Carmelino | Done |
+| HU07 | Visualizar estado de carga durante análisis | T12 | Implementar mensajes de estado | Mostrar mensajes informativos durante las diferentes etapas del análisis. | 2 | Michael Carmelino | Done |
+| HU15 | Validar formato de imagen antes de análisis | T13 | Implementar validación de archivos | Como usuario quiero recibir mensajes claros si el formato no es soportado. | 2 | Paolo Párraga | Done |
+| HU06 | Navegar con interfaz responsiva | T14 | Implementar navbar responsivo | Crear barra de navegación que se adapte a mobile y desktop. | 3 | José Gutiérrez | Done |
 
-#### 7.2.X.3. Development Evidence for Sprint Review
+#### 7.2.1.3. Development Evidence for Sprint Review
 
-[Content for development evidence]
+| Repository                        | Branch | Commit Id | Commit Message                                                                                      | Commit Message Body | Committed on (Date) |
+|-----------------------------------|--------|-----------|-----------------------------------------------------------------------------------------------------|---------------------|---------------------|
+| PixelCheckORG/PixelCheckApp       | develop   | ffdb56f   | chore: clean up README.md by removing outdated content and unnecessary sections                     |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | d2a6e16   | feat: remove unnecessary redirect conditions for cleaner netlify configuration                      |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 0bc45cc   | feat: simplify Header component by removing unused theme and language state management              |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 944abce   | feat: add netlify configuration for build process, redirects, and security headers                  |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 94db809   | feat: remove theme and language selectors from Header component for cleaner UI                      |                     | 2025-10-20          |
+| PixelCheckORG/PixelCheckApp       | develop   | 045f7ec   | feat: Implement language and theme context providers for internationalization and dark mode support |                     | 2025-10-20          |
+| PixelCheckORG/PixelCheckApp       | main   | 9d0531d   | feat: add initial project structure and core components                                             |                     | 2025-10-20          |
 
-#### 7.2.X.4. Testing Suite Evidence for Sprint Review
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
 
 [Content for testing suite evidence]
 
-#### 7.2.X.5. Execution Evidence for Sprint Review
+#### 7.2.1.5. Execution Evidence for Sprint Review
 
 [Content for execution evidence]
 
-#### 7.2.X.6. Services Documentation Evidence for Sprint Review
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review
 
 [Content for services documentation evidence]
 
-#### 7.2.X.7. Software Deployment Evidence for Sprint Review
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
 [Content for software deployment evidence]
 
-#### 7.2.X.8. Team Collaboration Insights during Sprint
+#### 7.2.1.8. Team Collaboration Insights during Sprint
 
 [Content for team collaboration insights]
 
