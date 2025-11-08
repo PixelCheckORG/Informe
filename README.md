@@ -3458,7 +3458,7 @@ Organization: https://github.com/PixelCheckORG Landing page repository: https://
 
 Report repository: https://github.com/PixelCheckORG/Informe
 
-Web Application repository: https://aquaconecta-app.netlify.app/
+Web Application repository: https://pixel-check-app.netlify.app/
 
 Para controlar de manera eficiente el flujo de trabajo se utilizó GitFlow, donde contamos con una rama principal main que es donde se encuentra la versión más estable y lista para pasar a producción del proyecto.
 
