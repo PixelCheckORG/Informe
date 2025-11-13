@@ -3645,7 +3645,13 @@ En conjunto, la documentación generada respalda la implementación técnica rev
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
-[Content for team collaboration insights]
+Se mantuvo un flujo de trabajo coordinado bajo la metodología Scrum, promoviendo comunicación efectiva mediante pull requests, revisiones cruzadas y retroalimentación técnica.
+Los aportes abarcaron tanto tareas de frontend (implementación de componentes React, Storybook y validación de diseño responsivo) como de backend (configuración de API REST, documentación OpenAPI y pruebas funcionales).
+
+La evidencia de contribuciones en GitHub confirma una integración progresiva del código y una participación multidisciplinaria, lo que permitió alcanzar los objetivos del sprint con trazabilidad y calidad técnica verificable.
+
+<img width="949" height="482" alt="image" src="https://github.com/user-attachments/assets/543f4781-9946-4992-aaf4-90885bdcdbd0" />
+
 
 ## 7.3. Validation Interviews
 
