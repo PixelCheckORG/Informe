@@ -3650,7 +3650,39 @@ En conjunto, la documentación generada respalda la implementación técnica rev
 
 ### 7.3.1. Diseño de Entrevistas
 
-[Content for interview design]
+**Preguntas generales:**
+1. ¿Cuál es su nombre?
+2. ¿Qué edad tiene?
+3. ¿A qué se dedica actualmente?
+4. ¿En qué distrito o ciudad reside?
+
+**Preguntas dirigidas a Usuarios Generales de Internet:**
+1. ¿Con qué frecuencia consume contenido visual (imágenes) en redes sociales o sitios web?
+2. ¿La interfaz de PixelCheck le resulta intuitiva y fácil de usar?
+3. ¿Qué tan claro le parece el resultado del análisis (Real/Generado por IA)?
+4. ¿Entendió el proceso de carga de imágenes mediante drag & drop o botón de carga?
+5. ¿El tiempo de análisis (5-10 segundos) le pareció adecuado o demasiado largo?
+6. ¿La información mostrada en los resultados es suficiente para tomar una decisión sobre la imagen?
+7. ¿Le gustaría tener explicaciones más detalladas sobre por qué una imagen fue clasificada como IA?
+8. ¿Qué tan útil considera la aplicación para verificar imágenes en su día a día?
+9. ¿Cambiaría algo del diseño o la navegación de la aplicación?
+10. ¿Qué funcionalidad adicional le gustaría que tuviera PixelCheck?
+11. ¿Estaría dispuesto a pagar por funcionalidades premium? Si es así, ¿cuánto?
+12. ¿Recomendaría esta aplicación a otras personas?
+
+**Preguntas dirigidas a Profesionales de Medios y Comunicación:**
+1. ¿Cuál es su rol específico en medios o comunicación?
+2. ¿Con qué frecuencia necesita verificar la autenticidad de imágenes en su trabajo?
+3. ¿La aplicación cubre las necesidades básicas de verificación que tiene en su flujo de trabajo?
+4. ¿El nivel de detalle técnico en los resultados (porcentaje de confianza, metadatos) es apropiado para sus necesidades profesionales?
+5. ¿Qué tan importante es para usted poder generar reportes en PDF o CSV de los análisis realizados?
+6. ¿La información técnica proporcionada es suficiente para justificar decisiones editoriales ante su equipo?
+7. ¿Qué indicadores o métricas adicionales le gustaría ver en los resultados del análisis?
+8. ¿Cómo imagina integrar PixelCheck en su flujo de trabajo diario?
+9. ¿Qué tan confiable debe ser la precisión del análisis para que confíe en la herramienta? (porcentaje mínimo)
+10. ¿Cambiaría algo de la interfaz o funcionalidades actuales para adaptarlas mejor a su trabajo?
+11. ¿Su organización tendría presupuesto para una suscripción mensual? ¿En qué rango de precios?
+12. ¿Qué mejoraría o agregaría para que se convierta en una herramienta indispensable en su trabajo?
 
 ### 7.3.2. Registro de Entrevistas
 
@@ -3658,7 +3690,168 @@ En conjunto, la documentación generada respalda la implementación técnica rev
 
 ### 7.3.3. Evaluaciones según heurísticas
 
-[Content for heuristic evaluations]
+#### UX Heuristics & Principles Evaluation
+##### Usability – Inclusive Design – Information Architecture
+
+**CARRERA:** Ingeniería de Software  
+**CURSO:** Arquitecturas de Software Emergentes  
+**SECCIÓN:** 7295  
+**PROFESOR:** Royer Edelwer Rojas Malasquez  
+**AUDITOR:** Pixel Dev  
+**CLIENTE(S):** Usuarios Generales de Internet y Profesionales de Medios y Comunicación  
+**SITE o APP A EVALUAR:** PixelCheck Web Application  
+
+#### TAREAS A EVALUAR:
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Registro e inicio de sesión de usuarios
+2. Carga y validación de imágenes (drag & drop, formatos)
+3. Visualización de resultados de análisis
+4. Navegación principal y estructura responsiva
+5. Indicadores de progreso durante análisis
+6. Sistema de búsqueda y filtrado en historial
+
+
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+- Integración con modelo de Machine Learning (backend)
+- Procesamiento asíncrono con Celery
+- Funcionalidades de API REST completas
+- Módulos de facturación y suscripciones premium
+- Integración con servicios de Azure (App Service, MySQL, Blob Storage)
+
+#### ESCALA DE SEVERIDAD:
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|-------|-------------|
+| 1     | Problema superficial: puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2     | Problema menor: puede ocurrer un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3     | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4     | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+#### TABLA RESUMEN:
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|----------|---------------------|---------------------------------|
+| 1 | Falta de feedback visual inmediato al cargar imagen | 3 | Usability: Visibilidad del estado del sistema |
+| 2 | Mensajes de error genéricos en validación de formatos | 2 | Usability: Prevención de errores y mensajes de error claros |
+| 3 | Botón "Upload" no deshabilitado durante procesamiento | 3 | Usability: Prevención de errores |
+| 4 | Historial sin paginación para múltiples análisis | 2 | Usability: Flexibilidad y eficiencia de uso |
+| 5 | Falta de indicador de progreso detallado | 3 | Usability: Visibilidad del estado del sistema |
+| 6 | Resultados de análisis sin explicación contextual | 2 | Information Architecture: Jerarquía de información |
+
+
+
+#### DESCRIPCIÓN DE PROBLEMAS:
+
+##### PROBLEMA #1: Falta de feedback visual inmediato al cargar imagen
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Descripción:** Cuando el usuario arrastra y suelta una imagen o la selecciona mediante el botón de carga, no hay una confirmación visual inmediata de que el archivo ha sido detectado correctamente antes de presionar "Analyze". Esto genera incertidumbre sobre si la imagen se cargó exitosamente, especialmente con archivos grandes que pueden tardar en mostrarse en el preview.
+
+**Recomendación:**
+Implementar un feedback visual inmediato que incluya:
+- Indicador de carga (spinner) mientras se procesa el archivo
+- Preview de la imagen cargada con bordes destacados (color primario #3498DB)
+- Información del archivo (nombre, tamaño, formato) visible junto al preview
+- Mensaje de confirmación: "Imagen cargada correctamente"
+
+---
+
+##### PROBLEMA #2: Mensajes de error genéricos en validación de formatos
+
+**Severidad:** 2  
+**Heurística violada:** Usability: Prevención de errores y mensajes de error claros
+
+**Descripción:** Cuando un usuario intenta cargar un formato no soportado (ej: GIF, BMP, TIFF), el mensaje de error es genérico: "Formato no válido". No especifica qué formatos son aceptados ni guía al usuario sobre cómo solucionar el problema. Según las user stories (HU15), se deben validar únicamente JPG, PNG y WEBP.
+
+**Recomendación:**
+Mejorar los mensajes de error para que sean descriptivos y orientados a la acción:
+- **Actual:** "Formato no válido"
+- **Propuesto:** "Este formato no es compatible. Por favor, sube imágenes en formato JPG, PNG o WEBP."
+- Incluir un ícono de alerta (AlertCircle de Lucide Icons)
+- Agregar un enlace a la documentación: "¿Qué formatos puedo usar?"
+
+---
+
+##### PROBLEMA #3: Botón "Upload" no deshabilitado durante procesamiento
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Prevención de errores
+
+**Descripción:** Durante el análisis de una imagen, el botón "Upload Image" permanece activo, permitiendo que el usuario cargue otra imagen mientras aún se está procesando la anterior. Esto puede generar confusión sobre cuál imagen se está analizando y potencialmente causar errores en el sistema si el usuario inicia múltiples análisis simultáneos sin intención.
+
+**Recomendación:**
+- Deshabilitar el botón "Upload" y cambiar su estado visual cuando haya un análisis en curso
+- Mostrar el botón con opacidad reducida (0.5) y cursor "not-allowed"
+- Agregar un mensaje informativo: "Analizando imagen... Por favor espera"
+- Habilitar nuevamente el botón solo cuando el análisis se complete o falle
+
+---
+
+##### PROBLEMA #4: Historial sin paginación para múltiples análisis
+
+**Severidad:** 2  
+**Heurística violada:** Usability: Flexibilidad y eficiencia de uso
+
+**Descripción:** El panel de historial (History) muestra todos los análisis previos en una lista continua sin paginación ni lazy loading. Para usuarios profesionales que realizan múltiples análisis diarios (10-30 imágenes según las entrevistas), esto puede generar scroll excesivo, lentitud en la carga y dificultad para encontrar análisis específicos.
+
+**Recomendación:**
+Implementar un sistema de paginación o scroll infinito:
+- Mostrar 10-15 resultados por página inicialmente
+- Agregar controles de paginación en la parte inferior: "← Anterior | 1 2 3 ... | Siguiente →"
+- Incluir un selector de "Resultados por página: 10 | 25 | 50"
+- Mantener la barra de búsqueda siempre visible en la parte superior
+- Indicar el total de análisis: "Mostrando 1-10 de 45 análisis"
+
+---
+
+##### PROBLEMA #5: Falta de indicador de progreso detallado
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Descripción:** Durante el análisis de la imagen, solo se muestra un spinner genérico sin información sobre el progreso. Según HU07 (Visualizar estado de carga durante análisis), los usuarios necesitan ver el progreso y mensajes informativos durante las diferentes etapas. La falta de transparencia en el proceso genera ansiedad y puede hacer que los usuarios abandonen la página creyendo que el sistema está congelado.
+
+**Recomendación:**
+Implementar un indicador de progreso con etapas visuales:
+
+```
+Analizando imagen...
+Validando formato (completado)
+Extrayendo características de píxeles (en proceso)
+Ejecutando modelo de detección (pendiente)
+Generando reporte (pendiente)
+```
+
+- Usar una barra de progreso con porcentaje: "Progreso: 45%"
+- Agregar mensajes contextuales: "Esto puede tomar entre 5-10 segundos"
+- Incluir animación sutil para indicar actividad continua
+
+
+##### PROBLEMA #8: Contraste insuficiente en texto secundario
+
+**Severidad:** 2  
+**Heurística violada:** Inclusive Design: Accesibilidad WCAG AA
+
+**Descripción:** El texto secundario (#7F8C8D Medium Gray) sobre fondo blanco (#FFFFFF) tiene un ratio de contraste de aproximadamente 3.8:1, ligeramente por debajo del estándar WCAG AA que requiere 4.5:1 para texto normal. Esto afecta la legibilidad para usuarios con baja visión o en condiciones de luz intensa, especialmente al usar la aplicación web en dispositivos con pantallas de menor calidad o en exteriores.
+
+**Elementos afectados:**
+- Timestamps en el historial ("Analizado hace 2 horas")
+- Descripciones auxiliares en los resultados
+- Texto de ayuda contextual (tooltips)
+
+**Recomendación:**
+Ajustar el color del texto secundario para cumplir con WCAG AA:
+- **Color actual:** #7F8C8D (Medium Gray)
+- **Color propuesto:** #5A6C7D (Darker Gray) - Ratio de contraste: 4.6:1
+- Validar todos los colores con herramientas como WebAIM Contrast Checker
+- Documentar los nuevos valores en las Style Guidelines (6.1.1)
+
 
 ## 7.4. Video About-the-Product
 
