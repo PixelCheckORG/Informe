@@ -3617,7 +3617,8 @@ Durante las primeras fases del desarrollo, se emplea json-server en local para s
 
 #### 7.2.1.5. Execution Evidence for Sprint Review
 
-[Content for execution evidence]
+<img width="995" height="1103" alt="image" src="https://github.com/user-attachments/assets/ba44f769-948e-4809-b4a6-039730f5dd88" />
+
 
 ### **7.2.1.6. Services Documentation Evidence for Sprint Review**
 
