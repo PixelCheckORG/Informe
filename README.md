@@ -3641,7 +3641,25 @@ En conjunto, la documentación generada respalda la implementación técnica rev
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
-[Content for software deployment evidence]
+Durante este sprint, se realizó el despliegue de la aplicación utilizando Netlify como plataforma de hosting. A continuación, se presenta la evidencia del proceso de deployment:
+
+**Configuración del proyecto en Netlify:**
+
+![Configuración inicial en Netlify](assets/chapter-VII/deploy-image-1-netlify.png)
+
+Se configuraron los parámetros de build y deployment en Netlify, especificando el directorio de publicación y los comandos de construcción necesarios.
+
+**Panel de control de Netlify:**
+
+![Panel de Netlify](assets/chapter-VII/deploy-image-2-netlify.png)
+
+Vista del dashboard de Netlify mostrando el estado del deployment y la configuración del proyecto.
+
+**Proyecto desplegado:**
+
+![Proyecto en producción](assets/chapter-VII/deploy-project.png)
+
+Aplicación desplegada y funcionando correctamente en el entorno de producción de Netlify.
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
