@@ -560,11 +560,7 @@ Entrevista N°3:
 
 <img src="./assets/chapter-ii/entrevista-3.png" alt="Entrevista con Maria Jose" style="width: 600px; height: auto;"><br>
 
-<<<<<<< HEAD
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=QV4Q06)
-=======
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw)
->>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
 
 **Resumen de la Entrevista:** <br>
 
@@ -3711,8 +3707,13 @@ La evidencia de contribuciones en GitHub confirma una integración progresiva de
 
 ### 7.3.2. Registro de Entrevistas
 
+---
+
+**Entrevista para el Segmento Objetivo 1 - Usuarios Generales de Internet:**
 
 ---
+
+Entrevista N°1:
 
 ## **Entrevista N°1:**
 
@@ -3723,12 +3724,115 @@ La evidencia de contribuciones en GitHub confirma una integración progresiva de
 **Inicio de la Entrevista:** 0:00<br>
 **Duración de la Entrevista:** 5:06<br>
 
-<img src="./assets/chapter-ii/entrevista-4.png" alt="Entrevista 4" style="width: 600px; height: auto;"><br>
+<img src="" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [Ver entrevista en YouTube](https://youtu.be/djFUpLPGMKE)
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
 
-**Resumen de la Entrevista:**
+**Resumen de la Entrevista:** <br>
 El entrevistado es un estudiante universitario que utiliza internet diariamente, consumiendo contenido visual desde diversas plataformas como Instagram, TikTok, Reddit y Twitter. Ha tenido experiencias frecuentes en las que duda de si una imagen es real o generada por IA, lo que aumenta su preocupación sobre la veracidad del contenido online. Considera muy importante poder identificar imágenes generadas por IA (9/10), y suele recurrir a comentarios o búsquedas rápidas cuando sospecha de una imagen falsa. Prefiere respuestas rápidas pero con opción de ver explicaciones. Usaría una herramienta que tarde hasta 30 segundos si es confiable, y estaría dispuesto a pagar un monto bajo (3–5 dólares). Aunque se siente cómodo con la tecnología, prefiere interfaces simples. Para él, la herramienta ideal debe ser precisa, rápida y capaz de explicar de manera clara por qué una imagen podría ser IA. Representa a un usuario joven con alta exposición digital y creciente necesidad de distinguir contenido auténtico en un entorno donde las IA generan cada vez más imágenes indistinguibles de la realidad.<br>
+
+
+## **Entrevista N°2:**
+
+**Entrevistado:** <br>
+**Sexo:** <br>
+**Edad:** años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 0:00<br>
+
+<img src="" alt="Entrevista 2" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+
+**Resumen de la Entrevista:** <br>
+
+<br>
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** <br>
+**Sexo:** <br>
+**Edad:** años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 0:00<br>
+
+<img src="" alt="Entrevista 3" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+
+**Resumen de la Entrevista:** <br>
+
+<br>
+
+
+---
+
+**Entrevista para el Segmento Objetivo 2 - Profesionales de Medios y Comunicación:**
+
+
+## **Entrevista N°1:**
+
+**Entrevistado:** <br>
+**Sexo:** <br>
+**Edad:** años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 0:00<br>
+
+<img src="" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+
+**Resumen de la Entrevista:** <br>
+
+<br>
+
+
+## **Entrevista N°2:**
+
+**Entrevistado:** <br>
+**Sexo:** <br>
+**Edad:** años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 0:00<br>
+
+<img src="" alt="Entrevista 2" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+
+**Resumen de la Entrevista:** <br>
+
+<br>
+
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** <br>
+**Sexo:** <br>
+**Edad:** años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 0:00<br>
+
+<img src="" alt="Entrevista 3" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+
+**Resumen de la Entrevista:** <br>
+
+<br>
+
+
+
+---
+
+
+
 
 
 ### 7.3.3. Evaluaciones según heurísticas
