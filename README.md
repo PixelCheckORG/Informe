@@ -3609,7 +3609,14 @@ Durante las primeras fases del desarrollo, se emplea json-server en local para s
 
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review
 
-[Content for testing suite evidence]
+### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+Captura de pantalla de la ejecución de la suite de pruebas y resultados de cobertura.
+
+![Evidencia de pruebas automatizadas 2](assets/chapter-VII/test1.png)
+
+![Evidencia de pruebas automatizadas](assets/chapter-VII/test3.png)
+![Evidencia de pruebas automatizadas 3](assets/chapter-VII/test2.png)
 
 #### 7.2.1.5. Execution Evidence for Sprint Review
 
