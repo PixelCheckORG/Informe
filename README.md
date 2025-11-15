@@ -4010,7 +4010,11 @@ Ajustar el color del texto secundario para cumplir con WCAG AA:
 
 ## 7.4. Video About-the-Product
 
-[Content for video about the product]
+En este video se verá el como es que funciona nuestro producto, desde un usuario sin una cuenta, hasta el usuario que tiene la posibilidad de tener una y su diferenciador entre ellas.
+
+![Video about the product](assets/chapter-VII/about-the-product.png)
+
+Enlace: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212760_upc_edu_pe/IQAXFGoTYl-WT7mGU6e8geATAXOyWJcNiZgcjKiW1hGHofE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gD6a9D
 
 
 ## Conclusiones
