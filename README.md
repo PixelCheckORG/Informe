@@ -104,6 +104,19 @@ Para la entrega del TP se han realizado:
 [Colaboraciones del repositorio]
 ![insight_tp](./assets/chapter-I/insights-tp.png)
 
+### TB2
+Para la entrega del TB2 se han realizado:
+- Implementación del sistema de autenticación completo incluyendo registro de usuarios con validaciones de campos y login con JWT.
+- Desarrollo del módulo de carga de imágenes con componente drag-and-drop, preview de imagen y validación de formatos JPG, PNG y WEBP.
+- Implementación de la integración con el servicio de análisis de autenticidad de imágenes incluyendo comunicación con API externa.
+- Desarrollo del sistema de visualización de resultados de análisis con porcentajes de autenticidad y indicadores visuales.
+- Implementación del historial de análisis permitiendo a los usuarios revisar verificaciones anteriores.
+- Configuración del despliegue en Netlify con redirects, security headers y proceso de build automatizado.
+
+
+[Colaboraciones del repositorio]
+![insight_tb2](https://github.com/user-attachments/assets/543f4781-9946-4992-aaf4-90885bdcdbd0)
+
 ## Repositorios:
 
 - Informe: [https://github.com/PixelCheckORG/Informe](https://github.com/PixelCheckORG/Informe)
@@ -3756,26 +3769,6 @@ El entrevistado es un usuario frecuente de redes sociales que consume contenido 
 
 Aunque considera suficiente la información mostrada, sí le gustaría tener explicaciones más detalladas sobre por qué la imagen fue clasificada como IA. Valora mucho la utilidad de la aplicación en el día a día, especialmente por la cantidad de imágenes falsas que circulan actualmente. Sugiere mejorar la visibilidad de algunos elementos del diseño y añadir un breve tutorial inicial. Le interesaría ver futuras funciones como análisis de videos cortos o detección de ediciones. Estaría dispuesto a pagar entre 3 y 5 dólares por funciones premium, y afirma que recomendaría la aplicación a otras personas debido a su utilidad y facilidad de uso.<br>
 
-## **Entrevista N°3:**
-
-**Entrevistado:** <br>
-**Sexo:** <br>
-**Edad:** años<br>
-**Domicilio:** Lima<br>
-**Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
-
-<img src="" alt="Entrevista 3" style="width: 600px; height: auto;"><br>
-
-**Enlace:** [Ver entrevista en SharePoint]()
-
-**Resumen de la Entrevista:** <br>
-
-<br>
-
-
-
-
 ---
 
 **Entrevista para el Segmento Objetivo 2 - Profesionales de Medios y Comunicación:**
@@ -3814,27 +3807,6 @@ Nasthya, estudiante de Comunicación Audiovisual y practicante en una agencia de
 '**Resumen de la Entrevista:** <br>
 María José, estudiante de Marketing y practicante de comunicación en una ONG, gestiona materiales para redes y reportes a donantes. Ha enfrentado imágenes manipuladas por IA que exageraban el impacto, afectando la transparencia. Su revisión actual es visual y toma 5–10 min por imagen. Con PixelCheck, le resulta útil la etiqueta “Apta para transparencia”, el porcentaje de confianza y los metadatos, además de exportar PDF para el comité y CSV para archivo interno. Requiere 85–90% de certeza (≥90% para evidencias críticas), y prefiere un resumen en lenguaje simple para donantes con anexo técnico; solicita firma digital y hash del reporte, histórico por proyecto, “source trace” y cruce con bancos de imágenes. Imagina integrarlo como web ligera con carpetas por proyecto y un botón “Agregar al informe mensual”. Presupuesto aproximado: USD 20–30/mes.'
 <br>
-
-
-
-## **Entrevista N°3:**
-
-**Entrevistado:** <br>
-**Sexo:** <br>
-**Edad:** años<br>
-**Domicilio:** Lima<br>
-**Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
-
-<img src="" alt="Entrevista 3" style="width: 600px; height: auto;"><br>
-
-**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
-
-**Resumen de la Entrevista:** <br>
-
-<br>
-
-
 
 ---
 
@@ -4013,8 +3985,7 @@ En este video se verá el como es que funciona nuestro producto, desde un usuari
 
 ![Video about the product](assets/chapter-VII/about-the-product.png)
 
-Enlace: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212760_upc_edu_pe/IQAXFGoTYl-WT7mGU6e8geATAXOyWJcNiZgcjKiW1hGHofE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gD6a9D
-
+**Enlace:** [Ver video en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212760_upc_edu_pe/IQAXFGoTYl-WT7mGU6e8geATAXOyWJcNiZgcjKiW1hGHofE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gD6a9D)
 
 ## Conclusiones
 
@@ -4054,9 +4025,12 @@ Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contr
 ## Anexos
 
  - *Enlace a la presentación del TB1:* <br>
-[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ)
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQDKrxKGczEqQbYWSTTzkv9LAaJ8dkbbjYPFJD1zeQaYcfg?e=nHINsq&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
  - *Enlace a la presentación del TB2:* <br>
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQBaBGXsWSozSrc1syjJZ_Z1ASsLN9JkNM1dbIW_rq9esFA?e=M4nqIb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+ - *Enlace a la presentación del About-the-Team:* <br>
 [`Ver video de exposición`]()
 
  - *Enlace Landing Page:* <br>
