@@ -3753,45 +3753,43 @@ El entrevistado es un estudiante universitario que utiliza internet diariamente,
 **Enlace:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn
 
 
-
 ---
 
 **Entrevista para el Segmento Objetivo 2 - Profesionales de Medios y Comunicación:**
 
-
 ## **Entrevista N°1:**
 
-**Entrevistado:** <br>
-**Sexo:** <br>
-**Edad:** años<br>
-**Domicilio:** Lima<br>
-**Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
+**Entrevistado:** Nasthya Del Carpio<br>
+**Sexo:** Femenino <br>
+**Edad:** 21 años<br>
+**Domicilio:** La perla, Callao<br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 6:30<br>
 
-<img src="" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
+<img src="./assets/chapter-VII/interviews/interview1.png" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44AbO3PvBxG6iMyI07eWz4JYk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ug3Xyi)
 
-**Resumen de la Entrevista:** <br>
-
+'**Resumen de la Entrevista:** <br>
+Nasthya, estudiante de Comunicación Audiovisual y practicante en una agencia de publicidad, trabaja con 20–30 imágenes diarias para campañas. La autenticidad es crítica: comenta un caso previo donde una pieza generada por IA afectó la confianza del público. Hoy verifica metadatos y hace búsquedas en Google Imágenes (~5 min/imagen), pero reconoce que no es confiable ni rápido. Tras ver PixelCheck, valora el veredicto IA/Real con porcentaje y un semáforo visible; solicita ≥90% de certeza (95% en campañas sensibles), reportes PDF para clientes y CSV interno que incluyan modelVersion, umbral aplicado y hash del archivo. Pide integración como web app y plugin (Adobe/Canva), análisis por lotes, opción de “compartir reporte” y un SLA de ≤10 s. Como métricas adicionales sugiere heatmap de artefactos IA, detección de upscaling y un reverse image básico. Presupuesto estimado: USD 30–50/mes.'
 <br>
 
 
 ## **Entrevista N°2:**
 
-**Entrevistado:** <br>
-**Sexo:** <br>
-**Edad:** años<br>
-**Domicilio:** Lima<br>
-**Inicio de la Entrevista:** 0:00<br>
-**Duración de la Entrevista:** 0:00<br>
+**Entrevistado:** Maria Jose Munisaca<br>
+**Sexo:** Femenino <br>
+**Edad:** 22 años<br>
+**Domicilio:** San Borja, Lima <br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 7:10<br>
 
-<img src="" alt="Entrevista 2" style="width: 600px; height: auto;"><br>
+<img src="./assets/chapter-VII/interviews/interview2.png" alt="Entrevista 2" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [Ver entrevista en SharePoint](https://youtu.be/djFUpLPGMKE)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQD0aewzuiOQRoiFQJ6mYC9wAVzt17kXfTA2oaIcPeM6fqI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Dsreaq)
 
-**Resumen de la Entrevista:** <br>
-
+'**Resumen de la Entrevista:** <br>
+María José, estudiante de Marketing y practicante de comunicación en una ONG, gestiona materiales para redes y reportes a donantes. Ha enfrentado imágenes manipuladas por IA que exageraban el impacto, afectando la transparencia. Su revisión actual es visual y toma 5–10 min por imagen. Con PixelCheck, le resulta útil la etiqueta “Apta para transparencia”, el porcentaje de confianza y los metadatos, además de exportar PDF para el comité y CSV para archivo interno. Requiere 85–90% de certeza (≥90% para evidencias críticas), y prefiere un resumen en lenguaje simple para donantes con anexo técnico; solicita firma digital y hash del reporte, histórico por proyecto, “source trace” y cruce con bancos de imágenes. Imagina integrarlo como web ligera con carpetas por proyecto y un botón “Agregar al informe mensual”. Presupuesto aproximado: USD 20–30/mes.'
 <br>
 
 
