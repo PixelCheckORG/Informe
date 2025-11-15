@@ -3753,6 +3753,9 @@ El entrevistado es un estudiante universitario que utiliza internet diariamente,
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn)
 
 **Resumen de la Entrevista:** <br>
+El entrevistado es un usuario frecuente de redes sociales que consume contenido visual diariamente desde su móvil y computadora. Durante la prueba con PixelCheck, comentó que la interfaz le parece intuitiva y sencilla de usar. Considera que el resultado principal (Real/IA) es claro, y entendió sin dificultad el proceso de carga de imágenes mediante drag & drop o el botón de selección. El tiempo de análisis (5–10 segundos) le pareció adecuado, siempre que mantenga buena precisión.
+
+Aunque considera suficiente la información mostrada, sí le gustaría tener explicaciones más detalladas sobre por qué la imagen fue clasificada como IA. Valora mucho la utilidad de la aplicación en el día a día, especialmente por la cantidad de imágenes falsas que circulan actualmente. Sugiere mejorar la visibilidad de algunos elementos del diseño y añadir un breve tutorial inicial. Le interesaría ver futuras funciones como análisis de videos cortos o detección de ediciones. Estaría dispuesto a pagar entre 3 y 5 dólares por funciones premium, y afirma que recomendaría la aplicación a otras personas debido a su utilidad y facilidad de uso.<br>
 
 ## **Entrevista N°3:**
 
