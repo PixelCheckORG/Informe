@@ -3735,7 +3735,7 @@ Entrevista N°1:
 <img width="1783" height="628" alt="image" src="https://github.com/user-attachments/assets/bf33514f-ace5-46d2-ad69-c415a4e9d1f9" /><br>
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQDi2ELrJZvvR5Or1d2sMWF9AeLlVUn8Qs4AHA9Li0H-UWA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bumHzQ)
-
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQDi2ELrJZvvR5Or1d2sMWF9AeLlVUn8Qs4AHA9Li0H-UWA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bumHzQ
 **Resumen de la Entrevista:** <br>
 El entrevistado es un estudiante universitario que utiliza internet diariamente, consumiendo contenido visual desde diversas plataformas como Instagram, TikTok, Reddit y Twitter. Ha tenido experiencias frecuentes en las que duda de si una imagen es real o generada por IA, lo que aumenta su preocupación sobre la veracidad del contenido online. Considera muy importante poder identificar imágenes generadas por IA (9/10), y suele recurrir a comentarios o búsquedas rápidas cuando sospecha de una imagen falsa. Prefiere respuestas rápidas pero con opción de ver explicaciones. Usaría una herramienta que tarde hasta 30 segundos si es confiable, y estaría dispuesto a pagar un monto bajo (3–5 dólares). Aunque se siente cómodo con la tecnología, prefiere interfaces simples. Para él, la herramienta ideal debe ser precisa, rápida y capaz de explicar de manera clara por qué una imagen podría ser IA. Representa a un usuario joven con alta exposición digital y creciente necesidad de distinguir contenido auténtico en un entorno donde las IA generan cada vez más imágenes indistinguibles de la realidad.<br>
 
@@ -3751,7 +3751,7 @@ El entrevistado es un estudiante universitario que utiliza internet diariamente,
 <img width="1246" height="870" alt="image" src="https://github.com/user-attachments/assets/de3dd1fd-97a3-449c-8505-50cf7e4af5e7" /><br>
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn)
-
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn
 **Resumen de la Entrevista:** <br>
 El entrevistado es un usuario frecuente de redes sociales que consume contenido visual diariamente desde su móvil y computadora. Durante la prueba con PixelCheck, comentó que la interfaz le parece intuitiva y sencilla de usar. Considera que el resultado principal (Real/IA) es claro, y entendió sin dificultad el proceso de carga de imágenes mediante drag & drop o el botón de selección. El tiempo de análisis (5–10 segundos) le pareció adecuado, siempre que mantenga buena precisión.
 
