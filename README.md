@@ -73,6 +73,15 @@
 |2.5|09/10/2025|Jose|Finalización de bounded context software architecture y diagramas de base de datos.|
 |2.6|09/10/2025|Paolo|Integración de la Landing Page con el diseño establecido en Capítulo VI.|
 |2.7|10/10/2025|Todos|Revisión final de diseño UX/UI, arquitectura táctica y documentación completa del TP.|
+|3.0|23/10/2025|Jose [Capítulo VII]|Desarrollo del backend en Django con APIs RESTful e integración del modelo de Machine Learning para detección de imágenes IA.|
+|3.1|25/10/2025|Michael [Capítulo VII]|Implementación del frontend en React con componentes UI, integración con Material-UI y diseño responsivo completo.|
+|3.2|27/10/2025|Paolo|Actualización de la Landing Page con mejoras de diseño responsivo y elaboración de documentación técnica de despliegue.|
+|3.3|28/10/2025|Adrian [Capítulo VII]|Coordinación del informe técnico TB2 y realización de entrevistas de validación con usuarios reales de ambos segmentos objetivo.|
+|3.4|30/10/2025|Jose|Configuración de Celery para procesamiento asíncrono y documentación de arquitectura backend con especificaciones OpenAPI.|
+|3.5|01/11/2025|Michael|Desarrollo de Sprint 1 completo: sistema de autenticación, carga de imágenes y visualización de resultados de análisis.|
+|3.6|03/11/2025|Paolo|Configuración de despliegue en Netlify, integración CI/CD y documentación de guías de setup de entornos de desarrollo.|
+|3.7|05/11/2025|Adrian|Elaboración de evaluaciones heurísticas (Sección 7.3.3) y diseño de entrevistas de validación (Sección 7.3.1) del Capítulo VII.|
+|3.8|07/11/2025|Todos|Finalización del Capítulo VII con evidencias de implementación, testing, deployment y documentación completa del TB2.|
 
 # Project Report Collaboration Insights
 
