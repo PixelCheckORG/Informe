@@ -73,6 +73,15 @@
 |2.5|09/10/2025|Jose|Finalización de bounded context software architecture y diagramas de base de datos.|
 |2.6|09/10/2025|Paolo|Integración de la Landing Page con el diseño establecido en Capítulo VI.|
 |2.7|10/10/2025|Todos|Revisión final de diseño UX/UI, arquitectura táctica y documentación completa del TP.|
+|3.0|23/10/2025|Jose [Capítulo VII]|Desarrollo del backend en Django con APIs RESTful e integración del modelo de Machine Learning para detección de imágenes IA.|
+|3.1|25/10/2025|Michael [Capítulo VII]|Implementación del frontend en React con componentes UI, integración con Material-UI y diseño responsivo completo.|
+|3.2|27/10/2025|Paolo|Actualización de la Landing Page con mejoras de diseño responsivo y elaboración de documentación técnica de despliegue.|
+|3.3|28/10/2025|Adrian [Capítulo VII]|Coordinación del informe técnico TB2 y realización de entrevistas de validación con usuarios reales de ambos segmentos objetivo.|
+|3.4|30/10/2025|Jose|Configuración de Celery para procesamiento asíncrono y documentación de arquitectura backend con especificaciones OpenAPI.|
+|3.5|01/11/2025|Michael|Desarrollo de Sprint 1 completo: sistema de autenticación, carga de imágenes y visualización de resultados de análisis.|
+|3.6|03/11/2025|Paolo|Configuración de despliegue en Netlify, integración CI/CD y documentación de guías de setup de entornos de desarrollo.|
+|3.7|05/11/2025|Adrian|Elaboración de evaluaciones heurísticas (Sección 7.3.3) y diseño de entrevistas de validación (Sección 7.3.1) del Capítulo VII.|
+|3.8|07/11/2025|Todos|Finalización del Capítulo VII con evidencias de implementación, testing, deployment y documentación completa del TB2.|
 
 # Project Report Collaboration Insights
 
@@ -103,6 +112,19 @@ Para la entrega del TP se han realizado:
 
 [Colaboraciones del repositorio]
 ![insight_tp](./assets/chapter-I/insights-tp.png)
+
+### TB2
+Para la entrega del TB2 se han realizado:
+- Implementación del sistema de autenticación completo incluyendo registro de usuarios con validaciones de campos y login con JWT.
+- Desarrollo del módulo de carga de imágenes con componente drag-and-drop, preview de imagen y validación de formatos JPG, PNG y WEBP.
+- Implementación de la integración con el servicio de análisis de autenticidad de imágenes incluyendo comunicación con API externa.
+- Desarrollo del sistema de visualización de resultados de análisis con porcentajes de autenticidad y indicadores visuales.
+- Implementación del historial de análisis permitiendo a los usuarios revisar verificaciones anteriores.
+- Configuración del despliegue en Netlify con redirects, security headers y proceso de build automatizado.
+
+
+[Colaboraciones del repositorio]
+![insight_tb2](https://github.com/user-attachments/assets/543f4781-9946-4992-aaf4-90885bdcdbd0)
 
 ## Repositorios:
 
@@ -230,8 +252,8 @@ conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el l
 del ABET – EAC - Student Outcome 3.
 | **Criterio Específico**                                                                                                                                                                   | **Acciones Realizadas**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | **Conclusiones**                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.**    | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, realicé las **entrevistas a usuarios**, incluyendo el diseño, la recopilación de información y el análisis de resultados. Además, expuse la **documentación técnica de los diagramas C4**, mostrando la arquitectura del sistema a nivel de landscape, contexto, contenedores y despliegue.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé completamente la **especificación de requerimientos**, que incluyó el **mapeo de escenarios futuros (To-Be)**, la definición de **User Stories**, la elaboración del **Impact Mapping** y la priorización en el **Product Backlog**. También participé en la explicación de puntos clave de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, elaboré el **análisis de competidores** y sus estrategias, conduje el proceso de **Needfinding** mediante la construcción de **User Personas, User Task Matrix, Empathy Mapping y As-Is Scenario Mapping**, y definí el **lenguaje ubicuo** del proyecto. Asimismo, presenté el **planeamiento del producto**, guiando la visión de la solución.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, presenté el **Startup Profile**, los **perfiles de los integrantes del equipo**, el **Solution Profile**, la identificación de **antecedentes y problemática**, y apliqué el **Lean UX Process**, desarrollando los **problem statements, assumptions, hypothesis statements y el Lean UX Canvas**. También expuse los **segmentos objetivo** y el **prototipo MVP Web**.<br><br>**TP:**<br><br>Yo, **Michael Stefano Carmelino Dueñas**, presenté el **Capítulo VI: Solution UX Design**, exponiendo las decisiones de diseño, guías de estilo, wireframes, mockups y prototipos interactivos de la solución PixelCheck.<br><br>Yo, **José Eduardo Gutiérrez García**, expuse el **Capítulo V: Tactical-Level Software Design**, detallando la arquitectura táctica, los bounded contexts y los diagramas de componentes y clases del sistema.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, presenté la **Landing Page** desarrollada y colaboré en la explicación del diseño UX/UI del **Capítulo VI**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, coordiné las presentaciones del equipo y apoyé en la exposición del **Capítulo VI**, asegurando la coherencia de los conceptos presentados. | En **TB1** demostré mi capacidad de **comunicación oral efectiva**, presentando resultados, metodologías y propuestas con **claridad y objetividad**. Pude **adaptar el lenguaje según la audiencia**, desde explicaciones técnicas hasta enfoques más generales. Con ello, evidencié mi **competencia en el logro del curso** y en el **Student Outcome 3 de ABET**, vinculado con la comunicación oral.<br><br>En **TP** fortalecí mis habilidades de **comunicación oral técnica**, presentando diseños de software, arquitectura y experiencia de usuario de manera clara y estructurada, logrando transmitir conceptos complejos a diferentes audiencias. |
-| **Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, documenté de manera detallada las **entrevistas realizadas**, presentando la metodología y los hallazgos más relevantes. También elaboré la **documentación técnica de los diagramas C4**, describiendo con precisión la arquitectura del sistema y sus diferentes vistas.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, redacté íntegramente la **especificación de requerimientos**, que incluyó el mapeo de escenarios futuros, la definición de historias de usuario, la construcción del impact mapping y la organización del product backlog. Adicionalmente, aporté en la documentación técnica de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, redacté el **análisis de requerimientos**, incluyendo el estudio de competidores, el análisis de entrevistas, la definición de user personas, task matrix, empathy mapping, escenarios actuales y el lenguaje ubicuo. También me encargué de la **documentación del planeamiento del producto**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, elaboré el informe que incluyó el **Startup Profile**, el **Solution Profile**, los **antecedentes y la problemática**, así como la documentación completa del **Lean UX Process** con problem statements, assumptions, hypothesis statements y Lean UX Canvas. También desarrollé el **canvas de modelo de negocio** y la descripción del **MVP Web**.<br><br>**TP:**<br><br>Yo, **Michael Stefano Carmelino Dueñas**, desarrollé completamente el **Capítulo VI: Solution UX Design**, que incluyó la elaboración de **Style Guidelines**, **Information Architecture**, **Landing Page UI Design**, **Applications UX/UI Design** y **Applications Prototyping**. Documenté las decisiones de diseño y los principios de usabilidad aplicados.<br><br>Yo, **José Eduardo Gutiérrez García**, redacté íntegramente el **Capítulo V: Tactical-Level Software Design**, incluyendo el **Domain Layer**, **Interface Layer**, **Application Layer**, **Infrastructure Layer** y todos los **diagramas de arquitectura a nivel de componentes, clases y base de datos** para cada bounded context.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé la **Landing Page** del proyecto y colaboré activamente en la documentación del **Capítulo VI**, apoyando en la redacción de secciones de diseño UX/UI y en la organización de wireframes y mockups.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, coordiné las tareas del equipo, gestioné los tiempos de entrega y apoyé en la redacción y revisión del **Capítulo VI**, asegurando la coherencia entre las diferentes secciones del diseño de la solución. | En **TB1** demostré mi capacidad de **comunicación escrita clara y estructurada**, logrando plasmar de manera **objetiva y comprensible** el proceso seguido y los resultados alcanzados. El documento permitió que personas con distintos niveles de especialización comprendieran el análisis y la propuesta. Con ello, evidencié mi **aporte al logro del curso** y al **Student Outcome 3 de ABET**, en su **dimensión escrita**.<br><br>En **TP** consolidé mis habilidades de **comunicación escrita técnica y especializada**, elaborando documentación detallada de diseño de software, arquitectura táctica y experiencia de usuario. La claridad y estructura de la documentación facilitó la comprensión de conceptos técnicos complejos, reafirmando mi **competencia en el Student Outcome 3 de ABET**. |
+| **Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.**    | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, realicé las **entrevistas a usuarios**, incluyendo el diseño, la recopilación de información y el análisis de resultados. Además, expuse la **documentación técnica de los diagramas C4**, mostrando la arquitectura del sistema a nivel de landscape, contexto, contenedores y despliegue.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé completamente la **especificación de requerimientos**, que incluyó el **mapeo de escenarios futuros (To-Be)**, la definición de **User Stories**, la elaboración del **Impact Mapping** y la priorización en el **Product Backlog**. También participé en la explicación de puntos clave de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, elaboré el **análisis de competidores** y sus estrategias, conduje el proceso de **Needfinding** mediante la construcción de **User Personas, User Task Matrix, Empathy Mapping y As-Is Scenario Mapping**, y definí el **lenguaje ubicuo** del proyecto. Asimismo, presenté el **planeamiento del producto**, guiando la visión de la solución.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, presenté el **Startup Profile**, los **perfiles de los integrantes del equipo**, el **Solution Profile**, la identificación de **antecedentes y problemática**, y apliqué el **Lean UX Process**, desarrollando los **problem statements, assumptions, hypothesis statements y el Lean UX Canvas**. También expuse los **segmentos objetivo** y el **prototipo MVP Web**.<br><br>**TP:**<br><br>Yo, **Michael Stefano Carmelino Dueñas**, presenté el **Capítulo VI: Solution UX Design**, exponiendo las decisiones de diseño, guías de estilo, wireframes, mockups y prototipos interactivos de la solución PixelCheck.<br><br>Yo, **José Eduardo Gutiérrez García**, expuse el **Capítulo V: Tactical-Level Software Design**, detallando la arquitectura táctica, los bounded contexts y los diagramas de componentes y clases del sistema.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, presenté la **Landing Page** desarrollada y colaboré en la explicación del diseño UX/UI del **Capítulo VI**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, coordiné las presentaciones del equipo y apoyé en la exposición del **Capítulo VI**, asegurando la coherencia de los conceptos presentados.<br><br> **TB2:**<br><br> Yo, **José Eduardo Gutiérrez García**, presenté la **implementación del backend en Python con Django**, explicando la arquitectura de APIs RESTful, la integración del modelo de Machine Learning para detección de imágenes IA, y la configuración de servicios de procesamiento asíncrono con Celery. Expuse de manera técnica pero accesible cómo el sistema procesa las imágenes cargadas y genera resultados precisos mediante inferencia del modelo entrenado.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, presenté las **mejoras realizadas a la Landing Page**, detallando las optimizaciones de diseño responsivo, integración de nuevas secciones informativas y ajustes de accesibilidad. También expuse la **documentación técnica actualizada** del proyecto, incluyendo guías de despliegue, configuración de entornos y estructura del repositorio, facilitando la comprensión del flujo de trabajo del equipo.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, presenté la **implementación del frontend con React**, exponiendo la construcción de componentes UI basados en las guías de estilo del Capítulo VI, la integración con Material-UI, el sistema de navegación responsivo y la experiencia de usuario optimizada para ambos segmentos objetivo. Expliqué cómo se aplicaron los principios de usabilidad y accesibilidad en cada componente desarrollado.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, coordiné la **actualización del informe técnico** y presenté los resultados de las **nuevas entrevistas de validación**, analizando el feedback de usuarios reales sobre la aplicación desplegada. Expuse los hallazgos clave sobre usabilidad, satisfacción y áreas de mejora identificadas durante las sesiones de testing con ambos segmentos objetivo.<br><br>| En **TB1** demostré mi capacidad de **comunicación oral efectiva**, presentando resultados, metodologías y propuestas con **claridad y objetividad**. Pude **adaptar el lenguaje según la audiencia**, desde explicaciones técnicas hasta enfoques más generales. Con ello, evidencié mi **competencia en el logro del curso** y en el **Student Outcome 3 de ABET**, vinculado con la comunicación oral.<br><br>En **TP** fortalecí mis habilidades de **comunicación oral técnica**, presentando diseños de software, arquitectura y experiencia de usuario de manera clara y estructurada, logrando transmitir conceptos complejos a diferentes audiencias.<br><br> En **TB2**, la comunicación alcanzó su máximo nivel técnico al presentar la implementación completa del backend en Django, la integración del modelo ML, el frontend en React y las entrevistas de validación con usuarios reales. Esta progresión refleja el **dominio del Student Outcome 3 de ABET**, evidenciando que los integrantes poseen habilidades técnicas sólidas y la capacidad de transmitir conocimientos especializados de forma efectiva ante stakeholders de distintos niveles jerárquicos y especialidades.
+**Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | <br>**TB1:**<br><br>Yo, **José Eduardo Gutiérrez García**, documenté de manera detallada las **entrevistas realizadas**, presentando la metodología y los hallazgos más relevantes. También elaboré la **documentación técnica de los diagramas C4**, describiendo con precisión la arquitectura del sistema y sus diferentes vistas.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, redacté íntegramente la **especificación de requerimientos**, que incluyó el mapeo de escenarios futuros, la definición de historias de usuario, la construcción del impact mapping y la organización del product backlog. Adicionalmente, aporté en la documentación técnica de la **arquitectura estratégica**.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, redacté el **análisis de requerimientos**, incluyendo el estudio de competidores, el análisis de entrevistas, la definición de user personas, task matrix, empathy mapping, escenarios actuales y el lenguaje ubicuo. También me encargué de la **documentación del planeamiento del producto**.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, elaboré el informe que incluyó el **Startup Profile**, el **Solution Profile**, los **antecedentes y la problemática**, así como la documentación completa del **Lean UX Process** con problem statements, assumptions, hypothesis statements y Lean UX Canvas. También desarrollé el **canvas de modelo de negocio** y la descripción del **MVP Web**.<br><br>**TP:**<br><br>Yo, **Michael Stefano Carmelino Dueñas**, desarrollé completamente el **Capítulo VI: Solution UX Design**, que incluyó la elaboración de **Style Guidelines**, **Information Architecture**, **Landing Page UI Design**, **Applications UX/UI Design** y **Applications Prototyping**. Documenté las decisiones de diseño y los principios de usabilidad aplicados.<br><br>Yo, **José Eduardo Gutiérrez García**, redacté íntegramente el **Capítulo V: Tactical-Level Software Design**, incluyendo el **Domain Layer**, **Interface Layer**, **Application Layer**, **Infrastructure Layer** y todos los **diagramas de arquitectura a nivel de componentes, clases y base de datos** para cada bounded context.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, desarrollé la **Landing Page** del proyecto y colaboré activamente en la documentación del **Capítulo VI**, apoyando en la redacción de secciones de diseño UX/UI y en la organización de wireframes y mockups.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, coordiné las tareas del equipo, gestioné los tiempos de entrega y apoyé en la redacción y revisión del **Capítulo VI**, asegurando la coherencia entre las diferentes secciones del diseño de la solución.<br><br>**TB2:**<br><br>Yo, **José Eduardo Gutiérrez García**, documenté completamente la **arquitectura del backend en Django**, incluyendo la estructura de modelos, serializers, vistas y servicios. Elaboré guías técnicas sobre la integración del modelo de Machine Learning, configuración de Celery para procesamiento asíncrono, y especificaciones de los endpoints RESTful con ejemplos de request/response en formato OpenAPI.<br><br>Yo, **Paolo Gonzalo Párraga Gamarra**, redacté la **documentación actualizada de la Landing Page**, detallando las mejoras implementadas, justificando decisiones de diseño y estructura de contenido. También elaboré **guías de configuración y despliegue** del proyecto completo, incluyendo instrucciones paso a paso para setup de entornos locales, variables de entorno y configuración de servicios cloud.<br><br>Yo, **Michael Stefano Carmelino Dueñas**, documenté exhaustivamente la **implementación del frontend en React**, describiendo la arquitectura de componentes, gestión de estado, integración con APIs backend y aplicación de Style Guidelines. Redacté secciones del **Capítulo VII** sobre configuración de herramientas de desarrollo, convenciones de código y estrategias de deployment en Netlify.<br><br>Yo, **Adrián Enrique Jesús Palma Obispo**, actualicé integralmente el **informe técnico del proyecto**, incorporando toda la documentación de TB2, redactando el **Capítulo VII completo** con evidencias de implementación, testing y deployment. También documenté las **entrevistas de validación** con transcripciones, análisis de feedback y evaluaciones heurísticas según principios de UX/UI, asegurando coherencia narrativa en todo el documento.<br><br>| En **TB1** demostré mi capacidad de **comunicación escrita clara y estructurada**, logrando plasmar de manera **objetiva y comprensible** el proceso seguido y los resultados alcanzados. El documento permitió que personas con distintos niveles de especialización comprendieran el análisis y la propuesta. Con ello, evidencié mi **aporte al logro del curso** y al **Student Outcome 3 de ABET**, en su **dimensión escrita**.<br><br>En **TP** consolidé mis habilidades de **comunicación escrita técnica y especializada**, elaborando documentación detallada de diseño de software, arquitectura táctica y experiencia de usuario. La claridad y estructura de la documentación facilitó la comprensión de conceptos técnicos complejos, reafirmando mi **competencia en el Student Outcome 3 de ABET**.<br><br>  En **TB2**, se integraron **evidencias de implementación real**: configuración de entornos, guías de despliegue, especificaciones de APIs RESTful, documentación de componentes React, integración del modelo ML y análisis heurístico de usabilidad. La calidad de esta documentación refleja un **dominio profesional del Student Outcome 3 de ABET**, demostrando capacidad para producir documentación técnica de nivel empresarial comprensible tanto para equipos técnicos como stakeholders de negocio, garantizando trazabilidad y transferencia de conocimiento en proyectos complejos. |
 
 <div style="page-break-after: always;"></div>
 
@@ -559,11 +581,7 @@ Entrevista N°3:
 
 <img src="./assets/chapter-ii/entrevista-3.png" alt="Entrevista con Maria Jose" style="width: 600px; height: auto;"><br>
 
-<<<<<<< HEAD
-**Enlace:** [`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw?e=QV4Q06&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=QV4Q06)
-=======
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/EatWsg5UdnhBk0hG4fyjn_kB_w0pCc1vPXz776u7GPcSNw)
->>>>>>> c0b97e3d09cfca4e504fb6acc43c01eb12ca0cdc
 
 **Resumen de la Entrevista:** <br>
 
@@ -1450,7 +1468,7 @@ Eestas restricciones son impuestas por alcance del proyecto, presupuesto y decis
       <td>C05</td>
       <td>CI/CD obligatorio</td>
       <td>Usar GitHub Actions para build/deploy</td>
-      <td>Pipelines que despliegan a App Service / Firebase / GH Pages</td>
+      <td>Pipelines que despliegan a App Service / Netlify / GH Pages</td>
       <td>TS03</td>
     </tr>
     <tr>
@@ -1560,7 +1578,7 @@ Para cada driver clave evaluamos patrones candidatos (3 por driver relevante) y 
 
 - **Persistencia:** Azure MySQL para entidades; en producción se recomienda usar Blob Storage para imágenes grandes y una colección JSON para features si se requiere.
 
-- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Firebase, backend → Azure App Service).
+- **CI/CD:** GitHub Actions pipelines (landing → GitHub Pages, frontend → Netlify, backend → Azure App Service).
 
 <h3>Candidate Pattern Evaluation Matrix (selección de 3 drivers clave)</h3>
 
@@ -2352,9 +2370,9 @@ Este diagrama muestra cómo el sistema PixelCheck se despliega en diferentes ent
 
 - En Microsoft Azure, se utiliza un App Service para desplegar el Backend API desarrollado en Python Django, el cual contiene la lógica de negocio y el modelo de Machine Learning encargado de verificar imágenes. Además, en el mismo entorno se encuentra el servicio Azure Database for MySQL, que aloja la base de datos donde se almacenan usuarios, resultados de análisis e historial de reportes.
 
-- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Firebase Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en firebase funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
+- En la capa de Frontends, la aplicación web (PixelCheck WebApp), desarrollada con React, se aloja en Netlify Hosting, permitiendo a los usuarios interactuar de manera responsiva desde navegadores. A su vez, la Landing Page, estática y ligera, se encuentra desplegada en Netlify, funcionando como puerta de entrada para dar a conocer el servicio antes de redirigir al usuario hacia la aplicación principal.
 
-- Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Firebase Hosting y la Landing Page en GitHub Pages.
+- Para la automatización del ciclo de vida del software, el proyecto utiliza un flujo CI/CD basado en GitHub Actions. El código fuente reside en un GitHub Repository, desde donde se ejecutan pipelines de despliegue hacia los tres entornos: el Backend API en Azure App Service, la aplicación web en Netlify Hosting y la Landing Page en GitHub Pages.
 
 - Finalmente, los usuarios generales acceden a la plataforma para subir imágenes y recibir resultados básicos de detección, mientras que los profesionales de medios pueden acceder a análisis avanzados y reportes detallados, todo a través de la WebApp.
 
@@ -3386,76 +3404,633 @@ Luego de subirla, obtiene los resultados y datos más específicos sobre esta
 
 ## 7.1. Software Configuration Management
 
+En los siguientes puntos, detallaremos las herramientas, convenciones, referencias y configuraciones empleadas a lo largo del desarrollo del proyecto, los cuales contribuyeron a mantener la base en el trabajo realizado.
+
 ### 7.1.1. Software Development Environment Configuration
 
-[Content for development environment configuration]
+**UX/UI Design**
+
+**Miro**
+
+Es una plataforma colaborativa de pizarra digital que permite trabajar en equipo de manera remota. Se utilizó para realizar el proceso completo de EventStorming, identificando eventos de dominio, comandos, agregados, políticas de negocio y bounded contexts. También fue fundamental para la creación de los mapas To-Be Scenario, Brainstorming, User Journey Maps y Empathy Maps, facilitando la visualización y organización de los flujos de usuario y necesidades detectadas en ambos segmentos objetivo.
+
+**Figma**
+
+Es una herramienta de diseño de interfaces colaborativa basada en la nube. Se empleó para diseñar los wireframes, mock-ups y prototipos interactivos de la aplicación web PixelCheck. Permitió crear componentes reutilizables, establecer el sistema de diseño (style guidelines, paleta de colores, tipografía) y generar las vistas tanto para usuarios generales como para profesionales de medios, asegurando consistencia visual en toda la experiencia de usuario.
+
+**UXPressia**
+
+Es una plataforma especializada en la creación de herramientas de UX como User Personas, Impact Maps y Customer Journey Maps. Se utilizó para documentar de manera profesional los perfiles de los segmentos objetivo (Usuarios Generales y Profesionales de Medios), sus necesidades, frutraciones y objetivos, así como para mapear el impacto de las funcionalidades del producto en los resultados de negocio.
+
+**Software Architecture & Diagrams**
+
+**PlantUML**
+
+Es una herramienta de código abierto que permite crear diagramas UML mediante sintaxis de texto plano. Se utilizó extensivamente para generar los diagramas de clases (Domain Layer Class Diagrams) de cada bounded context del sistema, incluyendo IAM, Ingestion & Validation, Image Analysis (ML), Results & Reporting y System Management. Esto garantizó precisión técnica en la representación de las entidades, value objects, aggregates y sus relaciones.
+
+**Structurizr**
+
+Es una plataforma que implementa el modelo C4 (Context, Containers, Components, Code) para documentar arquitectura de software como código. Se empleó para diseñar y generar los diagramas C4 del sistema PixelCheck, incluyendo el System Context Diagram, Container Diagram y Component Diagrams, permitiendo visualizar la arquitectura estratégica del sistema y sus integraciones con servicios externos como Azure MySQL, Azure Blob Storage y servicios de Machine Learning.
+
+
+**Software Development**
+
+**Landing Page Development**
+
+Para el desarrollo de la landing page de PixelCheck se utilizaron las tecnologías fundamentales del desarrollo web: HTML5 para la estructura semántica, CSS3 para los estilos y diseño responsivo, y JavaScript para la interactividad y efectos visuales. Se implementó un diseño moderno y minimalista que presenta claramente la propuesta de valor del producto, con secciones informativas sobre las funcionalidades de detección de imágenes generadas por IA dirigidas a ambos segmentos objetivo.
+
+**Backend Development**
+
+Para el desarrollo del backend de la aplicación se utilizó Python como lenguaje principal junto con Django 4.2 como framework web, complementado con Django REST Framework (DRF) para la construcción de las APIs RESTful. Esta elección tecnológica permitió implementar rápidamente el sistema de autenticación JWT, los bounded contexts (IAM, Ingestion, Analysis, Reporting) y la integración con el modelo de Machine Learning. Se utilizó PyTorch para la inferencia del modelo de detección de imágenes IA, Celery con Redis como broker para el procesamiento asíncrono de trabajos de análisis, y Pillow para el manejo y preprocesamiento de imágenes.
+
+**Frontend Web Application**
+
+Para el desarrollo del frontend de la aplicación web se utilizó React 18 como framework principal de JavaScript, complementado con Material-UI (MUI) para los componentes de interfaz de usuario, garantizando una experiencia consistente y profesional. Se implementó React Router para la navegación entre vistas, Axios para las llamadas HTTP a la API backend, y Recharts para la visualización de estadísticas y dashboards de uso. El estado global de la aplicación se gestionó mediante Context API, permitiendo compartir información de autenticación y resultados de análisis entre componentes.
+
+**Software Deployment**
+
+**GitHub Pages**
+
+Es un servicio de hosting estático gratuito integrado con GitHub. Se utilizó para desplegar y hospedar la landing page de PixelCheck, aprovechando su integración automática con el repositorio y su capacidad de servir contenido estático de manera rápida y confiable mediante CDN global.
+
+**Netlify Hosting**
+
+Es la plataforma de hosting de Google para aplicaciones web modernas. Se empleó para desplegar la aplicación web frontend de React, aprovechando su CDN global, certificados SSL automáticos y capacidad de rollback instantáneo entre versiones. La integración con GitHub Actions permitió despliegues automáticos en cada merge a la rama principal.
+
+**Software Documentation**
+
+**Markdown**
+
+Es un lenguaje de marcado ligero que permite formatear texto de manera sencilla. Se utilizó para toda la documentación del proyecto en los archivos README.md del repositorio, incluyendo este informe técnico completo con todos los capítulos de análisis, diseño y arquitectura del sistema PixelCheck.
+
+**GitHub**
+
+Es la plataforma de control de versiones y colaboración basada en Git. Se creó la organización PixelCheckORG con repositorios separados para el informe de documentación, landing page y aplicaciones backend/frontend. Se implementó GitFlow como estrategia de branching con ramas feature para cada capítulo del desarrollo, permitiendo un trabajo colaborativo ordenado entre los miembros del equipo.
 
 ### 7.1.2. Source Code Management
 
-[Content for source code management]
+Para la gestión y actualización del proyecto, se creó una organización via GitHub, en la cual se tuvo un control sobre los cambios a lo largo del ciclo de vida del proyect. Se organizo de la siguiente manera.
+
+Organization: https://github.com/PixelCheckORG Landing page repository: https://github.com/PixelCheckORG/Landing-Page
+
+Report repository: https://github.com/PixelCheckORG/Informe
+
+Web Application: https://pixel-check-app.netlify.app/
+
+Para controlar de manera eficiente el flujo de trabajo se utilizó GitFlow, donde contamos con una rama principal main que es donde se encuentra la versión más estable y lista para pasar a producción del proyecto.
+
+Ramas auxiliares:
+
+feature: Son las ramas donde se desarrollan las funcionalidades del proyecto. Luego de completarlas, se fusionan con la rama develop.
+
+La nomenclatura para los features fueron las siguientes: feature/chapter-n. Por ejemplo, feature/chapter-6.
+
+Commit Conventions
+
+Para el formato de los commits se siguió la estructura de Conventional Commits 1.0.0, la cual tiene la siguiente estructura:
+
+< type > [optional scope]: < description > Donde:
+
+type: Es el tipo de cambio. Tenemos valores como: fix, feat, build, chore, ci, docs, style, refactor, perf, test, etc. scope: Indica donde se realizó el commit (opcional). description: Menciona las actualizaciones del codigo.
 
 ### 7.1.3. Source Code Style Guide & Conventions
 
-[Content for source code style guide & conventions]
+**HTML/CSS**
+
+Para el desarrollo de la landing page se siguió la Guía de Estilo de Google para HTML/CSS, aplicando los siguientes principios:
+
+- Iniciar documento con `<!DOCTYPE html>` y etiquetas meta apropiadas.
+- Incluir la etiqueta `<title>` dentro de `<head>`.
+- Aplicar sangría de dos espacios de manera consistente.
+- Usar letras minúsculas para elementos HTML, atributos, propiedades CSS y selectores.
+- Encerrar atributos HTML entre comillas.
+- Asegurar que todos los elementos tengan etiqueta de cierre.
+- Evitar líneas de código extensas.
+- Las imágenes deben incluir `width`, `height` y atributo `alt` descriptivo.
+
+**JavaScript/React**
+
+Para el desarrollo del frontend en React se siguió la Guía de Estilo de Airbnb para JavaScript, estableciendo:
+
+**Nomenclatura:**
+- Componentes React: PascalCase (ej: `ImageAnalyzer`, `UserDashboard`)
+- Funciones y variables: camelCase (ej: `handleUpload`, `imageData`)
+- Constantes: UPPER_SNAKE_CASE (ej: `API_BASE_URL`, `MAX_FILE_SIZE`)
+
+**Sintaxis:**
+- Usar `const` por defecto, `let` solo cuando sea necesario, evitar `var`.
+- Todas las instrucciones finalizan con punto y coma (`;`).
+- Comillas simples (`'`) para strings, dobles para JSX props.
+- Sangría de 2 espacios consistente.
+- Arrow functions para callbacks.
+- Hooks de React (`useState`, `useEffect`, `useContext`) en componentes funcionales.
 
 ### 7.1.4. Software Deployment Configuration
 
-[Content for software deployment configuration]
+Para el despliegue de la Landing Page y la Aplicación Web, se utiliza GitHub Pages y Netlify Hosting como servicios principales.
+
+Durante las primeras fases del desarrollo, se emplea json-server en local para simular datos (mock) y validar funcionalidades. Esta configuración permite trabajar sin una base de datos real durante las pruebas iniciales. Una vez que se tenga una base de datos definitiva, esta configuración será reemplazada por una conexión real.
 
 ## 7.2. Solution Implementation
 
-### 7.2.X. Sprint n
+### 7.2.1. Sprint 1
 
-#### 7.2.X.1. Sprint Planning n
+#### 7.2.1.1. Sprint Planning 1
 
-[Content for sprint planning]
+<table border="1">
+    <thead>
+        <tr>
+            <th>Sprint #</th>
+            <th>Sprint 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Sprint Planning Background</strong></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>2025-10-15</td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td>18:00 PM</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>La reunión se realizó virtualmente vía Discord</td>
+        </tr>
+        <tr>
+            <td>Prepared By</td>
+            <td>Palma Obispo, Adrian Enrique Jesus</td>
+        </tr>
+        <tr>
+            <td>Attendees (to planning meeting)</td>
+            <td>
+                Carmelino Dueñas, Michael Stefano / Palma Obispo, Adrian Enrique Jesus / Párraga Gamarra, Paolo Gonzalo / Gutiérrez García, José Eduardo
+            </td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Review Summary</td>
+            <td>No aplica (primer sprint)</td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Retrospective Summary</td>
+            <td>No aplica (primer sprint)</td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Goal</td>
+            <td>
+              El objetivo de este sprint es desarrollar la versión inicial de la aplicación web de PixelCheck, enfocándose en las funcionalidades core de detección de imágenes generadas por IA. Se implementará el sistema de autenticación de usuarios, la interfaz para cargar imágenes, la visualización de resultados de análisis y una experiencia de usuario responsiva e intuitiva que permita a los usuarios generales verificar rápidamente la autenticidad de imágenes.
+            </td>
+        </tr>
+        <tr>
+            <td>Sprint 1 Velocity</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Sum of Story Points</td>
+            <td>23</td>
+        </tr>
+    </tbody>
+</table>
 
-#### 7.2.X.2. Sprint Backlog n
+#### 7.2.1.2. Sprint Backlog 1
 
-[Content for sprint backlog]
+| Sprint # | Sprint 1 |           |             |             |                     |             |                                          |
+|----------|----------|-----------|-------------|-------------|---------------------|-------------|------------------------------------------|
+| User Story |        | Work-Item / Task |         |             |                     |             |                                          |
+| Id       | Title    | Id        | Title       | Description | Estimation (Hours)   | Assigned To | Status (To-do / InProcess / ToReview / Done) |
+| HU21 | Registro de usuario web | T01 | Implementar formulario de registro | Como usuario quiero poder registrarme en la plataforma ingresando email, contraseña y nombre completo. | 4 | Adrian Palma | Done |
+| HU21 | Registro de usuario web | T02 | Validación de campos del formulario | Implementar validaciones de email único, contraseña segura y campos requeridos. | 3 | Adrian Palma | Done |
+| HU22 | Inicio de sesión de usuario web | T03 | Crear pantalla de login | Como usuario registrado quiero iniciar sesión con email y contraseña para acceder a mis funcionalidades. | 3 | Paolo Párraga | Done |
+| HU22 | Inicio de sesión de usuario web | T04 | Implementar autenticación JWT | Configurar sistema de tokens JWT para mantener sesión activa del usuario. | 4 | Paolo Párraga | Done |
+| HU01 | Verificación rápida de autenticidad | T05 | Crear componente de carga de imagen | Como usuario quiero cargar imágenes desde mi dispositivo para analizarlas. | 5 | Michael Carmelino | Done |
+| HU01 | Verificación rápida de autenticidad | T06 | Implementar preview de imagen | Mostrar vista previa de la imagen cargada antes del análisis. | 2 | Michael Carmelino | Done |
+| HU03 | Carga rápida y sencilla | T07 | Implementar drag and drop | Como usuario quiero arrastrar y soltar imágenes en el área de carga. | 3 | José Gutiérrez | Done |
+| HU03 | Carga rápida y sencilla | T08 | Validar formatos de imagen | Validar que solo se acepten formatos JPG, PNG y WEBP. | 2 | José Gutiérrez | Done |
+| HU06 | Navegar con interfaz responsiva | T09 | Implementar diseño responsivo | Como usuario quiero que la interfaz se adapte a diferentes tamaños de pantalla. | 4 | Adrian Palma | Done |
+| HU06 | Navegar con interfaz responsiva | T10 | Configurar breakpoints Material-UI | Configurar responsive design usando sistema de grid de MUI. | 2 | Adrian Palma | Done |
+| HU07 | Visualizar estado de carga durante análisis | T11 | Crear componente de loading | Como usuario quiero ver el progreso mientras se analiza mi imagen. | 3 | Michael Carmelino | Done |
+| HU07 | Visualizar estado de carga durante análisis | T12 | Implementar mensajes de estado | Mostrar mensajes informativos durante las diferentes etapas del análisis. | 2 | Michael Carmelino | Done |
+| HU15 | Validar formato de imagen antes de análisis | T13 | Implementar validación de archivos | Como usuario quiero recibir mensajes claros si el formato no es soportado. | 2 | Paolo Párraga | Done |
+| HU06 | Navegar con interfaz responsiva | T14 | Implementar navbar responsivo | Crear barra de navegación que se adapte a mobile y desktop. | 3 | José Gutiérrez | Done |
 
-#### 7.2.X.3. Development Evidence for Sprint Review
+#### 7.2.1.3. Development Evidence for Sprint Review
 
-[Content for development evidence]
+| Repository                        | Branch | Commit Id | Commit Message                                                                                      | Commit Message Body | Committed on (Date) |
+|-----------------------------------|--------|-----------|-----------------------------------------------------------------------------------------------------|---------------------|---------------------|
+| PixelCheckORG/PixelCheckApp       | develop   | ffdb56f   | chore: clean up README.md by removing outdated content and unnecessary sections                     |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | d2a6e16   | feat: remove unnecessary redirect conditions for cleaner netlify configuration                      |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 0bc45cc   | feat: simplify Header component by removing unused theme and language state management              |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 944abce   | feat: add netlify configuration for build process, redirects, and security headers                  |                     | 2025-10-23          |
+| PixelCheckORG/PixelCheckApp       | develop   | 94db809   | feat: remove theme and language selectors from Header component for cleaner UI                      |                     | 2025-10-20          |
+| PixelCheckORG/PixelCheckApp       | develop   | 045f7ec   | feat: Implement language and theme context providers for internationalization and dark mode support |                     | 2025-10-20          |
+| PixelCheckORG/PixelCheckApp       | main   | 9d0531d   | feat: add initial project structure and core components                                             |                     | 2025-10-20          |
 
-#### 7.2.X.4. Testing Suite Evidence for Sprint Review
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
 
-[Content for testing suite evidence]
+### 7.2.1.4. Testing Suite Evidence for Sprint Review
 
-#### 7.2.X.5. Execution Evidence for Sprint Review
+Captura de pantalla de la ejecución de la suite de pruebas y resultados de cobertura.
 
-[Content for execution evidence]
+![Evidencia de pruebas automatizadas 2](assets/chapter-VII/test1.png)
 
-#### 7.2.X.6. Services Documentation Evidence for Sprint Review
+![Evidencia de pruebas automatizadas](assets/chapter-VII/test3.png)
+![Evidencia de pruebas automatizadas 3](assets/chapter-VII/test2.png)
 
-[Content for services documentation evidence]
+#### 7.2.1.5. Execution Evidence for Sprint Review
 
-#### 7.2.X.7. Software Deployment Evidence for Sprint Review
+<img width="995" height="1103" alt="image" src="https://github.com/user-attachments/assets/ba44f769-948e-4809-b4a6-039730f5dd88" />
 
-[Content for software deployment evidence]
 
-#### 7.2.X.8. Team Collaboration Insights during Sprint
+### **7.2.1.6. Services Documentation Evidence for Sprint Review**
 
-[Content for team collaboration insights]
+Durante el **Sprint 1** se elaboró y actualizó la documentación técnica de los servicios desarrollados en *PixelCheck*, garantizando trazabilidad, mantenibilidad y alineación con las guías de estilo y arquitectura establecidas.
+
+Se documentaron los servicios **backend** (Django REST Framework) mediante **Swagger/OpenAPI**, **Redoc** y archivos `README.md` por módulo, detallando endpoints, parámetros, respuestas y ejemplos. Los diagramas **UML y C4** fueron actualizados en *PlantUML* y *Structurizr*, reflejando las integraciones entre los bounded contexts (IAM, Ingestion, Analysis, Reporting).
+
+En el **frontend (React 18)** se empleó **Storybook** para documentar componentes UI (ImageUploader, LoadingIndicator, Navbar, ResultCard), asegurando consistencia visual con las *Style Guidelines (6.1.2)*.
+Se validó el diseño **responsive** en los breakpoints Mobile, Tablet, Desktop y Large Desktop, confirmando cumplimiento del grid de 12 columnas y contrastes accesibles (WCAG AA).
+
+Las evidencias se registraron en los repositorios oficiales:
+
+* `/docs/services/` – Documentación modular
+* `/docs/architecture/uml/` – Diagramas UML/C4
+* `/docs/ui/responsive_tests/` – Pruebas de diseño adaptable
+* `https://pixelcheckapi.netlify.app/docs` – Documentación OpenAPI visual
+
+En conjunto, la documentación generada respalda la implementación técnica revisada en el Sprint Review y asegura la coherencia del sistema con los lineamientos definidos en los capítulos VI y VII.
+
+
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+
+Durante este sprint, se realizó el despliegue de la aplicación utilizando Netlify como plataforma de hosting. A continuación, se presenta la evidencia del proceso de deployment:
+
+**Configuración del proyecto en Netlify:**
+
+![Configuración inicial en Netlify](assets/chapter-VII/deploy-image-1-netlify.png)
+
+Se configuraron los parámetros de build y deployment en Netlify, especificando el directorio de publicación y los comandos de construcción necesarios.
+
+**Panel de control de Netlify:**
+
+![Panel de Netlify](assets/chapter-VII/deploy-image-2-netlify.png)
+
+Vista del dashboard de Netlify mostrando el estado del deployment y la configuración del proyecto.
+
+**Proyecto desplegado:**
+
+![Proyecto en producción](assets/chapter-VII/deploy-project.png)
+
+Aplicación desplegada y funcionando correctamente en el entorno de producción de Netlify.
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint
+
+Se mantuvo un flujo de trabajo coordinado bajo la metodología Scrum, promoviendo comunicación efectiva mediante pull requests, revisiones cruzadas y retroalimentación técnica.
+Los aportes abarcaron tanto tareas de frontend (implementación de componentes React, Storybook y validación de diseño responsivo) como de backend (configuración de API REST, documentación OpenAPI y pruebas funcionales).
+
+La evidencia de contribuciones en GitHub confirma una integración progresiva del código y una participación multidisciplinaria, lo que permitió alcanzar los objetivos del sprint con trazabilidad y calidad técnica verificable.
+
+<img width="949" height="482" alt="image" src="https://github.com/user-attachments/assets/543f4781-9946-4992-aaf4-90885bdcdbd0" />
+
 
 ## 7.3. Validation Interviews
 
 ### 7.3.1. Diseño de Entrevistas
 
-[Content for interview design]
+**Preguntas generales:**
+1. ¿Cuál es su nombre?
+2. ¿Qué edad tiene?
+3. ¿A qué se dedica actualmente?
+4. ¿En qué distrito o ciudad reside?
+
+**Preguntas dirigidas a Usuarios Generales de Internet:**
+1. ¿Con qué frecuencia consume contenido visual (imágenes) en redes sociales o sitios web?
+2. ¿La interfaz de PixelCheck le resulta intuitiva y fácil de usar?
+3. ¿Qué tan claro le parece el resultado del análisis (Real/Generado por IA)?
+4. ¿Entendió el proceso de carga de imágenes mediante drag & drop o botón de carga?
+5. ¿El tiempo de análisis (5-10 segundos) le pareció adecuado o demasiado largo?
+6. ¿La información mostrada en los resultados es suficiente para tomar una decisión sobre la imagen?
+7. ¿Le gustaría tener explicaciones más detalladas sobre por qué una imagen fue clasificada como IA?
+8. ¿Qué tan útil considera la aplicación para verificar imágenes en su día a día?
+9. ¿Cambiaría algo del diseño o la navegación de la aplicación?
+10. ¿Qué funcionalidad adicional le gustaría que tuviera PixelCheck?
+11. ¿Estaría dispuesto a pagar por funcionalidades premium? Si es así, ¿cuánto?
+12. ¿Recomendaría esta aplicación a otras personas?
+
+**Preguntas dirigidas a Profesionales de Medios y Comunicación:**
+1. ¿Cuál es su rol específico en medios o comunicación?
+2. ¿Con qué frecuencia necesita verificar la autenticidad de imágenes en su trabajo?
+3. ¿La aplicación cubre las necesidades básicas de verificación que tiene en su flujo de trabajo?
+4. ¿El nivel de detalle técnico en los resultados (porcentaje de confianza, metadatos) es apropiado para sus necesidades profesionales?
+5. ¿Qué tan importante es para usted poder generar reportes en PDF o CSV de los análisis realizados?
+6. ¿La información técnica proporcionada es suficiente para justificar decisiones editoriales ante su equipo?
+7. ¿Qué indicadores o métricas adicionales le gustaría ver en los resultados del análisis?
+8. ¿Cómo imagina integrar PixelCheck en su flujo de trabajo diario?
+9. ¿Qué tan confiable debe ser la precisión del análisis para que confíe en la herramienta? (porcentaje mínimo)
+10. ¿Cambiaría algo de la interfaz o funcionalidades actuales para adaptarlas mejor a su trabajo?
+11. ¿Su organización tendría presupuesto para una suscripción mensual? ¿En qué rango de precios?
+12. ¿Qué mejoraría o agregaría para que se convierta en una herramienta indispensable en su trabajo?
 
 ### 7.3.2. Registro de Entrevistas
 
-[Content for interview records]
+---
+
+**Entrevista para el Segmento Objetivo 1 - Usuarios Generales de Internet:**
+
+---
+
+Entrevista N°1:
+
+## **Entrevista N°1:**
+
+**Entrevistado:** Rodrigo Chirinos<br>
+**Sexo:** Masculino<br>
+**Edad:** 20 años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 5:06<br>
+
+<img width="1783" height="628" alt="image" src="https://github.com/user-attachments/assets/bf33514f-ace5-46d2-ad69-c415a4e9d1f9" /><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQDi2ELrJZvvR5Or1d2sMWF9AeLlVUn8Qs4AHA9Li0H-UWA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bumHzQ)
+
+**Resumen de la Entrevista:** <br>
+El entrevistado es un estudiante universitario que utiliza internet diariamente, consumiendo contenido visual desde diversas plataformas como Instagram, TikTok, Reddit y Twitter. Ha tenido experiencias frecuentes en las que duda de si una imagen es real o generada por IA, lo que aumenta su preocupación sobre la veracidad del contenido online. Considera muy importante poder identificar imágenes generadas por IA (9/10), y suele recurrir a comentarios o búsquedas rápidas cuando sospecha de una imagen falsa. Prefiere respuestas rápidas pero con opción de ver explicaciones. Usaría una herramienta que tarde hasta 30 segundos si es confiable, y estaría dispuesto a pagar un monto bajo (3–5 dólares). Aunque se siente cómodo con la tecnología, prefiere interfaces simples. Para él, la herramienta ideal debe ser precisa, rápida y capaz de explicar de manera clara por qué una imagen podría ser IA. Representa a un usuario joven con alta exposición digital y creciente necesidad de distinguir contenido auténtico en un entorno donde las IA generan cada vez más imágenes indistinguibles de la realidad.<br>
+
+## **Entrevista N°2:**
+
+**Entrevistado:** Carlos<br>
+**Sexo:** Masculino<br>
+**Edad:** 22 años<br>
+**Domicilio:** Lima<br>
+**Inicio de la Entrevista:** 0:00<br>
+**Duración de la Entrevista:** 4:30<br>
+
+<img width="1246" height="870" alt="image" src="https://github.com/user-attachments/assets/de3dd1fd-97a3-449c-8505-50cf7e4af5e7" /><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn)
+
+
+**Resumen de la Entrevista:** <br>
+El entrevistado es un usuario frecuente de redes sociales que consume contenido visual diariamente desde su móvil y computadora. Durante la prueba con PixelCheck, comentó que la interfaz le parece intuitiva y sencilla de usar. Considera que el resultado principal (Real/IA) es claro, y entendió sin dificultad el proceso de carga de imágenes mediante drag & drop o el botón de selección. El tiempo de análisis (5–10 segundos) le pareció adecuado, siempre que mantenga buena precisión.
+
+Aunque considera suficiente la información mostrada, sí le gustaría tener explicaciones más detalladas sobre por qué la imagen fue clasificada como IA. Valora mucho la utilidad de la aplicación en el día a día, especialmente por la cantidad de imágenes falsas que circulan actualmente. Sugiere mejorar la visibilidad de algunos elementos del diseño y añadir un breve tutorial inicial. Le interesaría ver futuras funciones como análisis de videos cortos o detección de ediciones. Estaría dispuesto a pagar entre 3 y 5 dólares por funciones premium, y afirma que recomendaría la aplicación a otras personas debido a su utilidad y facilidad de uso.<br>
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** Oscar Aranda<br>
+**Sexo:** Masculino <br>
+**Edad:** 21 años<br>
+**Domicilio:** Callao<br>
+**Inicio de la Entrevista:** 0:07<br>
+**Duración de la Entrevista:** 7:00<br>
+
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBs46QOGLYsQIXUvXeffFu6AUKUJtn8_sqsz-m3EmBsT4A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dhEH9u)
+
+'**Resumen de la Entrevista:** <br>
+
+La entrevista con Oscar Aranda, estudiante universitario de 21 años residente en el Callao y usuario frecuente de redes sociales, permitió evaluar PixelCheck desde la perspectiva de un usuario general de internet. Oscar indicó que consume contenido visual a diario en plataformas como Instagram, X y TikTok, y consideró que la interfaz de PixelCheck es intuitiva, con un flujo claro de subir imagen, analizar y ver el resultado. Señaló que la clasificación “Real/Generado por IA” acompañada de un porcentaje de confianza le resulta clara y suficiente para tomar decisiones rápidas sobre si compartir o no una imagen, y que el tiempo de análisis de 5–10 segundos le parece razonable. Aunque valora la información mostrada, comentó que le gustaría contar con explicaciones simples sobre por qué una imagen fue clasificada como IA, así como mejoras en diseño (modo oscuro, priorizar el resultado en pantalla) y funcionalidades adicionales como historial de análisis, extensión para navegador y opción para compartir resultados. Indicó que usaría principalmente una versión gratuita, pero estaría dispuesto a pagar un monto bajo (aprox. 3–5 USD mensuales) por funciones premium, y afirmó que sí recomendaría la aplicación a amigos y contactos que comparten noticias y contenido sensible en redes sociales.
+
+---
+
+**Entrevista para el Segmento Objetivo 2 - Profesionales de Medios y Comunicación:**
+
+## **Entrevista N°1:**
+
+**Entrevistado:** Nasthya Del Carpio<br>
+**Sexo:** Femenino <br>
+**Edad:** 21 años<br>
+**Domicilio:** La perla, Callao<br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 6:30<br>
+
+<img src="./assets/chapter-VII/interviews/interview1.png" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44ARzwI-t0vIWzag5440YPJX8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=QWijQo)
+
+'**Resumen de la Entrevista:** <br>
+Nasthya, estudiante de Comunicación Audiovisual y practicante en una agencia de publicidad, trabaja con 20–30 imágenes diarias para campañas. La autenticidad es crítica: comenta un caso previo donde una pieza generada por IA afectó la confianza del público. Hoy verifica metadatos y hace búsquedas en Google Imágenes (~5 min/imagen), pero reconoce que no es confiable ni rápido. Tras ver PixelCheck, valora el veredicto IA/Real con porcentaje y un semáforo visible; solicita ≥90% de certeza (95% en campañas sensibles), reportes PDF para clientes y CSV interno que incluyan modelVersion, umbral aplicado y hash del archivo. Pide integración como web app y plugin (Adobe/Canva), análisis por lotes, opción de “compartir reporte” y un SLA de ≤10 s. Como métricas adicionales sugiere heatmap de artefactos IA, detección de upscaling y un reverse image básico. Presupuesto estimado: USD 30–50/mes.'
+<br>
+
+
+## **Entrevista N°2:**
+
+**Entrevistado:** Maria Jose Munisaca<br>
+**Sexo:** Femenino <br>
+**Edad:** 22 años<br>
+**Domicilio:** San Borja, Lima <br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 7:10<br>
+
+<img src="./assets/chapter-VII/interviews/interview2.png" alt="Entrevista 2" style="width: 600px; height: auto;"><br>
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQD0aewzuiOQRoiFQJ6mYC9wAVzt17kXfTA2oaIcPeM6fqI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Dsreaq)
+
+'**Resumen de la Entrevista:** <br>
+María José, estudiante de Marketing y practicante de comunicación en una ONG, gestiona materiales para redes y reportes a donantes. Ha enfrentado imágenes manipuladas por IA que exageraban el impacto, afectando la transparencia. Su revisión actual es visual y toma 5–10 min por imagen. Con PixelCheck, le resulta útil la etiqueta “Apta para transparencia”, el porcentaje de confianza y los metadatos, además de exportar PDF para el comité y CSV para archivo interno. Requiere 85–90% de certeza (≥90% para evidencias críticas), y prefiere un resumen en lenguaje simple para donantes con anexo técnico; solicita firma digital y hash del reporte, histórico por proyecto, “source trace” y cruce con bancos de imágenes. Imagina integrarlo como web ligera con carpetas por proyecto y un botón “Agregar al informe mensual”. Presupuesto aproximado: USD 20–30/mes.'
+<br>
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** Maurizzio Puente<br>
+**Sexo:** Masculino <br>
+**Edad:** 20 años<br>
+**Domicilio:** Jesus Maria, Lima <br>
+**Inicio de la Entrevista:** 0:02<br>
+**Duración de la Entrevista:** 10:49<br>
+
+<a href="https://ibb.co/V0dpzMr3"><img src="https://i.ibb.co/rKgfz5Tv/entre.png" alt="entre" border="0"></a>
+
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBSZ40jHuNrRJzSO9rfpfHVAVL3jd6Gdqr7-pr8ou7mtII?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=J34OVO)
+
+
+'**Resumen de la Entrevista:** <br>
+
+La entrevista con Maurizzio Puente, periodista deportivo y estudiante de Comunicación de 20 años, residente en Jesús María (Lima), permitió evaluar PixelCheck desde la perspectiva de un usuario de medios digitales. Tras ver la demo, Maurizzio afirmó que la herramienta cubre sus necesidades básicas de verificación de imágenes, valorando especialmente el análisis rápido, el porcentaje de confianza y los metadatos como soporte para decisiones editoriales. Consideró muy útil la generación de reportes en PDF, sugirió añadir métricas como historial de apariciones de la imagen y zonas manipuladas, y señaló que integraría PixelCheck como paso previo obligatorio antes de publicar contenidos sensibles, con un umbral mínimo cercano al 90 % de confianza. Además, propuso mejoras en la interfaz orientadas a conclusiones rápidas, modo oscuro e integraciones con el flujo de trabajo del medio, y estimó que un rango de 20–50 USD mensuales sería razonable para que un medio pequeño o mediano adopte la herramienta.
+
+---
+
+
+
+
 
 ### 7.3.3. Evaluaciones según heurísticas
 
-[Content for heuristic evaluations]
+#### UX Heuristics & Principles Evaluation
+##### Usability – Inclusive Design – Information Architecture
+
+**CARRERA:** Ingeniería de Software  
+**CURSO:** Arquitecturas de Software Emergentes  
+**SECCIÓN:** 7295  
+**PROFESOR:** Royer Edelwer Rojas Malasquez  
+**AUDITOR:** Pixel Dev  
+**CLIENTE(S):** Usuarios Generales de Internet y Profesionales de Medios y Comunicación  
+**SITE o APP A EVALUAR:** PixelCheck Web Application  
+
+#### TAREAS A EVALUAR:
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Registro e inicio de sesión de usuarios
+2. Carga y validación de imágenes (drag & drop, formatos)
+3. Visualización de resultados de análisis
+4. Navegación principal y estructura responsiva
+5. Indicadores de progreso durante análisis
+6. Sistema de búsqueda y filtrado en historial
+
+
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+- Integración con modelo de Machine Learning (backend)
+- Procesamiento asíncrono con Celery
+- Funcionalidades de API REST completas
+- Módulos de facturación y suscripciones premium
+- Integración con servicios de Azure (App Service, MySQL, Blob Storage)
+
+#### ESCALA DE SEVERIDAD:
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|-------|-------------|
+| 1     | Problema superficial: puede ser fácilmente superado por el usuario u ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2     | Problema menor: puede ocurrer un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3     | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4     | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+#### TABLA RESUMEN:
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|----------|---------------------|---------------------------------|
+| 1 | Falta de feedback visual inmediato al cargar imagen | 3 | Usability: Visibilidad del estado del sistema |
+| 2 | Mensajes de error genéricos en validación de formatos | 2 | Usability: Prevención de errores y mensajes de error claros |
+| 3 | Botón "Upload" no deshabilitado durante procesamiento | 3 | Usability: Prevención de errores |
+| 4 | Historial sin paginación para múltiples análisis | 2 | Usability: Flexibilidad y eficiencia de uso |
+| 5 | Falta de indicador de progreso detallado | 3 | Usability: Visibilidad del estado del sistema |
+| 6 | Resultados de análisis sin explicación contextual | 2 | Information Architecture: Jerarquía de información |
+
+
+
+#### DESCRIPCIÓN DE PROBLEMAS:
+
+##### PROBLEMA #1: Falta de feedback visual inmediato al cargar imagen
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Descripción:** Cuando el usuario arrastra y suelta una imagen o la selecciona mediante el botón de carga, no hay una confirmación visual inmediata de que el archivo ha sido detectado correctamente antes de presionar "Analyze". Esto genera incertidumbre sobre si la imagen se cargó exitosamente, especialmente con archivos grandes que pueden tardar en mostrarse en el preview.
+
+**Recomendación:**
+Implementar un feedback visual inmediato que incluya:
+- Indicador de carga (spinner) mientras se procesa el archivo
+- Preview de la imagen cargada con bordes destacados (color primario #3498DB)
+- Información del archivo (nombre, tamaño, formato) visible junto al preview
+- Mensaje de confirmación: "Imagen cargada correctamente"
+
+---
+
+##### PROBLEMA #2: Mensajes de error genéricos en validación de formatos
+
+**Severidad:** 2  
+**Heurística violada:** Usability: Prevención de errores y mensajes de error claros
+
+**Descripción:** Cuando un usuario intenta cargar un formato no soportado (ej: GIF, BMP, TIFF), el mensaje de error es genérico: "Formato no válido". No especifica qué formatos son aceptados ni guía al usuario sobre cómo solucionar el problema. Según las user stories (HU15), se deben validar únicamente JPG, PNG y WEBP.
+
+**Recomendación:**
+Mejorar los mensajes de error para que sean descriptivos y orientados a la acción:
+- **Actual:** "Formato no válido"
+- **Propuesto:** "Este formato no es compatible. Por favor, sube imágenes en formato JPG, PNG o WEBP."
+- Incluir un ícono de alerta (AlertCircle de Lucide Icons)
+- Agregar un enlace a la documentación: "¿Qué formatos puedo usar?"
+
+---
+
+##### PROBLEMA #3: Botón "Upload" no deshabilitado durante procesamiento
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Prevención de errores
+
+**Descripción:** Durante el análisis de una imagen, el botón "Upload Image" permanece activo, permitiendo que el usuario cargue otra imagen mientras aún se está procesando la anterior. Esto puede generar confusión sobre cuál imagen se está analizando y potencialmente causar errores en el sistema si el usuario inicia múltiples análisis simultáneos sin intención.
+
+**Recomendación:**
+- Deshabilitar el botón "Upload" y cambiar su estado visual cuando haya un análisis en curso
+- Mostrar el botón con opacidad reducida (0.5) y cursor "not-allowed"
+- Agregar un mensaje informativo: "Analizando imagen... Por favor espera"
+- Habilitar nuevamente el botón solo cuando el análisis se complete o falle
+
+---
+
+##### PROBLEMA #4: Historial sin paginación para múltiples análisis
+
+**Severidad:** 2  
+**Heurística violada:** Usability: Flexibilidad y eficiencia de uso
+
+**Descripción:** El panel de historial (History) muestra todos los análisis previos en una lista continua sin paginación ni lazy loading. Para usuarios profesionales que realizan múltiples análisis diarios (10-30 imágenes según las entrevistas), esto puede generar scroll excesivo, lentitud en la carga y dificultad para encontrar análisis específicos.
+
+**Recomendación:**
+Implementar un sistema de paginación o scroll infinito:
+- Mostrar 10-15 resultados por página inicialmente
+- Agregar controles de paginación en la parte inferior: "← Anterior | 1 2 3 ... | Siguiente →"
+- Incluir un selector de "Resultados por página: 10 | 25 | 50"
+- Mantener la barra de búsqueda siempre visible en la parte superior
+- Indicar el total de análisis: "Mostrando 1-10 de 45 análisis"
+
+---
+
+##### PROBLEMA #5: Falta de indicador de progreso detallado
+
+**Severidad:** 3  
+**Heurística violada:** Usability: Visibilidad del estado del sistema
+
+**Descripción:** Durante el análisis de la imagen, solo se muestra un spinner genérico sin información sobre el progreso. Según HU07 (Visualizar estado de carga durante análisis), los usuarios necesitan ver el progreso y mensajes informativos durante las diferentes etapas. La falta de transparencia en el proceso genera ansiedad y puede hacer que los usuarios abandonen la página creyendo que el sistema está congelado.
+
+**Recomendación:**
+Implementar un indicador de progreso con etapas visuales:
+
+```
+Analizando imagen...
+Validando formato (completado)
+Extrayendo características de píxeles (en proceso)
+Ejecutando modelo de detección (pendiente)
+Generando reporte (pendiente)
+```
+
+- Usar una barra de progreso con porcentaje: "Progreso: 45%"
+- Agregar mensajes contextuales: "Esto puede tomar entre 5-10 segundos"
+- Incluir animación sutil para indicar actividad continua
+
+
+##### PROBLEMA #8: Contraste insuficiente en texto secundario
+
+**Severidad:** 2  
+**Heurística violada:** Inclusive Design: Accesibilidad WCAG AA
+
+**Descripción:** El texto secundario (#7F8C8D Medium Gray) sobre fondo blanco (#FFFFFF) tiene un ratio de contraste de aproximadamente 3.8:1, ligeramente por debajo del estándar WCAG AA que requiere 4.5:1 para texto normal. Esto afecta la legibilidad para usuarios con baja visión o en condiciones de luz intensa, especialmente al usar la aplicación web en dispositivos con pantallas de menor calidad o en exteriores.
+
+**Elementos afectados:**
+- Timestamps en el historial ("Analizado hace 2 horas")
+- Descripciones auxiliares en los resultados
+- Texto de ayuda contextual (tooltips)
+
+**Recomendación:**
+Ajustar el color del texto secundario para cumplir con WCAG AA:
+- **Color actual:** #7F8C8D (Medium Gray)
+- **Color propuesto:** #5A6C7D (Darker Gray) - Ratio de contraste: 4.6:1
+- Validar todos los colores con herramientas como WebAIM Contrast Checker
+- Documentar los nuevos valores en las Style Guidelines (6.1.1)
+
 
 ## 7.4. Video About-the-Product
 
-[Content for video about the product]
+En este video se verá el como es que funciona nuestro producto, desde un usuario sin una cuenta, hasta el usuario que tiene la posibilidad de tener una y su diferenciador entre ellas.
 
+![Video about the product](assets/chapter-VII/about-the-product.png)
+
+**Enlace:** [Ver video en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202212760_upc_edu_pe/IQAXFGoTYl-WT7mGU6e8geATAXOyWJcNiZgcjKiW1hGHofE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gD6a9D)
 
 ## Conclusiones
 
@@ -3495,4 +4070,21 @@ Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contr
 ## Anexos
 
  - *Enlace a la presentación del TB1:* <br>
-[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/EakGtu3FQP9JhNAUTKt7HsUBlPX5wfXdm4phqlwK56Mz9Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dxf6sQ)
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQDKrxKGczEqQbYWSTTzkv9LAaJ8dkbbjYPFJD1zeQaYcfg?e=nHINsq&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+ - *Enlace a la presentación del TB2:* <br>
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQBaBGXsWSozSrc1syjJZ_Z1ASsLN9JkNM1dbIW_rq9esFA?e=M4nqIb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+ - *Enlace a la presentación del About-the-Team:* <br>
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQAgIu4MVrAxSKLSowA42r9KAfWpWBRIqgk7ApCTwcjbp0Y?e=0cmgOy&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+ - *Enlace Landing Page:* <br>
+[`Ingresar a la Landing Page`](https://pixelcheck-landing.web.app/)
+
+ - *Enlace Pagina Web:* <br>
+[`Ingresar a la Pagina Web`](http://pixel-check-app.netlify.app)
+
+
+
+
+
