@@ -3781,7 +3781,7 @@ Aunque considera suficiente la información mostrada, sí le gustaría tener exp
 **Duración de la Entrevista:** 6:30<br>
 
 
-**Enlace:** [Ver entrevista en SharePoint]()
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44ARzwI-t0vIWzag5440YPJX8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0UKh4O)
 
 '**Resumen de la Entrevista:** <br>
 
