@@ -3777,8 +3777,8 @@ Aunque considera suficiente la información mostrada, sí le gustaría tener exp
 **Sexo:** Masculino <br>
 **Edad:** 21 años<br>
 **Domicilio:** Callao<br>
-**Inicio de la Entrevista:** 0:12<br>
-**Duración de la Entrevista:** 6:30<br>
+**Inicio de la Entrevista:** 0:07<br>
+**Duración de la Entrevista:** 7:00<br>
 
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBs46QOGLYsQIXUvXeffFu6AUKUJtn8_sqsz-m3EmBsT4A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dhEH9u)
@@ -3829,20 +3829,20 @@ María José, estudiante de Marketing y practicante de comunicación en una ONG,
 
 ## **Entrevista N°3:**
 
-**Entrevistado:** Mateo Moreno<br>
+**Entrevistado:** Maurizzio Puente<br>
 **Sexo:** Masculino <br>
-**Edad:** 21 años<br>
+**Edad:** 20 años<br>
 **Domicilio:** Jesus Maria, Lima <br>
-**Inicio de la Entrevista:** 0:12<br>
-**Duración de la Entrevista:** 7:10<br>
+**Inicio de la Entrevista:** 0:02<br>
+**Duración de la Entrevista:** 10:49<br>
 
 
 
-**Enlace:** [Ver entrevista en SharePoint]()
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBSZ40jHuNrRJzSO9rfpfHVAVL3jd6Gdqr7-pr8ou7mtII?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=J34OVO)
 
 '**Resumen de la Entrevista:** <br>
 
-La entrevista con Mateo Moreno, practicante de periodismo deportivo y estudiante de Comunicación de 22 años que reside en Jesús María, permitió evaluar PixelCheck desde la perspectiva de un usuario de medios digitales. Tras ver la demo, Mateo afirmó que la herramienta cubre sus necesidades básicas de verificación de imágenes, valorando especialmente el análisis rápido, el porcentaje de confianza y los metadatos como soporte para decisiones editoriales. Consideró muy útil la generación de reportes en PDF, sugirió añadir métricas como historial de apariciones de la imagen y zonas manipuladas, y señaló que integraría PixelCheck como paso previo obligatorio antes de publicar contenidos sensibles, con un umbral mínimo de ~90% de confianza. Además, propuso mejoras en la interfaz orientadas a conclusiones rápidas, modo oscuro e integraciones con el flujo de trabajo del medio, y estimó que un rango de 20–50 USD mensuales sería razonable para que un medio pequeño o mediano adopte la herramienta.
+La entrevista con Maurizzio Puente, periodista deportivo y estudiante de Comunicación de 20 años, residente en Jesús María (Lima), permitió evaluar PixelCheck desde la perspectiva de un usuario de medios digitales. Tras ver la demo, Maurizzio afirmó que la herramienta cubre sus necesidades básicas de verificación de imágenes, valorando especialmente el análisis rápido, el porcentaje de confianza y los metadatos como soporte para decisiones editoriales. Consideró muy útil la generación de reportes en PDF, sugirió añadir métricas como historial de apariciones de la imagen y zonas manipuladas, y señaló que integraría PixelCheck como paso previo obligatorio antes de publicar contenidos sensibles, con un umbral mínimo cercano al 90 % de confianza. Además, propuso mejoras en la interfaz orientadas a conclusiones rápidas, modo oscuro e integraciones con el flujo de trabajo del medio, y estimó que un rango de 20–50 USD mensuales sería razonable para que un medio pequeño o mediano adopte la herramienta.
 
 ---
 
