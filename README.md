@@ -3836,9 +3836,10 @@ María José, estudiante de Marketing y practicante de comunicación en una ONG,
 **Inicio de la Entrevista:** 0:02<br>
 **Duración de la Entrevista:** 10:49<br>
 
-
+<a href="https://ibb.co/V0dpzMr3"><img src="https://i.ibb.co/rKgfz5Tv/entre.png" alt="entre" border="0"></a>
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBSZ40jHuNrRJzSO9rfpfHVAVL3jd6Gdqr7-pr8ou7mtII?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=J34OVO)
+
 
 '**Resumen de la Entrevista:** <br>
 
