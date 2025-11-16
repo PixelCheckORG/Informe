@@ -3781,7 +3781,7 @@ Aunque considera suficiente la información mostrada, sí le gustaría tener exp
 **Duración de la Entrevista:** 6:30<br>
 
 
-**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44ARzwI-t0vIWzag5440YPJX8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0UKh4O)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQBs46QOGLYsQIXUvXeffFu6AUKUJtn8_sqsz-m3EmBsT4A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dhEH9u)
 
 '**Resumen de la Entrevista:** <br>
 
@@ -3802,7 +3802,7 @@ La entrevista con Oscar Aranda, estudiante universitario de 21 años residente e
 
 <img src="./assets/chapter-VII/interviews/interview1.png" alt="Entrevista 1" style="width: 600px; height: auto;"><br>
 
-**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44AbO3PvBxG6iMyI07eWz4JYk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ug3Xyi)
+**Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202221518_upc_edu_pe/IQCra3U-o2GrTLM2MB9Xzc44ARzwI-t0vIWzag5440YPJX8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=QWijQo)
 
 '**Resumen de la Entrevista:** <br>
 Nasthya, estudiante de Comunicación Audiovisual y practicante en una agencia de publicidad, trabaja con 20–30 imágenes diarias para campañas. La autenticidad es crítica: comenta un caso previo donde una pieza generada por IA afectó la confianza del público. Hoy verifica metadatos y hace búsquedas en Google Imágenes (~5 min/imagen), pero reconoce que no es confiable ni rápido. Tras ver PixelCheck, valora el veredicto IA/Real con porcentaje y un semáforo visible; solicita ≥90% de certeza (95% en campañas sensibles), reportes PDF para clientes y CSV interno que incluyan modelVersion, umbral aplicado y hash del archivo. Pide integración como web app y plugin (Adobe/Canva), análisis por lotes, opción de “compartir reporte” y un SLA de ≤10 s. Como métricas adicionales sugiere heatmap de artefactos IA, detección de upscaling y un reverse image básico. Presupuesto estimado: USD 30–50/mes.'
