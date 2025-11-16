@@ -4031,7 +4031,7 @@ Zhang, L., Wang, X., & Chen, M. (2023, December 10). Rich and poor texture contr
 [`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQBaBGXsWSozSrc1syjJZ_Z1ASsLN9JkNM1dbIW_rq9esFA?e=M4nqIb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
  - *Enlace a la presentación del About-the-Team:* <br>
-[`Ver video de exposición`]()
+[`Ver video de exposición`](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219186_upc_edu_pe/IQAgIu4MVrAxSKLSowA42r9KAfWpWBRIqgk7ApCTwcjbp0Y?e=0cmgOy&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
  - *Enlace Landing Page:* <br>
 [`Ingresar a la Landing Page`](https://pixelcheck-landing.web.app/)
