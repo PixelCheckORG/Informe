@@ -124,7 +124,7 @@ Para la entrega del TB2 se han realizado:
 
 
 [Colaboraciones del repositorio]
-![insight_tb2](https://github.com/user-attachments/assets/543f4781-9946-4992-aaf4-90885bdcdbd0)
+![insight_tb2](./assets/chapter-I/insights-tb2.png)
 
 ## Repositorios:
 
