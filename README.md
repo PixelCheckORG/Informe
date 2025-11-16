@@ -3747,7 +3747,7 @@ Entrevista N°1:
 <img width="1783" height="628" alt="image" src="https://github.com/user-attachments/assets/bf33514f-ace5-46d2-ad69-c415a4e9d1f9" /><br>
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQDi2ELrJZvvR5Or1d2sMWF9AeLlVUn8Qs4AHA9Li0H-UWA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bumHzQ)
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQDi2ELrJZvvR5Or1d2sMWF9AeLlVUn8Qs4AHA9Li0H-UWA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bumHzQ
+
 **Resumen de la Entrevista:** <br>
 El entrevistado es un estudiante universitario que utiliza internet diariamente, consumiendo contenido visual desde diversas plataformas como Instagram, TikTok, Reddit y Twitter. Ha tenido experiencias frecuentes en las que duda de si una imagen es real o generada por IA, lo que aumenta su preocupación sobre la veracidad del contenido online. Considera muy importante poder identificar imágenes generadas por IA (9/10), y suele recurrir a comentarios o búsquedas rápidas cuando sospecha de una imagen falsa. Prefiere respuestas rápidas pero con opción de ver explicaciones. Usaría una herramienta que tarde hasta 30 segundos si es confiable, y estaría dispuesto a pagar un monto bajo (3–5 dólares). Aunque se siente cómodo con la tecnología, prefiere interfaces simples. Para él, la herramienta ideal debe ser precisa, rápida y capaz de explicar de manera clara por qué una imagen podría ser IA. Representa a un usuario joven con alta exposición digital y creciente necesidad de distinguir contenido auténtico en un entorno donde las IA generan cada vez más imágenes indistinguibles de la realidad.<br>
 
@@ -3763,11 +3763,29 @@ El entrevistado es un estudiante universitario que utiliza internet diariamente,
 <img width="1246" height="870" alt="image" src="https://github.com/user-attachments/assets/de3dd1fd-97a3-449c-8505-50cf7e4af5e7" /><br>
 
 **Enlace:** [Ver entrevista en SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn)
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210066_upc_edu_pe/IQCGc-GfHakVQoTBSe_VsXevATQl2VFQ6C-llid1MUm7YnA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MUdgNn
+
+
 **Resumen de la Entrevista:** <br>
 El entrevistado es un usuario frecuente de redes sociales que consume contenido visual diariamente desde su móvil y computadora. Durante la prueba con PixelCheck, comentó que la interfaz le parece intuitiva y sencilla de usar. Considera que el resultado principal (Real/IA) es claro, y entendió sin dificultad el proceso de carga de imágenes mediante drag & drop o el botón de selección. El tiempo de análisis (5–10 segundos) le pareció adecuado, siempre que mantenga buena precisión.
 
 Aunque considera suficiente la información mostrada, sí le gustaría tener explicaciones más detalladas sobre por qué la imagen fue clasificada como IA. Valora mucho la utilidad de la aplicación en el día a día, especialmente por la cantidad de imágenes falsas que circulan actualmente. Sugiere mejorar la visibilidad de algunos elementos del diseño y añadir un breve tutorial inicial. Le interesaría ver futuras funciones como análisis de videos cortos o detección de ediciones. Estaría dispuesto a pagar entre 3 y 5 dólares por funciones premium, y afirma que recomendaría la aplicación a otras personas debido a su utilidad y facilidad de uso.<br>
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** Oscar Aranda<br>
+**Sexo:** Masculino <br>
+**Edad:** 21 años<br>
+**Domicilio:** Callao<br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 6:30<br>
+
+
+**Enlace:** [Ver entrevista en SharePoint]()
+
+'**Resumen de la Entrevista:** <br>
+
+La entrevista con Oscar Aranda, estudiante universitario de 21 años residente en el Callao y usuario frecuente de redes sociales, permitió evaluar PixelCheck desde la perspectiva de un usuario general de internet. Oscar indicó que consume contenido visual a diario en plataformas como Instagram, X y TikTok, y consideró que la interfaz de PixelCheck es intuitiva, con un flujo claro de subir imagen, analizar y ver el resultado. Señaló que la clasificación “Real/Generado por IA” acompañada de un porcentaje de confianza le resulta clara y suficiente para tomar decisiones rápidas sobre si compartir o no una imagen, y que el tiempo de análisis de 5–10 segundos le parece razonable. Aunque valora la información mostrada, comentó que le gustaría contar con explicaciones simples sobre por qué una imagen fue clasificada como IA, así como mejoras en diseño (modo oscuro, priorizar el resultado en pantalla) y funcionalidades adicionales como historial de análisis, extensión para navegador y opción para compartir resultados. Indicó que usaría principalmente una versión gratuita, pero estaría dispuesto a pagar un monto bajo (aprox. 3–5 USD mensuales) por funciones premium, y afirmó que sí recomendaría la aplicación a amigos y contactos que comparten noticias y contenido sensible en redes sociales.
 
 ---
 
@@ -3807,6 +3825,24 @@ Nasthya, estudiante de Comunicación Audiovisual y practicante en una agencia de
 '**Resumen de la Entrevista:** <br>
 María José, estudiante de Marketing y practicante de comunicación en una ONG, gestiona materiales para redes y reportes a donantes. Ha enfrentado imágenes manipuladas por IA que exageraban el impacto, afectando la transparencia. Su revisión actual es visual y toma 5–10 min por imagen. Con PixelCheck, le resulta útil la etiqueta “Apta para transparencia”, el porcentaje de confianza y los metadatos, además de exportar PDF para el comité y CSV para archivo interno. Requiere 85–90% de certeza (≥90% para evidencias críticas), y prefiere un resumen en lenguaje simple para donantes con anexo técnico; solicita firma digital y hash del reporte, histórico por proyecto, “source trace” y cruce con bancos de imágenes. Imagina integrarlo como web ligera con carpetas por proyecto y un botón “Agregar al informe mensual”. Presupuesto aproximado: USD 20–30/mes.'
 <br>
+
+
+## **Entrevista N°3:**
+
+**Entrevistado:** Mateo Moreno<br>
+**Sexo:** Masculino <br>
+**Edad:** 21 años<br>
+**Domicilio:** Jesus Maria, Lima <br>
+**Inicio de la Entrevista:** 0:12<br>
+**Duración de la Entrevista:** 7:10<br>
+
+
+
+**Enlace:** [Ver entrevista en SharePoint]()
+
+'**Resumen de la Entrevista:** <br>
+
+La entrevista con Mateo Moreno, practicante de periodismo deportivo y estudiante de Comunicación de 22 años que reside en Jesús María, permitió evaluar PixelCheck desde la perspectiva de un usuario de medios digitales. Tras ver la demo, Mateo afirmó que la herramienta cubre sus necesidades básicas de verificación de imágenes, valorando especialmente el análisis rápido, el porcentaje de confianza y los metadatos como soporte para decisiones editoriales. Consideró muy útil la generación de reportes en PDF, sugirió añadir métricas como historial de apariciones de la imagen y zonas manipuladas, y señaló que integraría PixelCheck como paso previo obligatorio antes de publicar contenidos sensibles, con un umbral mínimo de ~90% de confianza. Además, propuso mejoras en la interfaz orientadas a conclusiones rápidas, modo oscuro e integraciones con el flujo de trabajo del medio, y estimó que un rango de 20–50 USD mensuales sería razonable para que un medio pequeño o mediano adopte la herramienta.
 
 ---
 
